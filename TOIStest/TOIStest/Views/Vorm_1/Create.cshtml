@@ -1,0 +1,358 @@
+﻿@model TOIStest.Models.Vorm_1
+
+@{
+    ViewData["Title"] = "Õppekava";
+}
+<head>
+    <style>
+        #info-1, #info-2, #info-3, #info-4{
+            opacity: 0;
+            padding: 0;
+            margin: 0;
+            border: 1px solid black;
+            background-color: rgb(230, 230, 230);
+            display: none;
+            grid-template-columns: auto auto auto;
+        }
+        .col-md-4{
+            width: 100%;
+        }
+        .form-group {
+            margin: 1em;
+        }
+        .introbox{
+            /*text-shadow: 2px 2px black;*/
+            height: 8vh;
+            text-indent: 1em;
+            color: white;
+            background-color: #ba0c2f;
+            border: 1px solid black;
+            cursor: pointer;
+        }
+        .oppeviisid{
+            text-indent: 1vw;
+        }
+        h2{
+            margin-top: 0.5em;
+            font-family: "Times New Roman",Times,Georgia,serif;
+            font-style: italic;
+            text-transform: uppercase;
+        }
+        /*hidden-form{
+            animation: ease-in;
+            transition: 300ms;
+            visibility: hidden;
+        }
+        .shown-form{
+            animation: ease-in;
+            transition: 300ms;
+            visibility: visible;
+        }*/
+    </style>
+</head>
+
+<!--<div class="row">-->
+        <form asp-action="Create">
+            <h1>Õppekava loomine</h1>
+            <label asp-for="creatorName" class="control-label"><h2>Täitja:</h2></label>
+            <input asp-for="creatorName" class="form-control" value="@ViewData["filler"]"/>
+            <h2>Õppekava id: @ViewData["id"]</h2>
+            <br />
+            <br />
+            <hr />
+    <div class="col-md-4">
+        <div class="introbox" id="ib_1"><h2>Üldine info:</h2></div>
+
+        <div id="formContent">
+        <div id="info-1" class="hidden-form" style="opacity: 0; display: none;">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="nameEstonian" class="control-label" >õppekava nimetus e.k</label>
+                <input asp-for="nameEstonian" class="form-control" />
+                <span asp-validation-for="nameEstonian" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="nameEnglish" class="control-label">õppekava nimetus i.k</label>
+                <input asp-for="nameEnglish" class="form-control" />
+                <span asp-validation-for="nameEnglish" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="nameRussian" class="control-label">õppekava nimetus v.k</label>
+                <input asp-for="nameRussian" class="form-control" />
+                <span asp-validation-for="nameRussian" class="text-danger"></span>
+            </div>
+            <hr />
+            <hr />
+            <hr />
+            <div class="oppeviisid">
+
+            <h5>õppeviisid</h5>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="e_Study" /> E-õpe
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="practice" /> Praktika
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="independentStudy" /> Iseseisev õppetöö
+                </label>
+            </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="someElse" class="control-label">Muu</label>
+                <input asp-for="someElse" class="form-control" />
+                <span asp-validation-for="someElse" class="text-danger"></span>
+            </div>
+            <div></div>
+            <hr />
+            <hr />
+            <hr />
+            <div class="more-info">
+
+            <div class="form-group">
+                <label asp-for="EAP" class="control-label">Õppekava EAP hulk:</label>
+                <input asp-for="EAP" class="form-control" />
+                <span asp-validation-for="EAP" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="studyForm" class="control-label">Õppevorm</label>
+                <input asp-for="studyForm" class="form-control" />
+                <span asp-validation-for="studyForm" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="studyLanguages" class="control-label">Õppetöö keeled</label>
+                <input asp-for="studyLanguages" class="form-control" />
+                <span asp-validation-for="studyLanguages" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="targetGroup" class="control-label">Sihtgrupp</label>
+                <input asp-for="targetGroup" class="form-control" />
+                <span asp-validation-for="targetGroup" class="text-danger"></span>
+            </div>
+            </div>
+        </div>
+        <br />
+        <br />
+            <div class="introbox" id="ib_2"><h2>Hindamine ja õppe eesmärgid:</h2></div>
+            <div id="info-2" style="opacity: 0; display: none;">
+            <div class="form-group">
+                <label asp-for="gradingMethod" class="control-label">Hindamismeetod</label>
+                <input asp-for="gradingMethod" class="form-control" />
+                <span asp-validation-for="gradingMethod" class="text-danger"></span>
+            </div>
+            <div></div>
+            <div></div>
+            <hr />
+            <hr />
+            <hr />
+            <div class="form-group">
+                <label asp-for="gradingCriteriaEstonian" class="control-label">Hindamiskriteeriumid e.k</label>
+                <input asp-for="gradingCriteriaEstonian" class="form-control" />
+                <span asp-validation-for="gradingCriteriaEstonian" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="gradingCriteriaEnglish" class="control-label">Hindamiskriteeriumid i.k</label>
+                <input asp-for="gradingCriteriaEnglish" class="form-control" />
+                <span asp-validation-for="gradingCriteriaEnglish" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="gradingCriteriaRussian" class="control-label">Hindamiskriteeriumid v.k</label>
+                <input asp-for="gradingCriteriaRussian" class="form-control" />
+                <span asp-validation-for="gradingCriteriaRussian" class="text-danger"></span>
+            </div>
+            <hr />
+            <hr />
+            <hr />
+            <div class="form-group">
+                <label asp-for="studyGoalEstonian" class="control-label">Õppe eesmärgid e.k</label>
+                <input asp-for="studyGoalEstonian" class="form-control" />
+                <span asp-validation-for="studyGoalEstonian" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="studyGoalEnglish" class="control-label">Õppe eesmärgid i.k</label>
+                <input asp-for="studyGoalEnglish" class="form-control" />
+                <span asp-validation-for="studyGoalEnglish" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="studyGoalRussian" class="control-label">Õppe eesmärgid v.k</label>
+                <input asp-for="studyGoalRussian" class="form-control" />
+                <span asp-validation-for="studyGoalRussian" class="text-danger"></span>
+            </div>
+            <hr />
+            <hr />
+            <hr />
+            <div class="form-group">
+                <label asp-for="contentEstonian" class="control-label">Õppe sisu e.k</label>
+                <textarea rows="3" asp-for="contentEstonian" class="form-control" ></textarea>
+                <span asp-validation-for="contentEstonian" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="contentEnglish" class="control-label">Õppe sisu i.k</label>
+                <textarea rows="3" asp-for="contentEnglish" class="form-control" ></textarea>
+                <span asp-validation-for="contentEnglish" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="contentRussian" class="control-label">Õppe sisu v.k</label>
+                <textarea rows="3" asp-for="contentRussian" class="form-control" ></textarea>
+                <span asp-validation-for="contentRussian" class="text-danger"></span>
+            </div>
+            <hr />
+            <hr />
+            <hr />
+            <div class="form-group">
+                <label asp-for="reqEstonian" class="control-label">Eeldused kursusele e.k</label>
+                <input asp-for="reqEstonian" class="form-control" />
+                <span asp-validation-for="reqEstonian" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="reqEnglish" class="control-label">Eeldused kursusele i.k</label>
+                <input asp-for="reqEnglish" class="form-control" />
+                <span asp-validation-for="reqEnglish" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="reqRussian" class="control-label">Eeldused kursusele v.k</label>
+                <input asp-for="reqRussian" class="form-control" />
+                <span asp-validation-for="reqRussian" class="text-danger"></span>
+            </div>
+            <hr />
+            <hr />
+            <hr />
+            <div class="form-group">
+                <label asp-for="studyMethodsEstonian" class="control-label">Õppemeetodid e.k</label>
+                <input asp-for="studyMethodsEstonian" class="form-control"/>
+                <span asp-validation-for="studyMethodsEstonian" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="studyMethodsEnglish" class="control-label">Õppemeetodid i.k</label>
+                <input asp-for="studyMethodsEnglish" class="form-control" />
+                <span asp-validation-for="studyMethodsEnglish" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="studyMethodsRussian" class="control-label">Õppemeetodid v.k</label>
+                <input asp-for="studyMethodsRussian" class="form-control" />
+                <span asp-validation-for="studyMethodsRussian" class="text-danger"></span>
+            </div>
+            </div>  
+            <br />
+            <br />
+            <div class="introbox" id="ib_3"><h2>Muu informatsioon:</h2></div>
+            <div id="info-3" style="opacity: 0; display: none;">
+            <div class="form-group">
+                <label asp-for="fieldOfTraining" class="control-label"></label>
+                <input asp-for="fieldOfTraining" class="form-control" />
+                <span asp-validation-for="fieldOfTraining" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="fieldOfStudy" class="control-label"></label>
+                <input asp-for="fieldOfStudy" class="form-control" />
+                <span asp-validation-for="fieldOfStudy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="fieldOfStudyDetailed" class="control-label"></label>
+                <input asp-for="fieldOfStudyDetailed" class="form-control" />
+                <span asp-validation-for="fieldOfStudyDetailed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="groupOfField" class="control-label"></label>
+                <input asp-for="groupOfField" class="form-control" />
+                <span asp-validation-for="groupOfField" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="citationForField" class="control-label"></label>
+                <input asp-for="citationForField" class="form-control" />
+                <span asp-validation-for="citationForField" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="baseForCurriculum" class="control-label"></label>
+                <input asp-for="baseForCurriculum" class="form-control" />
+                <span asp-validation-for="baseForCurriculum" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="studyEnvironment" class="control-label"></label>
+                <input asp-for="studyEnvironment" class="form-control" />
+                <span asp-validation-for="studyEnvironment" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="competenceOfTeacher" class="control-label"></label>
+                <input asp-for="competenceOfTeacher" class="form-control" />
+                <span asp-validation-for="competenceOfTeacher" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="comments" class="control-label"></label>
+                <input asp-for="comments" class="form-control" />
+                <span asp-validation-for="comments" class="text-danger"></span>
+            </div>
+            </div>
+            <br />
+            <br />
+            <div class="introbox" id="ib_4"><h2>Administraatori täita:</h2></div>
+            <div id="info-4" style="opacity: 0; display: none;">
+            <div class="form-group">
+                <label asp-for="instituteOfMainSupervisor" class="control-label"></label>
+                <input asp-for="instituteOfMainSupervisor" class="form-control" />
+                <span asp-validation-for="instituteOfMainSupervisor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="mainSupervisorName" class="control-label"></label>
+                <input asp-for="mainSupervisorName" class="form-control" />
+                <span asp-validation-for="mainSupervisorName" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="isOrganiser" /> @Html.DisplayNameFor(model => model.isOrganiser)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="supervisorInstitute" class="control-label"></label>
+                <input asp-for="supervisorInstitute" class="form-control" />
+                <span asp-validation-for="supervisorInstitute" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="nameOfsupervisor" class="control-label"></label>
+                <input asp-for="nameOfsupervisor" class="form-control" />
+                <span asp-validation-for="nameOfsupervisor" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="isSubscribable" /> @Html.DisplayNameFor(model => model.isSubscribable)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="webName" class="control-label"></label>
+                <input asp-for="webName" class="form-control" />
+                <span asp-validation-for="webName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="teacherNameOnWeb" class="control-label"></label>
+                <input asp-for="teacherNameOnWeb" class="form-control" />
+                <span asp-validation-for="teacherNameOnWeb" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="isVisible" /> @Html.DisplayNameFor(model => model.isVisible)
+                </label>
+            </div>
+            </div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Kinnita" class="btn btn-primary" />
+            </div>
+    </div>
+        </form>
+        <input type="submit" value="Salvesta PDF kujul" id="formToPDF" />
+<!--</div>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script type="module" src="~/js/convertToPDF.js"></script>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

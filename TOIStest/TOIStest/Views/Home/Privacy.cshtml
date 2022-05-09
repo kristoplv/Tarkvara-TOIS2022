@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Logi sisse";
+}
+<h1>@ViewData["Title"]</h1>
+
+<h2>Logi sisse</h2>
+
+<div class="login">
+    <hr />
+    <br />
+    <label for="email"  class="control-label">E-posti aadress:</label>
+    <input class="form-control" name="email"/>
+    <br />
+    <label for="pw"  class="control-label"> Parool:</label>
+    <input class="form-control" name="pw"/>
+    <br />
+    <input type="button" value="Logi sisse" class="btn btn-primary" id="sendToMain"/>
+    <br />
+    <hr />
+    <script>
+        var sendMain = document.querySelector("#sendToMain");
+        sendMain.addEventListener("click", function(){
+            location.href = "https://localhost:7134/Vorm_1";
+        })
+    </script>
+
+</div>
