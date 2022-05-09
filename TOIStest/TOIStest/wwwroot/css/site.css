@@ -1,0 +1,62 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+.logo{
+    width: 3vw;
+    aspect-ratio: 1/1;
+    background: url("logo.png") no-repeat;
+    background-size:cover;
+}
+.stick{
+    background-color: grey;
+    transform: rotate(15deg);
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 8px;
+    width: 2px;
+    height: 25px;
+    background-color: black;
+}
+.nav-item{
+    font-size: 16px;
+}
+.navbar-brand{
+    margin-right: 30px;
+}
+@keyframes newAnimation {
+    0% {display: none; opacity: 0;}
+    100% {display: grid; opacity: 1;}
+}
+
+@keyframes newAnimationOff {
+    100% {
+        display: grid;
+        opacity: 1;
+    }
+
+    0% {
+        display: none;
+        opacity: 0;
+    }
+}
+#searchCurr{
+    width: 50%;
+}
+#searchCurr #searchInput{
+    margin-bottom: 5px;
+}

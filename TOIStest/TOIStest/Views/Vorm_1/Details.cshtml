@@ -1,0 +1,288 @@
+﻿@model TOIStest.Models.Vorm_1
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Vorm_1</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.nameEstonian)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.nameEstonian)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.nameEnglish)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.nameEnglish)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.nameRussian)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.nameRussian)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.e_Study)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.e_Study)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.practice)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.practice)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.independentStudy)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.independentStudy)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.someElse)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.someElse)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.EAP)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EAP)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.studyForm)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.studyForm)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.studyLanguages)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.studyLanguages)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.targetGroup)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.targetGroup)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.gradingMethod)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.gradingMethod)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.gradingCriteriaEstonian)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.gradingCriteriaEstonian)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.gradingCriteriaEnglish)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.gradingCriteriaEnglish)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.gradingCriteriaRussian)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.gradingCriteriaRussian)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.studyGoalEstonian)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.studyGoalEstonian)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.studyGoalEnglish)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.studyGoalEnglish)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.studyGoalRussian)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.studyGoalRussian)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.contentEstonian)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.contentEstonian)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.contentEnglish)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.contentEnglish)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.contentRussian)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.contentRussian)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.reqEstonian)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.reqEstonian)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.reqEnglish)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.reqEnglish)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.reqRussian)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.reqRussian)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.studyMethodsEstonian)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.studyMethodsEstonian)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.studyMethodsEnglish)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.studyMethodsEnglish)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.studyMethodsRussian)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.studyMethodsRussian)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.fieldOfTraining)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.fieldOfTraining)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.fieldOfStudy)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.fieldOfStudy)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.fieldOfStudyDetailed)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.fieldOfStudyDetailed)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.groupOfField)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.groupOfField)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.citationForField)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.citationForField)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.baseForCurriculum)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.baseForCurriculum)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.studyEnvironment)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.studyEnvironment)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.competenceOfTeacher)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.competenceOfTeacher)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.comments)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.comments)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.instituteOfMainSupervisor)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.instituteOfMainSupervisor)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.mainSupervisorName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.mainSupervisorName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.isOrganiser)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.isOrganiser)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.supervisorInstitute)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.supervisorInstitute)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.nameOfsupervisor)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.nameOfsupervisor)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.isSubscribable)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.isSubscribable)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.webName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.webName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.teacherNameOnWeb)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.teacherNameOnWeb)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.isVisible)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.isVisible)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
