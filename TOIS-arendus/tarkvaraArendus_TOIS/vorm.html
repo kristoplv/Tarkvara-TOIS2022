@@ -9,8 +9,8 @@
     <title>Õppekava vorm</title>
 </head>
 <body>
-    <a href="#" onclick="openTable1()">Üldine info</a>
-    <table id="table1">
+    <a href="#" onclick="openTable1()">Üldine info</a><br>
+    <table id="table1" style="display:none">
         <tr>
             <th>
                 <label for="nimetus-ek">Nimetus e.k.</label>
@@ -72,8 +72,8 @@
         </tr>
     </table>
 
-    <a href="#" onclick="openTable2()">Hindamine ja õppe eesmärgid</a>
-    <table id="table2">
+    <a href="#" onclick="openTable2()">Hindamine ja õppe eesmärgid</a><br>
+    <table id="table2" style="display:none">
         <tr>
             <th>
                 <label for="kontrollivorm">Kontrollivorm</label>
@@ -111,18 +111,77 @@
         </tr>
     </table>
 
-    <a href="#" onclick="openTable3()">Muu informatsioon</a>
-    <table id="table3">
+    <a href="#" onclick="openTable3()">Muu informatsioon</a><br>
+    <table id="table3" style="display:none">
         <tr>
             <th>
-                
+                <label for="sihtgrupp">Sihtgrupp</label>
+                <br>
+                <input type="text" name="sihtgrupp" id="sihtgrupp">
+                <br>
+                <label for="opikeskkond">Õpikeskkond</label>
+                <br>
+                <input type="text" name="opikeskkond" id="opikeskkond">
+                <br>
+                <label for="koolitaja-kompetentsus">Koolitaja kompetentsus</label>
+                <br>
+                <input type="text" name="koolitaja-kompetentsus" id="koolitaja-kompetentsus">
+                <br>
+                <label for="veebis-kuvatav-koolitaja">Veebis kuvatav koolitaja</label>
+                <br>
+                <input type="text" name="veebis-kuvatav-koolitaja" id="veebis-kuvatav-koolitaja">
             </th>
         </tr>
     </table>
 
     <a href="#" onclick="openTable4()">Administraatori täita</a>
-    <table id="table4">
-
+    <table id="table4" style="display:none">
+        <tr>
+            <th>
+                <label for="oppevaldkond">Õppevaldkond (ISCED)</label>
+                <br>
+                <input type="text" name="oppevaldkond" id="oppevaldkond">
+            </th>
+            <th>
+                <label for="oppesuund">Õppesuund (ISCED)</label>
+                <br>
+                <input type="text" name="oppesuund" id="oppesuund">
+            </th>
+            <th>
+                <label for="oppekava-ruhm">Õppekava rühm (ISCED)</label>
+                <br>
+                <input type="text" name="oppekava-ruhm" id="oppekava-ruhm">
+            </th>
+        </tr>
+        <tr>
+            <th>
+                <label for="oppekava-koostamise-alus">Õppekava koostamise alus</label>
+                <br>
+                <input type="text" name="oppekava-koostamise-alus" id="oppekava-koostamise-alus">
+                <br>
+                <label for="pohivastutaja">Põhivastutaja</label>
+                <br>
+                <input type="text" name="pohivastutaja" id="pohivastutaja">
+                <br>
+                <label for="tellitav-kursus">TÕK on tellitav kursus</label>
+                <br>
+                <input type="radio" name="tellitav-kursus" id="tellitav">
+                <label for="tellitav">Jah</label>
+                <input type="radio" name="tellitav-kursus" id="pole-tellitav">
+                <label for="pole-tellitav">Ei</label>
+                <br>
+                <label for="veebis-kuvatav-korraldaja">Veebis kuvatav korraldaja struktuur ja kontakt</label>
+                <br>
+                <input type="text" name="veebis-kuvatav-korraldaja" id="veebis-kuvatav-korraldaja">
+                <br>
+                <label for="teistele-nahtav">TÕK on teistele nähtav</label>
+                <br>
+                <input type="radio" name="teistele-nahtav" id="nahtav">
+                <label for="nahtav">Jah</label>
+                <input type="radio" name="teistele-nahtav" id="pole-nahtav">
+                <label for="pole-nahtav">Ei</label>
+            </th>
+        </tr>
     </table>
 </body>
 </html>

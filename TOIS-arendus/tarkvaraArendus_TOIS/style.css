@@ -7,6 +7,6 @@
   margin-top: 60px;
 }
 
-#table1 {
-  display: none;
+#table1, #table2, #table3, #table4 {
+  /*display: none;*/
 }
