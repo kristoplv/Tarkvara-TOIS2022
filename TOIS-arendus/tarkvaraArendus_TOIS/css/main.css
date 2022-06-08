@@ -80,7 +80,10 @@ a::after{
     font-style: italic;
 }
 .box>a{
+    font-size: 32px;
     color: white;
+    font-style: italic;
+    text-transform: uppercase;
 }
 .fillForm{
     padding-left: 25px;

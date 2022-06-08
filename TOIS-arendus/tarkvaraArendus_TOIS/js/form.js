@@ -47,7 +47,7 @@ function calculateEAP() {
     let praktika = parseInt(document.getElementById('praktika-h').value);
     let iseseisev = parseInt(document.getElementById('iseseisev-ope-h').value);
 
-    let eap = (kontaktope + praktika + iseseisev) / 26;
+    let eap = Math.round((kontaktope + praktika + iseseisev) / 26);
 
     let result = document.getElementById('eap-result');
     result.innerText = eap;
