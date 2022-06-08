@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="js/form.js" defer></script>
+    <title>Õppekava vorm</title>
+</head>
+<body>
+    <a href="#" onclick="openTable1()">Üldine info</a>
+    <table id="table1">
+        <tr>
+            <th>
+                <label for="nimetus-ek">Nimetus e.k.</label>
+                <br>
+                <input type="text" name="nimetus-ek" id="nimetus-ek">
+            </th>
+            <th>
+                <label for="nimetus-ik">Nimetus i.k.</label>
+                <br>
+                <input type="text" name="nimetus-ik" id="nimetus-ik">
+            </th>
+        </tr>
+        <tr>
+            <th>
+                <label for="oppeviis">Õppeviis</label>
+                <br>
+                <input type="checkbox" name="oppeviis" id="kontaktope">
+                <label for="kontaktope">Kontaktõpe</label>
+                <br>
+                <input type="checkbox" name="oppeviis" id="praktika">
+                <label for="praktika">Praktika</label>
+                <br>
+                <input type="checkbox" name="oppeviis" id="iseseisev-ope">
+                <label for="iseseisev-ope">Iseseisev õpe</label>
+            </th>
+            <th>
+                <label for="koolituse-liik">Koolituse liik</label>
+                <br>
+                <select name="koolituse-liik" id="koolituse-liik">
+                    <option value="1">Koolitus</option>
+                </select>
+            </th>
+        </tr>
+        <tr>
+            <th>
+                <label for="maht-tundides">Maht tundides</label>
+                <br>
+                <input type="number" name="maht-tundides" id="kontaktope-h">
+                <label for="kontaktope-h">Kontaktõpe</label>
+                <br>
+                <input type="number" name="maht-tundides" id="praktika-h">
+                <label for="praktika-h">Praktika</label>
+                <br>
+                <input type="number" name="maht-tundides" id="iseseisev-ope-h">
+                <label for="iseseisev-ope-h">Iseseisev õpe</label>
+                <br>
+                <label for="oppekava-maht-eap">Õppekava maht (EAP): </label>
+                <p>Siia tuleb arvutatud EAP-de hulk.</p>
+            </th>
+            <th>
+                <label for="oppetoo-keeled">Õppetöö keeled</label>
+                <br>
+                <input type="checkbox" name="oppetoo-keeled" id="eesti">
+                <label for="eesti">Eesti</label>
+                <br>
+                <input type="checkbox" name="oppetoo-keeled" id="inglise">
+                <label for="inglise">Inglise</label>
+            </th>
+        </tr>
+    </table>
+
+    <a href="#" onclick="openTable2()">Hindamine ja õppe eesmärgid</a>
+    <table id="table2">
+        <tr>
+            <th>
+                <label for="kontrollivorm">Kontrollivorm</label>
+                <br>
+                <select name="kontrollivorm" id="kontrollivorm">
+                    <option value="1">Eksam</option>
+                    <option value="2">Arvestus</option>
+                    <option value="3">Puudub</option>
+                </select>
+                <br>
+                <label for="hindamiskriteeriumid-ek">Hindamiskriteeriumid e.k.</label>
+                <br>
+                <input type="text" name="hindamiskriteeriumid-ek" id="hindamiskriteeriumid-ek">
+                <br>
+                <label for="eesmargid-ek">Eesmärgid e.k.</label>
+                <br>
+                <input type="text" name="eesmargid-ek" id="eesmargid-ek">
+                <br>
+                <label for="opivaljundid-ek">Õpiväljundid e.k.</label>
+                <br>
+                <input type="text" name="opivaljundid-ek" id="opivaljundid-ek">
+                <br>
+                <label for="sisu-ek">Sisu e.k.</label>
+                <br>
+                <input type="text" name="sisu-ek" id="sisu-ek">
+                <br>
+                <label for="eeldused-ek">Eeldused e.k.</label>
+                <br>
+                <input type="text" name="eeldused-ek" id="eeldused-ek">
+                <br>
+                <label for="tingimused-ek">Läbimise tingimused, sh. praktiliste tööde lühikirjeldused e.k.</label>
+                <br>
+                <input type="text" name="tingimused-ek" id="tingimused-ek">
+            </th>
+        </tr>
+    </table>
+
+    <a href="#" onclick="openTable3()">Muu informatsioon</a>
+    <table id="table3">
+        <tr>
+            <th>
+                
+            </th>
+        </tr>
+    </table>
+
+    <a href="#" onclick="openTable4()">Administraatori täita</a>
+    <table id="table4">
+
+    </table>
+</body>
+</html>
