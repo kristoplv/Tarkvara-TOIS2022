@@ -3,7 +3,7 @@ body{
 }
 .hello{
     justify-self: center;
-    font-size: 26px;
+    font-size: 36px;
 }
 .login_form{
     align-items: center;
@@ -80,13 +80,14 @@ input[type=text], input[type=password]:focus{
     cursor: pointer;
     outline: none;
     transition: 200ms;
-    background-color: lightblue;
+    background-color: rgb(148, 28, 28);
+    color: rgb(240, 240, 240);
     border: 1px solid black;
     border-radius: 5px;
 
 }
 a:visited{
-    color: #7baedd;
+    color: #922b2b;
 }
 .forgot_pw{
     margin-top: 10px;
