@@ -62,6 +62,7 @@ th{
     height: 55px;
     font-weight: normal;
     border-bottom: 1px solid rgba(184, 182, 182, 0.671);
+    text-align: left;
 }
 a{
     color: blue;
@@ -78,6 +79,8 @@ a::after{
     padding-left: 25px;
     color: white;
     font-style: italic;
+    padding-top: 32px;
+    padding-bottom: 32px;
 }
 .box>a{
     font-size: 32px;
@@ -114,4 +117,7 @@ th label{
     color: white;
     font-size: 24px;
     cursor: pointer;
+}
+.formInputDropdown{
+    font-size: 16px;
 }
