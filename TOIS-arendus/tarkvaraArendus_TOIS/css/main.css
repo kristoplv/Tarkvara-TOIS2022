@@ -45,7 +45,7 @@ h2{
 .logo{
     background-image: url("TOISlogo.png");
     background-repeat: no-repeat;
-    background-size: 25%;
+    background-size: 693px;
     grid-column: 1 / 3;
     grid-row: 1 / 2;
     border-bottom: solid 0.5px #75142cc4;
