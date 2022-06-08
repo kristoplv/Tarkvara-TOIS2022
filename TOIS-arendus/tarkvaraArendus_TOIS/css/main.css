@@ -59,7 +59,7 @@ a::after{
 }
 
 .logo{
-    background-image: url("logo.jpg");
+    background-image: url("../images/logo.jpg");
     background-repeat: no-repeat;
     background-size: contain;
     grid-column: 1 / 3;

@@ -7,6 +7,7 @@
     <title>menüüriba-test</title>
     <link rel="stylesheet" href="css/menu.css">
     <link rel="stylesheet" href="css/login.css">
+    <script src="js/checkLogin.js" defer></script>
 </head>
 <body>
     <container class="ribbon">
@@ -36,13 +37,15 @@
                 </div>
             </div>
             <div class="send field">
-                <input type="submit" value="Logi sisse" class="login_btn">
+                <input type="submit" value="Logi sisse" class="login_btn" id="loginButton">
             </div>
+            <div id="notice"></div>
             <div class="register field">
                 <p1 class="login">Pole veel kasutajat?</p1>
                 <a href="index.html"><p1 class="login">Registreeru siin</p1></a>
             </div>
                         
+            <a class="forgot_pw" href="index.html"><p1 class="login">unustasid parooli?</p1></a>
         </container>
     
 </body>
