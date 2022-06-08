@@ -7,78 +7,75 @@ html{
     font-size: 24px;
 }
 
+h2{
+    font-size: 30px;
+    font-style: italic;
+}
+
 .links{
     padding: 1em;
     text-decoration: none;
     color: black;
 }
+
+.links:hover{
+    color: #ba0c2f;
+}
+
 .links::after{
     color: black;
-}
-
-
-a{
-    color: blue;
-    text-decoration: none;
-}
-a::after{
-    color: blue;
-}
-.box{
-    width: 100%;
-    height: 100%;
-    background-color: #ba0c2f;
-    font-size: 32px;
-    padding-left: 25px;
-    color: white;
-}
-.fillForm{
-    padding-left: 25px;
-    width: 100%;
-    margin: 0;
-    background-color: lightgray;
-    border: 1px solid black;
-}
-.formInput{
-    font-size: 24px;
 }
 
 .mainContainer{
     display: grid;
     grid-template-columns: 300px auto 200px;
-    grid-template-rows: 150px auto;
-    grid-column-gap: 50px;
-	grid-row-gap: 20px;
+    grid-template-rows: 100px auto;
+    grid-column-gap: 0px;
+	grid-row-gap: 0px;
 }
 
 .login{
-    margin: 10px;
-    padding: 20px;
+    margin-top: 10px;
+    padding-top: 20px;
     grid-column: 3 / 4;
     grid-row: 1 / 2;
+    border-bottom: solid 0.5px #75142cc4;
 }
 
 .logo{
-    background-image: url("../images/logo.jpg");
+    background-image: url("TOISlogo.png");
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: 500px;
     grid-column: 1 / 3;
     grid-row: 1 / 2;
+    border-bottom: solid 0.5px #75142cc4;
 }
 
 .sidebar{
     grid-column: 1 / 2;
     grid-row: 2 / 3;
+    padding: 0;
+    margin: 0;
+    border-right: solid 1px #75142cc4;
 }
 
-.mainArea{
+.newsArea{
     grid-column: 2 / 3;
     grid-row: 2 / 3;
+    margin-left: 50px;
 }
 
 ul{
+    margin-left: 0;
+    font-size: 20px;
     display: block;
-    list-style-image: url("listItem.png");
+    list-style: inside url("listItem.png");
+    border: solid 1px #75142cc4;
+}
+
+li{
+    border-bottom: solid 1px #75142cc4;
+    padding: 5px;
 }
 
 .loginButton{
@@ -86,12 +83,34 @@ ul{
     font-size: 24px;
     color: #ba0c2f;
     font-weight: 600;
+    text-decoration: none;
 }
 
 .mainInfo{
+    margin: 0;
     padding: 10px;
     background-color: #ba0c2f;
     color: white;
     font-size: 24px;
     font-style: italic;
+}
+
+.navMenu {
+    margin: 0;
+}
+
+.news{
+    font-size: 18px;
+    display: flex;
+    justify-content: left;
+}
+
+.newsContent{
+    padding-left: 20px;
+}
+
+.newsLink{
+    font-size: 18px;
+    color: #ba0c2f;
+    font-weight: 600;
 }
