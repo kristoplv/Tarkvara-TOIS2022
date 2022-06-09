@@ -12,10 +12,13 @@ body{
     display: grid;
     position: fixed;
     top: 150px;
-    left: 40%;
+    left: 31vw;
     background: linear-gradient(to bottom, white 70%, lightgrey);
-    width: 500px;
-    height: 700px;
+    min-width: 60vmin;
+    max-width: 42vmin;
+    min-height: 70vmin;
+    resize: horizontal;
+    box-sizing: border-box;
     border-radius: 15px;
     box-shadow: 5px 3px 15px rgba(0, 0, 0, 0.5);
 }
