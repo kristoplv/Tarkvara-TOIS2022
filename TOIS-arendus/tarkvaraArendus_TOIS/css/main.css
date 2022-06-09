@@ -49,6 +49,7 @@ hr{
     grid-column: 3 / 4;
     grid-row: 1 / 2;
     border-bottom: solid 0.5px #75142cc4;
+    border-left: solid 0.5px #75142cc4;
 }
 
 .logo{
