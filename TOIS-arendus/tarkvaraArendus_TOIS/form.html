@@ -32,306 +32,308 @@
                 </li>
             </ul>
         </div>
-        <div id="newsArea" class="newsArea">
-            <container class="oppekava">
-                <div class="headPiece">
-                    <h1>Õppekava loomine</h1>
-                    <p id="taitja">Täitja:</p>
-                    <input type="text" id="filler">
-                    <br>
-                    <p>Õppekava ID: <b>jölkadfh245389r2yfdöfw</b></p>
-                    <br>
-                    <hr>
-                </div>
-                <div class="box">
-                    <a href="javascript:;" id="table1Btn" onclick="openTable(this.id)">Üldine info</a><br>
-                </div>
-                <div class="fillForm">
-                    <table id="table1" style="display:none">
-                        <tr>
-                            <th>
-                                <label for="nimetus-ek">Nimetus e.k.</label>
-                                <br>
-                                <input type="text" name="nimetus-ek" id="nimetus-ek" class="formInput" title="Sisestage õppekava eestikeelne nimetus">
-                            </th>
-                            <th>
-                                <label for="nimetus-ik">Nimetus i.k.</label>
-                                <br>
-                                <input type="text" name="nimetus-ik" id="nimetus-ik" class="formInput">
-                            </th>
-                            <th>
-                                <label for="nimetus-vk">Nimetus v.k.</label>
-                                <br>
-                                <input type="text" name="nimetus-vk" id="nimetus-vk" class="formInput">
-                            </th>
-                        </tr>
-                        <tr>
-                            <th>
-                                <label for="oppeviis">Õppeviis</label>
-                                <br>
-                                <input type="checkbox" name="oppeviis" id="kontaktope">
-                                <label for="kontaktope">Kontaktõpe</label>
-                                <br>
-                                <input type="checkbox" name="oppeviis" id="praktika">
-                                <label for="praktika">Praktika</label>
-                                <br>
-                                <input type="checkbox" name="oppeviis" id="iseseisev-ope">
-                                <label for="iseseisev-ope">Iseseisev õpe</label>
-                            </th>
-                            <th>
-                                <label for="oppetoo-keeled">Õppetöö keeled</label>
-                                <br>
-                                <input type="checkbox" name="oppetoo-keeled" id="eesti">
-                                <label for="eesti">Eesti</label>
-                                <br>
-                                <input type="checkbox" name="oppetoo-keeled" id="inglise">
-                                <label for="inglise">Inglise</label>
-                            </th>
-                            <th>
-                                <label for="koolituse-liik">Koolituse liik</label>
-                                <br>
-                                <select name="koolituse-liik" id="koolituse-liik" class="formInputDropdown">
-                                    <option value="1">Koolitus</option>
-                                </select>
-                            </th>
-                        </tr>
-                        <tr>
-                            <th>
-                                <label for="maht-tundides">Maht tundides</label>
-                                <br>
-                                <input type="number" name="maht-tundides" id="kontaktope-h" class="formInput" onkeyup="calculateEAP()">
-                                <label for="kontaktope-h">Kontaktõpe</label>
-                                <br>
-                                <input type="number" name="maht-tundides" id="praktika-h" class="formInput" onkeyup="calculateEAP()">
-                                <label for="praktika-h">Praktika</label>
-                                <br>
-                                <input type="number" name="maht-tundides" id="iseseisev-ope-h" class="formInput" onkeyup="calculateEAP()">
-                                <label for="iseseisev-ope-h">Iseseisev õpe</label>
-                                <br>
-                            </th>
-                            <th>
-                                <label for="oppekava-maht-eap">Õppekava maht (EAP): </label>
-                                <p id="eap-result"></p>
-                            </th>
-                        </tr>
-                    </table>
-                </div>
-                
-                <div class="box">
-                    <a href="javascript:;" id="table2Btn" onclick="openTable(this.id)">Hindamine ja õppe eesmärgid</a><br>
-                </div>
-                <div class="fillForm">
-                    <table id="table2" style="display:none">
-                        <tr>
-                            <th>
-                                <label for="kontrollivorm">Kontrollivorm</label>
-                                <br>
-                                <select name="kontrollivorm" id="kontrollivorm" class="formInputDropdown">
-                                    <option value="1">Eksam</option>
-                                    <option value="2">Arvestus</option>
-                                    <option value="3">Puudub</option>
-                                </select>
-                            </th>
-                        </tr>
-                        <tr>
-                            <th>
-                                <label for="hindamiskriteeriumid-ek">Hindamiskriteeriumid e.k.</label>
-                                <br>
-                                <input type="text" name="hindamiskriteeriumid-ek" id="hindamiskriteeriumid-ek" class="formInput">
-                            </th>
-                            <th>
-                                <label for="hindamiskriteeriumid-ik">Hindamiskriteeriumid i.k.</label>
-                                <br>
-                                <input type="text" name="hindamiskriteeriumid-ik" id="hindamiskriteeriumid-ik" class="formInput">
-                            </th>
-                            <th>
-                                <label for="hindamiskriteeriumid-vk">Hindamiskriteeriumid v.k.</label>
-                                <br>
-                                <input type="text" name="hindamiskriteeriumid-vk" id="hindamiskriteeriumid-vk" class="formInput">
-                            </th>
-                        </tr>
-                        <tr>
-                            <th>
-                                <label for="eesmargid-ek">Eesmärgid e.k.</label>
-                                <br>
-                                <input type="text" name="eesmargid-ek" id="eesmargid-ek" class="formInput">
-                            </th>
-                            <th>
-                                <label for="eesmargid-ik">Eesmärgid i.k.</label>
-                                <br>
-                                <input type="text" name="eesmargid-ik" id="eesmargid-ik" class="formInput">
-                            </th>
-                            <th>
-                                <label for="eesmargid-vk">Eesmärgid v.k.</label>
-                                <br>
-                                <input type="text" name="eesmargid-vk" id="eesmargid-vk" class="formInput">
-                            </th>
-                        </tr>
-                        <tr>
-                            <th>
-                                <label for="opivaljundid-ek">Õpiväljundid e.k.</label>
-                                <br>
-                                <input type="text" name="opivaljundid-ek" id="opivaljundid-ek" class="formInput">
-                            </th>
-                            <th>
-                                <label for="opivaljundid-ik">Õpiväljundid i.k.</label>
-                                <br>
-                                <input type="text" name="opivaljundid-ik" id="opivaljundid-ik" class="formInput">
-                            </th>
-                            <th>
-                                <label for="opivaljundid-vk">Õpiväljundid v.k.</label>
-                                <br>
-                                <input type="text" name="opivaljundid-vk" id="opivaljundid-vk" class="formInput">
-                            </th>
-                        </tr>
-                        <tr>
-                            <th>
-                                <label for="sisu-ek">Sisu e.k.</label>
-                                <br>
-                                <input type="text" name="sisu-ek" id="sisu-ek" class="formInput">
-                            </th>
-                            <th>
-                                <label for="sisu-ik">Sisu i.k.</label>
-                                <br>
-                                <input type="text" name="sisu-ik" id="sisu-ik" class="formInput">
-                            </th>
-                            <th>
-                                <label for="sisu-vk">Sisu v.k.</label>
-                                <br>
-                                <input type="text" name="sisu-vk" id="sisu-vk" class="formInput">
-                            </th>
-                        </tr>
-                        <tr>
-                            <th>
-                                <label for="eeldused-ek">Eeldused e.k.</label>
-                                <br>
-                                <input type="text" name="eeldused-ek" id="eeldused-ek" class="formInput">
-                            </th>
-                            <th>
-                                <label for="eeldused-ik">Eeldused i.k.</label>
-                                <br>
-                                <input type="text" name="eeldused-ik" id="eeldused-ik" class="formInput">
-                            </th>
-                            <th>
-                                <label for="eeldused-vk">Eeldused v.k.</label>
-                                <br>
-                                <input type="text" name="eeldused-vk" id="eeldused-vk" class="formInput">
-                            </th>
-                        </tr>
-                        <tr>
-                            <th>
-                                <label for="tingimused-ek">Läbimise tingimused, sh. praktiliste tööde lühikirjeldused e.k.</label>
-                                <br>
-                                <input type="text" name="tingimused-ek" id="tingimused-ek" class="formInput">
-                            </th>
-                            <th>
-                                <label for="tingimused-ik">Läbimise tingimused, sh. praktiliste tööde lühikirjeldused i.k.</label>
-                                <br>
-                                <input type="text" name="tingimused-ik" id="tingimused-ik" class="formInput">
-                            </th>
-                            <th>
-                                <label for="tingimused-vk">Läbimise tingimused, sh. praktiliste tööde lühikirjeldused v.k.</label>
-                                <br>
-                                <input type="text" name="tingimused-vk" id="tingimused-vk" class="formInput">
-                            </th>
-                        </tr>
-                    </table>
-                </div>
-                
-                <div class="box">
-                    <a href="javascript:;" id="table3Btn" onclick="openTable(this.id)">Muu informatsioon</a><br>
-                </div>
-                <div class="fillForm">
-                    <table id="table3" style="display:none">
-                        <tr>
-                            <th>
-                                <label for="sihtgrupp">Sihtgrupp</label>
-                                <br>
-                                <input type="text" name="sihtgrupp" id="sihtgrupp" class="formInput">
-                            </th>
-                            <th>
-                                <label for="opikeskkond">Õpikeskkond</label>
-                                <br>
-                                <input type="text" name="opikeskkond" id="opikeskkond" class="formInput">
-                            </th>
-                        </tr>
-                        <tr>
-                            <th>
-                                <label for="koolitaja-kompetentsus">Koolitaja kompetentsus</label>
-                                <br>
-                                <input type="text" name="koolitaja-kompetentsus" id="koolitaja-kompetentsus" class="formInput">
-                            </th>
-                            <th>
-                                <label for="veebis-kuvatav-koolitaja">Veebis kuvatav koolitaja</label>
-                                <br>
-                                <input type="text" name="veebis-kuvatav-koolitaja" id="veebis-kuvatav-koolitaja" class="formInput">
-                            </th>
-                        </tr>
-                    </table>
-                </div>
-                
-                <div class="box">
-                    <a href="javascript:;" id="table4Btn" onclick="openTable(this.id)">Administraatori täita</a>
-                </div>
-                <div class="fillForm">
-                    <table id="table4" style="display:none">
-                        <tr>
-                            <th>
-                                <label for="oppevaldkond">Õppevaldkond (ISCED)</label>
-                                <br>
-                                <input type="text" name="oppevaldkond" id="oppevaldkond" class="formInput">
-                            </th>
-                            <th>
-                                <label for="oppesuund">Õppesuund (ISCED)</label>
-                                <br>
-                                <input type="text" name="oppesuund" id="oppesuund" class="formInput">
-                            </th>
-                            <th>
-                                <label for="oppekava-ruhm">Õppekava rühm (ISCED)</label>
-                                <br>
-                                <input type="text" name="oppekava-ruhm" id="oppekava-ruhm" class="formInput">
-                            </th>
-                        </tr>
-                        <tr>
-                            <th>
-                                <label for="oppekava-koostamise-alus">Õppekava koostamise alus</label>
-                                <br>
-                                <input type="text" name="oppekava-koostamise-alus" id="oppekava-koostamise-alus" class="formInput">
-                            </th>
-                        </tr>
-                        <tr>
-                            <th>
-                                <label for="pohivastutaja">Põhivastutaja</label>
-                                <br>
-                                <input type="text" name="pohivastutaja" id="pohivastutaja" class="formInput">
-                            </th>
-                            <th>
-                                <label for="veebis-kuvatav-korraldaja">Veebis kuvatav korraldaja struktuur ja kontakt</label>
-                                <br>
-                                <input type="text" name="veebis-kuvatav-korraldaja" id="veebis-kuvatav-korraldaja" class="formInput">
-                            </th>
-                        </tr>
-                        <tr>
-                            <th>
-                                <label for="tellitav-kursus">TÕK on tellitav kursus</label>
-                                <br>
-                                <input type="radio" name="tellitav-kursus" id="tellitav">
-                                <label for="tellitav">Jah</label>
-                                <input type="radio" name="tellitav-kursus" id="pole-tellitav">
-                                <label for="pole-tellitav">Ei</label>
-                            </th>
-                            <th>
-                                <label for="teistele-nahtav">TÕK on teistele nähtav</label>
-                                <br>
-                                <input type="radio" name="teistele-nahtav" id="nahtav">
-                                <label for="nahtav">Jah</label>
-                                <input type="radio" name="teistele-nahtav" id="pole-nahtav">
-                                <label for="pole-nahtav">Ei</label>
-                            </th>
-                        </tr>
-                    </table>
-                </div>
-            </container>
+        <div id="mainArea" class="mainArea">
+            <div id="newsArea" class="newsArea">
+                <container class="oppekava">
+                    <div class="headPiece">
+                        <h1>Õppekava loomine</h1>
+                        <p id="taitja">Täitja:</p>
+                        <input type="text" id="filler">
+                        <br>
+                        <p>Õppekava ID: <b>jölkadfh245389r2yfdöfw</b></p>
+                        <br>
+                        <hr>
+                    </div>
+                    <div class="box">
+                        <a href="javascript:;" id="table1Btn" onclick="openTable(this.id)">Üldine info</a><br>
+                    </div>
+                    <div class="fillForm">
+                        <table id="table1" style="display:none">
+                            <tr>
+                                <th>
+                                    <label for="nimetus-ek">Nimetus e.k.</label>
+                                    <br>
+                                    <input type="text" name="nimetus-ek" id="nimetus-ek" class="formInput" title="Sisestage õppekava eestikeelne nimetus">
+                                </th>
+                                <th>
+                                    <label for="nimetus-ik">Nimetus i.k.</label>
+                                    <br>
+                                    <input type="text" name="nimetus-ik" id="nimetus-ik" class="formInput">
+                                </th>
+                                <th>
+                                    <label for="nimetus-vk">Nimetus v.k.</label>
+                                    <br>
+                                    <input type="text" name="nimetus-vk" id="nimetus-vk" class="formInput">
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <label for="oppeviis">Õppeviis</label>
+                                    <br>
+                                    <input type="checkbox" name="oppeviis" id="kontaktope">
+                                    <label for="kontaktope">Kontaktõpe</label>
+                                    <br>
+                                    <input type="checkbox" name="oppeviis" id="praktika">
+                                    <label for="praktika">Praktika</label>
+                                    <br>
+                                    <input type="checkbox" name="oppeviis" id="iseseisev-ope">
+                                    <label for="iseseisev-ope">Iseseisev õpe</label>
+                                </th>
+                                <th>
+                                    <label for="oppetoo-keeled">Õppetöö keeled</label>
+                                    <br>
+                                    <input type="checkbox" name="oppetoo-keeled" id="eesti">
+                                    <label for="eesti">Eesti</label>
+                                    <br>
+                                    <input type="checkbox" name="oppetoo-keeled" id="inglise">
+                                    <label for="inglise">Inglise</label>
+                                </th>
+                                <th>
+                                    <label for="koolituse-liik">Koolituse liik</label>
+                                    <br>
+                                    <select name="koolituse-liik" id="koolituse-liik" class="formInputDropdown">
+                                        <option value="1">Koolitus</option>
+                                    </select>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <label for="maht-tundides">Maht tundides</label>
+                                    <br>
+                                    <input type="number" name="maht-tundides" id="kontaktope-h" class="formInput" onkeyup="calculateEAP()">
+                                    <label for="kontaktope-h">Kontaktõpe</label>
+                                    <br>
+                                    <input type="number" name="maht-tundides" id="praktika-h" class="formInput" onkeyup="calculateEAP()">
+                                    <label for="praktika-h">Praktika</label>
+                                    <br>
+                                    <input type="number" name="maht-tundides" id="iseseisev-ope-h" class="formInput" onkeyup="calculateEAP()">
+                                    <label for="iseseisev-ope-h">Iseseisev õpe</label>
+                                    <br>
+                                </th>
+                                <th>
+                                    <label for="oppekava-maht-eap">Õppekava maht (EAP): </label>
+                                    <p id="eap-result"></p>
+                                </th>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                    <div class="box">
+                        <a href="javascript:;" id="table2Btn" onclick="openTable(this.id)">Hindamine ja õppe eesmärgid</a><br>
+                    </div>
+                    <div class="fillForm">
+                        <table id="table2" style="display:none">
+                            <tr>
+                                <th>
+                                    <label for="kontrollivorm">Kontrollivorm</label>
+                                    <br>
+                                    <select name="kontrollivorm" id="kontrollivorm" class="formInputDropdown">
+                                        <option value="1">Eksam</option>
+                                        <option value="2">Arvestus</option>
+                                        <option value="3">Puudub</option>
+                                    </select>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <label for="hindamiskriteeriumid-ek">Hindamiskriteeriumid e.k.</label>
+                                    <br>
+                                    <input type="text" name="hindamiskriteeriumid-ek" id="hindamiskriteeriumid-ek" class="formInput">
+                                </th>
+                                <th>
+                                    <label for="hindamiskriteeriumid-ik">Hindamiskriteeriumid i.k.</label>
+                                    <br>
+                                    <input type="text" name="hindamiskriteeriumid-ik" id="hindamiskriteeriumid-ik" class="formInput">
+                                </th>
+                                <th>
+                                    <label for="hindamiskriteeriumid-vk">Hindamiskriteeriumid v.k.</label>
+                                    <br>
+                                    <input type="text" name="hindamiskriteeriumid-vk" id="hindamiskriteeriumid-vk" class="formInput">
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <label for="eesmargid-ek">Eesmärgid e.k.</label>
+                                    <br>
+                                    <input type="text" name="eesmargid-ek" id="eesmargid-ek" class="formInput">
+                                </th>
+                                <th>
+                                    <label for="eesmargid-ik">Eesmärgid i.k.</label>
+                                    <br>
+                                    <input type="text" name="eesmargid-ik" id="eesmargid-ik" class="formInput">
+                                </th>
+                                <th>
+                                    <label for="eesmargid-vk">Eesmärgid v.k.</label>
+                                    <br>
+                                    <input type="text" name="eesmargid-vk" id="eesmargid-vk" class="formInput">
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <label for="opivaljundid-ek">Õpiväljundid e.k.</label>
+                                    <br>
+                                    <input type="text" name="opivaljundid-ek" id="opivaljundid-ek" class="formInput">
+                                </th>
+                                <th>
+                                    <label for="opivaljundid-ik">Õpiväljundid i.k.</label>
+                                    <br>
+                                    <input type="text" name="opivaljundid-ik" id="opivaljundid-ik" class="formInput">
+                                </th>
+                                <th>
+                                    <label for="opivaljundid-vk">Õpiväljundid v.k.</label>
+                                    <br>
+                                    <input type="text" name="opivaljundid-vk" id="opivaljundid-vk" class="formInput">
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <label for="sisu-ek">Sisu e.k.</label>
+                                    <br>
+                                    <input type="text" name="sisu-ek" id="sisu-ek" class="formInput">
+                                </th>
+                                <th>
+                                    <label for="sisu-ik">Sisu i.k.</label>
+                                    <br>
+                                    <input type="text" name="sisu-ik" id="sisu-ik" class="formInput">
+                                </th>
+                                <th>
+                                    <label for="sisu-vk">Sisu v.k.</label>
+                                    <br>
+                                    <input type="text" name="sisu-vk" id="sisu-vk" class="formInput">
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <label for="eeldused-ek">Eeldused e.k.</label>
+                                    <br>
+                                    <input type="text" name="eeldused-ek" id="eeldused-ek" class="formInput">
+                                </th>
+                                <th>
+                                    <label for="eeldused-ik">Eeldused i.k.</label>
+                                    <br>
+                                    <input type="text" name="eeldused-ik" id="eeldused-ik" class="formInput">
+                                </th>
+                                <th>
+                                    <label for="eeldused-vk">Eeldused v.k.</label>
+                                    <br>
+                                    <input type="text" name="eeldused-vk" id="eeldused-vk" class="formInput">
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <label for="tingimused-ek">Läbimise tingimused, sh. praktiliste tööde lühikirjeldused e.k.</label>
+                                    <br>
+                                    <input type="text" name="tingimused-ek" id="tingimused-ek" class="formInput">
+                                </th>
+                                <th>
+                                    <label for="tingimused-ik">Läbimise tingimused, sh. praktiliste tööde lühikirjeldused i.k.</label>
+                                    <br>
+                                    <input type="text" name="tingimused-ik" id="tingimused-ik" class="formInput">
+                                </th>
+                                <th>
+                                    <label for="tingimused-vk">Läbimise tingimused, sh. praktiliste tööde lühikirjeldused v.k.</label>
+                                    <br>
+                                    <input type="text" name="tingimused-vk" id="tingimused-vk" class="formInput">
+                                </th>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                    <div class="box">
+                        <a href="javascript:;" id="table3Btn" onclick="openTable(this.id)">Muu informatsioon</a><br>
+                    </div>
+                    <div class="fillForm">
+                        <table id="table3" style="display:none">
+                            <tr>
+                                <th>
+                                    <label for="sihtgrupp">Sihtgrupp</label>
+                                    <br>
+                                    <input type="text" name="sihtgrupp" id="sihtgrupp" class="formInput">
+                                </th>
+                                <th>
+                                    <label for="opikeskkond">Õpikeskkond</label>
+                                    <br>
+                                    <input type="text" name="opikeskkond" id="opikeskkond" class="formInput">
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <label for="koolitaja-kompetentsus">Koolitaja kompetentsus</label>
+                                    <br>
+                                    <input type="text" name="koolitaja-kompetentsus" id="koolitaja-kompetentsus" class="formInput">
+                                </th>
+                                <th>
+                                    <label for="veebis-kuvatav-koolitaja">Veebis kuvatav koolitaja</label>
+                                    <br>
+                                    <input type="text" name="veebis-kuvatav-koolitaja" id="veebis-kuvatav-koolitaja" class="formInput">
+                                </th>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                    <div class="box">
+                        <a href="javascript:;" id="table4Btn" onclick="openTable(this.id)">Administraatori täita</a>
+                    </div>
+                    <div class="fillForm">
+                        <table id="table4" style="display:none">
+                            <tr>
+                                <th>
+                                    <label for="oppevaldkond">Õppevaldkond (ISCED)</label>
+                                    <br>
+                                    <input type="text" name="oppevaldkond" id="oppevaldkond" class="formInput">
+                                </th>
+                                <th>
+                                    <label for="oppesuund">Õppesuund (ISCED)</label>
+                                    <br>
+                                    <input type="text" name="oppesuund" id="oppesuund" class="formInput">
+                                </th>
+                                <th>
+                                    <label for="oppekava-ruhm">Õppekava rühm (ISCED)</label>
+                                    <br>
+                                    <input type="text" name="oppekava-ruhm" id="oppekava-ruhm" class="formInput">
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <label for="oppekava-koostamise-alus">Õppekava koostamise alus</label>
+                                    <br>
+                                    <input type="text" name="oppekava-koostamise-alus" id="oppekava-koostamise-alus" class="formInput">
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <label for="pohivastutaja">Põhivastutaja</label>
+                                    <br>
+                                    <input type="text" name="pohivastutaja" id="pohivastutaja" class="formInput">
+                                </th>
+                                <th>
+                                    <label for="veebis-kuvatav-korraldaja">Veebis kuvatav korraldaja struktuur ja kontakt</label>
+                                    <br>
+                                    <input type="text" name="veebis-kuvatav-korraldaja" id="veebis-kuvatav-korraldaja" class="formInput">
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <label for="tellitav-kursus">TÕK on tellitav kursus</label>
+                                    <br>
+                                    <input type="radio" name="tellitav-kursus" id="tellitav">
+                                    <label for="tellitav">Jah</label>
+                                    <input type="radio" name="tellitav-kursus" id="pole-tellitav">
+                                    <label for="pole-tellitav">Ei</label>
+                                </th>
+                                <th>
+                                    <label for="teistele-nahtav">TÕK on teistele nähtav</label>
+                                    <br>
+                                    <input type="radio" name="teistele-nahtav" id="nahtav">
+                                    <label for="nahtav">Jah</label>
+                                    <input type="radio" name="teistele-nahtav" id="pole-nahtav">
+                                    <label for="pole-nahtav">Ei</label>
+                                </th>
+                            </tr>
+                        </table>
+                    </div>
+                </container>
+            </div>
         </div>
     </div>
 </body>
