@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
     <script src="js/form.js" defer></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <title>Õppekava vorm</title>
 </head>
 <body>
@@ -76,13 +75,13 @@
                     <th>
                         <label for="maht-tundides">Maht tundides</label>
                         <br>
-                        <input type="number" name="maht-tundides" id="kontaktope-h" class="formInput">
+                        <input type="number" name="maht-tundides" id="kontaktope-h" class="formInput" onkeyup="calculateEAP()">
                         <label for="kontaktope-h">Kontaktõpe</label>
                         <br>
-                        <input type="number" name="maht-tundides" id="praktika-h" class="formInput">
+                        <input type="number" name="maht-tundides" id="praktika-h" class="formInput" onkeyup="calculateEAP()">
                         <label for="praktika-h">Praktika</label>
                         <br>
-                        <input type="number" name="maht-tundides" id="iseseisev-ope-h" class="formInput">
+                        <input type="number" name="maht-tundides" id="iseseisev-ope-h" class="formInput" onkeyup="calculateEAP()">
                         <label for="iseseisev-ope-h">Iseseisev õpe</label>
                         <br>
                     </th>
