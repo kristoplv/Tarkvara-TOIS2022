@@ -121,3 +121,16 @@ th label{
 .formInputDropdown{
     font-size: 16px;
 }
+
+.oppekava {
+    margin-top: 80px;
+}
+
+#filler {
+    width: 40%;
+    font-size: 28px;
+}
+
+#taitja {
+    font-size: 32px;
+}

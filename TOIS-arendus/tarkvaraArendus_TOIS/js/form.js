@@ -1,7 +1,7 @@
 function openTable(tableBtn_id) {
     let table_id = tableBtn_id.replace('Btn', '');
     let table = document.getElementById(table_id);
-    let hide = table.style.display == 'none';
+    let hide = table.style.display === 'none';
 
     if (hide) {
         table.style.display = 'table';
