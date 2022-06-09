@@ -7,6 +7,8 @@ var emailCheck = -7;
 var pwCheck = -5;
 var correctAnsPw;
 var correctAns;
+var testEmail;
+var testPass;
 
 
 var login = document.querySelector("#loginButton");
@@ -43,23 +45,23 @@ function checkForValues(){
     var notice = "";
     if(email.value == ""){
         notice += "Meiliaadress lisamata! <br>"
-        email.style.border = "2px solid red";
+        email.style.border = "1px solid red";
         noticeBox.style.color = "red";
-        emailLogo.style.border = "2px solid red";
+        emailLogo.style.border = "1px solid red";
         email.style.borderLeft = "";
         emailLogo.style.borderRight = "";
     } else {
-        var testEmail = onValue(EmailTester, testEmailInput);
+        testEmail = onValue(EmailTester, testEmailInput);
     }
     if(pw.value == ""){
         notice += "Parool lisamata!";
         noticeBox.style.color = "red";
-        pw.style.border = "2px solid red";
-        pwLogo.style.border = "2px solid red";
+        pw.style.border = "1px solid red";
+        pwLogo.style.border = "1px solid red";
         pw.style.borderLeft = "";
         pwLogo.style.borderRight = "";
     } else {
-        var testPass = onValue(passwordTester, testPasswordInput);
+        testPass = onValue(passwordTester, testPasswordInput);
     }
     if(notice == ""){
         console.log(emailCheck);
@@ -79,10 +81,14 @@ function checkForValues(){
             notice = "Kasutajanimi või parool vale!";
             noticeBox.style.color = "red";
 
-            pw.style.border = "2px solid red";
-            pwLogo.style.border = "2px solid red";
-            emailLogo.style.border = "2px solid red";
-            email.style.border = "2px solid red";
+            pw.style.border = "1px solid red";
+            pwLogo.style.border = "1px solid red";
+            emailLogo.style.border = "1px solid red";
+            email.style.border = "1px solid red";
+            email.style.borderLeft = "";
+            emailLogo.style.borderRight = "";
+            pw.style.borderLeft = "";
+            pwLogo.style.borderRight = "";
             
         }
         

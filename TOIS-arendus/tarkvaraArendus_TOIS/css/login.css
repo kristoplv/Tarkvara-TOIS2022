@@ -3,80 +3,87 @@ body{
 }
 .hello{
     justify-self: center;
-    font-size: 36px;
+    font-size: 2.1vw;
 }
 .login_form{
     align-items: center;
     justify-content: center;
-    grid-template-rows: 200px 100px 100px 100px 100px 100px;
+    grid-template-rows: 30% 15% 15% 20% 5% 15%;
     display: grid;
     position: fixed;
-    top: 150px;
-    left: 31vw;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
     background: linear-gradient(to bottom, white 70%, lightgrey);
     min-width: 60vmin;
     max-width: 42vmin;
-    min-height: 70vmin;
+    height: 70vmin;
     resize: horizontal;
     box-sizing: border-box;
-    border-radius: 15px;
+    border-radius: 0.5em;
     box-shadow: 5px 3px 15px rgba(0, 0, 0, 0.5);
 }
 .field{
+    font-size: 2.5vh;
     padding: 0;
     margin: 0;
     border: 0;
 }
 #email, #password{
-    width: 300px;
-    height: 29px;
+    width: 18vw;
+    min-width: 300px;
+    aspect-ratio: 12/1;
 }
 .nice_email, .nice_password{
     display: flex;
-    margin-top: 2px;
+    margin-top: 0.5vh;
 
 }
 .human_logo, .password_logo{
     background-image: url("../images/avatar.png");
     background-repeat: no-repeat;
-    background-size: cover;
-    border-left: 1px solid black;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-    border-radius: 5px 0px 0px 5px;
-    border-right: 1px dashed black;
-    width: 31px;
-    height: 31px;
+    background-size: contain;
+    border-left: 0.05em solid black;
+    border-top: 0.05em solid black;
+    border-bottom: 0.05em solid black;
+    border-radius: 0.3em 0px 0px 0.3em;
+    border-right: 0.05em dashed black;
+    width: 2.1vw;
+    aspect-ratio: 1/1;
 }
 .password_logo{
     background-image: url("../images/lock.png");
 }
 input[type=text], input[type=password]{
-    border: 1px solid black;
+    font-size: 2.5vh;
+    border: 0.05em solid black;
     border-left: none;
-    border-radius: 0px 5px 5px 0px
+    border-radius: 0px 5px 0.3em 0px
+}
+input[type=submit]{
+    font-size: 2.5vh;
 }
 input[type=text], input[type=password]:focus{
     outline:none;
 }
 .login{
-    margin: 0; 
+    margin: 0;
     border: 0;
     padding: 0;
     font-family: "Times New Roman",Times,Georgia,serif;
     font-style:italic;
-    letter-spacing: 1px;
-    font-size: 22px;
+    letter-spacing: 0.05em;
+    font-size: 2.2vh;
 }
 .login_btn{
-    width: 335px;
-    height: 45px;
+    font-size: 2.5vh;
+    width: 100%;
+    aspect-ratio: 5.5/1;
     font-family: "Times New Roman",Times,Georgia,serif;
-    font-size: 24px;
     font-style:normal;
     transition: 200ms;
-    border: 1px solid black;
-    border-radius: 5px;
+    border: 0.05em solid black;
+    border-radius: 0.3em;
 
     
 }.login_btn:hover{
@@ -85,14 +92,14 @@ input[type=text], input[type=password]:focus{
     transition: 200ms;
     background-color: rgb(148, 28, 28);
     color: rgb(240, 240, 240);
-    border: 1px solid black;
-    border-radius: 5px;
+    border: 0.05em solid black;
+    border-radius: 0.3em;
 
 }
 a:visited{
     color: #922b2b;
 }
 .forgot_pw{
-    margin-top: 10px;
+    margin-top: 1em;
     text-align: center;
 }
