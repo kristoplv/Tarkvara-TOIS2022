@@ -15,7 +15,6 @@ th{
     text-align: left;
 }
 .box{
-    width: 100%;
     background-color: #ba0c2f;
     font-size: 32px;
     padding-left: 25px;
@@ -30,7 +29,6 @@ th{
 }
 .fillForm{
     padding-left: 25px;
-    width: 100%;
     background-color: lightgray;
     border: 1px solid black;
 }
