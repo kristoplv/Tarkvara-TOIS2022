@@ -1,19 +1,4 @@
-<?php
-    $notice = 0;
-    if(isset($_POST["submit"])){
-        if(isset($_POST["email_in"]) && !empty($_POST["email_in"])){
-            continue
-        } else {
-            $notice += "E-post aadress lisamata";
-        }
-        if(isset($_POST["password_in"]) && !empty($_POST["password_in"])){
-                continue
-            } else {
-                $notice += "E-post aadress lisamata";
-            }
-        
-    }
-?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -24,7 +9,7 @@
     <title>Sisselogimine</title>
     <link rel="stylesheet" href="css/menu.css">
     <link rel="stylesheet" href="css/login.css">
-    <!--<script src="js/checkLogin.js" defer></script>-->
+    <script src="js/checkLogin.js" defer></script>
 </head>
 <body>
     <container class="ribbon">
@@ -36,7 +21,6 @@
 
     </container>
     
-    <form method="post">
     <container class="login_form">
         
         <div class="hello">Logi enda kasutajasse</div>
@@ -65,7 +49,6 @@
             
             <a class="forgot_pw" href="index.html"><p1 class="login">unustasid parooli?</p1></a>
         </container>
-    </form>
     
 </body>
 </html>
