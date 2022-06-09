@@ -1,3 +1,20 @@
+<?php
+    $notice = 0;
+    if(isset($_POST["submit"])){
+        if(isset($_POST["email_in"]) && !empty($_POST["email_in"])){
+            continue
+        } else {
+            $notice += "E-post aadress lisamata";
+        }
+        if(isset($_POST["password_in"]) && !empty($_POST["password_in"])){
+                continue
+            } else {
+                $notice += "E-post aadress lisamata";
+            }
+        
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,6 +36,7 @@
 
     </container>
     
+    <form method="post">
     <container class="login_form">
         
         <div class="hello">Logi enda kasutajasse</div>
@@ -33,20 +51,21 @@
             <label for="password_in"><p1 class="login">Salasõna</p1></label><br>
             <div class="nice_password">
                 <div class="password_logo"></div>
-                <input type="password" name="passowrd_in" id="password" placeholder="Salasõna">
+                <input type="password" name="password_in" id="password" placeholder="Salasõna">
             </div>
         </div>
         <div class="send field">
-            <input type="submit" value="Logi sisse" class="login_btn" id="loginButton">
-        </div>
-        <div id="notice"></div>
-        <div class="register field">
-            <p1 class="login">Pole veel kasutajat?</p1>
-            <a href="index.html"><p1 class="login">Registreeru siin</p1></a>
-        </div>
-        
-        <a class="forgot_pw" href="index.html"><p1 class="login">unustasid parooli?</p1></a>
-    </container>
+                <input type="submit" value="Logi sisse" class="login_btn" id="loginButton">
+            </div>
+            <div id="notice"></div>
+            <div class="register field">
+                <p1 class="login">Pole veel kasutajat?</p1>
+                <a href="index.html"><p1 class="login">Registreeru siin</p1></a>
+            </div>
+            
+            <a class="forgot_pw" href="index.html"><p1 class="login">unustasid parooli?</p1></a>
+        </container>
+    </form>
     
 </body>
 </html>
