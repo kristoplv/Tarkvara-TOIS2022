@@ -77,7 +77,7 @@ ul{
     padding: 0;
     font-size: 20px;
     display: block;
-    list-style: inside url("listItem.png");
+    list-style: inside url("../images/listItem.png");
     border-top: solid 1px #75142cc4;
 }
 
