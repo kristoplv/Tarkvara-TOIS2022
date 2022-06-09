@@ -6,9 +6,8 @@ html{
 .oppekava{
     display: flex;
     flex-direction: column;
-    margin-top: 55px;
-    padding-left: 300px;
-    padding-right: 300px;
+    padding-left: 100px;
+    padding-right: 100px;
 }
 th{
     font-weight: normal;
@@ -44,10 +43,10 @@ th label{
 .formInputDropdown{
     font-size: 16px;
 }
-#filler {
+#filler{
     width: 40%;
     font-size: 28px;
 }
-#taitja {
+#taitja{
     font-size: 32px;
 }
