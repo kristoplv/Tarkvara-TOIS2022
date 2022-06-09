@@ -42,13 +42,10 @@ function openTable4() {
     }
 }
 
-function calculateEAP() {
-    let kontaktope = parseInt(document.getElementById('kontaktope-h').value);
-    let praktika = parseInt(document.getElementById('praktika-h').value);
-    let iseseisev = parseInt(document.getElementById('iseseisev-ope-h').value);
+$('input').keyup(function() {
+    let kontaktope = Number($('#kontaktope-h').val());
+    let praktika = Number($('#praktika-h').val());
+    let iseseisev = Number($('#iseseisev-ope-h').val());
 
-    let eap = Math.round((kontaktope + praktika + iseseisev) / 26);
-
-    let result = document.getElementById('eap-result');
-    result.innerText = eap;
-}
+    $('#eap-result').html(Math.round((kontaktope + praktika + iseseisev) / 26));
+});
