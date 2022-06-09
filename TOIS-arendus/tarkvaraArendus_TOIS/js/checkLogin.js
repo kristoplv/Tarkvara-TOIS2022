@@ -4,7 +4,36 @@ var pwLogo = document.querySelector(".password_logo");
 var emailLogo = document.querySelector(".human_logo");
 var noticeBox = document.getElementById("notice");
 
+
 var login = document.querySelector("#loginButton");
+
+
+
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.11/firebase-app.js";
+import {getDatabase, ref, push, set, onValue} from "https://www.gstatic.com/firebasejs/9.6.11/firebase-database.js";
+// Import the functions you need from the SDKs you need
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyA68-WRoXzWuFYJQf0t-txxMq4E749arpQ",
+  authDomain: "igplatvormid.firebaseapp.com",
+  databaseURL: "https://igplatvormid-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "igplatvormid",
+  storageBucket: "igplatvormid.appspot.com",
+  messagingSenderId: "778407009045",
+  appId: "1:778407009045:web:682d3fb68159d7a747a71c"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const db= getDatabase();
+const EmailTester = ref(db, "TOIS/logimine/meil");
+const passwordTester = ref(db, "TOIS/logimine/parool");
+
+
 
 function checkForValues(){
     var notice = "";
@@ -31,11 +60,42 @@ function checkForValues(){
         email.style.border = "";
         emailLogo.style.border = "";
         pwLogo.style.border = "";
+        onValue(EmailTester, testEmailInput);
+        onValue(passwordTester, testPasswordInput);
+        
     }
-    console.log(notice);
     noticeBox.innerHTML = "<p1 class='login'>" + notice + "</p1>";
     noticeBox.style.fontSize = "18";
 
+}
+
+function testEmailInput(vals){
+    var sisu = vals.val();
+    var getAns =Object.values(sisu);
+    console.log(getAns);
+    console.log(Object.keys(sisu));
+    for(var i=0;i<getAns.length; i++){
+        console.log(getAns);
+        if(email.value == getAns[i]){
+            console.log("Edukas guess!");
+        } else {
+            console.log("cool beans but not right");
+        }
+    }
+}
+function testPasswordInput(vals){
+    var sisu = vals.val();
+    var getAns =Object.values(sisu);
+    console.log(getAns);
+    console.log(Object.keys(sisu));
+    for(var i=0;i<getAns.length; i++){
+        console.log(getAns);
+        if(pw.value == getAns[i]){
+            console.log("Edukas guess pw style!");
+        } else {
+            console.log("cool beans but not right pw style");
+        }
+    }
 }
 
 function revertHightlightEmail(){
