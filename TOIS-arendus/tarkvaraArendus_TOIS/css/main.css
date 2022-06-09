@@ -51,7 +51,7 @@ hr{
 }
 
 .logo{
-    background-image: url("TOISlogo.png");
+    background-image: url("../images/TOISlogo.png");
     background-repeat: no-repeat;
     background-size: 500px;
     grid-column: 1 / 3;
