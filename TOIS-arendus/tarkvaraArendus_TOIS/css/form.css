@@ -1,97 +1,37 @@
 html{
-    padding: none;
-    margin: none;
-    border: none;
     font-family: "Times New Roman",Times,Georgia,serif;
     letter-spacing: 1px;
     font-size: 24px;
 }
-
-.navbar{
-    top:0;
-    left:0;
-    width: 100%;
-    height: 8%;
-    background-color: rgb(255, 255, 255);
-    border: 1px solid rgba(0,0,0,0.5);
-    position: fixed;
-    display: flex;
-    flex-direction: row;
-    box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
-}
-.links{
-    padding: 1em;
-    text-decoration: none;
-    color: black;
-}
-.links::after{
-    color: black;
-}
-.logo{
-    background-image: url("../pics/logos.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 30%;
-    height: 100%;
-}
 .oppekava{
-    height: 500%;
     display: flex;
     flex-direction: column;
     margin-top: 55px;
     padding-left: 300px;
     padding-right: 300px;
 }
-.search{
-    font-size: 18px;
-}
-.table{
-    font-size: 20px;
-    padding:0;
-    margin:0;
-    border-spacing: 0;
-}
-.table th{
-    width: 10%;
-}
-
-.topper{
-    border-bottom: 1px solid rgb(0, 0, 0);
-}
 th{
-    height: 55px;
     font-weight: normal;
     border-bottom: 1px solid rgba(184, 182, 182, 0.671);
     text-align: left;
 }
-a{
-    color: blue;
-    text-decoration: none;
-}
-a::after{
-    color: blue;
-}
 .box{
     width: 100%;
-    height: 100%;
     background-color: #ba0c2f;
     font-size: 32px;
     padding-left: 25px;
-    color: white;
     font-style: italic;
     padding-top: 32px;
     padding-bottom: 32px;
 }
 .box>a{
-    font-size: 32px;
     color: white;
-    font-style: italic;
     text-transform: uppercase;
+    text-decoration: none;
 }
 .fillForm{
     padding-left: 25px;
     width: 100%;
-    margin: 0;
     background-color: lightgray;
     border: 1px solid black;
 }
@@ -100,37 +40,14 @@ a::after{
 }
 th label{
     font-size: 20px;
-
-}
-.form th{
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-.form{
-    width: 100%;
-}
-#sendAnswer{
-    margin-top: 25px;
-    background-color: rgb(90, 90, 218);
-    border: 5px solid rgb(90, 90, 218);
-    border-radius: 10px;
-    color: white;
-    font-size: 24px;
-    cursor: pointer;
 }
 .formInputDropdown{
     font-size: 16px;
 }
-
-.oppekava {
-    margin-top: 80px;
-}
-
 #filler {
     width: 40%;
     font-size: 28px;
 }
-
 #taitja {
     font-size: 32px;
 }
