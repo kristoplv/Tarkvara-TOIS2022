@@ -24,7 +24,7 @@
     <title>Sisselogimine</title>
     <link rel="stylesheet" href="css/menu.css">
     <link rel="stylesheet" href="css/login.css">
-    <script src="js/checkLogin.js" defer></script>
+    <!--<script src="js/checkLogin.js" defer></script>-->
 </head>
 <body>
     <container class="ribbon">

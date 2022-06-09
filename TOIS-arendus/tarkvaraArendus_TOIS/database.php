@@ -5,8 +5,8 @@
     $server_password = "if21";
 
     function store_login_data($username, $password){
-        $notice = null;
-		$conn = new mysqli($servername, $server_username, $server_password, $database);
+        $notice = null
+		$conn = new mysqli("localhost", "if21", "if21", "if21_tois_tarkvaraprojekt");
 		$conn->set_charset("utf8");
 		$stmt = $conn->prepare("INSERT INTO login_data (username, password) VALUES (?, ?)");
         echo $conn->error;
