@@ -5,6 +5,8 @@ html{
     font-family: "Times New Roman",Times,Georgia,serif;
     letter-spacing: 1px;
     font-size: 24px;
+    background-color: #fae8ebda;
+    background: linear-gradient(90deg, white 0%, #fae8ebda 90%);
 }
 
 h2{
@@ -37,6 +39,7 @@ hr{
     grid-template-rows: 100px auto;
     grid-column-gap: 0px;
 	grid-row-gap: 0px;
+    background-color: white;
 }
 
 .login{
@@ -92,7 +95,11 @@ li{
     text-decoration: none;
 }
 
-.mainInfo{
+.loginButton:hover{
+    color: #d44562;
+}
+
+.menuLabel{
     margin: 0;
     padding: 10px;
     background-color: #ba0c2f;
