@@ -3,8 +3,10 @@ var pw = document.querySelector("#password");
 var pwLogo = document.querySelector(".password_logo");
 var emailLogo = document.querySelector(".human_logo");
 var noticeBox = document.getElementById("notice");
-var emailCheck;
-var pwCheck;
+var emailCheck = -7;
+var pwCheck = -5;
+var correctAnsPw;
+var correctAns;
 
 
 var login = document.querySelector("#loginButton");
@@ -46,6 +48,8 @@ function checkForValues(){
         emailLogo.style.border = "2px solid red";
         email.style.borderLeft = "";
         emailLogo.style.borderRight = "";
+    } else {
+        var testEmail = onValue(EmailTester, testEmailInput);
     }
     if(pw.value == ""){
         notice += "Parool lisamata!";
@@ -54,10 +58,13 @@ function checkForValues(){
         pwLogo.style.border = "2px solid red";
         pw.style.borderLeft = "";
         pwLogo.style.borderRight = "";
+    } else {
+        var testPass = onValue(passwordTester, testPasswordInput);
     }
     if(notice == ""){
-        var testPass = onValue(passwordTester, testPasswordInput);
-        var testEmail = onValue(EmailTester, testEmailInput);
+        console.log(emailCheck);
+        console.log(correctAns);
+        console.log(correctAnsPw);
         if(emailCheck == pwCheck){
             notice = "Vajalikud väljad täidetud!";
             noticeBox.style.color = "green";
@@ -65,6 +72,8 @@ function checkForValues(){
             email.style.border = "";
             emailLogo.style.border = "";
             pwLogo.style.border = "";
+            emailCheck = -7;
+            pwCheck = -5;
 
         } else {
             notice = "Kasutajanimi või parool vale!";
@@ -84,7 +93,6 @@ function checkForValues(){
 }
 
 function testEmailInput(vals){
-    var correctAns;
     var sisu = vals.val();
     var getAns =Object.values(sisu);
     var keys = Object.keys(sisu);
@@ -92,9 +100,10 @@ function testEmailInput(vals){
     for(var i=0;i<getAns.length; i++){
         console.log(getAns[i]);
         if(email.value == getAns[i]){
+            correctAns = true;
             console.log(keys[i]);
             emailCheck = keys[i];
-            return true;
+            break
         } else {
             correctAns = false;
             console.log("cool beans but not right");
@@ -102,7 +111,6 @@ function testEmailInput(vals){
     }
 }
 function testPasswordInput(vals){
-    var correctAns;
     var sisu = vals.val();
     var getAns =Object.values(sisu);
     var keys = Object.keys(sisu);
@@ -110,13 +118,13 @@ function testPasswordInput(vals){
     for(var i=0;i<getAns.length; i++){
         console.log(getAns);
         if(pw.value == getAns[i]){
-            correctAns = true;
+            correctAnsPw = true;
             console.log(keys[i]);
             console.log("Edukas guess pw style!");
             pwCheck = keys[i];
-            return true;
+            break
         } else {
-            correctAns = false;
+            correctAnsPw = false;
             console.log("cool beans but not right pw style");
         }
     }
