@@ -21,7 +21,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db= getDatabase();
 const loc = ref(db, "TOIS/vorm");
-
+var reffer = "";
 
 var button = document.querySelector("#sendDb");
 
@@ -40,27 +40,29 @@ function getAll(vals){
   var getAns =Object.values(sisu);
   var keys = Object.keys(getAns);
   var keyNames = Object.keys(sisu);
-  console.log(Object.keys(getAns[0]).length);
   for(var i=0;i<Object.keys(getAns).length; i++){
     if(getAns[i] == "test"){
     } else {
-      console.log(keyNames[i]);
-      console.log(Object.keys(getAns[i]).length);
       for(var a=0; a<Object.keys(getAns[i]).length; a++){
         var oneKey = Object.keys(getAns[i])
-        console.log(oneKey[a]);
-        var reffer = "TOIS/vorm/" + keyNames[i] + "/" + oneKey[a] + "/1";
-        var newRef = ref(db, reffer)
-        console.log(reffer);
-
-        var send = push(newRef);
-        set(send, "test");
-        sleep(50).then(()=>{ return null; })
+        reffer = "TOIS/vorm/" + keyNames[i] + "/" + oneKey[a];
+        set(ref(db, reffer), {
+          1: "tester"
+        });
         
-        console.log("lisasime asju")
       }
     }
     
   }
+}
+
+
+function sendNow(reffer){
+  var newRef = ref(db, reffer)
+  console.log(reffer);
+  var send = push(newRef);
+  set(send, "test");
+  newRef = null;
+  send = null;
 }
 button.addEventListener("click", sendToFirebase);
