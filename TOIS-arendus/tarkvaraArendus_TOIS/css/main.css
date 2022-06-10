@@ -73,7 +73,6 @@ hr{
 
 .mainArea{
     background-color: #dfced277;
-    box-shadow: 5px 0px 5px #b87a8ac4;
 }
 
 .newsArea{
@@ -134,4 +133,27 @@ li{
     font-size: 18px;
     color: #ba0c2f;
     font-weight: 600;
+}
+
+.fillerMain{
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+    box-shadow: -5px 0px 5px #b87a8ac4;
+}
+
+.notifications::before{
+    content: url(../images/notification.png);
+}
+
+.subjectArea{
+    padding-left: 50px;
+}
+
+th{
+    border-bottom: solid 1px #75142cc4;
+}
+
+.btn{
+    background-color: #c71a3d;
+    color: white;
 }

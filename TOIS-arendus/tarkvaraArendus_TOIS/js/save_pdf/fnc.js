@@ -1,3 +1,6 @@
+/*import * as jsPDF from 'jspdf';
+import 'jspdf-autotable';*/
+
 function generatePdf() {
     let nimetusEK = document.querySelector('#nimetus-ek');
     let nimetusIK = document.querySelector('#nimetus-ik');

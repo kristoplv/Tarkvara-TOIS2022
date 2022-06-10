@@ -122,7 +122,7 @@ class SaveFile{
 
         let data = 
             'Üldine info: \r\n' + 
-            '\r\n' +
+            '\r\n ' +
             'Õppekava nimetus eesti keeles: ' + this.nimiEK.value + ' \r\n ' + 
             'Õppekava nimetus inglise keeles: ' + this.nimiIK.value + ' \r\n ' +
             'Õppekava nimetus vene keeles: ' + this.nimiVK.value + ' \r\n ' +
@@ -136,7 +136,7 @@ class SaveFile{
             '\r\n' +
 
             'Hindamine ja õppe eesmärgid: \r\n' + 
-            '\r\n' +
+            '\r\n ' +
             'Kontrollivorm: ' + this.kontrollvorm + ' \r\n ' +
             'Hindamiskriteeriumid eesti keeles: ' + this.hindamisKriteeriumidEK.value + ' \r\n ' + 
             'Hindamiskriteeriumid inglise keeles: ' + this.hindamisKriteeriumidIK.value + ' \r\n ' +
@@ -159,7 +159,7 @@ class SaveFile{
             '\r\n' +
 
             'Muu informatsioon: \r\n' + 
-            '\r\n' +
+            '\r\n ' +
             'Sihtgrupp: ' + this.sihtGrupp.value + ' \r\n ' +
             'Õpikeskkond: ' + this.opiKeskkond.value + ' \r\n ' +
             'Koolitaja kompetentsus: ' + this.koolitajaKompetentsus.value + ' \r\n ' +
@@ -167,7 +167,7 @@ class SaveFile{
             '\r\n' +
 
             'Administratiivne info: \r\n' + 
-            '\r\n' +
+            '\r\n ' +
             'Õppevaldkond: ' + this.oppeValdkond.value + ' \r\n ' +
             'Õppesuund: ' + this.oppeSuund.value + ' \r\n ' +
             'Õppekava rühm: ' + this.oppeRuhm.value + ' \r\n ' +
