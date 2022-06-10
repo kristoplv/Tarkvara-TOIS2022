@@ -58,6 +58,10 @@ th label{
 #taitja{
     font-size: 32px;
 }
+.downloadBtnTxt{
+    background-color: #c71a3d;
+    color: white;
+}
 #divv1{
     transition: all 2s ease-in-out;
 }
