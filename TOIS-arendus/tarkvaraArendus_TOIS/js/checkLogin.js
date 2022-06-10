@@ -14,6 +14,8 @@ var testPass;
 var login = document.querySelector("#loginButton");
 
 
+var testMeil = async () => { return await onValue(EmailTester, testEmailInput)}
+var testPassw = async () => { return await onValue(passwordTester, testPasswordInput)}
 
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.11/firebase-app.js";
@@ -40,6 +42,39 @@ const EmailTester = ref(db, "TOIS/logimine/meil");
 const passwordTester = ref(db, "TOIS/logimine/parool");
 
 
+function testEmailInput(vals){
+    var sisu = vals.val();
+    var getAns =Object.values(sisu);
+    var keys = Object.keys(sisu);
+    for(var i=0;i<getAns.length; i++){
+        if(email.value == getAns[i]){
+            correctAns = true;
+            emailCheck = keys[i];
+            return 1;
+        } else {
+            correctAns = false;
+        }
+    }
+}
+function testPasswordInput(vals){
+    var sisu = vals.val();
+    var getAns =Object.values(sisu);
+    var keys = Object.keys(sisu);
+    for(var i=0;i<getAns.length; i++){
+        if(pw.value == getAns[i]){
+            correctAnsPw = true;
+            pwCheck = keys[i];
+            return 1;
+        } else {
+            correctAnsPw = false;
+        }
+    }
+}
+
+function sleep(ms){
+    return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
 
 function checkForValues(){
     var notice = "";
@@ -50,8 +85,6 @@ function checkForValues(){
         emailLogo.style.border = "1px solid red";
         email.style.borderLeft = "";
         emailLogo.style.borderRight = "";
-    } else {
-        testEmail = onValue(EmailTester, testEmailInput);
     }
     if(pw.value == ""){
         notice += "Parool lisamata!";
@@ -60,80 +93,49 @@ function checkForValues(){
         pwLogo.style.border = "1px solid red";
         pw.style.borderLeft = "";
         pwLogo.style.borderRight = "";
-    } else {
-        testPass = onValue(passwordTester, testPasswordInput);
     }
+    if(notice != ""){
+    } else
     if(notice == ""){
-        console.log(emailCheck);
-        console.log(correctAns);
-        console.log(correctAnsPw);
-        if(emailCheck == pwCheck){
-            notice = "Vajalikud väljad täidetud!";
-            noticeBox.style.color = "green";
-            pw.style.border = "";
-            email.style.border = "";
-            emailLogo.style.border = "";
-            pwLogo.style.border = "";
-            emailCheck = -7;
-            pwCheck = -5;
-
-        } else {
-            notice = "Kasutajanimi või parool vale!";
-            noticeBox.style.color = "red";
-
-            pw.style.border = "1px solid red";
-            pwLogo.style.border = "1px solid red";
-            emailLogo.style.border = "1px solid red";
-            email.style.border = "1px solid red";
-            email.style.borderLeft = "";
-            emailLogo.style.borderRight = "";
-            pw.style.borderLeft = "";
-            pwLogo.style.borderRight = "";
+        testMeil()
+        testPassw()
+        sleep(100).then(()=>{
+            console.log(emailCheck);
+            console.log(pwCheck);
+            return NotificationSystem(notice);
             
+        })
         }
+
+        noticeBox.innerHTML = "<p1 class='login'>" + notice + "</p1>";
+        noticeBox.style.fontSize = "18";
         
+    }
+
+function NotificationSystem(notice){
+    if(emailCheck == pwCheck){
+        notice = "Edukalt sisse logitud!";
+        noticeBox.style.color = "green";
+        pw.style.border = "";
+        email.style.border = "";
+        emailLogo.style.border = "";
+        pwLogo.style.border = "";
+        emailCheck = -7;
+        pwCheck = -5;
+    } else {
+        notice = "Kasutajanimi või parool vale!";
+        noticeBox.style.color = "red";
+        pw.style.border = "1px solid red";
+        pwLogo.style.border = "1px solid red";
+        emailLogo.style.border = "1px solid red";
+        email.style.border = "1px solid red";
+        email.style.borderLeft = "";
+        emailLogo.style.borderRight = "";
+        pw.style.borderLeft = "";
+        pwLogo.style.borderRight = "";   
     }
     noticeBox.innerHTML = "<p1 class='login'>" + notice + "</p1>";
     noticeBox.style.fontSize = "18";
-
-}
-
-function testEmailInput(vals){
-    var sisu = vals.val();
-    var getAns =Object.values(sisu);
-    var keys = Object.keys(sisu);
-    console.log(getAns);
-    for(var i=0;i<getAns.length; i++){
-        console.log(getAns[i]);
-        if(email.value == getAns[i]){
-            correctAns = true;
-            console.log(keys[i]);
-            emailCheck = keys[i];
-            break
-        } else {
-            correctAns = false;
-            console.log("cool beans but not right");
-        }
-    }
-}
-function testPasswordInput(vals){
-    var sisu = vals.val();
-    var getAns =Object.values(sisu);
-    var keys = Object.keys(sisu);
-    console.log(getAns);
-    for(var i=0;i<getAns.length; i++){
-        console.log(getAns);
-        if(pw.value == getAns[i]){
-            correctAnsPw = true;
-            console.log(keys[i]);
-            console.log("Edukas guess pw style!");
-            pwCheck = keys[i];
-            break
-        } else {
-            correctAnsPw = false;
-            console.log("cool beans but not right pw style");
-        }
-    }
 }
 
 function revertHightlightEmail(){
