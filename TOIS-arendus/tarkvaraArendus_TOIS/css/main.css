@@ -144,3 +144,17 @@ li{
 .notifications::before{
     content: url(../images/notification.png);
 }
+
+.subjectArea{
+    padding-left: 50px;
+}
+
+th{
+    border-bottom: solid 1px #75142cc4;
+}
+
+.btn{
+    background-color: #c71a3d;
+    color: white;
+    font-size: 14px;
+}

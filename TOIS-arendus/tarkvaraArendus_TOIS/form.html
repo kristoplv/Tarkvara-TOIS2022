@@ -9,11 +9,14 @@
     <link rel="stylesheet" href="css/form.css">
     <script src="js/form.js" defer></script>
     <script src="js/formToTxt.js" defer></script>
-    <script type="module" src="js/save_pdf/fnc.js" defer></script>
+    <script src="js/save_pdf/jspdf.umd.min.js" defer></script>
+    <script src="js/save_pdf/jspdf.plugin.autotable.js" defer></script>
+    <script src="js/save_pdf/fnc.js" defer></script>
     <title>Loo uus õppekava</title>
 </head>
 <body>
     <div id="mainContainer" class="mainContainer"> 
+        <div id="fillerMain" class="fillerMain"></div>
         <a href="main.html" class="logo"></a>
         
         <div id="loginArea" class="login" >          
@@ -335,8 +338,8 @@
                         </table>
                     </div>
                     <div id="downloadBtn">
-                        <input type="button" value="Lae alla tekstina" id="downloadTxt" class="downloadBtnTxt">
-                        <input type="button" value="Lae alla PDF-ina" id="downloadPdf" class="downloadBtnTxt">
+                        <input type="button" value="Lae alla tekstina" id="downloadTxt" class="btn">
+                        <input type="button" value="Lae alla PDF-ina" id="downloadPdf" class="btn">
                     </div>
                 </container>
             </div>
