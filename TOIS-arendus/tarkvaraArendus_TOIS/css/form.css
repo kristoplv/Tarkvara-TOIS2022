@@ -11,16 +11,23 @@ html{
 }
 th{
     font-weight: normal;
-    border-bottom: 1px solid rgba(184, 182, 182, 0.671);
+    border-bottom: 1px solid rgba(211, 211, 211, 0.671);
     text-align: left;
+    padding: 20px;
+    padding-right: 40px;
 }
 .box{
     background-color: #ba0c2f;
     font-size: 32px;
     padding-left: 25px;
     font-style: italic;
-    padding-top: 32px;
-    padding-bottom: 32px;
+    display: block;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-right: 2px;
+}
+.box:hover{
+    background-color: #99112c;
 }
 .box>a{
     color: white;
@@ -31,6 +38,7 @@ th{
     padding-left: 25px;
     background-color: lightgray;
     border: 1px solid black;
+    margin-bottom: 30px;
 }
 .formInput{
     font-size: 24px;
@@ -47,4 +55,19 @@ th label{
 }
 #taitja{
     font-size: 32px;
+}
+#divv1{
+    transition: all 2s ease-in-out;
+}
+#table1, #table2, #table3, #table4 {
+    animation-name: animatsioon;
+    animation-duration: 0.5s;
+}
+@keyframes animatsioon{
+    from{
+        opacity: 0%;
+    }
+    to{
+        opacity: 100%;
+    }
 }
