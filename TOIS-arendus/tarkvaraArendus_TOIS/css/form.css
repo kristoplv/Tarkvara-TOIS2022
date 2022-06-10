@@ -6,8 +6,6 @@ html{
 .oppekava{
     display: flex;
     flex-direction: column;
-    padding-left: 100px;
-    padding-right: 100px;
 }
 th{
     font-weight: normal;
@@ -25,14 +23,18 @@ th{
     padding-top: 30px;
     padding-bottom: 30px;
     padding-right: 2px;
+    cursor: pointer;
+    transition: 200ms;
 }
 .box:hover{
     background-color: #99112c;
 }
-.box>a{
+.box>p{
     color: white;
     text-transform: uppercase;
     text-decoration: none;
+    margin: 0;
+    cursor: pointer;
 }
 .fillForm{
     padding-left: 25px;
@@ -50,7 +52,7 @@ th label{
     font-size: 16px;
 }
 #filler{
-    width: 40%;
+    width: 300px;
     font-size: 28px;
 }
 #taitja{
@@ -63,6 +65,28 @@ th label{
     animation-name: animatsioon;
     animation-duration: 0.5s;
 }
+
+#mainArea{
+    position: relative;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    /*width: 80vw;*/
+    height: inherit;
+}
+.newsArea{
+    margin-right: 50px;
+}
+table{
+    table-layout: fixed;
+    width: 100%;
+}
+
+
+
+
+
+
 @keyframes animatsioon{
     from{
         opacity: 0%;
