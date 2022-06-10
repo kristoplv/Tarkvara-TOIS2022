@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/form.css">
     <script src="js/form.js" defer></script>
     <script src="js/formToTxt.js" defer></script>
+    <script type="module" src="js/save_pdf/fnc.js" defer></script>
     <title>Loo uus õppekava</title>
 </head>
 <body>
@@ -37,7 +38,7 @@
             <div id="newsArea" class="newsArea">
                 <container class="oppekava">
                     <div class="headPiece">
-                        <h1>Õppekava loomine</h1>
+                        <h2>Õppekava loomine</h2>
                         <p id="taitja">Täitja:</p>
                         <input type="text" id="filler">
                         <br>
@@ -45,8 +46,8 @@
                         <br>
                         <hr>
                     </div>
-                    <div class="box">
-                        <a href="javascript:;" id="table1Btn" onclick="openTable(this.id)">Üldine info</a><br>
+                    <div class="box" id="table1Btn" onclick="openTable(this.id)">
+                        <p>Üldine info</p>
                     </div>
                     <div class="fillForm" id="divv1">
                         <table id="table1" style="display:none">
@@ -119,8 +120,8 @@
                         </table>
                     </div>
                     
-                    <div class="box">
-                        <a href="javascript:;" id="table2Btn" onclick="openTable(this.id)">Hindamine ja õppe eesmärgid</a><br>
+                    <div class="box" id="table2Btn" onclick="openTable(this.id)">
+                        <p>Hindamine ja õppe eesmärgid</p>
                     </div>
                     <div class="fillForm" id="divv1">
                         <table id="table2" style="display:none">
@@ -240,8 +241,8 @@
                         </table>
                     </div>
                     
-                    <div class="box">
-                        <a href="javascript:;" id="table3Btn" onclick="openTable(this.id)">Muu informatsioon</a><br>
+                    <div class="box" id="table3Btn" onclick="openTable(this.id)">
+                        <p>Muu informatsioon</p>
                     </div>
                     <div class="fillForm" id="divv1">
                         <table id="table3" style="display:none">
@@ -272,8 +273,8 @@
                         </table>
                     </div>
                     
-                    <div class="box">
-                        <a href="javascript:;" id="table4Btn" onclick="openTable(this.id)">Administraatori täita</a>
+                    <div class="box" id="table4Btn" onclick="openTable(this.id)">
+                        <p>Administraatori täita</p>
                     </div>
                     <div class="fillForm" id="divv1">
                         <table id="table4" style="display:none">
@@ -335,6 +336,7 @@
                     </div>
                     <div id="downloadBtn">
                         <input type="button" value="Lae alla tekstina" id="downloadTxt" class="downloadBtnTxt">
+                        <input type="button" value="Lae alla PDF-ina" id="downloadPdf" class="downloadBtnTxt">
                     </div>
                 </container>
             </div>

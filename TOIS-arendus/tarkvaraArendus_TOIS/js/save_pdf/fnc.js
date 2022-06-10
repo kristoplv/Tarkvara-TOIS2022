@@ -1,5 +1,12 @@
+/*import * as jsPDF from 'jspdf';
+import 'jspdf-autotable';*/
+
+window.onload = function(){
+    document.querySelector('#downloadPdf').addEventListener('click', generatePdf);
+}
+
 function generatePdf() {
-    let doc = new jspdf.jsPDF();
+    let doc = new jsPDF.jsPDF();
     let pdfName = "oppekava.pdf"; // saab asendada nt. ainekoodiga
     doc.autoTable({
         theme: 'plain',
