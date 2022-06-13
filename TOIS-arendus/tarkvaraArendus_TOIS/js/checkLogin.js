@@ -17,6 +17,7 @@ var login = document.querySelector("#loginButton");
 var testMeil = async () => { return await onValue(EmailTester, testEmailInput)}
 var testPassw = async () => { return await onValue(passwordTester, testPasswordInput)}
 
+import {storeData} from '../js/cookies'
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.11/firebase-app.js";
 import {getDatabase, ref, push, set, onValue} from "https://www.gstatic.com/firebasejs/9.6.11/firebase-database.js";
@@ -122,6 +123,7 @@ function NotificationSystem(notice){
         pwLogo.style.border = "";
         emailCheck = -7;
         pwCheck = -5;
+        storeData();
     } else {
         notice = "Kasutajanimi või parool vale!";
         noticeBox.style.color = "red";
