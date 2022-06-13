@@ -158,3 +158,11 @@ th{
     color: white;
     font-size: 14px;
 }
+.estFlag{
+    width: 15%;
+    margin-top: 2%;
+    margin-left: 2%; 
+}
+.ukFlag{
+    width: 15%;
+}
