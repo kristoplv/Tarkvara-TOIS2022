@@ -44,7 +44,7 @@ function sendToFirebase(){
 function sleep(ms){
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
-
+/*
 function getAll(vals){
   var sisu = vals.val();
   var getAns =Object.values(sisu);
@@ -64,19 +64,18 @@ function getAll(vals){
     }
     
   }
-}
+}*/
 
 function sendValues(vals){
   // Teeme seda tulpade kaupa, aka liigume aina uude funktsiooni
   var baseRef = "TOIS/vorm/uldine_info";
   saada(baseRef+"/nimetus", nimiEK);
+  console.log(oppeviisid.value);
   
   saada(baseRef+"/oppeviisid", oppeviisid);
   saada(baseRef+"/maht", maht);
-  /*
-  saada(baseRef+"/keeled");
-  saada(baseRef);
-  */
+  saada(baseRef+"/keeled", keeled);
+  saadaOneline(baseRef + "/koolituse_liik", koolituse_liik);
 }
 
 function saada(baseRef, values){
@@ -85,8 +84,6 @@ function saada(baseRef, values){
     var newVals = sisu.val();
     var objectKeys = Object.keys(newVals);
     for(var i=0; i<objectKeys.length; i++){
-      console.log(objectKeys[i]);
-      console.log(values[i].value)
       set(ref(db, baseRef+"/"+objectKeys[i]), {
         1 : values[i].value
       });
@@ -94,14 +91,10 @@ function saada(baseRef, values){
   });
 }
 
-
-
-function sendNow(reffer){
-  var newRef = ref(db, reffer)
-  console.log(reffer);
-  var send = push(newRef);
-  set(send, "test");
-  newRef = null;
-  send = null;
+function saadaOneline(baseRef, liik){
+  set(ref(db, baseRef), {
+    1 : liik.value
+  });
 }
+
 button.addEventListener("click", sendToFirebase);
