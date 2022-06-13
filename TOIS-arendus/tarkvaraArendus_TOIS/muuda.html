@@ -12,7 +12,7 @@
     <script src="js/save_pdf/jspdf.umd.min.js" defer></script>
     <script src="js/save_pdf/jspdf.plugin.autotable.js" defer></script>
     <script src="js/save_pdf/fnc.js" defer></script>
-    <title>Loo uus õppekava</title>
+    <title>Õppekava muutmine</title>
 </head>
 <body>
     <div id="mainContainer" class="mainContainer"> 
@@ -41,8 +41,8 @@
             <div id="newsArea" class="newsArea">
                 <container class="oppekava">
                     <div class="headPiece">
-                        <h2>Õppekava loomine</h2>
-                        <p id="taitja">Täitja:</p>
+                        <h2>Õppekava muutmine</h2>
+                        <p id="muutja">Muutja:</p>
                         <input type="text" id="filler">
                         <br>
                         <p>Õppekava ID: <b>jölkadfh245389r2yfdöfw</b></p>
@@ -59,20 +59,16 @@
                                     <label for="nimetus-ek">Nimetus e.k.</label>
                                     <br>
                                     <input type="text" name="nimetus-ek" id="nimetus-ek" class="formInput" title="Sisestage õppekava eestikeelne nimetus">
-                                    
-                                    <span class="tooltip" data-tooltip="Sisestage õppekava nimetus eesti keeles">?</span>
                                 </th>
                                 <th>
                                     <label for="nimetus-ik">Nimetus i.k.</label>
                                     <br>
                                     <input type="text" name="nimetus-ik" id="nimetus-ik" class="formInput">
-                                    <span class="tooltip" data-tooltip="Sisestage õppekava nimetus inglise keeles">?</span>
                                 </th>
                                 <th>
                                     <label for="nimetus-vk">Nimetus v.k.</label>
                                     <br>
                                     <input type="text" name="nimetus-vk" id="nimetus-vk" class="formInput">
-                                    <span class="tooltip" data-tooltip="Sisestage õppekava nimetus inglise keeles">?</span>
                                 </th>
                             </tr>
                             <tr>
@@ -164,7 +160,6 @@
                                     <label for="hindamiskriteeriumid-ek">Hindamiskriteeriumid e.k.</label>
                                     <br>
                                     <textarea name="hindamiskriteeriumid-ek" id="hindamiskriteeriumid-ek" class="formInput"> </textarea>
-                                    <span class="tooltip" data-tooltip="Sisestage hindamiskriteeriumid ehk hindamisjuhised, mis kirjeldavad hindamismeetodiga tõendatavate teadmiste ja oskuste oodatavat taset ning ulatust">?</span>
                                 </th>
                                 <th id="hindamiskriteeriumid-ik-th" style="display:none">
                                     <label for="hindamiskriteeriumid-ik">Hindamiskriteeriumid i.k.</label>
@@ -182,19 +177,16 @@
                                     <label for="eesmargid-ek">Eesmärgid e.k.</label>
                                     <br>
                                     <textarea name="eesmargid-ek" id="eesmargid-ek" class="formInput"> </textarea>
-                                    <span class="tooltip" data-tooltip="Sisestage õppekava eesmärgid eesti keeles">?</span>
                                 </th>
                                 <th id="eesmargid-ik-th" style="display:none">
                                     <label for="eesmargid-ik">Eesmärgid i.k.</label>
                                     <br>
                                     <textarea name="eesmargid-ik" id="eesmargid-ik" class="formInput"> </textarea>
-                                    <span class="tooltip" data-tooltip="Sisestage õppekava eesmärgid inglise keeles">?</span>
                                 </th>
                                 <th id="eesmargid-vk-th" style="display:none">
                                     <label for="eesmargid-vk">Eesmärgid v.k.</label>
                                     <br>
                                     <textarea name="eesmargid-vk" id="eesmargid-vk" class="formInput"> </textarea>
-                                    <span class="tooltip" data-tooltip="Sisestage õppekava eesmärgid vene keeles">?</span>
                                 </th>
                             </tr>
                             <tr>
@@ -202,19 +194,16 @@
                                     <label for="opivaljundid-ek">Õpiväljundid e.k.</label>
                                     <br>
                                     <textarea name="opivaljundid-ek" id="opivaljundid-ek" class="formInput"> </textarea>
-                                    <span class="tooltip" data-tooltip="Sisestage õpiväljundid ehk see mida õppijalt oodatakse õpiobjekti läbitöötamise järel">?</span>
                                 </th>
                                 <th id="opivaljundid-ik-th" style="display:none">
                                     <label for="opivaljundid-ik">Õpiväljundid i.k.</label>
                                     <br>
                                     <textarea name="opivaljundid-ik" id="opivaljundid-ik" class="formInput"> </textarea>
-                                    <span class="tooltip" data-tooltip="Sisestage õpiväljundid ehk see mida õppijalt oodatakse õpiobjekti läbitöötamise järel, inglise keeles">?</span>
                                 </th>
                                 <th id="opivaljundid-vk-th" style="display:none">
                                     <label for="opivaljundid-vk">Õpiväljundid v.k.</label>
                                     <br>
                                     <textarea name="opivaljundid-vk" id="opivaljundid-vk" class="formInput"> </textarea>
-                                    <span class="tooltip" data-tooltip="Sisestage õpiväljundid ehk see mida õppijalt oodatakse õpiobjekti läbitöötamise järel, vene keeles">?</span>
                                 </th>
                             </tr>
                             <tr>
@@ -222,39 +211,33 @@
                                     <label for="sisu-ek">Sisu e.k.</label>
                                     <br>
                                     <textarea name="sisu-ek" id="sisu-ek" class="formInput"> </textarea>
-                                    <span class="tooltip" data-tooltip="Sisestage õppekava sisu eesti keeles">?</span>
                                 </th>
                                 <th id="sisu-ik-th" style="display:none">
                                     <label for="sisu-ik">Sisu i.k.</label>
                                     <br>
                                     <textarea name="sisu-ik" id="sisu-ik" class="formInput"> </textarea>
-                                    <span class="tooltip" data-tooltip="Sisestage õppekava sisu inglise keeles">?</span>
                                 </th>
                                 <th id="sisu-vk-th" style="display:none">
                                     <label for="sisu-vk">Sisu v.k.</label>
                                     <br>
                                     <textarea name="sisu-vk" id="sisu-vk" class="formInput"> </textarea>
-                                    <span class="tooltip" data-tooltip="Sisestage õppekava sisu vene keeles">?</span>
                                 </th>
                             </tr>
                             <tr>
                                 <th id="eeldused-ek-th">
                                     <label for="eeldused-ek">Eeldused e.k.</label>
-                                    <br>                                 
+                                    <br>
                                     <textarea name="eeldused-ek" id="eeldused-ek" class="formInput"> </textarea>
-                                    <span class="tooltip" data-tooltip="Sisestage õppekava eeldused eesti keeles">?</span>
                                 </th>
                                 <th id="eeldused-ik-th" style="display:none">
                                     <label for="eeldused-ik">Eeldused i.k.</label>
                                     <br>
                                     <textarea name="eeldused-ik" id="eeldused-ik" class="formInput"> </textarea>
-                                    <span class="tooltip" data-tooltip="Sisestage õppekava eeldused inglise keeles">?</span>
                                 </th>
                                 <th id="eeldused-vk-th" style="display:none">
                                     <label for="eeldused-vk">Eeldused v.k.</label>
                                     <br>
                                     <textarea name="eeldused-vk" id="eeldused-vk" class="formInput"> </textarea>
-                                    <span class="tooltip" data-tooltip="Sisestage õppekava eeldused vene keeles">?</span>
                                 </th>
                             </tr>
                             <tr>
