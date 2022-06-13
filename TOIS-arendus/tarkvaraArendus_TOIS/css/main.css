@@ -171,3 +171,12 @@ th{
 th{
     font-weight: 400;
 }
+
+.topper{
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.formList{
+    border-collapse: collapse;
+}
