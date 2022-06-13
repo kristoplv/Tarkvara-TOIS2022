@@ -7,7 +7,9 @@ import {getDatabase, ref, push, set, onValue, get, child} from "https://www.gsta
 var nimiEK = document.getElementsByClassName("formInput uldine");
 var oppeviisid = document.getElementsByClassName("uldine_viisid");
 var keeled = document.getElementsByClassName("uldine_keeled");
-var koolituse_liik = document.querySelector("koolituse-liik");
+var koolituse_liik = document.querySelector("#koolituse-liik");
+var koolitus_valitud = koolituse_liik.options[koolituse_liik.selectedIndex];
+
 var maht = document.getElementsByClassName("maht formInput");
 var eap = document.querySelector("#eap-result");
 
@@ -67,15 +69,15 @@ function getAll(vals){
 }*/
 
 function sendValues(vals){
+  console.log(koolitus_valitud + " ... " + koolitus_valitud.value)
   // Teeme seda tulpade kaupa, aka liigume aina uude funktsiooni
   var baseRef = "TOIS/vorm/uldine_info";
   saada(baseRef+"/nimetus", nimiEK);
-  console.log(oppeviisid.value);
   
   saada(baseRef+"/oppeviisid", oppeviisid);
   saada(baseRef+"/maht", maht);
   saada(baseRef+"/keeled", keeled);
-  saadaOneline(baseRef + "/koolituse_liik", koolituse_liik);
+  saadaOneline(baseRef + "/koolituse_liik", koolitus_valitud);
 }
 
 function saada(baseRef, values){
@@ -84,6 +86,7 @@ function saada(baseRef, values){
     var newVals = sisu.val();
     var objectKeys = Object.keys(newVals);
     for(var i=0; i<objectKeys.length; i++){
+      console.log(values[i].value)
       set(ref(db, baseRef+"/"+objectKeys[i]), {
         1 : values[i].value
       });
