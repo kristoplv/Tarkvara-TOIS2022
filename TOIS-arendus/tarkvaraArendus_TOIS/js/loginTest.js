@@ -4,7 +4,7 @@ let email = document.querySelector('#email');
 /*let language = document.querySelector('#')*/
 
 window.onload = function(){
-    document.querySelector('#loginButton').addEventListener('click', checkLogin);
+    /*document.querySelector('#loginButton').addEventListener('click', checkLogin);*/
 
     loadSavedLogin();
 }
