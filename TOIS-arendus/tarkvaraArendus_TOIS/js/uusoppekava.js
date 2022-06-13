@@ -12,6 +12,7 @@ window.onload = function() {
     document.querySelector('#generateCourseLink').addEventListener('click', generateLink);
 }
 
+// https://stackoverflow.com/a/27747377
 function dec2hex(dec) {
     return dec.toString(16).padStart(2, '0');
 }

@@ -7,48 +7,81 @@
     <title>Sisselogimine</title>
     <link rel="stylesheet" href="css/menu.css">
     <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/mobile.css">
     <script type="module" src="js/checkLogin.js" defer></script>
     <script type="module" src="js/cookies.js" defer></script>
     <script type="module" src="js/loginTest.js" defer></script>
 </head>
 <body>
+    <div id="mainContainer" class="mainContainer"> 
+        <a href="main.html" class="logo"></a>
+        
+        <div id="loginArea" class="login_txt" >          
+            <a href="login.html" class="loginButton" id="logIn">Logi sisse</a>
+        </div>
+
+        <div id="sidebar" class="sidebar">
+            <h2 class="menuLabel">MENÜÜ</h2>
+            <ul id="navMenu" class="navMenu">
+                <li>
+                    <a href="main.html" class="links" id="homePage">Avaleht</a>
+                </li>
+                <li>
+                    <a href="oppekavad.html" class="links" id="allForms">Kõik õppekavad</a>
+                </li>
+                <li>
+                    <a href="form.html" class="links" id="newForm">Loo uus õppekava</a>
+                </li>
+                <a href="main.html"><img src="images/eestilipp.png" title="Eesti keel" class="estFlag"></a>
+                <a href="main.html"><img src="images/uklipp.png" title="Inglise keel" class="ukFlag"></a>
+            </ul>
+        </div>
     <container class="ribbon">
         <a class="home_logo item a" id="Logo" href="index.html"><p class="menu-text">TLÜ TÄIENDÕPPE INFOSÜSTEEM</p></a>
-        <a class="item_3 item a" href="main.html"><p class="menu-text">Õppekavad</p></a>
+        <!--<a class="item_3 item a" href="main.html"><p class="menu-text">Õppekavad</p></a>
         <a class="item_3 item a" href="form.html"><p class="menu-text">Loo uus õppekava</p></a>
         <a class="item_3 item a" href="login.html"><p class="menu-text">Logi sisse</p></a>
-        <!--<div class="item_3 item"><p class="menu-text">Logi sisse</p></div>-->
+    -->
+        <div class="menuBtn"></div>
 
     </container>
-    
-    <container class="login_form">
-        
-        <div class="hello">Logi enda kasutajasse</div>
-        <div class="email field">
-            <label for="email_in" class="e_post"><p1 class="login">E-posti aadress</p1></label><br>
-            <div class="nice_email">
-                <div class="human_logo"></div>
-                <input type="text" name="email_in" id="email" placeholder="e-posti aadress">
+    <div id="mainArea" class="mainArea">
+        <div class="uselessFillBox"></div>
+            <container class="login_form">
+                <div class="hello">Logi enda kasutajasse</div>
+                <div class="email field">
+                    <label for="email_in" class="e_post"><p1 class="login_txt">E-posti aadress</p1></label><br>
+                    <div class="nice_email">
+                        <div class="human_logo"></div>
+                        <input type="text" name="email_in" id="email" placeholder="e-posti aadress">
             </div>
         </div>
         <div class="password field">
-            <label for="password_in"><p1 class="login">Salasõna</p1></label><br>
+            <label for="password_in"><p1 class="login_txt">Salasõna</p1></label><br>
             <div class="nice_password">
                 <div class="password_logo"></div>
                 <input type="password" name="password_in" id="password" placeholder="Salasõna">
             </div>
         </div>
         <div class="send field">
-                <input type="submit" value="Logi sisse" class="login_btn" id="loginButton">
+            <input type="submit" value="Logi sisse" class="login_btn" id="loginButton">
+        </div>
+        <div id="notice"></div>
+        <div class="register field">
+            <p1 class="login_txt">Unustasid parooli?</p1>
+            <a class="forgot_pw" href="index.html"><p1 class="login_txt">Vajuta siia!</p1></a>
             </div>
-            <div id="notice"></div>
-            <div class="register field">
-                <p1 class="login">Pole veel kasutajat?</p1>
-                <a href="index.html"><p1 class="login">Registreeru siin</p1></a>
-            </div>
-            
-            <a class="forgot_pw" href="index.html"><p1 class="login">unustasid parooli?</p1></a>
-        </container>
-    
+        
+    </container>
+    </div>
+    <div id="fillerMain" class="fillerMain"></div>
+</div>
 </body>
 </html>
+
+<!--
+e-post: kris@rel.ee
+pw : afgg325vtwce3ccr23v234c4
+
+-->

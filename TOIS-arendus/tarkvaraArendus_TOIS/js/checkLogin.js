@@ -108,7 +108,7 @@ function checkForValues(){
         })
         }
 
-        noticeBox.innerHTML = "<p1 class='login'>" + notice + "</p1>";
+        noticeBox.innerHTML = "<p1 class='login_txt'>" + notice + "</p1>";
         noticeBox.style.fontSize = "18";
         
     }
@@ -136,7 +136,7 @@ function NotificationSystem(notice){
         pw.style.borderLeft = "";
         pwLogo.style.borderRight = "";   
     }
-    noticeBox.innerHTML = "<p1 class='login'>" + notice + "</p1>";
+    noticeBox.innerHTML = "<p1 class='login_txt'>" + notice + "</p1>";
     noticeBox.style.fontSize = "18";
 }
 
