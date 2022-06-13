@@ -1,18 +1,20 @@
 <!DOCTYPE html>
-<html lang="ee">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TLÜ TÕIS</title>
-    <link rel="stylesheet" href="css/main.css">
     <link rel="icon" href="images/toisFavicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/uusoppekava.css">
+    <script src="js/uusoppekava.js" defer></script>
+    <title>Loo uus õppekava</title>
 </head>
 <body>
-    <div id="mainContainer" class="mainContainer"> 
-        <a href="https://greeny.cs.tlu.ee/~chrhin/OOP/oo2022/14_eksam/TOIS/main.html" class="logo"></a>
-        
-        <div id="loginArea" class="login" >          
+    <div id="mainContainer" class="mainContainer">
+        <a href="main.html" class="logo"></a>
+
+        <div id="loginArea" class="login">
             <a href="login.html" class="loginButton" id="logIn">Logi sisse</a>
         </div>
 
@@ -32,32 +34,27 @@
         </div>
         <div id="mainArea" class="mainArea">
             <div id="newsArea" class="newsArea">
-                <h2 class="notifications">Teated</h2>
-                <div id="news1" class="news">
-                    <div id="date1">
-                        <p>08.06.2022</p>
+                <container class="newCourseArea">
+                    <h2>Õppekava loomine</h2>
+                    <div class="inputField">
+                        <label for="courseCreator">Õppekava looja nimi:</label>
+                        <input type="text" name="courseCreator" id="courseCreator">
                     </div>
-                    <div id="newsContent1" class="newsContent">
-                        <p>Õppekavas x on tehtud muudatused</p>
-                        <a href="" class="newsLink">Vaata</a>
+                    <div class="inputField">
+                        <label for="courseFiller">Õppekava täitja nimi:</label>
+                        <input type="text" name="courseFiller" id="courseFiller">
                     </div>
-                </div>
-                <hr>
-                <div id="news2" class="news">
-                    <div id="date2">
-                        <p>07.06.2022</p>
+                    <div id="dateField">
+                        <span id="courseCreationDate"></span>
                     </div>
-                    <div id="newsContent2" class="newsContent">
-                        <p>Õppekava x vorm on valmis kontrollimiseks</p>
-                        <a href="" class="newsLink">Vaata</a>
+                    <div id="linkField">
+                        <button id="generateCourseLink" class="btn">Koosta link</button>
+                        <span id="courseLink"></span>
                     </div>
-                </div>
-                <hr>
+                </container>
             </div>
         </div>
         <div id="fillerMain" class="fillerMain"></div>
-
     </div>
-    
 </body>
 </html>

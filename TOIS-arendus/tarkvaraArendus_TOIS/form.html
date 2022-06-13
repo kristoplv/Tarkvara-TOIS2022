@@ -33,7 +33,7 @@
                     <a href="oppekavad.html" class="links" id="allForms">Kõik õppekavad</a>
                 </li>
                 <li>
-                    <a href="form.html" class="links" id="newForm">Loo uus õppekava</a>
+                    <a href="uusoppekava.html" class="links" id="newForm">Loo uus õppekava</a>
                 </li>
             </ul>
         </div>
@@ -45,7 +45,13 @@
                         <p id="taitja">Täitja:</p>
                         <input type="text" id="filler">
                         <br>
-                        <p>Õppekava ID: <b>jölkadfh245389r2yfdöfw</b></p>
+                        <p>Õppekava ID: <span id="courseId"></span></p>
+                        <script>
+                            const queryString = window.location.search;
+                            const urlParams = new URLSearchParams(queryString);
+                            const id = urlParams.get('id');
+                            document.querySelector('#courseId').innerHTML = id;
+                        </script>
                         <br>
                         <hr>
                     </div>
