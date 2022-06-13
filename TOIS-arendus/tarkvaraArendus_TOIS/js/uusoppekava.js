@@ -25,13 +25,27 @@ function generateId(len) {
 }
 
 function generateLink() {
-    var linkId = generateId(30);
+    let linkId = generateId(30);
+    let date = new Date();
+    date.toISOString();
+
+    let courseCreator = document.querySelector('#courseCreator').value;
+    let courseFiller = document.querySelector('#courseFiller').value;
     let buttonId = document.querySelector('#generateCourseLink');
     let courseLink = document.querySelector('#courseLink');
     
     buttonId.style.display = 'none';
     courseLink.innerHTML = '<a class="linkBtn" id="linkBtn" href="form.html?id=' + linkId + '">Link uue õppekava täitmiseks</a>';
     courseLink.innerHTML += '<img id="copyLink" src="images/link.png" alt="Kopeeri" title="Kopeeri" onclick="copyLink()">';
+
+    let newFormHashmap = new Map([
+        ['id', linkId],
+        // firebase klappivus?
+        ['date', date],
+        ['courseCreator', courseCreator],
+        ['courseFiller', courseFiller]
+    ]);
+    console.log(newFormHashmap);
 }
 
 function copyLink() {
