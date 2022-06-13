@@ -90,8 +90,11 @@
                                     <input type="checkbox" name="oppetoo-keeled" id="eesti">
                                     <label for="eesti">Eesti</label>
                                     <br>
-                                    <input type="checkbox" name="oppetoo-keeled" id="inglise">
+                                    <input type="checkbox" name="oppetoo-keeled" id="inglise" onclick="showInputs(this.id)">
                                     <label for="inglise">Inglise</label>
+                                    <br>
+                                    <input type="checkbox" name="oppetoo-keeled" id="vene" onclick="showInputs(this.id)">
+                                    <label for="vene">Vene</label>
                                 </th>
                                 <th>
                                     <label for="koolituse-liik">Koolituse liik</label>
@@ -116,8 +119,11 @@
                                     <br>
                                 </th>
                                 <th>
+                                    <label for="oppekava-maht-tunnid">Õppekava maht (h): </label>
+                                    <span id="hours-result"></span>
+                                    <br>
                                     <label for="oppekava-maht-eap">Õppekava maht (EAP): </label>
-                                    <p id="eap-result"></p>
+                                    <span id="eap-result"></span>
                                 </th>
                             </tr>
                         </table>
@@ -140,102 +146,102 @@
                                 </th>
                             </tr>
                             <tr>
-                                <th>
+                                <th id="hindamiskriteeriumid-ek-th">
                                     <label for="hindamiskriteeriumid-ek">Hindamiskriteeriumid e.k.</label>
                                     <br>
                                     <input type="text" name="hindamiskriteeriumid-ek" id="hindamiskriteeriumid-ek" class="formInput">
                                 </th>
-                                <th>
+                                <th id="hindamiskriteeriumid-ik-th" style="display:none">
                                     <label for="hindamiskriteeriumid-ik">Hindamiskriteeriumid i.k.</label>
                                     <br>
                                     <input type="text" name="hindamiskriteeriumid-ik" id="hindamiskriteeriumid-ik" class="formInput">
                                 </th>
-                                <th>
+                                <th id="hindamiskriteeriumid-vk-th" style="display:none">
                                     <label for="hindamiskriteeriumid-vk">Hindamiskriteeriumid v.k.</label>
                                     <br>
                                     <input type="text" name="hindamiskriteeriumid-vk" id="hindamiskriteeriumid-vk" class="formInput">
                                 </th>
                             </tr>
                             <tr>
-                                <th>
+                                <th id="eesmargid-ek-th">
                                     <label for="eesmargid-ek">Eesmärgid e.k.</label>
                                     <br>
                                     <input type="text" name="eesmargid-ek" id="eesmargid-ek" class="formInput">
                                 </th>
-                                <th>
+                                <th id="eesmargid-ik-th" style="display:none">
                                     <label for="eesmargid-ik">Eesmärgid i.k.</label>
                                     <br>
                                     <input type="text" name="eesmargid-ik" id="eesmargid-ik" class="formInput">
                                 </th>
-                                <th>
+                                <th id="eesmargid-vk-th" style="display:none">
                                     <label for="eesmargid-vk">Eesmärgid v.k.</label>
                                     <br>
                                     <input type="text" name="eesmargid-vk" id="eesmargid-vk" class="formInput">
                                 </th>
                             </tr>
                             <tr>
-                                <th>
+                                <th id="opivaljundid-ek-th">
                                     <label for="opivaljundid-ek">Õpiväljundid e.k.</label>
                                     <br>
                                     <input type="text" name="opivaljundid-ek" id="opivaljundid-ek" class="formInput">
                                 </th>
-                                <th>
+                                <th id="opivaljundid-ik-th" style="display:none">
                                     <label for="opivaljundid-ik">Õpiväljundid i.k.</label>
                                     <br>
                                     <input type="text" name="opivaljundid-ik" id="opivaljundid-ik" class="formInput">
                                 </th>
-                                <th>
+                                <th id="opivaljundid-vk-th" style="display:none">
                                     <label for="opivaljundid-vk">Õpiväljundid v.k.</label>
                                     <br>
                                     <input type="text" name="opivaljundid-vk" id="opivaljundid-vk" class="formInput">
                                 </th>
                             </tr>
                             <tr>
-                                <th>
+                                <th id="sisu-ek-th">
                                     <label for="sisu-ek">Sisu e.k.</label>
                                     <br>
                                     <input type="text" name="sisu-ek" id="sisu-ek" class="formInput">
                                 </th>
-                                <th>
+                                <th id="sisu-ik-th" style="display:none">
                                     <label for="sisu-ik">Sisu i.k.</label>
                                     <br>
                                     <input type="text" name="sisu-ik" id="sisu-ik" class="formInput">
                                 </th>
-                                <th>
+                                <th id="sisu-vk-th" style="display:none">
                                     <label for="sisu-vk">Sisu v.k.</label>
                                     <br>
                                     <input type="text" name="sisu-vk" id="sisu-vk" class="formInput">
                                 </th>
                             </tr>
                             <tr>
-                                <th>
+                                <th id="eeldused-ek-th">
                                     <label for="eeldused-ek">Eeldused e.k.</label>
                                     <br>
                                     <input type="text" name="eeldused-ek" id="eeldused-ek" class="formInput">
                                 </th>
-                                <th>
+                                <th id="eeldused-ik-th" style="display:none">
                                     <label for="eeldused-ik">Eeldused i.k.</label>
                                     <br>
                                     <input type="text" name="eeldused-ik" id="eeldused-ik" class="formInput">
                                 </th>
-                                <th>
+                                <th id="eeldused-vk-th" style="display:none">
                                     <label for="eeldused-vk">Eeldused v.k.</label>
                                     <br>
                                     <input type="text" name="eeldused-vk" id="eeldused-vk" class="formInput">
                                 </th>
                             </tr>
                             <tr>
-                                <th>
+                                <th id="tingimused-ek-th">
                                     <label for="tingimused-ek">Läbimise tingimused, sh. praktiliste tööde lühikirjeldused e.k.</label>
                                     <br>
                                     <input type="text" name="tingimused-ek" id="tingimused-ek" class="formInput">
                                 </th>
-                                <th>
+                                <th id="tingimused-ik-th" style="display:none">
                                     <label for="tingimused-ik">Läbimise tingimused, sh. praktiliste tööde lühikirjeldused i.k.</label>
                                     <br>
                                     <input type="text" name="tingimused-ik" id="tingimused-ik" class="formInput">
                                 </th>
-                                <th>
+                                <th id="tingimused-vk-th" style="display:none">
                                     <label for="tingimused-vk">Läbimise tingimused, sh. praktiliste tööde lühikirjeldused v.k.</label>
                                     <br>
                                     <input type="text" name="tingimused-vk" id="tingimused-vk" class="formInput">

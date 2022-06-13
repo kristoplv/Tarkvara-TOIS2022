@@ -1,6 +1,3 @@
-/*import * as jsPDF from 'jspdf';
-import 'jspdf-autotable';*/
-
 window.onload = function(){
     document.querySelector('#downloadPdf').addEventListener('click', generatePdf);
 }
@@ -15,12 +12,14 @@ function generatePdf() {
     let oppeviisid = "";
     let eesti = document.querySelector('#eesti');
     let inglise = document.querySelector('#inglise');
+    let vene = document.querySelector('#vene');
     let oppetooKeeled = "";
     let koolituseLiik = document.querySelector('#koolituse-liik');
     let liik = "";
     let kontaktopeH = document.querySelector('#kontaktope-h');
     let praktikaH = document.querySelector('#praktika-h');
     let iseseisevOpeH = document.querySelector('#iseseisev-ope-h');
+    let mahtTundides = document.querySelector('#hours-result');
     let eap = document.querySelector('#eap-result');
 
     let kontrollivorm = document.querySelector('#kontrollivorm');
@@ -69,8 +68,9 @@ function generatePdf() {
         oppeviisid += "Praktika\n";
     }
     if(iseseisevOpe.checked){
-        oppeviisid += "Iseseisev õpe\n";
+        oppeviisid += "Iseseisev õpe";
     }
+    oppeviisid = oppeviisid.trim();
 
     if(eesti.checked){
         oppetooKeeled += "Eesti\n";
@@ -78,6 +78,10 @@ function generatePdf() {
     if(inglise.checked){
         oppetooKeeled += "Inglise\n";
     }
+    if(vene.checked){
+        oppetooKeeled += "Vene";
+    }
+    oppetooKeeled = oppetooKeeled.trim();
 
     if(onTellitav.checked){
         tellitavus = "Tellitav";
@@ -123,6 +127,7 @@ function generatePdf() {
             ['Kontaktõppe maht', kontaktopeH.value],
             ['Praktika maht', praktikaH.value],
             ['Iseseisva õppe maht', iseseisevOpeH.value],
+            ['Õppekava maht kokku', mahtTundides.innerText],
             ['EAP maht', eap.innerText],
             [{ content: 'Hindamine ja õppe eesmärgid', colSpan: 2, styles: { fontStyle: 'bold' } }],
             ['Kontrollivorm', kontrollvorm],
@@ -159,15 +164,6 @@ function generatePdf() {
             ['Tellitavus', tellitavus],
             ['Nähtavus', nahtavus]
         ],
-        /*didDrawCell: function (hookData) {
-            if (hookData.section === 'body') {
-                if (hookData.column.index === 0) {
-                    for (const cell of Object.values(hookData.row.cells)) {
-                        cell.styles.fontStyle = 'bold';
-                    }
-                }
-            }
-        },*/
     });
     doc.save(pdfName);
 }
