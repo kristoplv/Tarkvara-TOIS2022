@@ -167,3 +167,7 @@ th{
 .deleteHead::before{
     content: url("../images/trashbin.png");
 }
+
+th{
+    font-weight: 400;
+}
