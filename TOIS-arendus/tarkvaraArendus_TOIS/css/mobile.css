@@ -1,0 +1,43 @@
+@media (max-width: 1000px){
+    .field{
+        font-size: 1.5vh;
+    }
+    .login_form{
+        height: 85vmin;
+        min-width: 65vmin;
+        max-width: 80vmin;
+    }
+    .ribbon{
+        display: show;
+    }
+    #loginArea, #fillerMain, #sidebar, .logo{
+        display: none;
+    }
+    .menu-text{
+        font-size: 1em;
+    }
+    .ribbon{
+        grid-template-columns: 85% 15%;
+        text-align: right;
+    }
+    .menuBtn{
+        background-image: url("../images/menuBtn.png");
+        background-repeat: no-repeat;
+        background-size: 40% 80%;
+        background-position: center;
+        cursor: pointer;
+        transition: 300ms;
+    }
+    .menuBtn:hover{
+        transition: 300ms;
+        transform: rotate(90deg);
+    }
+}
+@media (min-width: 1000px){
+    .ribbon{
+        display: none;
+    }
+    #loginArea, #fillerMain, #sidebar{
+        display: show;
+    }
+}

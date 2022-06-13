@@ -3,7 +3,7 @@ body{
 }
 .hello{
     justify-self: center;
-    font-size: 38px;
+    font-size: 3vh;
 }
 .login_form{
     align-items: center;
@@ -20,7 +20,7 @@ body{
     height: 70vmin;
     resize: horizontal;
     box-sizing: border-box;
-    border-radius: 0.5em;
+    border-radius: 1vh;
     box-shadow: 5px 3px 15px rgba(0, 0, 0, 0.5);
 }
 .field{
@@ -31,7 +31,7 @@ body{
 }
 #email, #password{
     width: 100%;
-    min-width: 300px;
+    min-width: 100px;
     aspect-ratio: 12/1;
 }
 .nice_email, .nice_password{
@@ -66,7 +66,7 @@ input[type=submit]{
 input[type=text], input[type=password]:focus{
     outline:none;
 }
-.login{
+.login_txt{
     margin: 0;
     border: 0;
     padding: 0;
@@ -102,4 +102,9 @@ a:visited{
 .forgot_pw{
     margin-top: 1em;
     text-align: center;
+}
+.uselessFillBox{
+    position: relative;
+    width: 100%;
+    height: 90vmin;
 }
