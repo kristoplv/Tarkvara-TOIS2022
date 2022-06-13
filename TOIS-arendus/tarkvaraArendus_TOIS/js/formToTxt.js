@@ -19,12 +19,14 @@ class SaveFile{
         this.oppeViisid = "";
         this.keel1 = document.querySelector('#eesti');
         this.keel2 = document.querySelector('#inglise');
+        this.keel3 = document.querySelector('#vene');
         this.keeled = "";
         this.koolituseLiik = document.querySelector('#koolituse-liik');
         this.liik = "";
         this.mahtTundidesKontakt = document.querySelector('#kontaktope-h');
         this.mahtTundidesPraktika = document.querySelector('#praktika-h');
         this.mahtTundidesIseseisev = document.querySelector('#iseseisev-ope-h');
+        this.mahtTundidesKokku = document.querySelector('#hours-result');
         this.eap = document.querySelector('#eap-result');
 
         this.kontrolliVorm = document.querySelector('#kontrollivorm');
@@ -90,6 +92,9 @@ class SaveFile{
         if(this.keel2.checked){
             this.keeled += "Inglise \r\n";
         }
+        if(this.keel3.checked){
+            this.keeled += "Vene \r\n";
+        }
         console.log(this.keeled);
 
         if(this.onTellitav.checked){
@@ -132,7 +137,8 @@ class SaveFile{
             'Kontaktõppe maht: ' + this.mahtTundidesKontakt.value + ' \r\n ' +
             'Praktika maht: ' + this.mahtTundidesPraktika.value + ' \r\n ' +
             'Iseseisva õppe maht: ' + this.mahtTundidesIseseisev.value + ' \r\n ' +
-            'EAP maht: ' + this.eap.value + ' \r\n ' +
+            'Õppekava maht kokku: ' + this.mahtTundidesKokku.innerText + ' \r\n ' +
+            'EAP maht: ' + this.eap.innerText + ' \r\n ' +
             '\r\n' +
 
             'Hindamine ja õppe eesmärgid: \r\n' + 
