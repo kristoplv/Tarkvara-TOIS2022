@@ -75,18 +75,11 @@ hr{
     background-color: #dfced277;
 }
 
-.newsArea{
+.mainContentArea{
     grid-column: 2 / 3;
     grid-row: 2 / 3;
     margin-left: 50px;
-}
-
-ul{
-    padding: 0;
-    font-size: 20px;
-    display: block;
-    list-style: inside url("../images/listItem.png");
-    border-top: solid 1px #75142cc4;
+    margin-right: 30px;
 }
 
 li{
@@ -116,6 +109,11 @@ li{
 }
 
 .navMenu {
+    padding: 0;
+    font-size: 20px;
+    display: block;
+    list-style: inside url("../images/listItem.png");
+    border-top: solid 1px #75142cc4;
     margin: 0;
 }
 
@@ -143,10 +141,6 @@ li{
 
 .notifications::before{
     content: url(../images/notification.png);
-}
-
-.subjectArea{
-    padding-left: 50px;
 }
 
 th{
@@ -180,11 +174,15 @@ th{
     font-weight: 400;
 }
 
+td{
+    font-size: 20px;
+}
+
 .topper{
     padding-left: 50px;
     padding-right: 50px;
 }
 
-.formList{
+.evenBorders{
     border-collapse: collapse;
 }
