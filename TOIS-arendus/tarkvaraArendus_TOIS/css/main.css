@@ -158,3 +158,12 @@ th{
     color: white;
     font-size: 14px;
 }
+
+.confirmation{
+    color: red;
+    font-weight: 900;
+}
+
+.deleteHead::before{
+    content: url("../images/trashbin.png");
+}
