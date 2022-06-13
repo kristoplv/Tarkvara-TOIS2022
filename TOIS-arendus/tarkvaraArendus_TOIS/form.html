@@ -83,6 +83,10 @@
                                     <br>
                                     <input type="checkbox" name="oppeviis" id="iseseisev-ope">
                                     <label for="iseseisev-ope">Iseseisev õpe</label>
+                                    <br>
+                                    <input type="checkbox" name="oppeviis" id="muu-oppeviis">
+                                    <label for="muu-oppeviis">Muu</label>
+                                    <input type="text" name="muu-oppeviisi-nimetus" id="muu-oppeviisi-nimetus" class="formInput">
                                 </th>
                                 <th>
                                     <label for="oppetoo-keeled">Õppetöö keeled</label>
@@ -92,6 +96,13 @@
                                     <br>
                                     <input type="checkbox" name="oppetoo-keeled" id="inglise">
                                     <label for="inglise">Inglise</label>
+                                    <br>
+                                    <input type="checkbox" name="oppetoo-keeled" id="vene">
+                                    <label for="vene">Vene</label>
+                                    <br>
+                                    <input type="checkbox" name="oppetoo-keeled" id="muu-oppetookeel">
+                                    <label for="muu-oppetookeel">Muu</label>
+                                    <input type="text" name="muu-oppetookeele-nimetus" id="muu-oppetookeele-nimetus" class="formInput">
                                 </th>
                                 <th>
                                     <label for="koolituse-liik">Koolituse liik</label>
@@ -114,6 +125,8 @@
                                     <input type="number" name="maht-tundides" id="iseseisev-ope-h" class="formInput" onkeyup="calculateEAP()">
                                     <label for="iseseisev-ope-h">Iseseisev õpe</label>
                                     <br>
+                                    <input type="number" name="maht-tundides" id="muu-ope-h" class="formInput" onkeyup="calculateEAP()">
+                                    <label for="muu-ope-h">Muu</label>
                                 </th>
                                 <th>
                                     <label for="oppekava-maht-eap">Õppekava maht (EAP): </label>
@@ -143,102 +156,102 @@
                                 <th>
                                     <label for="hindamiskriteeriumid-ek">Hindamiskriteeriumid e.k.</label>
                                     <br>
-                                    <input type="text" name="hindamiskriteeriumid-ek" id="hindamiskriteeriumid-ek" class="formInput">
+                                    <textarea name="hindamiskriteeriumid-ek" id="hindamiskriteeriumid-ek" class="formInput"> </textarea>
                                 </th>
                                 <th>
                                     <label for="hindamiskriteeriumid-ik">Hindamiskriteeriumid i.k.</label>
                                     <br>
-                                    <input type="text" name="hindamiskriteeriumid-ik" id="hindamiskriteeriumid-ik" class="formInput">
+                                    <textarea name="hindamiskriteeriumid-ik" id="hindamiskriteeriumid-ik" class="formInput"> </textarea>
                                 </th>
                                 <th>
                                     <label for="hindamiskriteeriumid-vk">Hindamiskriteeriumid v.k.</label>
                                     <br>
-                                    <input type="text" name="hindamiskriteeriumid-vk" id="hindamiskriteeriumid-vk" class="formInput">
+                                    <textarea name="hindamiskriteeriumid-vk" id="hindamiskriteeriumid-vk" class="formInput"> </textarea>
                                 </th>
                             </tr>
                             <tr>
                                 <th>
                                     <label for="eesmargid-ek">Eesmärgid e.k.</label>
                                     <br>
-                                    <input type="text" name="eesmargid-ek" id="eesmargid-ek" class="formInput">
+                                    <textarea name="eesmargid-ek" id="eesmargid-ek" class="formInput"> </textarea>
                                 </th>
                                 <th>
                                     <label for="eesmargid-ik">Eesmärgid i.k.</label>
                                     <br>
-                                    <input type="text" name="eesmargid-ik" id="eesmargid-ik" class="formInput">
+                                    <textarea name="eesmargid-ik" id="eesmargid-ik" class="formInput"> </textarea>
                                 </th>
                                 <th>
                                     <label for="eesmargid-vk">Eesmärgid v.k.</label>
                                     <br>
-                                    <input type="text" name="eesmargid-vk" id="eesmargid-vk" class="formInput">
+                                    <textarea name="eesmargid-vk" id="eesmargid-vk" class="formInput"> </textarea>
                                 </th>
                             </tr>
                             <tr>
                                 <th>
                                     <label for="opivaljundid-ek">Õpiväljundid e.k.</label>
                                     <br>
-                                    <input type="text" name="opivaljundid-ek" id="opivaljundid-ek" class="formInput">
+                                    <textarea name="opivaljundid-ek" id="opivaljundid-ek" class="formInput"> </textarea>
                                 </th>
                                 <th>
                                     <label for="opivaljundid-ik">Õpiväljundid i.k.</label>
                                     <br>
-                                    <input type="text" name="opivaljundid-ik" id="opivaljundid-ik" class="formInput">
+                                    <textarea name="opivaljundid-ik" id="opivaljundid-ik" class="formInput"> </textarea>
                                 </th>
                                 <th>
                                     <label for="opivaljundid-vk">Õpiväljundid v.k.</label>
                                     <br>
-                                    <input type="text" name="opivaljundid-vk" id="opivaljundid-vk" class="formInput">
+                                    <textarea name="opivaljundid-vk" id="opivaljundid-vk" class="formInput"> </textarea>
                                 </th>
                             </tr>
                             <tr>
                                 <th>
                                     <label for="sisu-ek">Sisu e.k.</label>
                                     <br>
-                                    <input type="text" name="sisu-ek" id="sisu-ek" class="formInput">
+                                    <textarea name="sisu-ek" id="sisu-ek" class="formInput"> </textarea>
                                 </th>
                                 <th>
                                     <label for="sisu-ik">Sisu i.k.</label>
                                     <br>
-                                    <input type="text" name="sisu-ik" id="sisu-ik" class="formInput">
+                                    <textarea name="sisu-ik" id="sisu-ik" class="formInput"> </textarea>
                                 </th>
                                 <th>
                                     <label for="sisu-vk">Sisu v.k.</label>
                                     <br>
-                                    <input type="text" name="sisu-vk" id="sisu-vk" class="formInput">
+                                    <textarea name="sisu-vk" id="sisu-vk" class="formInput"> </textarea>
                                 </th>
                             </tr>
                             <tr>
                                 <th>
                                     <label for="eeldused-ek">Eeldused e.k.</label>
                                     <br>
-                                    <input type="text" name="eeldused-ek" id="eeldused-ek" class="formInput">
+                                    <textarea name="eeldused-ek" id="eeldused-ek" class="formInput"> </textarea>
                                 </th>
                                 <th>
                                     <label for="eeldused-ik">Eeldused i.k.</label>
                                     <br>
-                                    <input type="text" name="eeldused-ik" id="eeldused-ik" class="formInput">
+                                    <textarea name="eeldused-ik" id="eeldused-ik" class="formInput"> </textarea>
                                 </th>
                                 <th>
                                     <label for="eeldused-vk">Eeldused v.k.</label>
                                     <br>
-                                    <input type="text" name="eeldused-vk" id="eeldused-vk" class="formInput">
+                                    <textarea name="eeldused-vk" id="eeldused-vk" class="formInput"> </textarea>
                                 </th>
                             </tr>
                             <tr>
                                 <th>
                                     <label for="tingimused-ek">Läbimise tingimused, sh. praktiliste tööde lühikirjeldused e.k.</label>
                                     <br>
-                                    <input type="text" name="tingimused-ek" id="tingimused-ek" class="formInput">
+                                    <textarea name="tingimused-ek" id="tingimused-ek" class="formInput"> </textarea>
                                 </th>
                                 <th>
                                     <label for="tingimused-ik">Läbimise tingimused, sh. praktiliste tööde lühikirjeldused i.k.</label>
                                     <br>
-                                    <input type="text" name="tingimused-ik" id="tingimused-ik" class="formInput">
+                                    <textarea name="tingimused-ik" id="tingimused-ik" class="formInput"> </textarea>
                                 </th>
                                 <th>
                                     <label for="tingimused-vk">Läbimise tingimused, sh. praktiliste tööde lühikirjeldused v.k.</label>
                                     <br>
-                                    <input type="text" name="tingimused-vk" id="tingimused-vk" class="formInput">
+                                    <textarea name="tingimused-vk" id="tingimused-vk" class="formInput"> </textarea>
                                 </th>
                             </tr>
                         </table>
@@ -267,17 +280,12 @@
                                     <br>
                                     <input type="text" name="koolitaja-kompetentsus" id="koolitaja-kompetentsus" class="formInput">
                                 </th>
-                                <th>
-                                    <label for="veebis-kuvatav-koolitaja">Veebis kuvatav koolitaja</label>
-                                    <br>
-                                    <input type="text" name="veebis-kuvatav-koolitaja" id="veebis-kuvatav-koolitaja" class="formInput">
-                                </th>
                             </tr>
                         </table>
                     </div>
                     
                     <div class="box" id="table4Btn" onclick="openTable(this.id)">
-                        <p>Administraatori täita</p>
+                        <p>Õppejuhi täita</p>
                     </div>
                     <div class="fillForm" id="divv1">
                         <table id="table4" style="display:none">
@@ -304,17 +312,59 @@
                                     <br>
                                     <input type="text" name="oppekava-koostamise-alus" id="oppekava-koostamise-alus" class="formInput">
                                 </th>
-                            </tr>
-                            <tr>
-                                <th>
-                                    <label for="pohivastutaja">Põhivastutaja</label>
-                                    <br>
-                                    <input type="text" name="pohivastutaja" id="pohivastutaja" class="formInput">
-                                </th>
                                 <th>
                                     <label for="veebis-kuvatav-korraldaja">Veebis kuvatav korraldaja struktuur ja kontakt</label>
                                     <br>
                                     <input type="text" name="veebis-kuvatav-korraldaja" id="veebis-kuvatav-korraldaja" class="formInput">
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <label for="pohivastutaja-struktuur">Põhivastutaja struktuuriüksus</label>
+                                    <br>
+                                    <input list="pohivastutaja-struktuur" name="pohivastutaja-struktuur" class="formInput">
+                                    <datalist id="pohivastutaja-struktuur">
+                                        <option value="Tallinna Ülikool"></option>
+                                        <option value="Tartu Ülikool"></option>
+                                    </datalist>
+                                    <br>
+                                    <label for="pohivastutaja-nimi">Põhivastutaja nimi</label>
+                                    <br>
+                                    <input type="text" name="pohivastutaja-nimi" id="pohivastutaja-nimi" class="formInput">
+                                    <br>
+                                    <label for="korraldaja">On korraldaja</label>
+                                    <br>
+                                    <input type="radio" name="korraldaja" id="on-korraldaja">
+                                    <label for="on-korraldaja">Jah</label>
+                                    <input type="radio" name="korraldaja" id="pole-korraldaja">
+                                    <label for="pole-korraldaja">Ei</label>
+                                    <br>
+                                    <label for="mahuprotsent">Mahuprotsent</label>
+                                    <input type="number" name="mahuprotsent" id="mahuprotsent">
+                                </th>
+                                <th>
+                                    <label for="vastutaja-struktuur">Vastutaja struktuuriüksus</label>
+                                    <br>
+                                    <input list="vastutaja-struktuur" name="vastutaja-struktuur" class="formInput">
+                                    <datalist id="vastutaja-struktuur">
+                                        <option value="Tallinna Ülikool"></option>
+                                        <option value="Tartu Ülikool"></option>
+                                    </datalist>
+                                    <br>
+                                    <label for="vastutaja-nimi">Vastutaja nimi</label>
+                                    <br>
+                                    <input type="text" name="vastutaja-nimi" id="vastutaja-nimi" class="formInput">
+                                    <br>
+                                    <label for="korraldaja">On korraldaja</label>
+                                    <br>
+                                    <input type="radio" name="korraldaja" id="on-korraldaja">
+                                    <label for="on-korraldaja">Jah</label>
+                                    <input type="radio" name="korraldaja" id="pole-korraldaja">
+                                    <label for="pole-korraldaja">Ei</label>
+                                    <br>
+                                    <label for="mahuprotsent">Mahuprotsent</label>
+                                    <input type="number" name="mahuprotsent" id="mahuprotsent">
+                                    <input type="button" value="Lisa vastutaja" class="btn">
                                 </th>
                             </tr>
                             <tr>
@@ -333,6 +383,23 @@
                                     <label for="nahtav">Jah</label>
                                     <input type="radio" name="teistele-nahtav" id="pole-nahtav">
                                     <label for="pole-nahtav">Ei</label>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <label for="koolitusvaldkond">Koolitusvaldkond</label>
+                                    <br>
+                                    <input type="text" name="koolitusvaldkond" id="koolitusvaldkond" class="formInput">
+                                </th>
+                                <th>
+                                    <label for="viide-koolitusele">Viide seadusega seotud koolitusele</label>
+                                    <br>
+                                    <input type="text" name="viide-koolitusele" id="viide-koolitusele" class="formInput">
+                                </th>
+                                <th>
+                                    <label for="veebis-kuvatav-koolitaja">Veebis kuvatav koolitaja</label>
+                                    <br>
+                                    <input type="text" name="veebis-kuvatav-koolitaja" id="veebis-kuvatav-koolitaja" class="formInput">
                                 </th>
                             </tr>
                         </table>
