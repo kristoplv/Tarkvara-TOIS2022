@@ -1,6 +1,15 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.11/firebase-app.js";
-import {getDatabase, ref, push, set, onValue} from "https://www.gstatic.com/firebasejs/9.6.11/firebase-database.js";
+import {getDatabase, ref, push, set, onValue, get, child} from "https://www.gstatic.com/firebasejs/9.6.11/firebase-database.js";
 
+
+
+// Vaga palju querySelectoreid
+var nimiEK = document.getElementsByClassName("formInput uldine");
+var oppeviisid = document.getElementsByClassName("uldine_viisid");
+var keeled = document.getElementsByClassName("uldine_keeled");
+var koolituse_liik = document.querySelector("koolituse-liik");
+var maht = document.getElementsByClassName("maht formInput");
+var eap = document.querySelector("#eap-result");
 
 // Import the functions you need from the SDKs you need
 // TODO: Add SDKs for Firebase products that you want to use
@@ -28,7 +37,8 @@ var button = document.querySelector("#sendDb");
 
 
 function sendToFirebase(){
-  onValue(loc, getAll)
+  //onValue(loc, getAll)
+  onValue(loc, sendValues)
   
 }
 function sleep(ms){
@@ -55,6 +65,35 @@ function getAll(vals){
     
   }
 }
+
+function sendValues(vals){
+  // Teeme seda tulpade kaupa, aka liigume aina uude funktsiooni
+  var baseRef = "TOIS/vorm/uldine_info";
+  saada(baseRef+"/nimetus", nimiEK);
+  
+  saada(baseRef+"/oppeviisid", oppeviisid);
+  saada(baseRef+"/maht", maht);
+  /*
+  saada(baseRef+"/keeled");
+  saada(baseRef);
+  */
+}
+
+function saada(baseRef, values){
+  var basic_info_loc = ref(db, baseRef);
+  onValue(basic_info_loc, function(sisu){
+    var newVals = sisu.val();
+    var objectKeys = Object.keys(newVals);
+    for(var i=0; i<objectKeys.length; i++){
+      console.log(objectKeys[i]);
+      console.log(values[i].value)
+      set(ref(db, baseRef+"/"+objectKeys[i]), {
+        1 : values[i].value
+      });
+    }
+  });
+}
+
 
 
 function sendNow(reffer){

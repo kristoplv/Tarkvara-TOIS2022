@@ -11,10 +11,10 @@
 <body>
     <div id="mainContainer" class="mainContainer">
         <div id="fillerMain" class="fillerMain"></div> 
-        <a href="https://greeny.cs.tlu.ee/~chrhin/OOP/oo2022/14_eksam/TOIS/main.html" class="logo"></a>
+        <a href="main.html" class="logo"></a>
         
         <div id="loginArea" class="login" >          
-            <a href="http://www.tlu.ee/~krisplv/TOIStest/logi.html" class="loginButton" id="logIn">Logi sisse</a>
+            <a href="login.html" class="loginButton" id="logIn">Logi sisse</a>
         </div>
 
         <div id="sidebar" class="sidebar">
@@ -24,18 +24,20 @@
                     <a href="main.html" class="links" id="homePage">Avaleht</a>
                 </li>
                 <li>
-                    <a href="http://www.tlu.ee/~krisplv/TOIStest/oppekavad.html" class="links" id="allForms">Kõik õppekavad</a>
+                    <a href="oppekavad.html" class="links" id="allForms">Kõik õppekavad</a>
                 </li>
                 <li>
                     <a href="uusoppekava.html" class="links" id="newForm">Loo uus õppekava</a>
                 </li>
+                <a href="oppekavad.html"><img src="images/eestilipp.png" title="Eesti keel" class="estFlag"></a>
+                <a href="oppekavad.html"><img src="images/uklipp.png" title="Inglise keel" class="ukFlag"></a>
             </ul>
         </div>
 
         <container class="mainArea" id="mainArea">
-            <div class="subjectArea" id="subjectArea">
+            <div class="mainContentArea" id="subjectArea">
                 <div class="okHead">
-                    <h1>Kõik õppekavad</h1>
+                    <h2>Kõik õppekavad</h2>
                     <hr>
                     
                 </div>
@@ -46,7 +48,7 @@
                 </div>
 
                 <br>
-                <table class="table">
+                <table id="formList" class="evenBorders">
                     <tr class="mains">
                         <th class="topper"><b>Õppekava nimetus</b></th>
                         <th class="topper"><b>Kursuse maht(EAP)</b></th>
@@ -55,53 +57,58 @@
                         <th class="topper"></th>
                     </tr>
                     <tr>
-                        <th>Matemaatika elemendid</th>
+                        <th><a href="form.html" class="links">Matemaatika elemendid</a></th>
                         <th>1</th>
                         <th>Arvestus</th>
                         <th>Digitehnoloogiate instituut</th>
                         <th class="links">
+                            <a href="form.html" class="newsLink">Vaata</a> |
                             <a href="muuda.html" class="newsLink">Muuda</a> |
-                            <a href="Kustuta.html" class="newsLink">Kustuta</a>
+                            <a href="kustuta.html" class="newsLink">Kustuta</a>
                         </th>
                     </tr>
                     <tr>
-                        <th>Termodünaamika</th>
+                        <th><a href="form.html" class="links">Termodünaamika</a></th>
                         <th>2</th>
                         <th>Eksam</th>
                         <th>Loodusteaduste instituut</th>
                         <th class="links">
+                            <a href="form.html" class="newsLink">Vaata</a> |
                             <a href="muuda.html" class="newsLink">Muuda</a> |
-                            <a href="Kustuta.html" class="newsLink">Kustuta</a>
+                            <a href="kustuta.html" class="newsLink">Kustuta</a>
                         </th>
                     </tr>
                     <tr>
-                        <th>Vana-Kreeka ajalugu</th>
+                        <th><a href="form.html" class="links">Vana-Kreeka ajalugu</a></th>
                         <th>5</th>
                         <th>Arvestus</th>
                         <th>HTLE</th>
                         <th class="links">
+                            <a href="form.html" class="newsLink">Vaata</a> |
                             <a href="muuda.html" class="newsLink">Muuda</a> |
-                            <a href="Kustuta.html" class="newsLink">Kustuta</a>
+                            <a href="kustuta.html" class="newsLink">Kustuta</a>
                         </th>
                     </tr>
                     <tr>
-                        <th>Javascript algajatele</th>
+                        <th><a href="form.html" class="links">Javascript algajatele</a></th>
                         <th>4</th>
                         <th>Eksam</th>
                         <th>Digitehnoloogiate instituut</th>
                         <th class="links">
+                            <a href="form.html" class="newsLink">Vaata</a> |
                             <a href="muuda.html" class="newsLink">Muuda</a> |
-                            <a href="Kustuta.html" class="newsLink">Kustuta</a>
+                            <a href="kustuta.html" class="newsLink">Kustuta</a>
                         </th>
                     </tr>
                     <tr>
-                        <th>Ajakirjandus</th>
+                        <th><a href="form.html" class="links">Ajakirjandus</a></th>
                         <th>12</th>
                         <th>Eksam</th>
                         <th>Balti filmi ja meedia</th>
                         <th class="links">
+                            <a href="form.html" class="newsLink">Vaata</a> |
                             <a href="muuda.html" class="newsLink">Muuda</a> |
-                            <a href="Kustuta.html" class="newsLink">Kustuta</a>
+                            <a href="kustuta.html" class="newsLink">Kustuta</a>
                         </th>
                     </tr>
                 </table>
