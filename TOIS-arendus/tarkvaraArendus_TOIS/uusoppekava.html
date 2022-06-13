@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/toisFavicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/uusoppekava.css">
+    <script src="js/uusoppekava.js" defer></script>
+    <title>Loo uus õppekava</title>
+</head>
+<body>
+    <div id="mainContainer" class="mainContainer">
+        <a href="main.html" class="logo"></a>
+
+        <div id="loginArea" class="login">
+            <a href="login.html" class="loginButton" id="logIn">Logi sisse</a>
+        </div>
+
+        <div id="sidebar" class="sidebar">
+            <h2 class="menuLabel">MENÜÜ</h2>
+            <ul id="navMenu" class="navMenu">
+                <li>
+                    <a href="main.html" class="links" id="homePage">Avaleht</a>
+                </li>
+                <li>
+                    <a href="oppekavad.html" class="links" id="allForms">Kõik õppekavad</a>
+                </li>
+                <li>
+                    <a href="uusoppekava.html" class="links" id="newForm">Loo uus õppekava</a>
+                </li>
+                <a href="uusoppekava.html"><img src="images/eestilipp.png" title="Eesti keel" class="estFlag"></a>
+                <a href="uusoppekava.html"><img src="images/uklipp.png" title="Inglise keel" class="ukFlag"></a>
+            </ul>
+        </div>
+        <div id="mainArea" class="mainArea">
+            <div id="newsArea" class="mainContentArea">
+                <container class="newCourseArea">
+                    <h2>Õppekava loomine</h2>
+                    <div class="inputField">
+                        <label for="courseCreator">Õppekava looja nimi:</label>
+                        <input type="text" name="courseCreator" id="courseCreator">
+                    </div>
+                    <div class="inputField">
+                        <label for="courseFiller">Õppekava täitja nimi:</label>
+                        <input type="text" name="courseFiller" id="courseFiller">
+                    </div>
+                    <div id="dateField">
+                        <span id="courseCreationDate"></span>
+                    </div>
+                    <div id="linkField">
+                        <button id="generateCourseLink" class="btn">Koosta link</button>
+                        <span id="courseLink"></span>
+                    </div>
+                </container>
+            </div>
+        </div>
+        <div id="fillerMain" class="fillerMain"></div>
+    </div>
+</body>
+</html>
