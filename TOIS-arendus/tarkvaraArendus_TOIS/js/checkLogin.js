@@ -124,7 +124,10 @@ function NotificationSystem(notice){
         emailCheck = -7;
         pwCheck = -5;
         storeData();
-    } else {
+        sleep(1500).then(()=>{
+            return location.href = "main.html";
+        });
+        } else {
         notice = "Kasutajanimi või parool vale!";
         noticeBox.style.color = "red";
         pw.style.border = "1px solid red";

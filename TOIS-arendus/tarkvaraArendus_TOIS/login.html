@@ -20,7 +20,7 @@
         <div id="loginArea" class="login_txt" >          
             <a href="login.html" class="loginButton" id="logIn">Logi sisse</a>
         </div>
-
+        
         <div id="sidebar" class="sidebar">
             <h2 class="menuLabel">MENÜÜ</h2>
             <ul id="navMenu" class="navMenu">
@@ -37,17 +37,25 @@
                 <a href="main.html"><img src="images/uklipp.png" title="Inglise keel" class="ukFlag"></a>
             </ul>
         </div>
-    <container class="ribbon">
-        <a class="home_logo item a" id="Logo" href="index.html"><p class="menu-text">TLÜ TÄIENDÕPPE INFOSÜSTEEM</p></a>
-        <!--<a class="item_3 item a" href="main.html"><p class="menu-text">Õppekavad</p></a>
-        <a class="item_3 item a" href="form.html"><p class="menu-text">Loo uus õppekava</p></a>
-        <a class="item_3 item a" href="login.html"><p class="menu-text">Logi sisse</p></a>
-    -->
-        <div class="menuBtn"></div>
-
-    </container>
-    <div id="mainArea" class="mainArea">
-        <div class="uselessFillBox"></div>
+        <div class="containTheContainer">
+            
+            <container class="ribbon">
+                <a class="home_logo item a" id="Logo" href="index.html"><p class="menu-text"></p></a>
+                <!--<a class="item_3 item a" href="main.html"><p class="menu-text">Õppekavad</p></a>
+                    <a class="item_3 item a" href="form.html"><p class="menu-text">Loo uus õppekava</p></a>
+                    <a class="item_3 item a" href="login.html"><p class="menu-text">Logi sisse</p></a>
+                -->
+                <div class="menuBtn" id="menu"></div>
+            </container>
+            <div class="peidus" id="dropped">
+                <p1 class="item login_txt">Avaleht</p1>
+                <p1 class="item login_txt">Õppekavad</p1>
+                <p1 class="item login_txt">Loo uus õppekava</p1>
+                <p1 class="item login_txt">Logi sisse</p1>
+            </div>
+        </div>
+        <div id="mainArea" class="mainArea">
+            <div class="uselessFillBox"></div>
             <container class="login_form">
                 <div class="hello">Logi enda kasutajasse</div>
                 <div class="email field">
@@ -55,33 +63,34 @@
                     <div class="nice_email">
                         <div class="human_logo"></div>
                         <input type="text" name="email_in" id="email" placeholder="e-posti aadress">
-            </div>
+                    </div>
+                </div>
+                <div class="password field">
+                    <label for="password_in"><p1 class="login_txt">Salasõna</p1></label><br>
+                    <div class="nice_password">
+                        <div class="password_logo"></div>
+                        <input type="password" name="password_in" id="password" placeholder="Salasõna">
+                    </div>
+                </div>
+                <div class="send field">
+                    <input type="submit" value="Logi sisse" class="login_btn" id="loginButton">
+                </div>
+                <div id="notice"></div>
+                <div class="register field">
+                    <p1 class="login_txt">Unustasid parooli?</p1>
+                    <a class="forgot_pw" href="index.html"><p1 class="login_txt">Vajuta siia!</p1></a>
+                </div>
+                
+            </container>
         </div>
-        <div class="password field">
-            <label for="password_in"><p1 class="login_txt">Salasõna</p1></label><br>
-            <div class="nice_password">
-                <div class="password_logo"></div>
-                <input type="password" name="password_in" id="password" placeholder="Salasõna">
-            </div>
-        </div>
-        <div class="send field">
-            <input type="submit" value="Logi sisse" class="login_btn" id="loginButton">
-        </div>
-        <div id="notice"></div>
-        <div class="register field">
-            <p1 class="login_txt">Unustasid parooli?</p1>
-            <a class="forgot_pw" href="index.html"><p1 class="login_txt">Vajuta siia!</p1></a>
-            </div>
-        
-    </container>
+        <div id="fillerMain" class="fillerMain"></div>
     </div>
-    <div id="fillerMain" class="fillerMain"></div>
-</div>
+    <script src="js/ribbon.js" defer></script>
 </body>
 </html>
 
 <!--
-e-post: kris@rel.ee
-pw : afgg325vtwce3ccr23v234c4
-
+    e-post: kris@rel.ee
+    pw : afgg325vtwce3ccr23v234c4
+    
 -->

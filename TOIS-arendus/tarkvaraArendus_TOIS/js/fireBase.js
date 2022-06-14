@@ -18,6 +18,7 @@ var names_keeled = ["/ek", "/ik", "/vk"]
 
 // Hindamine ja sisu
 var kontrollvorm = document.querySelector("#kontrollivorm");
+document.getEleme
 var kontrollvorm_valitud = kontrollvorm.options[kontrollvorm.selectedIndex]
 var hindamiskriteeriumid = document.getElementsByClassName("formInput hk");
 var eesmark = document.getElementsByClassName("formInput em");
@@ -33,14 +34,6 @@ var kompetentsus = document.getElementsByClassName("formInput comp");
 var veebis = document.getElementsByClassName("formInput web");
 
 // Administraatori täita
-var oppevaldkond = document.querySelector("#oppevaldkond");
-var oppevaldkond_val =  oppevaldkond.options[oppevaldkond.selectedIndex].innerHTML;
-
-var oppesuund = document.querySelector("#oppesuund");
-var oppesuund_val =  oppesuund.options[oppesuund.selectedIndex].innerHTML;
-
-var oppekava_ruhm = document.querySelector("#oppekava-ruhm");
-var oppekava_ruhm_val =  oppekava_ruhm.options[oppekava_ruhm.selectedIndex].innerHTML;
 
 var koostamise_alus = document.getElementById("oppekava-koostamise-alus");  // done
 var korraldaja_veebis = document.getElementById("veebis-kuvatav-korraldaja");  // done
@@ -49,21 +42,21 @@ var pohivastutaja_uksus = document.getElementById("pohivastutaja-struktuur"); //
 //var pohivastutaja_uksus_val = pohivastutaja_uksus[pohivastutaja_uksus.selectedIndex]
 var pohivastutaja_korraldaja_ei = document.querySelector("#pole-korraldaja");
 var pohivastutaja_korraldaja_jah = document.querySelector("#on-korraldaja");
-var pohivastutaja_maht = document.getElementById("#mahuprotsent");  // done
+var pohivastutaja_maht = document.getElementById("mahuprotsent");  // done
 var pohivastutaja_nimi = document.querySelector("#pohivastutaja-nimi");  // done
 
 var vastutaja_uksus = document.getElementById("vastutaja-struktuur");  // done
 //var vastutaja_uksus_val = vastutaja_uksus[vastutaja_uksus.selectedIndex]
 var vastutaja_korraldaja_ei = document.getElementById("pole-korraldaja-norm");
 var vastutaja_korraldaja_jah = document.getElementById("on-korraldaja-norm");
-var vastutaja_maht = document.getElementById("#mahuprotsent_norm"); // done
-var vastutaja_nimi = document.getElementById("#vastuaja-nimi");  // done
+var vastutaja_maht = document.getElementById("mahuprotsent-norm"); // done
+var vastutaja_nimi = document.getElementById("vastutaja-nimi");  // done
 
-var onTellitav = document.getElementById("tellitav");
-var poleTellitav = document.getElementById("pole-tellitav");
+var onTellitav = document.getElementById("tellitav"); // done
+var poleTellitav = document.getElementById("pole-tellitav"); // done
 
-var onNahtav = document.getElementById("nahtav");
-var poleNahtav = document.getElementById("pole-nahtav");
+var onNahtav = document.getElementById("nahtav"); // done
+var poleNahtav = document.getElementById("pole-nahtav"); // done
 
 var koolitusvaldkond = document.getElementById("koolitusvaldkond"); // done
 var seadusega_koolitus_viide = document.getElementById("viide-koolitusele"); // done
@@ -118,7 +111,7 @@ function sendValues(vals){
   set(ref(db, baseRef+"/EAP"), {
     1 : eap
   });
-
+  
   // Hindamine ja sisu
   baseRef = "TOIS/vorm/hindamine_eesmargid";
   saada(baseRef+"/eeldused", eeldused);
@@ -128,15 +121,24 @@ function sendValues(vals){
   saada(baseRef+"/labimise_tingimused", tingimused);
   saada(baseRef+"/opivaljundid", opivaljundid);
   saada(baseRef+"/sisu", sisu);
-
+  
   // Muu info
   baseRef = "TOIS/vorm/muu_info";
   saadaOneline(baseRef+"/opikeskkond", keskkond[0]);
   saadaOneline(baseRef+"/sihtgrupp", sihtgrupp[0]);
   saadaOneline(baseRef+"/veebis_koolitaja", veebis[0]);
   saadaOneline(baseRef+"/koolitaja_komp", kompetentsus[0]);
-
+  
   // Administraator
+  var oppevaldkond = document.querySelector("#oppevaldkond");
+  var oppevaldkond_val =  oppevaldkond.options[oppevaldkond.selectedIndex].innerText;
+  
+  var oppesuund = document.querySelector("#oppesuund");
+  var oppesuund_val =  oppesuund.options[oppesuund.selectedIndex].innerHTML;
+  
+  var oppekava_ruhm = document.querySelector("#oppekava-ruhm");
+  var oppekava_ruhm_val =  oppekava_ruhm.options[oppekava_ruhm.selectedIndex].innerHTML;
+
   baseRef = "TOIS/vorm/admin";
   saadaOneline(baseRef+"/koolitusvaldkond", koolitusvaldkond);
   saadaOneline(baseRef+"/seadusega_seotud_koolituse_viide", seadusega_koolitus_viide);
@@ -145,15 +147,37 @@ function sendValues(vals){
   saadaOneline(baseRef+"/ok_koostamise_alus", koostamise_alus);
 
   saadaOneline(baseRef+"/pohivastutaja/nimi", pohivastutaja_nimi);
-  saadaOneline(baseRef+"/pohivastutaja/nimi", pohivastutaja_maht);
+  saadaOneline(baseRef+"/pohivastutaja/mahuprotsent", pohivastutaja_maht);
 
   saadaOneline(baseRef+"/vastutaja/nimi",vastutaja_nimi);
   saadaOneline(baseRef+"/vastutaja/mahuprotsent",vastutaja_maht);
+  checkRadios(baseRef+"/tellitav", onTellitav);
+  checkRadios(baseRef+"/nahtav", onNahtav);
+  checkRadios(baseRef+"/pohivastutaja/on_korraldaja", pohivastutaja_korraldaja_jah);
+  checkRadios(baseRef+"/vastutaja/on_korraldaja", vastutaja_korraldaja_jah);
+  
+  saadaOptionSisu(baseRef+"/oppevaldkond", oppevaldkond_val);
+  saadaOptionSisu(baseRef+"/oppesuund", oppesuund_val);
+  saadaOptionSisu(baseRef+"/oppekava_ruhm", oppekava_ruhm_val);
 }
 
 function saadaOptionSisu(baseRef, values){
-
+  set(ref(db, baseRef), {
+    1 : values
+  });
 }
+function checkRadios(baseRef, values){
+  if(values.checked){
+    set(ref(db, baseRef), {
+      1 : "Jah"
+    });
+  } else{
+    set(ref(db, baseRef), {
+      1 : "Ei"
+    });
+  }
+}
+
 
 function saada(baseRef, values){
   var basic_info_loc = ref(db, baseRef);

@@ -3,12 +3,13 @@
         font-size: 1.5vh;
     }
     .login_form{
+        margin-top: 10vmin;
         height: 85vmin;
         min-width: 65vmin;
         max-width: 80vmin;
     }
     .ribbon{
-        display: show;
+        display: grid;
     }
     #loginArea, #fillerMain, #sidebar, .logo{
         display: none;
@@ -23,7 +24,7 @@
     .menuBtn{
         background-image: url("../images/menuBtn.png");
         background-repeat: no-repeat;
-        background-size: 40% 80%;
+        background-size: 2em 2em;
         background-position: center;
         cursor: pointer;
         transition: 300ms;
