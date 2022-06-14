@@ -20,7 +20,7 @@ hr{
 }
 
 .links{
-    padding: 1em;
+    /*padding: 1em;*/
     text-decoration: none;
     color: black;
 }
@@ -175,6 +175,8 @@ th{
 
 th{
     font-weight: 400;
+    text-align: left;
+    padding-right: 30px;
 }
 
 td{
@@ -182,10 +184,13 @@ td{
 }
 
 .topper{
-    padding-left: 50px;
-    padding-right: 50px;
+    text-align: justify;
 }
 
 .evenBorders{
     border-collapse: collapse;
+}
+
+.number{
+    text-align: right;
 }
