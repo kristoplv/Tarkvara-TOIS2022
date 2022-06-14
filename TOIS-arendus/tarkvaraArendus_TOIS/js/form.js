@@ -37,7 +37,25 @@ window.onload = function(){
         } else {
             document.querySelector('#muu-oppetookeele-nimetus').disabled = true;
         }
-    })
+    });
+    document.querySelector('#inglise').addEventListener('change', function() {
+        if (this.checked) {
+            document.querySelector('#kontrollivorm-colspan').colSpan += 1;
+        } else {
+            if (document.querySelector('#kontrollivorm-colspan').colSpan != 1) {
+                document.querySelector('#kontrollivorm-colspan').colSpan -= 1
+            }
+        }
+    });
+    document.querySelector('#vene').addEventListener('change', function() {
+        if (this.checked) {
+            document.querySelector('#kontrollivorm-colspan').colSpan += 1;
+        } else {
+            if (document.querySelector('#kontrollivorm-colspan').colSpan != 1) {
+                document.querySelector('#kontrollivorm-colspan').colSpan -= 1
+            }
+        }
+    });
 }
 
 function openTable(tableBtn_id) {
@@ -159,18 +177,18 @@ function validate() {
     }
     if (kontaktope.checked == false && praktika.checked == false && iseseisevOpe.checked == false) {
         uldineInfoCount++;
-        oppeviisLabel.classList.add('emptyError');
+        oppeviisLabel.classList.add('emptyErrorText');
     } else {
-        oppeviisLabel.classList.remove('emptyError');
+        oppeviisLabel.classList.remove('emptyErrorText');
     }
     if (eestiKeel.checked == false && ingliseKeel.checked == false && veneKeel.checked == false) {
         if (muuKeel.value.trim() == '') {
             uldineInfoCount++;
             muuKeel.value = muuKeel.value.trim();
-            oppetooKeeledLabel.classList.add('emptyError');
+            oppetooKeeledLabel.classList.add('emptyErrorText');
         }
     } else {
-        oppetooKeeledLabel.classList.remove('emptyError');
+        oppetooKeeledLabel.classList.remove('emptyErrorText');
     }
     if (koolituseLiik.value.trim() == '') {
         uldineInfoCount++;
