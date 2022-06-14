@@ -177,6 +177,7 @@ th{
     background-color: #c71a3d;
     color: white;
     font-size: 0.65vw;
+    cursor: pointer;
 }
 .estFlag{
     width: 15%;

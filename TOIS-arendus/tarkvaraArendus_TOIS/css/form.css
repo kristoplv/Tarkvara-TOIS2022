@@ -138,13 +138,12 @@ span{
 }
 .emptyError{
     border: 2px solid #ba0c2f;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
 }
-.emptyErrorText{
+.emptyErrorText, #table1-error>th, #table2-error>th, #table3-error>th, #table4-error>th{
     color: #ba0c2f;
     font-weight: 600;
-}
-#table1-error, #table2-error, #table3-error, #table4-error {
-    color: #ba0c2f;
+    text-shadow: 1px 1px 20px rgba(0,0,0,0.3);
 }
 
 
