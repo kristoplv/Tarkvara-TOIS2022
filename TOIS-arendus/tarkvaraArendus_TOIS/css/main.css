@@ -222,8 +222,10 @@ td{
     text-align: right;
 }
 
-.curriculumTable{
+/*.curriculumTable{
     display: flex;
     flex-direction: column;
     padding-left: 3%;
-}
+    min-width: 1000;
+    overflow: unset;
+}*/
