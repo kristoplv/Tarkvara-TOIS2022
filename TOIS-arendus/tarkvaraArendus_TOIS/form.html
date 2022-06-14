@@ -324,17 +324,166 @@
                                 <th>
                                     <label for="oppevaldkond">Õppevaldkond (ISCED)<span class="required">*</span></label>
                                     <br>
-                                    <input type="text" name="oppevaldkond" id="oppevaldkond" class="formInput">
+                                    <select name="oppevaldkond" id="oppevaldkond" class="formInputDropdown">
+                                        <option value="1">00 Üldõppekavade õppevaldkond</option>
+                                        <option value="2">01 Hariduse õppevaldkond</option>
+                                        <option value="3">02 Humanitaaria ja kunsti õppevaldkond</option>
+                                        <option value="4">03 Sotsiaalteaduste, ajakirjanduse ja teabe õppevaldkond</option>
+                                        <option value="5">04 Ärinduse, halduse ja õiguse õppevaldkond</option>
+                                        <option value="6">05 Loodusteaduste, matemaatika ja statistika õppevaldkond</option>
+                                        <option value="7">06 Informatsiooni- ja kommunikatsioonitehnoloogia õppevaldkond</option>
+                                        <option value="8">07 Tehnika, tootmise ja ehituse õppevaldkond</option>
+                                        <option value="9">08 Põllumajanduse, metsanduse, kalanduse ja veterinaaria õppevaldkond</option>
+                                        <option value="10">09 Tervise ja heaolu õppevaldkond</option>
+                                        <option value="11">10 Teeninduse õppevaldkond</option>
+                                    </select>
                                 </th>
+                            </tr>
+                            <tr>
                                 <th>
                                     <label for="oppesuund">Õppesuund (ISCED)<span class="required">*</span></label>
                                     <br>
-                                    <input type="text" name="oppesuund" id="oppesuund" class="formInput">
+                                    <select name="oppesuund" id="oppesuund" class="formInputDropdown">
+                                        <option value="1">001 Põhiõppekavade õppesuund</option>
+                                        <option value="2">002 Kirja- ja arvutioskuse õppesuund</option>
+                                        <option value="3">003 Isikuarengu õppesuund</option>
+                                        <option value="4">011 Hariduse õppesuund</option>
+                                        <option value="5">018 Hariduse interdistsiplinaarne õppesuund</option>
+                                        <option value="6">021 Kunsti õppesuund</option>
+                                        <option value="7">022 Humanitaaria õppesuund (v.a keeled)</option>
+                                        <option value="8">023 Keele õppesuund</option>
+                                        <option value="9">028 Humanitaaria ja kunsti interdistsiplinaarne õppesuund</option>
+                                        <option value="10">031 Sotsiaal- ja käitumisteaduste õppesuund</option>
+                                        <option value="11">032 Ajakirjanduse ja teabe õppesuund</option>
+                                        <option value="12">038 Sotsiaalteaduste, ajakirjanduse ja teave interdistsiplinaarne õppesuund</option>
+                                        <option value="13">041 Ärinduse ja halduse õppesuund</option>
+                                        <option value="14">042 Õiguse õppesuund</option>
+                                        <option value="15">048 Ärinduse, halduse ja õiguse interdistsiplinaarne õppesuund</option>
+                                        <option value="16">051 Bioloogia ja sellega seotud teaduste õppesuund</option>
+                                        <option value="17">052 Keskkonna õppesuund</option>
+                                        <option value="18">053 Füüsikaliste loodusteaduste õppesuund</option>
+                                        <option value="19">054 Matemaatika ja statistika õppesuund</option>
+                                        <option value="20">058 Loodusteaduste, matemaatika ja statistika interdistsiplinaarne õppesuund</option>
+                                        <option value="21">061 Informatsiooni- ja kommunikatsioonitehnoloogia õppesuund</option>
+                                        <option value="22">068 Informatsiooni- ja kommunikatsioonitehnoloogia interdistsiplinaarne õppesuund</option>
+                                        <option value="23">071 Tehnikaalade õppesuund</option>
+                                        <option value="24">072 Tootmise ja töötlemise õppesuund</option>
+                                        <option value="25">073 Arhitektuuri ja ehituse õppesuund</option>
+                                        <option value="26">078 Tehnika, tootmise ja ehituse interdistsiplinaarne õppesuund</option>
+                                        <option value="27">081 Põllumajanduse õppesuund</option>
+                                        <option value="28">082 Metsanduse õppesuund</option>
+                                        <option value="29">083 Kalanduse õppesuund</option>
+                                        <option value="30">084 Veterinaaria õppesuund</option>
+                                        <option value="31">084 Põllumajanduse, metsanduse, kalanduse ja veterinaaria interdistsiplinaarne õppesuund</option>
+                                        <option value="32">091 Tervise õppesuund</option>
+                                        <option value="33">092 Heaolu õppesuund</option>
+                                        <option value="34">098 Tervise ja heaolu interdistsiplinaarne õppesuund</option>
+                                        <option value="35">101 Isikuteeninduse õppesuund</option>
+                                        <option value="36">102 Hügieeni ja töötervishoiu õppesuund</option>
+                                        <option value="37">103 Turvateenuste õppesuund</option>
+                                        <option value="38">104 Transporditeenuste õppesuund</option>
+                                        <option value="39">108 Teeninduse interdistsiplinaarne õppesuund</option>
+                                    </select>
                                 </th>
+                            </tr>
+                            <tr>
                                 <th>
                                     <label for="oppekava-ruhm">Õppekava rühm (ISCED)</label>
                                     <br>
-                                    <input type="text" name="oppekava-ruhm" id="oppekava-ruhm" class="formInput">
+                                    <select name="oppekava-ruhm" id="oppekava-ruhm" class="formInputDropdown">
+                                        <option value="1">0011 Põhiõppekavarühm</option>
+                                        <option value="2">0021 Kirja- ja arvutusoskuse õppekavarühm</option>
+                                        <option value="3">0031 Isikuarengu õppekavarühm</option>
+                                        <option value="4">0111 Kasvatusteaduse õppekavarühm</option>
+                                        <option value="5">0112 Koolieelikute õpetajate koolituse õppekavarühm</option>
+                                        <option value="6">0113 Klassiõpetaja koolituse õppekavarühm</option>
+                                        <option value="7">0114 Aineõpetaja koolituse õppekavarühm</option>
+                                        <option value="8">0188 Hariduse interdistsiplinaarne õppekavarühm</option>
+                                        <option value="9">0211 Audiovisuaalsete tehnikate ja meedia tootmise õppekavarühm</option>
+                                        <option value="10">0212 Moe, sise- ja tööstusdisaini õppekavarühm</option>
+                                        <option value="11">0213 Kujutava kunsti ja kunstiteaduse õppekavarühm</option>
+                                        <option value="12">0214 Käsitöö õppekavarühm</option>
+                                        <option value="13">0215 Muusika ja esituskunstide õppekavarühm</option>
+                                        <option value="14">0221 Usundiõpetuse ja usuteaduse õppekavarühm</option>
+                                        <option value="15">0222 Ajaloo ja arheoloogia õppekavarühm</option>
+                                        <option value="16">0223 Filosoofia ja eetika õppekavarühm</option>
+                                        <option value="17">0231 Keeleõppe õppekavarühm</option>
+                                        <option value="18">0232 Kirjanduse ja lingvistika õppekavarühm</option>
+                                        <option value="19">0288 Humanitaaria ja kunsti interdistsiplinaarne õppekavarühm</option>
+                                        <option value="20">0311 Majandusteaduse õppekavarühm</option>
+                                        <option value="21">0312 Poliitikateaduse ja kodanikuõpetuse õppekavarühm</option>
+                                        <option value="22">0313 Psühholoogia õppekavarühm</option>
+                                        <option value="23">0314 Sotsioloogia ja kulturoloogia õppekavarühm</option>
+                                        <option value="24">0321 Ajakirjanduse õppekavarühm</option>
+                                        <option value="25">0322 Raamatukogunduse, teabe ja arhiivinduse õppekavarühm</option>
+                                        <option value="26">0388 Sotsiaalteaduste, ajakirjanduse ja teabe interdistsiplinaarne õppekavarühm</option>
+                                        <option value="27">0411 Majandusarvestuse ja maksunduse õppekavarühm</option>
+                                        <option value="28">0412 Rahanduse, panganduse ja kindlustuse õppekavarühm</option>
+                                        <option value="29">0413 Juhtimise ja halduse õppekavarühm</option>
+                                        <option value="30">0414 Turunduse ja reklaami õppekavarühm</option>
+                                        <option value="31">0415 Sekretäti ja kontoritöö õppekavarühm</option>
+                                        <option value="32">0416 Hulgi- ja jaekaubanduse õppekavarühm</option>
+                                        <option value="33">0417 Tööoskuste õppekavarühm</option>
+                                        <option value="34">0421 Õiguse õppekavarühm</option>
+                                        <option value="35">0488 Ärinduse, halduse ja õiguse interdistsiplinaarne õppekavarühm</option>
+                                        <option value="36">0511 Bioloogia õppekavarühm</option>
+                                        <option value="37">0512 Biokeemia õppekavarühm</option>
+                                        <option value="38">0521 Keskkonnateaduste õppekavarühm</option>
+                                        <option value="39">0522 Looduskeskkonna ja eluslooduse õppekavarühm</option>
+                                        <option value="40">0531 Keemia õppekavarühm</option>
+                                        <option value="41">0532 Maateaduse õppekavarühm</option>
+                                        <option value="42">0533 Füüsika õppekavarühm</option>
+                                        <option value="43">0541 Matemaatika õppekavarühm</option>
+                                        <option value="44">0542 Statistika õppekavarühm</option>
+                                        <option value="45">0588 Loodusteaduste, matemaatika ja statistika interdistsiplinaarne õppekavarühm</option>
+                                        <option value="46">0611 Arvutikasutuse õppekavarühm</option>
+                                        <option value="47">0612 Andmebaaside ja võrgu disaini ning halduse õppekavarühm</option>
+                                        <option value="48">0613 Tarkvara ja rakenduste arenduse ning analüüsi õppekavarühm</option>
+                                        <option value="49">0619 Informatsiooni- ja kommunikatsioonitehnoloogia õppekavarühm, mujal liigitamata</option>
+                                        <option value="50">0688 Informatsiooni- ja kommunikatsioonitehnoloogia interdistsiplinaarne õppekavarühm</option>
+                                        <option value="51">0711 Keemiatehnoloogia ja -protsesside õppekavarühm</option>
+                                        <option value="52">0712 Keskkonnakaitsetehnoloogia õppekavarühm</option>
+                                        <option value="53">0713 Elektrienergia ja energeetika õppekavarühm</option>
+                                        <option value="54">0714 Elektroonika ja automaatika õppekavarühm</option>
+                                        <option value="55">0715 Mehaanika ja metallitöö õppekavarühm</option>
+                                        <option value="56">0716 Mootorliikurite, laevanduse ja lennundustehnika õppekavarühm</option>
+                                        <option value="57">0719 Tehnikaalade õppekavarühm, mujal liigitamata</option>
+                                        <option value="58">0721 Toiduainete töötlemise õppekavarühm</option>
+                                        <option value="59">0722 Materjalide töötlemise (klaas, paber, plast ja puit)  õppekavarühm</option>
+                                        <option value="60">0723 Tekstiili, rõivaste, jalatsite valmistamise ning naha töötlemise õppekavarühm</option>
+                                        <option value="61">0724 Kaevandamise ja rikastamise õppekavarühm</option>
+                                        <option value="62">0731 Arhitektuuri ja linnaplaneerimise õppekavarühm</option>
+                                        <option value="63">0732 Ehituse ja tsiviilrajatiste õppekavarühm</option>
+                                        <option value="64">0788 Tehnika, tootmise ja ehituse interdistsiplinaarne õppekavarühm</option>
+                                        <option value="65">0811 Põllunduse ja loomakasvatuse õppekavarühm</option>
+                                        <option value="66">0812 Aianduse õppekavarühm</option>
+                                        <option value="67">0821 Metsanduse õppekavarühm</option>
+                                        <option value="68">0831 Kalanduse õppekavarühm</option>
+                                        <option value="69">0841 Veterinaaria õppekavarühm</option>
+                                        <option value="70">0888 Põllumajanduse, metsanduse, kalanduse ja veterinaaria interdistsiplinaarne õppekavarühm</option>
+                                        <option value="71">0911 Hambaravi õppekavarühm</option>
+                                        <option value="72">0912 Meditsiini õppekavarühm</option>
+                                        <option value="73">0913 Õenduse ja ämmaemanduse õppekavarühm</option>
+                                        <option value="74">0914 Meditsiinidiagnostika- ja ravitehnoloogia õppekavarühm</option>
+                                        <option value="75">0915 Teraapia ja taastusravi õppekavarühm</option>
+                                        <option value="76">0916 Farmaatsia õppekavarühm</option>
+                                        <option value="77">0917 Traditsioonilise ja täiendava meditsiini ning teraapia õppekavarühm</option>
+                                        <option value="78">0921 Eakate ja puudega täiskasvanute hooldamise õppekavarühm</option>
+                                        <option value="79">0922 Lastehoiu ja noorte teenuste õppekavarühm</option>
+                                        <option value="80">0923 Sotsiaaltöö ja nõustamise õppekavarühm</option>
+                                        <option value="82">0988 Tervise ja heaolu interdistsiplinaarne õppekavarühm</option>
+                                        <option value="83">1011 Koduteeninduse õppekavarühm</option>
+                                        <option value="84">1012 Juuksuritöö ja iluteeninduse õppekavarühm</option>
+                                        <option value="85">1013 Majutamise ja toitlustamise õppekavarühm</option>
+                                        <option value="86">1014 Spordi õppekavarühm</option>
+                                        <option value="87">1015 Reisimise, turismi ja vaba aja veetmise õppekavarühm</option>
+                                        <option value="88">1021 Prügi ja heitvete käitlemise õppekavarühm</option>
+                                        <option value="89">1022 Töötervishoiu ja -kaitse õppekavarühm</option>
+                                        <option value="90">1031 Sõjanduse ja riigikaitse õppekavarühm</option>
+                                        <option value="91">1032 Vara- ja isikukaitse õppekavarühm</option>
+                                        <option value="92">1041 Transporditeenuste õppekavarühm</option>
+                                        <option value="93">1088 Teeninduse interdistsiplinaarne õppekavarühm</option>
+                                    </select>
                                 </th>
                             </tr>
                             <tr>
