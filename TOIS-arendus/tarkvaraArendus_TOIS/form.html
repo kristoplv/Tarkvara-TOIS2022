@@ -64,14 +64,14 @@
                         <table id="table1" style="display:none">
                             <tr>
                                 <th>
-                                    <label for="nimetus-ek">Nimetus e.k.</label>
+                                    <label for="nimetus-ek">Nimetus e.k.<span class="required">*</span></label>
                                     <br>
                                     <input type="text" name="nimetus-ek" id="nimetus-ek" class="formInput" title="Sisestage õppekava eestikeelne nimetus">
                                     
                                     <span class="tooltip" data-tooltip="Sisestage õppekava nimetus eesti keeles">?</span>
                                 </th>
                                 <th>
-                                    <label for="nimetus-ik">Nimetus i.k.</label>
+                                    <label for="nimetus-ik">Nimetus i.k.<span class="required">*</span></label>
                                     <br>
                                     <input type="text" name="nimetus-ik" id="nimetus-ik" class="formInput">
                                     <span class="tooltip" data-tooltip="Sisestage õppekava nimetus inglise keeles">?</span>
@@ -85,39 +85,39 @@
                             </tr>
                             <tr>
                                 <th>
-                                    <label for="oppeviis">Õppeviis</label>
+                                    <label for="oppeviis">Õppeviis<span class="required">*</span></label>
                                     <br>
                                     <input type="checkbox" name="oppeviis" id="kontaktope">
-                                    <label for="kontaktope">Kontaktõpe</label>
+                                    <label for="kontaktope" id="kontaktope-label">Kontaktõpe</label>
                                     <br>
                                     <input type="checkbox" name="oppeviis" id="praktika">
-                                    <label for="praktika">Praktika</label>
+                                    <label for="praktika" id="praktika-label">Praktika</label>
                                     <br>
                                     <input type="checkbox" name="oppeviis" id="iseseisev-ope">
-                                    <label for="iseseisev-ope">Iseseisev õpe</label>
+                                    <label for="iseseisev-ope" id="iseseisev-ope-label">Iseseisev õpe</label>
                                     <br>
                                     <input type="checkbox" name="oppeviis" id="muu-oppeviis">
                                     <label for="muu-oppeviis">Muu</label>
                                     <input type="text" name="muu-oppeviisi-nimetus" id="muu-oppeviisi-nimetus" class="formInput">
                                 </th>
                                 <th>
-                                    <label for="oppetoo-keeled">Õppetöö keeled</label>
+                                    <label for="oppetoo-keeled">Õppetöö keeled<span class="required">*</span></label>
                                     <br>
                                     <input type="checkbox" name="oppetoo-keeled" id="eesti">
-                                    <label for="eesti">Eesti</label>
+                                    <label for="eesti" id="eesti-label">Eesti</label>
                                     <br>
                                     <input type="checkbox" name="oppetoo-keeled" id="inglise" onclick="showInputs(this.id)">
-                                    <label for="inglise">Inglise</label>
+                                    <label for="inglise" id="inglise-label">Inglise</label>
                                     <br>
                                     <input type="checkbox" name="oppetoo-keeled" id="vene" onclick="showInputs(this.id)">
-                                    <label for="vene">Vene</label>
+                                    <label for="vene" id="vene-label">Vene</label>
                                     <br>
                                     <input type="checkbox" name="oppetoo-keeled" id="muu-oppetookeel">
                                     <label for="muu-oppetookeel">Muu</label>
                                     <input type="text" name="muu-oppetookeele-nimetus" id="muu-oppetookeele-nimetus" class="formInput">
                                 </th>
                                 <th>
-                                    <label for="koolituse-liik">Koolituse liik</label>
+                                    <label for="koolituse-liik">Koolituse liik<span class="required">*</span></label>
                                     <br>
                                     <select name="koolituse-liik" id="koolituse-liik" class="formInputDropdown">
                                         <option value="1">Koolitus</option>
@@ -129,25 +129,26 @@
                                     <label for="maht-tundides">Maht tundides</label>
                                     <br>
                                     <input type="number" name="maht-tundides" id="kontaktope-h" class="formInput" onkeyup="calculateEAP()">
-                                    <label for="kontaktope-h">Kontaktõpe</label>
+                                    <label for="kontaktope-h">Kontaktõpe<span class="required">*</span></label>
                                     <br>
                                     <input type="number" name="maht-tundides" id="praktika-h" class="formInput" onkeyup="calculateEAP()">
-                                    <label for="praktika-h">Praktika</label>
+                                    <label for="praktika-h">Praktika<span class="required">*</span></label>
                                     <br>
                                     <input type="number" name="maht-tundides" id="iseseisev-ope-h" class="formInput" onkeyup="calculateEAP()">
-                                    <label for="iseseisev-ope-h">Iseseisev õpe</label>
+                                    <label for="iseseisev-ope-h">Iseseisev õpe<span class="required">*</span></label>
                                     <br>
                                     <input type="number" name="maht-tundides" id="muu-ope-h" class="formInput" onkeyup="calculateEAP()">
                                     <label for="muu-ope-h">Muu</label>
                                 </th>
                                 <th>
-                                    <label for="oppekava-maht-tunnid">Õppekava maht (h): </label>
+                                    <label for="oppekava-maht-tunnid">Õppekava maht (h):<span class="required">*</span> </label>
                                     <span id="hours-result"></span>
                                     <br>
-                                    <label for="oppekava-maht-eap">Õppekava maht (EAP): </label>
+                                    <label for="oppekava-maht-eap">Õppekava maht (EAP):<span class="required">*</span> </label>
                                     <span id="eap-result"></span>
                                 </th>
                             </tr>
+                            <tr id="table1-error"></tr>
                         </table>
                     </div>
                     
@@ -158,7 +159,7 @@
                         <table id="table2" style="display:none">
                             <tr>
                                 <th>
-                                    <label for="kontrollivorm">Kontrollivorm</label>
+                                    <label for="kontrollivorm">Kontrollivorm<span class="required">*</span></label>
                                     <br>
                                     <select name="kontrollivorm" id="kontrollivorm" class="formInputDropdown">
                                         <option value="1">Eksam</option>
@@ -169,119 +170,120 @@
                             </tr>
                             <tr>
                                 <th id="hindamiskriteeriumid-ek-th">
-                                    <label for="hindamiskriteeriumid-ek">Hindamiskriteeriumid e.k.</label>
+                                    <label for="hindamiskriteeriumid-ek">Hindamiskriteeriumid e.k.<span class="required">*</span></label>
                                     <br>
-                                    <textarea name="hindamiskriteeriumid-ek" id="hindamiskriteeriumid-ek" class="formInput"> </textarea>
+                                    <textarea name="hindamiskriteeriumid-ek" id="hindamiskriteeriumid-ek" class="formInput"></textarea>
                                     <span class="tooltip" data-tooltip="Sisestage hindamiskriteeriumid ehk hindamisjuhised, mis kirjeldavad hindamismeetodiga tõendatavate teadmiste ja oskuste oodatavat taset ning ulatust">?</span>
                                 </th>
                                 <th id="hindamiskriteeriumid-ik-th" style="display:none">
                                     <label for="hindamiskriteeriumid-ik">Hindamiskriteeriumid i.k.</label>
                                     <br>
-                                    <textarea name="hindamiskriteeriumid-ik" id="hindamiskriteeriumid-ik" class="formInput"> </textarea>
+                                    <textarea name="hindamiskriteeriumid-ik" id="hindamiskriteeriumid-ik" class="formInput"></textarea>
                                 </th>
                                 <th id="hindamiskriteeriumid-vk-th" style="display:none">
                                     <label for="hindamiskriteeriumid-vk">Hindamiskriteeriumid v.k.</label>
                                     <br>
-                                    <textarea name="hindamiskriteeriumid-vk" id="hindamiskriteeriumid-vk" class="formInput"> </textarea>
+                                    <textarea name="hindamiskriteeriumid-vk" id="hindamiskriteeriumid-vk" class="formInput"></textarea>
                                 </th>
                             </tr>
                             <tr>
                                 <th id="eesmargid-ek-th">
-                                    <label for="eesmargid-ek">Eesmärgid e.k.</label>
+                                    <label for="eesmargid-ek">Eesmärgid e.k.<span class="required">*</span></label>
                                     <br>
-                                    <textarea name="eesmargid-ek" id="eesmargid-ek" class="formInput"> </textarea>
+                                    <textarea name="eesmargid-ek" id="eesmargid-ek" class="formInput"></textarea>
                                     <span class="tooltip" data-tooltip="Sisestage õppekava eesmärgid eesti keeles">?</span>
                                 </th>
                                 <th id="eesmargid-ik-th" style="display:none">
                                     <label for="eesmargid-ik">Eesmärgid i.k.</label>
                                     <br>
-                                    <textarea name="eesmargid-ik" id="eesmargid-ik" class="formInput"> </textarea>
+                                    <textarea name="eesmargid-ik" id="eesmargid-ik" class="formInput"></textarea>
                                     <span class="tooltip" data-tooltip="Sisestage õppekava eesmärgid inglise keeles">?</span>
                                 </th>
                                 <th id="eesmargid-vk-th" style="display:none">
                                     <label for="eesmargid-vk">Eesmärgid v.k.</label>
                                     <br>
-                                    <textarea name="eesmargid-vk" id="eesmargid-vk" class="formInput"> </textarea>
+                                    <textarea name="eesmargid-vk" id="eesmargid-vk" class="formInput"></textarea>
                                     <span class="tooltip" data-tooltip="Sisestage õppekava eesmärgid vene keeles">?</span>
                                 </th>
                             </tr>
                             <tr>
                                 <th id="opivaljundid-ek-th">
-                                    <label for="opivaljundid-ek">Õpiväljundid e.k.</label>
+                                    <label for="opivaljundid-ek">Õpiväljundid e.k.<span class="required">*</span></label>
                                     <br>
-                                    <textarea name="opivaljundid-ek" id="opivaljundid-ek" class="formInput"> </textarea>
+                                    <textarea name="opivaljundid-ek" id="opivaljundid-ek" class="formInput"></textarea>
                                     <span class="tooltip" data-tooltip="Sisestage õpiväljundid ehk see mida õppijalt oodatakse õpiobjekti läbitöötamise järel">?</span>
                                 </th>
                                 <th id="opivaljundid-ik-th" style="display:none">
                                     <label for="opivaljundid-ik">Õpiväljundid i.k.</label>
                                     <br>
-                                    <textarea name="opivaljundid-ik" id="opivaljundid-ik" class="formInput"> </textarea>
+                                    <textarea name="opivaljundid-ik" id="opivaljundid-ik" class="formInput"></textarea>
                                     <span class="tooltip" data-tooltip="Sisestage õpiväljundid ehk see mida õppijalt oodatakse õpiobjekti läbitöötamise järel, inglise keeles">?</span>
                                 </th>
                                 <th id="opivaljundid-vk-th" style="display:none">
                                     <label for="opivaljundid-vk">Õpiväljundid v.k.</label>
                                     <br>
-                                    <textarea name="opivaljundid-vk" id="opivaljundid-vk" class="formInput"> </textarea>
+                                    <textarea name="opivaljundid-vk" id="opivaljundid-vk" class="formInput"></textarea>
                                     <span class="tooltip" data-tooltip="Sisestage õpiväljundid ehk see mida õppijalt oodatakse õpiobjekti läbitöötamise järel, vene keeles">?</span>
                                 </th>
                             </tr>
                             <tr>
                                 <th id="sisu-ek-th">
-                                    <label for="sisu-ek">Sisu e.k.</label>
+                                    <label for="sisu-ek">Sisu e.k.<span class="required">*</span></label>
                                     <br>
-                                    <textarea name="sisu-ek" id="sisu-ek" class="formInput"> </textarea>
+                                    <textarea name="sisu-ek" id="sisu-ek" class="formInput"></textarea>
                                     <span class="tooltip" data-tooltip="Sisestage õppekava sisu eesti keeles">?</span>
                                 </th>
                                 <th id="sisu-ik-th" style="display:none">
                                     <label for="sisu-ik">Sisu i.k.</label>
                                     <br>
-                                    <textarea name="sisu-ik" id="sisu-ik" class="formInput"> </textarea>
+                                    <textarea name="sisu-ik" id="sisu-ik" class="formInput"></textarea>
                                     <span class="tooltip" data-tooltip="Sisestage õppekava sisu inglise keeles">?</span>
                                 </th>
                                 <th id="sisu-vk-th" style="display:none">
                                     <label for="sisu-vk">Sisu v.k.</label>
                                     <br>
-                                    <textarea name="sisu-vk" id="sisu-vk" class="formInput"> </textarea>
+                                    <textarea name="sisu-vk" id="sisu-vk" class="formInput"></textarea>
                                     <span class="tooltip" data-tooltip="Sisestage õppekava sisu vene keeles">?</span>
                                 </th>
                             </tr>
                             <tr>
                                 <th id="eeldused-ek-th">
-                                    <label for="eeldused-ek">Eeldused e.k.</label>
+                                    <label for="eeldused-ek">Eeldused e.k.<span class="required">*</span></label>
                                     <br>                                 
-                                    <textarea name="eeldused-ek" id="eeldused-ek" class="formInput"> </textarea>
+                                    <textarea name="eeldused-ek" id="eeldused-ek" class="formInput"></textarea>
                                     <span class="tooltip" data-tooltip="Sisestage õppekava eeldused eesti keeles">?</span>
                                 </th>
                                 <th id="eeldused-ik-th" style="display:none">
                                     <label for="eeldused-ik">Eeldused i.k.</label>
                                     <br>
-                                    <textarea name="eeldused-ik" id="eeldused-ik" class="formInput"> </textarea>
+                                    <textarea name="eeldused-ik" id="eeldused-ik" class="formInput"></textarea>
                                     <span class="tooltip" data-tooltip="Sisestage õppekava eeldused inglise keeles">?</span>
                                 </th>
                                 <th id="eeldused-vk-th" style="display:none">
                                     <label for="eeldused-vk">Eeldused v.k.</label>
                                     <br>
-                                    <textarea name="eeldused-vk" id="eeldused-vk" class="formInput"> </textarea>
+                                    <textarea name="eeldused-vk" id="eeldused-vk" class="formInput"></textarea>
                                     <span class="tooltip" data-tooltip="Sisestage õppekava eeldused vene keeles">?</span>
                                 </th>
                             </tr>
                             <tr>
                                 <th id="tingimused-ek-th">
-                                    <label for="tingimused-ek">Läbimise tingimused, sh. praktiliste tööde lühikirjeldused e.k.</label>
+                                    <label for="tingimused-ek">Läbimise tingimused, sh. praktiliste tööde lühikirjeldused e.k.<span class="required">*</span></label>
                                     <br>
-                                    <textarea name="tingimused-ek" id="tingimused-ek" class="formInput"> </textarea>
+                                    <textarea name="tingimused-ek" id="tingimused-ek" class="formInput"></textarea>
                                 </th>
                                 <th id="tingimused-ik-th" style="display:none">
                                     <label for="tingimused-ik">Läbimise tingimused, sh. praktiliste tööde lühikirjeldused i.k.</label>
                                     <br>
-                                    <textarea name="tingimused-ik" id="tingimused-ik" class="formInput"> </textarea>
+                                    <textarea name="tingimused-ik" id="tingimused-ik" class="formInput"></textarea>
                                 </th>
                                 <th id="tingimused-vk-th" style="display:none">
                                     <label for="tingimused-vk">Läbimise tingimused, sh. praktiliste tööde lühikirjeldused v.k.</label>
                                     <br>
-                                    <textarea name="tingimused-vk" id="tingimused-vk" class="formInput"> </textarea>
+                                    <textarea name="tingimused-vk" id="tingimused-vk" class="formInput"></textarea>
                                 </th>
                             </tr>
+                            <tr id="table2-error"></tr>
                         </table>
                     </div>
                     
@@ -292,23 +294,24 @@
                         <table id="table3" style="display:none">
                             <tr>
                                 <th>
-                                    <label for="sihtgrupp">Sihtgrupp</label>
+                                    <label for="sihtgrupp">Sihtgrupp<span class="required">*</span></label>
                                     <br>
                                     <input type="text" name="sihtgrupp" id="sihtgrupp" class="formInput">
                                 </th>
                                 <th>
-                                    <label for="opikeskkond">Õpikeskkond</label>
+                                    <label for="opikeskkond">Õpikeskkond<span class="required">*</span></label>
                                     <br>
                                     <input type="text" name="opikeskkond" id="opikeskkond" class="formInput">
                                 </th>
                             </tr>
                             <tr>
                                 <th>
-                                    <label for="koolitaja-kompetentsus">Koolitaja kompetentsus</label>
+                                    <label for="koolitaja-kompetentsus">Koolitaja kompetentsus<span class="required">*</span></label>
                                     <br>
                                     <input type="text" name="koolitaja-kompetentsus" id="koolitaja-kompetentsus" class="formInput">
                                 </th>
                             </tr>
+                            <tr id="table3-error"></tr>
                         </table>
                     </div>
                     
@@ -319,12 +322,12 @@
                         <table id="table4" style="display:none">
                             <tr>
                                 <th>
-                                    <label for="oppevaldkond">Õppevaldkond (ISCED)</label>
+                                    <label for="oppevaldkond">Õppevaldkond (ISCED)<span class="required">*</span></label>
                                     <br>
                                     <input type="text" name="oppevaldkond" id="oppevaldkond" class="formInput">
                                 </th>
                                 <th>
-                                    <label for="oppesuund">Õppesuund (ISCED)</label>
+                                    <label for="oppesuund">Õppesuund (ISCED)<span class="required">*</span></label>
                                     <br>
                                     <input type="text" name="oppesuund" id="oppesuund" class="formInput">
                                 </th>
@@ -336,21 +339,21 @@
                             </tr>
                             <tr>
                                 <th>
-                                    <label for="oppekava-koostamise-alus">Õppekava koostamise alus</label>
+                                    <label for="oppekava-koostamise-alus">Õppekava koostamise alus<span class="required">*</span></label>
                                     <br>
                                     <input type="text" name="oppekava-koostamise-alus" id="oppekava-koostamise-alus" class="formInput">
                                 </th>
                                 <th>
-                                    <label for="veebis-kuvatav-korraldaja">Veebis kuvatav korraldaja struktuur ja kontakt</label>
+                                    <label for="veebis-kuvatav-korraldaja">Veebis kuvatav korraldaja struktuur ja kontakt<span class="required">*</span></label>
                                     <br>
                                     <input type="text" name="veebis-kuvatav-korraldaja" id="veebis-kuvatav-korraldaja" class="formInput">
                                 </th>
                             </tr>
                             <tr>
                                 <th>
-                                    <label for="pohivastutaja-struktuur">Põhivastutaja struktuuriüksus</label>
+                                    <label for="pohivastutaja-struktuur">Põhivastutaja struktuuriüksus<span class="required">*</span></label>
                                     <br>
-                                    <input list="pohivastutaja-struktuur" name="pohivastutaja-struktuur" class="formInput">
+                                    <input id="pohivastutaja-struktuur-id" list="pohivastutaja-struktuur" name="pohivastutaja-struktuur" class="formInput">
                                     <datalist id="pohivastutaja-struktuur">
                                         <option value="Tallinna Ülikool"></option>
                                         <option value="Tartu Ülikool"></option>
@@ -415,7 +418,7 @@
                             </tr>
                             <tr>
                                 <th>
-                                    <label for="koolitusvaldkond">Koolitusvaldkond</label>
+                                    <label for="koolitusvaldkond">Koolitusvaldkond<span class="required">*</span></label>
                                     <br>
                                     <input type="text" name="koolitusvaldkond" id="koolitusvaldkond" class="formInput">
                                 </th>
@@ -430,9 +433,11 @@
                                     <input type="text" name="veebis-kuvatav-koolitaja" id="veebis-kuvatav-koolitaja" class="formInput">
                                 </th>
                             </tr>
+                            <tr id="table4-error"></tr>
                         </table>
                     </div>
                     <div id="downloadBtn">
+                        <input type="button" value="Kinnita" id="submitForm" class="btn" onclick="validate()">
                         <input type="button" value="Lae alla tekstina" id="downloadTxt" class="btn">
                         <input type="button" value="Lae alla PDF-ina" id="downloadPdf" class="btn">
                     </div>
