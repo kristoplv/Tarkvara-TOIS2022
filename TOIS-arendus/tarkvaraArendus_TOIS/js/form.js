@@ -108,18 +108,14 @@ function validate() {
     let oppejuhiCount = 0;
     let nimetusEK = document.querySelector('#nimetus-ek');
     let nimetusIK = document.querySelector('#nimetus-ik');
+    let oppeviisLabel = document.querySelector('#oppeviis-label');
     let kontaktope = document.querySelector('#kontaktope');
-    let kontaktopeLabel = document.querySelector('#kontaktope-label');
     let praktika = document.querySelector('#praktika');
-    let praktikaLabel = document.querySelector('#praktika-label');
     let iseseisevOpe = document.querySelector('#iseseisev-ope');
-    let iseseisevOpeLabel = document.querySelector('#iseseisev-ope-label');
+    let oppetooKeeledLabel = document.querySelector('#oppetoo-keeled-label');
     let eestiKeel = document.querySelector('#eesti');
-    let eestiKeelLabel = document.querySelector('#eesti-label');
     let ingliseKeel = document.querySelector('#inglise');
-    let ingliseKeelLabel = document.querySelector('#inglise-label');
     let veneKeel = document.querySelector('#vene');
-    let veneKeelLabel = document.querySelector('#vene-label');
     let muuKeel = document.querySelector('#muu-oppetookeele-nimetus');
     let koolituseLiik = document.querySelector('#koolituse-liik');
     let kontaktopeH = document.querySelector('#kontaktope-h');
@@ -163,28 +159,18 @@ function validate() {
     }
     if (kontaktope.checked == false && praktika.checked == false && iseseisevOpe.checked == false) {
         uldineInfoCount++;
-        kontaktopeLabel.classList.add('emptyError');
-        praktikaLabel.classList.add('emptyError');
-        iseseisevOpeLabel.classList.add('emptyError');
+        oppeviisLabel.classList.add('emptyError');
     } else {
-        kontaktopeLabel.classList.remove('emptyError');
-        praktikaLabel.classList.remove('emptyError');
-        iseseisevOpeLabel.classList.remove('emptyError');
+        oppeviisLabel.classList.remove('emptyError');
     }
     if (eestiKeel.checked == false && ingliseKeel.checked == false && veneKeel.checked == false) {
         if (muuKeel.value.trim() == '') {
             uldineInfoCount++;
             muuKeel.value = muuKeel.value.trim();
-            eestiKeelLabel.classList.add('emptyError');
-            ingliseKeelLabel.classList.add('emptyError');
-            veneKeelLabel.classList.add('emptyError');
-            muuKeel.classList.add('emptyError');
+            oppetooKeeledLabel.classList.add('emptyError');
         }
     } else {
-        eestiKeelLabel.classList.remove('emptyError');
-        ingliseKeelLabel.classList.remove('emptyError');
-        veneKeelLabel.classList.remove('emptyError');
-        muuKeel.classList.remove('emptyError');
+        oppetooKeeledLabel.classList.remove('emptyError');
     }
     if (koolituseLiik.value.trim() == '') {
         uldineInfoCount++;
