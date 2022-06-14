@@ -6,10 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TLÜ TÕIS</title>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/mobile.css">
+    <link rel="stylesheet" href="css/main.css">
     <link rel="icon" href="images/toisFavicon.png" type="image/x-icon">
 </head>
 <body>
-    <div id="mainContainer" class="mainContainer">
+    <!-- <div id="mainContainer" class="mainContainer">
         <div id="fillerMain" class="fillerMain"></div> 
         <a href="main.html" class="logo"></a>
         
@@ -32,7 +34,39 @@
                 <a href="oppekavad.html"><img src="images/eestilipp.png" title="Eesti keel" class="estFlag"></a>
                 <a href="oppekavad.html"><img src="images/uklipp.png" title="Inglise keel" class="ukFlag"></a>
             </ul>
-        </div>
+        </div> -->
+        <div id="mainContainer" class="mainContainer"> 
+            <a href="main.html" class="logo"></a>
+            
+            <div id="loginArea" class="login_txt" >          
+                <a href="login.html" class="loginButton" id="logIn">Logi sisse</a>
+            </div>
+    
+            <div id="sidebar" class="sidebar">
+                <h2 class="menuLabel">MENÜÜ</h2>
+                <ul id="navMenu" class="navMenu">
+                    <li>
+                        <a href="main.html" class="links" id="homePage">Avaleht</a>
+                    </li>
+                    <li>
+                        <a href="oppekavad.html" class="links" id="allForms">Kõik õppekavad</a>
+                    </li>
+                    <li>
+                        <a href="form.html" class="links" id="newForm">Loo uus õppekava</a>
+                    </li>
+                    <a href="main.html"><img src="images/eestilipp.png" title="Eesti keel" class="estFlag"></a>
+                    <a href="main.html"><img src="images/uklipp.png" title="Inglise keel" class="ukFlag"></a>
+                </ul>
+            </div>
+        <container class="ribbon">
+            <a class="home_logo item a" id="Logo" href="index.html"><p class="menu-text">TLÜ TÄIENDÕPPE INFOSÜSTEEM</p></a>
+            <!--<a class="item_3 item a" href="main.html"><p class="menu-text">Õppekavad</p></a>
+            <a class="item_3 item a" href="form.html"><p class="menu-text">Loo uus õppekava</p></a>
+            <a class="item_3 item a" href="login.html"><p class="menu-text">Logi sisse</p></a>
+        -->
+            <div class="menuBtn"></div>
+    
+        </container>
 
         <container class="mainArea" id="mainArea">
             <div class="mainContentArea" id="subjectArea">
@@ -58,7 +92,7 @@
                     </tr>
                     <tr>
                         <th><a href="form.html" class="links">Matemaatika elemendid</a></th>
-                        <th>1</th>
+                        <th class="number">1</th>
                         <th>Arvestus</th>
                         <th>Digitehnoloogiate instituut</th>
                         <th class="links">
@@ -69,7 +103,7 @@
                     </tr>
                     <tr>
                         <th><a href="form.html" class="links">Termodünaamika</a></th>
-                        <th>2</th>
+                        <th class="number">2</th>
                         <th>Eksam</th>
                         <th>Loodusteaduste instituut</th>
                         <th class="links">
@@ -80,7 +114,7 @@
                     </tr>
                     <tr>
                         <th><a href="form.html" class="links">Vana-Kreeka ajalugu</a></th>
-                        <th>5</th>
+                        <th class="number">5</th>
                         <th>Arvestus</th>
                         <th>HTLE</th>
                         <th class="links">
@@ -91,7 +125,7 @@
                     </tr>
                     <tr>
                         <th><a href="form.html" class="links">Javascript algajatele</a></th>
-                        <th>4</th>
+                        <th class="number">4</th>
                         <th>Eksam</th>
                         <th>Digitehnoloogiate instituut</th>
                         <th class="links">
@@ -102,7 +136,7 @@
                     </tr>
                     <tr>
                         <th><a href="form.html" class="links">Ajakirjandus</a></th>
-                        <th>12</th>
+                        <th class="number">12</th>
                         <th>Eksam</th>
                         <th>Balti filmi ja meedia</th>
                         <th class="links">
@@ -114,6 +148,7 @@
                 </table>
             </div>
         </container>
+        <div id="fillerMain" class="fillerMain"></div>
         
 
     </div>
