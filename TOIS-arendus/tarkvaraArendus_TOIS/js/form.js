@@ -1,3 +1,45 @@
+window.onload = function(){
+    document.querySelector('#downloadTxt').addEventListener('click', downloadFormTxt);
+    document.querySelector('#downloadPdf').addEventListener('click', generatePdf);
+    document.querySelector('#kontaktope').addEventListener('change', function() {
+        if (this.checked) {
+            document.querySelector('#kontaktope-h').disabled = false;
+        } else {
+            document.querySelector('#kontaktope-h').disabled = true;
+        }
+    });
+    document.querySelector('#praktika').addEventListener('change', function() {
+        if (this.checked) {
+            document.querySelector('#praktika-h').disabled = false;
+        } else {
+            document.querySelector('#praktika-h').disabled = true;
+        }
+    });
+    document.querySelector('#iseseisev-ope').addEventListener('change', function() {
+        if (this.checked) {
+            document.querySelector('#iseseisev-ope-h').disabled = false;
+        } else {
+            document.querySelector('#iseseisev-ope-h').disabled = true;
+        }
+    });
+    document.querySelector('#muu-oppeviis').addEventListener('change', function() {
+        if (this.checked) {
+            document.querySelector('#muu-ope-h').disabled = false;
+            document.querySelector('#muu-oppeviisi-nimetus').disabled = false;
+        } else {
+            document.querySelector('#muu-ope-h').disabled = true;
+            document.querySelector('#muu-oppeviisi-nimetus').disabled = true;
+        }
+    });
+    document.querySelector('#muu-oppetookeel').addEventListener('change', function() {
+        if (this.checked) {
+            document.querySelector('#muu-oppetookeele-nimetus').disabled = false;
+        } else {
+            document.querySelector('#muu-oppetookeele-nimetus').disabled = true;
+        }
+    })
+}
+
 function openTable(tableBtn_id) {
     let table_id = tableBtn_id.replace('Btn', '');
     let table = document.getElementById(table_id);
