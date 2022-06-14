@@ -38,7 +38,7 @@ th{
 }
 .fillForm{
     padding-left: 25px;
-    background-color: lightgray;
+    background-color: #eaeaea;
     border: 1px solid black;
     margin-bottom: 30px;
 }
@@ -51,6 +51,8 @@ th label{
 }
 .formInputDropdown{
     font-size: 16px;
+    font-family: "Times New Roman",Times,Georgia,serif;
+    letter-spacing: 1px;
 }
 #filler{
     width: 300px;
@@ -135,7 +137,11 @@ span{
     color: #ba0c2f;
 }
 .emptyError{
-    background-color: rgba(186, 12, 47, 0.3);
+    border: 2px solid #ba0c2f;
+}
+.emptyErrorText{
+    color: #ba0c2f;
+    font-weight: 600;
 }
 #table1-error, #table2-error, #table3-error, #table4-error {
     color: #ba0c2f;
