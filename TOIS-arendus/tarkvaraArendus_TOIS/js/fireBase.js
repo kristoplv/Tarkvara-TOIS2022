@@ -4,14 +4,71 @@ import {getDatabase, ref, push, set, onValue, get, child} from "https://www.gsta
 
 
 // Vaga palju querySelectoreid
+
+// Üldine
 var nimiEK = document.getElementsByClassName("formInput uldine");
 var oppeviisid = document.getElementsByClassName("uldine_viisid");
 var keeled = document.getElementsByClassName("uldine_keeled");
 var koolituse_liik = document.querySelector("#koolituse-liik");
 var koolitus_valitud = koolituse_liik.options[koolituse_liik.selectedIndex];
-
 var maht = document.getElementsByClassName("maht formInput");
-var eap = document.querySelector("#eap-result");
+//var eap = document.querySelector("#eap-result");
+var names_viisid = ["/iseseisev", "/kontaktope", "/praktika"];
+var names_keeled = ["/ek", "/ik", "/vk"]
+
+// Hindamine ja sisu
+var kontrollvorm = document.querySelector("#kontrollivorm");
+var kontrollvorm_valitud = kontrollvorm.options[kontrollvorm.selectedIndex]
+var hindamiskriteeriumid = document.getElementsByClassName("formInput hk");
+var eesmark = document.getElementsByClassName("formInput em");
+var opivaljundid = document.getElementsByClassName("formInput ov");
+var sisu = document.getElementsByClassName("formInput sisu");
+var eeldused = document.getElementsByClassName("formInput eeldus");
+var tingimused = document.getElementsByClassName("formInput tingimused");
+
+// Muu info
+var sihtgrupp = document.getElementsByClassName("formInput siht");
+var keskkond = document.getElementsByClassName("formInput keskkond");
+var kompetentsus = document.getElementsByClassName("formInput comp");
+var veebis = document.getElementsByClassName("formInput web");
+
+// Administraatori täita
+var oppevaldkond = document.querySelector("#oppevaldkond");
+var oppevaldkond_val =  oppevaldkond.options[oppevaldkond.selectedIndex].innerHTML;
+
+var oppesuund = document.querySelector("#oppesuund");
+var oppesuund_val =  oppesuund.options[oppesuund.selectedIndex].innerHTML;
+
+var oppekava_ruhm = document.querySelector("#oppekava-ruhm");
+var oppekava_ruhm_val =  oppekava_ruhm.options[oppekava_ruhm.selectedIndex].innerHTML;
+
+var koostamise_alus = document.getElementById("oppekava-koostamise-alus");  // done
+var korraldaja_veebis = document.getElementById("veebis-kuvatav-korraldaja");  // done
+
+var pohivastutaja_uksus = document.getElementById("pohivastutaja-struktuur"); // done
+//var pohivastutaja_uksus_val = pohivastutaja_uksus[pohivastutaja_uksus.selectedIndex]
+var pohivastutaja_korraldaja_ei = document.querySelector("#pole-korraldaja");
+var pohivastutaja_korraldaja_jah = document.querySelector("#on-korraldaja");
+var pohivastutaja_maht = document.getElementById("#mahuprotsent");  // done
+var pohivastutaja_nimi = document.querySelector("#pohivastutaja-nimi");  // done
+
+var vastutaja_uksus = document.getElementById("vastutaja-struktuur");  // done
+//var vastutaja_uksus_val = vastutaja_uksus[vastutaja_uksus.selectedIndex]
+var vastutaja_korraldaja_ei = document.getElementById("pole-korraldaja-norm");
+var vastutaja_korraldaja_jah = document.getElementById("on-korraldaja-norm");
+var vastutaja_maht = document.getElementById("#mahuprotsent_norm"); // done
+var vastutaja_nimi = document.getElementById("#vastuaja-nimi");  // done
+
+var onTellitav = document.getElementById("tellitav");
+var poleTellitav = document.getElementById("pole-tellitav");
+
+var onNahtav = document.getElementById("nahtav");
+var poleNahtav = document.getElementById("pole-nahtav");
+
+var koolitusvaldkond = document.getElementById("koolitusvaldkond"); // done
+var seadusega_koolitus_viide = document.getElementById("viide-koolitusele"); // done
+var koolitajaVeebis = document.getElementById("veebis-kuvatav-koolitaja"); // done
+
 
 // Import the functions you need from the SDKs you need
 // TODO: Add SDKs for Firebase products that you want to use
@@ -38,46 +95,64 @@ var button = document.querySelector("#sendDb");
 
 
 
-function sendToFirebase(){
+/*function sendToFirebase(){
   //onValue(loc, getAll)
   onValue(loc, sendValues)
   
-}
+}*/
 function sleep(ms){
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
-/*
-function getAll(vals){
-  var sisu = vals.val();
-  var getAns =Object.values(sisu);
-  var keys = Object.keys(getAns);
-  var keyNames = Object.keys(sisu);
-  for(var i=0;i<Object.keys(getAns).length; i++){
-    if(getAns[i] == "test"){
-    } else {
-      for(var a=0; a<Object.keys(getAns[i]).length; a++){
-        var oneKey = Object.keys(getAns[i])
-        reffer = "TOIS/vorm/" + keyNames[i] + "/" + oneKey[a];
-        set(ref(db, reffer), {
-          1: "tester"
-        });
-        
-      }
-    }
-    
-  }
-}*/
 
 function sendValues(vals){
-  console.log(koolitus_valitud + " ... " + koolitus_valitud.value)
-  // Teeme seda tulpade kaupa, aka liigume aina uude funktsiooni
+  var eap = (maht[0].value + maht[1].value + maht[2].value) / 26;
+  console.log(koolitus_valitud + " ... " + koolitus_valitud.innerHTML)
   var baseRef = "TOIS/vorm/uldine_info";
-  saada(baseRef+"/nimetus", nimiEK);
   
-  saada(baseRef+"/oppeviisid", oppeviisid);
+  // Üldine info
+  saada(baseRef+"/nimetus", nimiEK);
   saada(baseRef+"/maht", maht);
-  saada(baseRef+"/keeled", keeled);
+  normaalkujule(oppeviisid, baseRef+"/oppeviisid", names_viisid);
+  normaalkujule(keeled, baseRef+"/keeled", names_keeled);
   saadaOneline(baseRef + "/koolituse_liik", koolitus_valitud);
+  set(ref(db, baseRef+"/EAP"), {
+    1 : eap
+  });
+
+  // Hindamine ja sisu
+  baseRef = "TOIS/vorm/hindamine_eesmargid";
+  saada(baseRef+"/eeldused", eeldused);
+  saada(baseRef+"/eesmargid", eesmark);
+  saadaOneline(baseRef+"/kontrollivorm", kontrollvorm_valitud);
+  saada(baseRef+"/kriteeriumid", hindamiskriteeriumid);
+  saada(baseRef+"/labimise_tingimused", tingimused);
+  saada(baseRef+"/opivaljundid", opivaljundid);
+  saada(baseRef+"/sisu", sisu);
+
+  // Muu info
+  baseRef = "TOIS/vorm/muu_info";
+  saadaOneline(baseRef+"/opikeskkond", keskkond[0]);
+  saadaOneline(baseRef+"/sihtgrupp", sihtgrupp[0]);
+  saadaOneline(baseRef+"/veebis_koolitaja", veebis[0]);
+  saadaOneline(baseRef+"/koolitaja_komp", kompetentsus[0]);
+
+  // Administraator
+  baseRef = "TOIS/vorm/admin";
+  saadaOneline(baseRef+"/koolitusvaldkond", koolitusvaldkond);
+  saadaOneline(baseRef+"/seadusega_seotud_koolituse_viide", seadusega_koolitus_viide);
+  saadaOneline(baseRef+"/veebis_kuvatav_koolitaja", koolitajaVeebis);
+  saadaOneline(baseRef+"/korraldaja_struktuur_kontakt", korraldaja_veebis);
+  saadaOneline(baseRef+"/ok_koostamise_alus", koostamise_alus);
+
+  saadaOneline(baseRef+"/pohivastutaja/nimi", pohivastutaja_nimi);
+  saadaOneline(baseRef+"/pohivastutaja/nimi", pohivastutaja_maht);
+
+  saadaOneline(baseRef+"/vastutaja/nimi",vastutaja_nimi);
+  saadaOneline(baseRef+"/vastutaja/mahuprotsent",vastutaja_maht);
+}
+
+function saadaOptionSisu(baseRef, values){
+
 }
 
 function saada(baseRef, values){
@@ -94,10 +169,27 @@ function saada(baseRef, values){
   });
 }
 
+function normaalkujule(values, baseRef, names_viisid){
+  var newList=[];
+  for(var i=0; i<values.length; i++){
+    if(values[i].checked){
+      newList[i] = "Jah"
+    } else {
+      newList[i] = "Ei"
+    }
+
+  }
+  for(var a=0; a<newList.length; a++){
+    set(ref(db, baseRef+names_viisid[a]), {
+      1 : newList[a]
+    });
+  }
+}
+
 function saadaOneline(baseRef, liik){
   set(ref(db, baseRef), {
     1 : liik.value
   });
 }
 
-button.addEventListener("click", sendToFirebase);
+button.addEventListener("click", sendValues);
