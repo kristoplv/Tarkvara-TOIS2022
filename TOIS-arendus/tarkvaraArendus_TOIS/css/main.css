@@ -10,7 +10,8 @@ html{
 }
 
 h2{
-    font-size: 30px;
+    /* font-size: 1.5vw; */
+    font-size: 34px;
     font-style: italic;
 }
 
@@ -52,6 +53,16 @@ hr{
     border-left: solid 0.5px #75142cc4;
 }
 
+.login_txt{
+    margin: 0;
+    border: 0;
+    padding: 0;
+    font-family: "Times New Roman",Times,Georgia,serif;
+    font-style:italic;
+    letter-spacing: 0.05em;
+    font-size: 2.2vh;
+}
+
 .logo{
     background-image: url("../images/TOISlogo.png");
     background-repeat: no-repeat;
@@ -63,22 +74,28 @@ hr{
 }
 
 .sidebar{
+    min-width: 11.7vw;
+    /* max-width: 11.7vw; */
+    font-size: 1vw;
     grid-column: 1 / 2;
     grid-row: 2 / 3;
-    padding: 0;
+    padding: 0em;
     margin: 0;
     border-right: solid 1px #75142cc4;
     box-shadow: 5px 0px 5px #b87a8ac4;
+    
 }
 
 .mainArea{
+
     background-color: #dfced277;
+    
 }
 
 .mainContentArea{
     grid-column: 2 / 3;
     grid-row: 2 / 3;
-    margin-left: 50px;
+    margin-left: 20px;
     margin-right: 30px;
     margin-bottom: 10px;
 }
@@ -87,6 +104,10 @@ li{
     border-bottom: solid 1px #75142cc4;
     padding: 5px;
 }
+
+/* p{
+    font-size: 0.85vw;
+} */
 
 .loginButton{
     padding-left: 50px;
@@ -105,13 +126,15 @@ li{
     padding: 10px;
     background-color: #ba0c2f;
     color: white;
-    font-size: 24px;
+    font-size: 1vw;
     font-style: italic;
 }
 
 .navMenu {
+    min-width: 11.7vw;
+    /* max-width: 11.7vw; */
     padding: 0;
-    font-size: 20px;
+    font-size: 0.85vw;
     display: block;
     list-style: inside url("../images/listItem.png");
     border-top: solid 1px #75142cc4;
@@ -119,7 +142,7 @@ li{
 }
 
 .news{
-    font-size: 18px;
+    font-size: 0.85vw;
     display: flex;
     justify-content: left;
 }
@@ -129,7 +152,8 @@ li{
 }
 
 .newsLink{
-    font-size: 18px;
+    font-size: 0.75vw;
+    /* font-size: 18px; */
     color: #ba0c2f;
     font-weight: 600;
 }
@@ -146,12 +170,13 @@ li{
 
 th{
     border-bottom: solid 1px #75142cc4;
+    text-align: left;
 }
 
 .btn{
     background-color: #c71a3d;
     color: white;
-    font-size: 14px;
+    font-size: 0.65vw;
 }
 .estFlag{
     width: 15%;
@@ -174,6 +199,7 @@ th{
 }
 
 th{
+    font-size: 1vw;
     font-weight: 400;
     text-align: left;
     padding-right: 30px;
