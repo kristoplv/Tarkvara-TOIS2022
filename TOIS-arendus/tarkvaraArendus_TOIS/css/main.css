@@ -220,3 +220,9 @@ td{
 .number{
     text-align: right;
 }
+
+.curriculumTable{
+    display: flex;
+    flex-direction: column;
+    padding-left: 3%;
+}
