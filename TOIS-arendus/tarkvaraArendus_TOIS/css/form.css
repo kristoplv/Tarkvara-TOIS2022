@@ -131,7 +131,12 @@ table{
 span{
     color: #75142cc4;
 }
-
+.required{
+    color: #ba0c2f;
+}
+.emptyError{
+    background-color: rgba(186, 12, 47, 0.3);
+}
 
 
 

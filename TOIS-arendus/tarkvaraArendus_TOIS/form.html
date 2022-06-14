@@ -64,14 +64,14 @@
                         <table id="table1" style="display:none">
                             <tr>
                                 <th>
-                                    <label for="nimetus-ek">Nimetus e.k.</label>
+                                    <label for="nimetus-ek">Nimetus e.k.<span class="required">*</span></label>
                                     <br>
                                     <input type="text" name="nimetus-ek" id="nimetus-ek" class="formInput" title="Sisestage õppekava eestikeelne nimetus">
                                     
                                     <span class="tooltip" data-tooltip="Sisestage õppekava nimetus eesti keeles">?</span>
                                 </th>
                                 <th>
-                                    <label for="nimetus-ik">Nimetus i.k.</label>
+                                    <label for="nimetus-ik">Nimetus i.k.<span class="required">*</span></label>
                                     <br>
                                     <input type="text" name="nimetus-ik" id="nimetus-ik" class="formInput">
                                     <span class="tooltip" data-tooltip="Sisestage õppekava nimetus inglise keeles">?</span>
@@ -85,39 +85,39 @@
                             </tr>
                             <tr>
                                 <th>
-                                    <label for="oppeviis">Õppeviis</label>
+                                    <label for="oppeviis">Õppeviis<span class="required">*</span></label>
                                     <br>
                                     <input type="checkbox" name="oppeviis" id="kontaktope">
-                                    <label for="kontaktope">Kontaktõpe</label>
+                                    <label for="kontaktope" id="kontaktope-label">Kontaktõpe</label>
                                     <br>
                                     <input type="checkbox" name="oppeviis" id="praktika">
-                                    <label for="praktika">Praktika</label>
+                                    <label for="praktika" id="praktika-label">Praktika</label>
                                     <br>
                                     <input type="checkbox" name="oppeviis" id="iseseisev-ope">
-                                    <label for="iseseisev-ope">Iseseisev õpe</label>
+                                    <label for="iseseisev-ope" id="iseseisev-ope-label">Iseseisev õpe</label>
                                     <br>
                                     <input type="checkbox" name="oppeviis" id="muu-oppeviis">
                                     <label for="muu-oppeviis">Muu</label>
                                     <input type="text" name="muu-oppeviisi-nimetus" id="muu-oppeviisi-nimetus" class="formInput">
                                 </th>
                                 <th>
-                                    <label for="oppetoo-keeled">Õppetöö keeled</label>
+                                    <label for="oppetoo-keeled">Õppetöö keeled<span class="required">*</span></label>
                                     <br>
                                     <input type="checkbox" name="oppetoo-keeled" id="eesti">
-                                    <label for="eesti">Eesti</label>
+                                    <label for="eesti" id="eesti-label">Eesti</label>
                                     <br>
                                     <input type="checkbox" name="oppetoo-keeled" id="inglise" onclick="showInputs(this.id)">
-                                    <label for="inglise">Inglise</label>
+                                    <label for="inglise" id="inglise-label">Inglise</label>
                                     <br>
                                     <input type="checkbox" name="oppetoo-keeled" id="vene" onclick="showInputs(this.id)">
-                                    <label for="vene">Vene</label>
+                                    <label for="vene" id="vene-label">Vene</label>
                                     <br>
                                     <input type="checkbox" name="oppetoo-keeled" id="muu-oppetookeel">
                                     <label for="muu-oppetookeel">Muu</label>
                                     <input type="text" name="muu-oppetookeele-nimetus" id="muu-oppetookeele-nimetus" class="formInput">
                                 </th>
                                 <th>
-                                    <label for="koolituse-liik">Koolituse liik</label>
+                                    <label for="koolituse-liik">Koolituse liik<span class="required">*</span></label>
                                     <br>
                                     <select name="koolituse-liik" id="koolituse-liik" class="formInputDropdown">
                                         <option value="1">Koolitus</option>
@@ -129,25 +129,26 @@
                                     <label for="maht-tundides">Maht tundides</label>
                                     <br>
                                     <input type="number" name="maht-tundides" id="kontaktope-h" class="formInput" onkeyup="calculateEAP()">
-                                    <label for="kontaktope-h">Kontaktõpe</label>
+                                    <label for="kontaktope-h">Kontaktõpe<span class="required">*</span></label>
                                     <br>
                                     <input type="number" name="maht-tundides" id="praktika-h" class="formInput" onkeyup="calculateEAP()">
-                                    <label for="praktika-h">Praktika</label>
+                                    <label for="praktika-h">Praktika<span class="required">*</span></label>
                                     <br>
                                     <input type="number" name="maht-tundides" id="iseseisev-ope-h" class="formInput" onkeyup="calculateEAP()">
-                                    <label for="iseseisev-ope-h">Iseseisev õpe</label>
+                                    <label for="iseseisev-ope-h">Iseseisev õpe<span class="required">*</span></label>
                                     <br>
                                     <input type="number" name="maht-tundides" id="muu-ope-h" class="formInput" onkeyup="calculateEAP()">
                                     <label for="muu-ope-h">Muu</label>
                                 </th>
                                 <th>
-                                    <label for="oppekava-maht-tunnid">Õppekava maht (h): </label>
+                                    <label for="oppekava-maht-tunnid">Õppekava maht (h):<span class="required">*</span> </label>
                                     <span id="hours-result"></span>
                                     <br>
-                                    <label for="oppekava-maht-eap">Õppekava maht (EAP): </label>
+                                    <label for="oppekava-maht-eap">Õppekava maht (EAP):<span class="required">*</span> </label>
                                     <span id="eap-result"></span>
                                 </th>
                             </tr>
+                            <tr id="table1-error"></tr>
                         </table>
                     </div>
                     
@@ -158,7 +159,7 @@
                         <table id="table2" style="display:none">
                             <tr>
                                 <th>
-                                    <label for="kontrollivorm">Kontrollivorm</label>
+                                    <label for="kontrollivorm">Kontrollivorm<span class="required">*</span></label>
                                     <br>
                                     <select name="kontrollivorm" id="kontrollivorm" class="formInputDropdown">
                                         <option value="1">Eksam</option>
@@ -169,119 +170,120 @@
                             </tr>
                             <tr>
                                 <th id="hindamiskriteeriumid-ek-th">
-                                    <label for="hindamiskriteeriumid-ek">Hindamiskriteeriumid e.k.</label>
+                                    <label for="hindamiskriteeriumid-ek">Hindamiskriteeriumid e.k.<span class="required">*</span></label>
                                     <br>
-                                    <textarea name="hindamiskriteeriumid-ek" id="hindamiskriteeriumid-ek" class="formInput"> </textarea>
+                                    <textarea name="hindamiskriteeriumid-ek" id="hindamiskriteeriumid-ek" class="formInput"></textarea>
                                     <span class="tooltip" data-tooltip="Sisestage hindamiskriteeriumid ehk hindamisjuhised, mis kirjeldavad hindamismeetodiga tõendatavate teadmiste ja oskuste oodatavat taset ning ulatust">?</span>
                                 </th>
                                 <th id="hindamiskriteeriumid-ik-th" style="display:none">
                                     <label for="hindamiskriteeriumid-ik">Hindamiskriteeriumid i.k.</label>
                                     <br>
-                                    <textarea name="hindamiskriteeriumid-ik" id="hindamiskriteeriumid-ik" class="formInput"> </textarea>
+                                    <textarea name="hindamiskriteeriumid-ik" id="hindamiskriteeriumid-ik" class="formInput"></textarea>
                                 </th>
                                 <th id="hindamiskriteeriumid-vk-th" style="display:none">
                                     <label for="hindamiskriteeriumid-vk">Hindamiskriteeriumid v.k.</label>
                                     <br>
-                                    <textarea name="hindamiskriteeriumid-vk" id="hindamiskriteeriumid-vk" class="formInput"> </textarea>
+                                    <textarea name="hindamiskriteeriumid-vk" id="hindamiskriteeriumid-vk" class="formInput"></textarea>
                                 </th>
                             </tr>
                             <tr>
                                 <th id="eesmargid-ek-th">
-                                    <label for="eesmargid-ek">Eesmärgid e.k.</label>
+                                    <label for="eesmargid-ek">Eesmärgid e.k.<span class="required">*</span></label>
                                     <br>
-                                    <textarea name="eesmargid-ek" id="eesmargid-ek" class="formInput"> </textarea>
+                                    <textarea name="eesmargid-ek" id="eesmargid-ek" class="formInput"></textarea>
                                     <span class="tooltip" data-tooltip="Sisestage õppekava eesmärgid eesti keeles">?</span>
                                 </th>
                                 <th id="eesmargid-ik-th" style="display:none">
                                     <label for="eesmargid-ik">Eesmärgid i.k.</label>
                                     <br>
-                                    <textarea name="eesmargid-ik" id="eesmargid-ik" class="formInput"> </textarea>
+                                    <textarea name="eesmargid-ik" id="eesmargid-ik" class="formInput"></textarea>
                                     <span class="tooltip" data-tooltip="Sisestage õppekava eesmärgid inglise keeles">?</span>
                                 </th>
                                 <th id="eesmargid-vk-th" style="display:none">
                                     <label for="eesmargid-vk">Eesmärgid v.k.</label>
                                     <br>
-                                    <textarea name="eesmargid-vk" id="eesmargid-vk" class="formInput"> </textarea>
+                                    <textarea name="eesmargid-vk" id="eesmargid-vk" class="formInput"></textarea>
                                     <span class="tooltip" data-tooltip="Sisestage õppekava eesmärgid vene keeles">?</span>
                                 </th>
                             </tr>
                             <tr>
                                 <th id="opivaljundid-ek-th">
-                                    <label for="opivaljundid-ek">Õpiväljundid e.k.</label>
+                                    <label for="opivaljundid-ek">Õpiväljundid e.k.<span class="required">*</span></label>
                                     <br>
-                                    <textarea name="opivaljundid-ek" id="opivaljundid-ek" class="formInput"> </textarea>
+                                    <textarea name="opivaljundid-ek" id="opivaljundid-ek" class="formInput"></textarea>
                                     <span class="tooltip" data-tooltip="Sisestage õpiväljundid ehk see mida õppijalt oodatakse õpiobjekti läbitöötamise järel">?</span>
                                 </th>
                                 <th id="opivaljundid-ik-th" style="display:none">
                                     <label for="opivaljundid-ik">Õpiväljundid i.k.</label>
                                     <br>
-                                    <textarea name="opivaljundid-ik" id="opivaljundid-ik" class="formInput"> </textarea>
+                                    <textarea name="opivaljundid-ik" id="opivaljundid-ik" class="formInput"></textarea>
                                     <span class="tooltip" data-tooltip="Sisestage õpiväljundid ehk see mida õppijalt oodatakse õpiobjekti läbitöötamise järel, inglise keeles">?</span>
                                 </th>
                                 <th id="opivaljundid-vk-th" style="display:none">
                                     <label for="opivaljundid-vk">Õpiväljundid v.k.</label>
                                     <br>
-                                    <textarea name="opivaljundid-vk" id="opivaljundid-vk" class="formInput"> </textarea>
+                                    <textarea name="opivaljundid-vk" id="opivaljundid-vk" class="formInput"></textarea>
                                     <span class="tooltip" data-tooltip="Sisestage õpiväljundid ehk see mida õppijalt oodatakse õpiobjekti läbitöötamise järel, vene keeles">?</span>
                                 </th>
                             </tr>
                             <tr>
                                 <th id="sisu-ek-th">
-                                    <label for="sisu-ek">Sisu e.k.</label>
+                                    <label for="sisu-ek">Sisu e.k.<span class="required">*</span></label>
                                     <br>
-                                    <textarea name="sisu-ek" id="sisu-ek" class="formInput"> </textarea>
+                                    <textarea name="sisu-ek" id="sisu-ek" class="formInput"></textarea>
                                     <span class="tooltip" data-tooltip="Sisestage õppekava sisu eesti keeles">?</span>
                                 </th>
                                 <th id="sisu-ik-th" style="display:none">
                                     <label for="sisu-ik">Sisu i.k.</label>
                                     <br>
-                                    <textarea name="sisu-ik" id="sisu-ik" class="formInput"> </textarea>
+                                    <textarea name="sisu-ik" id="sisu-ik" class="formInput"></textarea>
                                     <span class="tooltip" data-tooltip="Sisestage õppekava sisu inglise keeles">?</span>
                                 </th>
                                 <th id="sisu-vk-th" style="display:none">
                                     <label for="sisu-vk">Sisu v.k.</label>
                                     <br>
-                                    <textarea name="sisu-vk" id="sisu-vk" class="formInput"> </textarea>
+                                    <textarea name="sisu-vk" id="sisu-vk" class="formInput"></textarea>
                                     <span class="tooltip" data-tooltip="Sisestage õppekava sisu vene keeles">?</span>
                                 </th>
                             </tr>
                             <tr>
                                 <th id="eeldused-ek-th">
-                                    <label for="eeldused-ek">Eeldused e.k.</label>
+                                    <label for="eeldused-ek">Eeldused e.k.<span class="required">*</span></label>
                                     <br>                                 
-                                    <textarea name="eeldused-ek" id="eeldused-ek" class="formInput"> </textarea>
+                                    <textarea name="eeldused-ek" id="eeldused-ek" class="formInput"></textarea>
                                     <span class="tooltip" data-tooltip="Sisestage õppekava eeldused eesti keeles">?</span>
                                 </th>
                                 <th id="eeldused-ik-th" style="display:none">
                                     <label for="eeldused-ik">Eeldused i.k.</label>
                                     <br>
-                                    <textarea name="eeldused-ik" id="eeldused-ik" class="formInput"> </textarea>
+                                    <textarea name="eeldused-ik" id="eeldused-ik" class="formInput"></textarea>
                                     <span class="tooltip" data-tooltip="Sisestage õppekava eeldused inglise keeles">?</span>
                                 </th>
                                 <th id="eeldused-vk-th" style="display:none">
                                     <label for="eeldused-vk">Eeldused v.k.</label>
                                     <br>
-                                    <textarea name="eeldused-vk" id="eeldused-vk" class="formInput"> </textarea>
+                                    <textarea name="eeldused-vk" id="eeldused-vk" class="formInput"></textarea>
                                     <span class="tooltip" data-tooltip="Sisestage õppekava eeldused vene keeles">?</span>
                                 </th>
                             </tr>
                             <tr>
                                 <th id="tingimused-ek-th">
-                                    <label for="tingimused-ek">Läbimise tingimused, sh. praktiliste tööde lühikirjeldused e.k.</label>
+                                    <label for="tingimused-ek">Läbimise tingimused, sh. praktiliste tööde lühikirjeldused e.k.<span class="required">*</span></label>
                                     <br>
-                                    <textarea name="tingimused-ek" id="tingimused-ek" class="formInput"> </textarea>
+                                    <textarea name="tingimused-ek" id="tingimused-ek" class="formInput"></textarea>
                                 </th>
                                 <th id="tingimused-ik-th" style="display:none">
                                     <label for="tingimused-ik">Läbimise tingimused, sh. praktiliste tööde lühikirjeldused i.k.</label>
                                     <br>
-                                    <textarea name="tingimused-ik" id="tingimused-ik" class="formInput"> </textarea>
+                                    <textarea name="tingimused-ik" id="tingimused-ik" class="formInput"></textarea>
                                 </th>
                                 <th id="tingimused-vk-th" style="display:none">
                                     <label for="tingimused-vk">Läbimise tingimused, sh. praktiliste tööde lühikirjeldused v.k.</label>
                                     <br>
-                                    <textarea name="tingimused-vk" id="tingimused-vk" class="formInput"> </textarea>
+                                    <textarea name="tingimused-vk" id="tingimused-vk" class="formInput"></textarea>
                                 </th>
                             </tr>
+                            <tr id="table2-error"></tr>
                         </table>
                     </div>
                     
@@ -292,23 +294,24 @@
                         <table id="table3" style="display:none">
                             <tr>
                                 <th>
-                                    <label for="sihtgrupp">Sihtgrupp</label>
+                                    <label for="sihtgrupp">Sihtgrupp<span class="required">*</span></label>
                                     <br>
                                     <input type="text" name="sihtgrupp" id="sihtgrupp" class="formInput">
                                 </th>
                                 <th>
-                                    <label for="opikeskkond">Õpikeskkond</label>
+                                    <label for="opikeskkond">Õpikeskkond<span class="required">*</span></label>
                                     <br>
                                     <input type="text" name="opikeskkond" id="opikeskkond" class="formInput">
                                 </th>
                             </tr>
                             <tr>
                                 <th>
-                                    <label for="koolitaja-kompetentsus">Koolitaja kompetentsus</label>
+                                    <label for="koolitaja-kompetentsus">Koolitaja kompetentsus<span class="required">*</span></label>
                                     <br>
                                     <input type="text" name="koolitaja-kompetentsus" id="koolitaja-kompetentsus" class="formInput">
                                 </th>
                             </tr>
+                            <tr id="table3-error"></tr>
                         </table>
                     </div>
                     
@@ -319,38 +322,187 @@
                         <table id="table4" style="display:none">
                             <tr>
                                 <th>
-                                    <label for="oppevaldkond">Õppevaldkond (ISCED)</label>
+                                    <label for="oppevaldkond">Õppevaldkond (ISCED)<span class="required">*</span></label>
                                     <br>
-                                    <input type="text" name="oppevaldkond" id="oppevaldkond" class="formInput">
-                                </th>
-                                <th>
-                                    <label for="oppesuund">Õppesuund (ISCED)</label>
-                                    <br>
-                                    <input type="text" name="oppesuund" id="oppesuund" class="formInput">
-                                </th>
-                                <th>
-                                    <label for="oppekava-ruhm">Õppekava rühm (ISCED)</label>
-                                    <br>
-                                    <input type="text" name="oppekava-ruhm" id="oppekava-ruhm" class="formInput">
+                                    <select name="oppevaldkond" id="oppevaldkond" class="formInputDropdown">
+                                        <option value="1">00 Üldõppekavade õppevaldkond</option>
+                                        <option value="2">01 Hariduse õppevaldkond</option>
+                                        <option value="3">02 Humanitaaria ja kunsti õppevaldkond</option>
+                                        <option value="4">03 Sotsiaalteaduste, ajakirjanduse ja teabe õppevaldkond</option>
+                                        <option value="5">04 Ärinduse, halduse ja õiguse õppevaldkond</option>
+                                        <option value="6">05 Loodusteaduste, matemaatika ja statistika õppevaldkond</option>
+                                        <option value="7">06 Informatsiooni- ja kommunikatsioonitehnoloogia õppevaldkond</option>
+                                        <option value="8">07 Tehnika, tootmise ja ehituse õppevaldkond</option>
+                                        <option value="9">08 Põllumajanduse, metsanduse, kalanduse ja veterinaaria õppevaldkond</option>
+                                        <option value="10">09 Tervise ja heaolu õppevaldkond</option>
+                                        <option value="11">10 Teeninduse õppevaldkond</option>
+                                    </select>
                                 </th>
                             </tr>
                             <tr>
                                 <th>
-                                    <label for="oppekava-koostamise-alus">Õppekava koostamise alus</label>
+                                    <label for="oppesuund">Õppesuund (ISCED)<span class="required">*</span></label>
+                                    <br>
+                                    <select name="oppesuund" id="oppesuund" class="formInputDropdown">
+                                        <option value="1">001 Põhiõppekavade õppesuund</option>
+                                        <option value="2">002 Kirja- ja arvutioskuse õppesuund</option>
+                                        <option value="3">003 Isikuarengu õppesuund</option>
+                                        <option value="4">011 Hariduse õppesuund</option>
+                                        <option value="5">018 Hariduse interdistsiplinaarne õppesuund</option>
+                                        <option value="6">021 Kunsti õppesuund</option>
+                                        <option value="7">022 Humanitaaria õppesuund (v.a keeled)</option>
+                                        <option value="8">023 Keele õppesuund</option>
+                                        <option value="9">028 Humanitaaria ja kunsti interdistsiplinaarne õppesuund</option>
+                                        <option value="10">031 Sotsiaal- ja käitumisteaduste õppesuund</option>
+                                        <option value="11">032 Ajakirjanduse ja teabe õppesuund</option>
+                                        <option value="12">038 Sotsiaalteaduste, ajakirjanduse ja teave interdistsiplinaarne õppesuund</option>
+                                        <option value="13">041 Ärinduse ja halduse õppesuund</option>
+                                        <option value="14">042 Õiguse õppesuund</option>
+                                        <option value="15">048 Ärinduse, halduse ja õiguse interdistsiplinaarne õppesuund</option>
+                                        <option value="16">051 Bioloogia ja sellega seotud teaduste õppesuund</option>
+                                        <option value="17">052 Keskkonna õppesuund</option>
+                                        <option value="18">053 Füüsikaliste loodusteaduste õppesuund</option>
+                                        <option value="19">054 Matemaatika ja statistika õppesuund</option>
+                                        <option value="20">058 Loodusteaduste, matemaatika ja statistika interdistsiplinaarne õppesuund</option>
+                                        <option value="21">061 Informatsiooni- ja kommunikatsioonitehnoloogia õppesuund</option>
+                                        <option value="22">068 Informatsiooni- ja kommunikatsioonitehnoloogia interdistsiplinaarne õppesuund</option>
+                                        <option value="23">071 Tehnikaalade õppesuund</option>
+                                        <option value="24">072 Tootmise ja töötlemise õppesuund</option>
+                                        <option value="25">073 Arhitektuuri ja ehituse õppesuund</option>
+                                        <option value="26">078 Tehnika, tootmise ja ehituse interdistsiplinaarne õppesuund</option>
+                                        <option value="27">081 Põllumajanduse õppesuund</option>
+                                        <option value="28">082 Metsanduse õppesuund</option>
+                                        <option value="29">083 Kalanduse õppesuund</option>
+                                        <option value="30">084 Veterinaaria õppesuund</option>
+                                        <option value="31">084 Põllumajanduse, metsanduse, kalanduse ja veterinaaria interdistsiplinaarne õppesuund</option>
+                                        <option value="32">091 Tervise õppesuund</option>
+                                        <option value="33">092 Heaolu õppesuund</option>
+                                        <option value="34">098 Tervise ja heaolu interdistsiplinaarne õppesuund</option>
+                                        <option value="35">101 Isikuteeninduse õppesuund</option>
+                                        <option value="36">102 Hügieeni ja töötervishoiu õppesuund</option>
+                                        <option value="37">103 Turvateenuste õppesuund</option>
+                                        <option value="38">104 Transporditeenuste õppesuund</option>
+                                        <option value="39">108 Teeninduse interdistsiplinaarne õppesuund</option>
+                                    </select>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <label for="oppekava-ruhm">Õppekava rühm (ISCED)</label>
+                                    <br>
+                                    <select name="oppekava-ruhm" id="oppekava-ruhm" class="formInputDropdown">
+                                        <option value="1">0011 Põhiõppekavarühm</option>
+                                        <option value="2">0021 Kirja- ja arvutusoskuse õppekavarühm</option>
+                                        <option value="3">0031 Isikuarengu õppekavarühm</option>
+                                        <option value="4">0111 Kasvatusteaduse õppekavarühm</option>
+                                        <option value="5">0112 Koolieelikute õpetajate koolituse õppekavarühm</option>
+                                        <option value="6">0113 Klassiõpetaja koolituse õppekavarühm</option>
+                                        <option value="7">0114 Aineõpetaja koolituse õppekavarühm</option>
+                                        <option value="8">0188 Hariduse interdistsiplinaarne õppekavarühm</option>
+                                        <option value="9">0211 Audiovisuaalsete tehnikate ja meedia tootmise õppekavarühm</option>
+                                        <option value="10">0212 Moe, sise- ja tööstusdisaini õppekavarühm</option>
+                                        <option value="11">0213 Kujutava kunsti ja kunstiteaduse õppekavarühm</option>
+                                        <option value="12">0214 Käsitöö õppekavarühm</option>
+                                        <option value="13">0215 Muusika ja esituskunstide õppekavarühm</option>
+                                        <option value="14">0221 Usundiõpetuse ja usuteaduse õppekavarühm</option>
+                                        <option value="15">0222 Ajaloo ja arheoloogia õppekavarühm</option>
+                                        <option value="16">0223 Filosoofia ja eetika õppekavarühm</option>
+                                        <option value="17">0231 Keeleõppe õppekavarühm</option>
+                                        <option value="18">0232 Kirjanduse ja lingvistika õppekavarühm</option>
+                                        <option value="19">0288 Humanitaaria ja kunsti interdistsiplinaarne õppekavarühm</option>
+                                        <option value="20">0311 Majandusteaduse õppekavarühm</option>
+                                        <option value="21">0312 Poliitikateaduse ja kodanikuõpetuse õppekavarühm</option>
+                                        <option value="22">0313 Psühholoogia õppekavarühm</option>
+                                        <option value="23">0314 Sotsioloogia ja kulturoloogia õppekavarühm</option>
+                                        <option value="24">0321 Ajakirjanduse õppekavarühm</option>
+                                        <option value="25">0322 Raamatukogunduse, teabe ja arhiivinduse õppekavarühm</option>
+                                        <option value="26">0388 Sotsiaalteaduste, ajakirjanduse ja teabe interdistsiplinaarne õppekavarühm</option>
+                                        <option value="27">0411 Majandusarvestuse ja maksunduse õppekavarühm</option>
+                                        <option value="28">0412 Rahanduse, panganduse ja kindlustuse õppekavarühm</option>
+                                        <option value="29">0413 Juhtimise ja halduse õppekavarühm</option>
+                                        <option value="30">0414 Turunduse ja reklaami õppekavarühm</option>
+                                        <option value="31">0415 Sekretäti ja kontoritöö õppekavarühm</option>
+                                        <option value="32">0416 Hulgi- ja jaekaubanduse õppekavarühm</option>
+                                        <option value="33">0417 Tööoskuste õppekavarühm</option>
+                                        <option value="34">0421 Õiguse õppekavarühm</option>
+                                        <option value="35">0488 Ärinduse, halduse ja õiguse interdistsiplinaarne õppekavarühm</option>
+                                        <option value="36">0511 Bioloogia õppekavarühm</option>
+                                        <option value="37">0512 Biokeemia õppekavarühm</option>
+                                        <option value="38">0521 Keskkonnateaduste õppekavarühm</option>
+                                        <option value="39">0522 Looduskeskkonna ja eluslooduse õppekavarühm</option>
+                                        <option value="40">0531 Keemia õppekavarühm</option>
+                                        <option value="41">0532 Maateaduse õppekavarühm</option>
+                                        <option value="42">0533 Füüsika õppekavarühm</option>
+                                        <option value="43">0541 Matemaatika õppekavarühm</option>
+                                        <option value="44">0542 Statistika õppekavarühm</option>
+                                        <option value="45">0588 Loodusteaduste, matemaatika ja statistika interdistsiplinaarne õppekavarühm</option>
+                                        <option value="46">0611 Arvutikasutuse õppekavarühm</option>
+                                        <option value="47">0612 Andmebaaside ja võrgu disaini ning halduse õppekavarühm</option>
+                                        <option value="48">0613 Tarkvara ja rakenduste arenduse ning analüüsi õppekavarühm</option>
+                                        <option value="49">0619 Informatsiooni- ja kommunikatsioonitehnoloogia õppekavarühm, mujal liigitamata</option>
+                                        <option value="50">0688 Informatsiooni- ja kommunikatsioonitehnoloogia interdistsiplinaarne õppekavarühm</option>
+                                        <option value="51">0711 Keemiatehnoloogia ja -protsesside õppekavarühm</option>
+                                        <option value="52">0712 Keskkonnakaitsetehnoloogia õppekavarühm</option>
+                                        <option value="53">0713 Elektrienergia ja energeetika õppekavarühm</option>
+                                        <option value="54">0714 Elektroonika ja automaatika õppekavarühm</option>
+                                        <option value="55">0715 Mehaanika ja metallitöö õppekavarühm</option>
+                                        <option value="56">0716 Mootorliikurite, laevanduse ja lennundustehnika õppekavarühm</option>
+                                        <option value="57">0719 Tehnikaalade õppekavarühm, mujal liigitamata</option>
+                                        <option value="58">0721 Toiduainete töötlemise õppekavarühm</option>
+                                        <option value="59">0722 Materjalide töötlemise (klaas, paber, plast ja puit)  õppekavarühm</option>
+                                        <option value="60">0723 Tekstiili, rõivaste, jalatsite valmistamise ning naha töötlemise õppekavarühm</option>
+                                        <option value="61">0724 Kaevandamise ja rikastamise õppekavarühm</option>
+                                        <option value="62">0731 Arhitektuuri ja linnaplaneerimise õppekavarühm</option>
+                                        <option value="63">0732 Ehituse ja tsiviilrajatiste õppekavarühm</option>
+                                        <option value="64">0788 Tehnika, tootmise ja ehituse interdistsiplinaarne õppekavarühm</option>
+                                        <option value="65">0811 Põllunduse ja loomakasvatuse õppekavarühm</option>
+                                        <option value="66">0812 Aianduse õppekavarühm</option>
+                                        <option value="67">0821 Metsanduse õppekavarühm</option>
+                                        <option value="68">0831 Kalanduse õppekavarühm</option>
+                                        <option value="69">0841 Veterinaaria õppekavarühm</option>
+                                        <option value="70">0888 Põllumajanduse, metsanduse, kalanduse ja veterinaaria interdistsiplinaarne õppekavarühm</option>
+                                        <option value="71">0911 Hambaravi õppekavarühm</option>
+                                        <option value="72">0912 Meditsiini õppekavarühm</option>
+                                        <option value="73">0913 Õenduse ja ämmaemanduse õppekavarühm</option>
+                                        <option value="74">0914 Meditsiinidiagnostika- ja ravitehnoloogia õppekavarühm</option>
+                                        <option value="75">0915 Teraapia ja taastusravi õppekavarühm</option>
+                                        <option value="76">0916 Farmaatsia õppekavarühm</option>
+                                        <option value="77">0917 Traditsioonilise ja täiendava meditsiini ning teraapia õppekavarühm</option>
+                                        <option value="78">0921 Eakate ja puudega täiskasvanute hooldamise õppekavarühm</option>
+                                        <option value="79">0922 Lastehoiu ja noorte teenuste õppekavarühm</option>
+                                        <option value="80">0923 Sotsiaaltöö ja nõustamise õppekavarühm</option>
+                                        <option value="82">0988 Tervise ja heaolu interdistsiplinaarne õppekavarühm</option>
+                                        <option value="83">1011 Koduteeninduse õppekavarühm</option>
+                                        <option value="84">1012 Juuksuritöö ja iluteeninduse õppekavarühm</option>
+                                        <option value="85">1013 Majutamise ja toitlustamise õppekavarühm</option>
+                                        <option value="86">1014 Spordi õppekavarühm</option>
+                                        <option value="87">1015 Reisimise, turismi ja vaba aja veetmise õppekavarühm</option>
+                                        <option value="88">1021 Prügi ja heitvete käitlemise õppekavarühm</option>
+                                        <option value="89">1022 Töötervishoiu ja -kaitse õppekavarühm</option>
+                                        <option value="90">1031 Sõjanduse ja riigikaitse õppekavarühm</option>
+                                        <option value="91">1032 Vara- ja isikukaitse õppekavarühm</option>
+                                        <option value="92">1041 Transporditeenuste õppekavarühm</option>
+                                        <option value="93">1088 Teeninduse interdistsiplinaarne õppekavarühm</option>
+                                    </select>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <label for="oppekava-koostamise-alus">Õppekava koostamise alus<span class="required">*</span></label>
                                     <br>
                                     <input type="text" name="oppekava-koostamise-alus" id="oppekava-koostamise-alus" class="formInput">
                                 </th>
                                 <th>
-                                    <label for="veebis-kuvatav-korraldaja">Veebis kuvatav korraldaja struktuur ja kontakt</label>
+                                    <label for="veebis-kuvatav-korraldaja">Veebis kuvatav korraldaja struktuur ja kontakt<span class="required">*</span></label>
                                     <br>
                                     <input type="text" name="veebis-kuvatav-korraldaja" id="veebis-kuvatav-korraldaja" class="formInput">
                                 </th>
                             </tr>
                             <tr>
                                 <th>
-                                    <label for="pohivastutaja-struktuur">Põhivastutaja struktuuriüksus</label>
+                                    <label for="pohivastutaja-struktuur">Põhivastutaja struktuuriüksus<span class="required">*</span></label>
                                     <br>
-                                    <input list="pohivastutaja-struktuur" name="pohivastutaja-struktuur" class="formInput">
+                                    <input id="pohivastutaja-struktuur-id" list="pohivastutaja-struktuur" name="pohivastutaja-struktuur" class="formInput">
                                     <datalist id="pohivastutaja-struktuur">
                                         <option value="Tallinna Ülikool"></option>
                                         <option value="Tartu Ülikool"></option>
@@ -415,7 +567,7 @@
                             </tr>
                             <tr>
                                 <th>
-                                    <label for="koolitusvaldkond">Koolitusvaldkond</label>
+                                    <label for="koolitusvaldkond">Koolitusvaldkond<span class="required">*</span></label>
                                     <br>
                                     <input type="text" name="koolitusvaldkond" id="koolitusvaldkond" class="formInput">
                                 </th>
@@ -430,9 +582,11 @@
                                     <input type="text" name="veebis-kuvatav-koolitaja" id="veebis-kuvatav-koolitaja" class="formInput">
                                 </th>
                             </tr>
+                            <tr id="table4-error"></tr>
                         </table>
                     </div>
                     <div id="downloadBtn">
+                        <input type="button" value="Kinnita" id="submitForm" class="btn" onclick="validate()">
                         <input type="button" value="Lae alla tekstina" id="downloadTxt" class="btn">
                         <input type="button" value="Lae alla PDF-ina" id="downloadPdf" class="btn">
                     </div>
