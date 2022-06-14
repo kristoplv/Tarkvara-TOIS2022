@@ -1,8 +1,3 @@
-window.onload = function(){
-    document.querySelector('#downloadTxt').addEventListener('click', downloadFormTxt);
-    document.querySelector('#downloadPdf').addEventListener('click', generatePdf);
-}
-
 function downloadFormTxt(){
     let form = new SaveFile();
 }
