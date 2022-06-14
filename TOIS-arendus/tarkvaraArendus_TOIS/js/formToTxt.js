@@ -1,5 +1,6 @@
 window.onload = function(){
     document.querySelector('#downloadTxt').addEventListener('click', downloadFormTxt);
+    document.querySelector('#downloadPdf').addEventListener('click', generatePdf);
 }
 
 function downloadFormTxt(){
@@ -59,7 +60,7 @@ class SaveFile{
         this.oppeSuund = document.querySelector('#oppesuund');
         this.oppeRuhm = document.querySelector('#oppekava-ruhm');
         this.oppekavaKoostamiseAlus = document.querySelector('#oppekava-koostamise-alus');
-        this.pohiVastutaja = document.querySelector('#pohivastutaja');
+        this.pohiVastutaja = document.querySelector('#pohivastutaja-nimi');
         this.veebisKuvatavKorraldaja = document.querySelector('#veebis-kuvatav-korraldaja');
         this.onTellitav = document.querySelector('#tellitav');
         this.poleTellitav = document.querySelector('#pole-tellitav');

@@ -1,7 +1,3 @@
-window.onload = function(){
-    document.querySelector('#downloadPdf').addEventListener('click', generatePdf);
-}
-
 function generatePdf() {
     let nimetusEK = document.querySelector('#nimetus-ek');
     let nimetusIK = document.querySelector('#nimetus-ik');
@@ -52,7 +48,7 @@ function generatePdf() {
     let oppesuund = document.querySelector('#oppesuund');
     let oppekavaRuhm = document.querySelector('#oppekava-ruhm');
     let oppekavaKoostamiseAlus = document.querySelector('#oppekava-koostamise-alus');
-    let pohivastutaja = document.querySelector('#pohivastutaja');
+    let pohivastutaja = document.querySelector('#pohivastutaja-nimi');
     let veebisKuvatavKorraldaja = document.querySelector('#veebis-kuvatav-korraldaja');
     let onTellitav = document.querySelector('#tellitav');
     let poleTellitav = document.querySelector('#pole-tellitav');
