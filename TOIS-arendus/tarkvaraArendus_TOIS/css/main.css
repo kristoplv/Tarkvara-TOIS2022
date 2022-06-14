@@ -21,7 +21,7 @@ hr{
 }
 
 .links{
-    padding: 1em;
+    /*padding: 1em;*/
     text-decoration: none;
     color: black;
 }
@@ -177,6 +177,7 @@ th{
     background-color: #c71a3d;
     color: white;
     font-size: 0.65vw;
+    cursor: pointer;
 }
 .estFlag{
     width: 15%;
@@ -201,6 +202,8 @@ th{
 th{
     font-size: 1vw;
     font-weight: 400;
+    text-align: left;
+    padding-right: 30px;
 }
 
 td{
@@ -208,12 +211,21 @@ td{
 }
 
 .topper{
-    text-align: left;
-    padding-left: 10px;
-    padding-right: 60px;
+    text-align: justify;
 }
 
 .evenBorders{
     border-collapse: collapse;
 }
 
+.number{
+    text-align: right;
+}
+
+/*.curriculumTable{
+    display: flex;
+    flex-direction: column;
+    padding-left: 3%;
+    min-width: 1000;
+    overflow: unset;
+}*/
