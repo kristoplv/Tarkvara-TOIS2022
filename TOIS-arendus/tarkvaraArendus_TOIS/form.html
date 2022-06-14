@@ -13,6 +13,7 @@
     <script src="js/save_pdf/jspdf.plugin.autotable.js" defer></script>
     <script src="js/save_pdf/fnc.js" defer></script>
     <script src="js/isced.js" defer></script>
+    <script src="js/formOnload.js" defer></script>
     <title>Loo uus õppekava</title>
 </head>
 <body>
@@ -144,7 +145,7 @@
                                     <br>
                                     <input type="number" name="maht-tundides" id="muu-ope-h" class="formInput" onkeyup="calculateEAP()" disabled>
                                 </th>
-                                <th>
+                                <th colspan="2">
                                     <label for="oppekava-maht-tunnid">Õppekava maht (t): <span class="required">*</span> </label>
                                     <span id="hours-result"></span>
                                     <br>
@@ -309,7 +310,7 @@
                                 </th>
                             </tr>
                             <tr>
-                                <th>
+                                <th colspan="2">
                                     <label for="koolitaja-kompetentsus">Koolitaja kompetentsus <span class="required">*</span></label>
                                     <br>
                                     <input type="text" name="koolitaja-kompetentsus" id="koolitaja-kompetentsus" class="formInput">
@@ -325,7 +326,7 @@
                     <div class="fillForm" id="divv1">
                         <table id="table4" style="display:none">
                             <tr>
-                                <th>
+                                <th colspan="3">
                                     <label for="oppevaldkond">Õppevaldkond (ISCED) <span class="required">*</span></label>
                                     <br>
                                     <select name="oppevaldkond" id="oppevaldkond" class="formInputDropdown">
@@ -334,7 +335,7 @@
                                 </th>
                             </tr>
                             <tr>
-                                <th>
+                                <th colspan="3">
                                     <label for="oppesuund">Õppesuund (ISCED) <span class="required">*</span></label>
                                     <br>
                                     <select name="oppesuund" id="oppesuund" class="formInputDropdown">
@@ -343,7 +344,7 @@
                                 </th>
                             </tr>
                             <tr>
-                                <th>
+                                <th colspan="3">
                                     <label for="oppekava-ruhm">Õppekava rühm (ISCED)</label>
                                     <br>
                                     <select name="oppekava-ruhm" id="oppekava-ruhm" class="formInputDropdown">
@@ -357,7 +358,7 @@
                                     <br>
                                     <input type="text" name="oppekava-koostamise-alus" id="oppekava-koostamise-alus" class="formInput">
                                 </th>
-                                <th>
+                                <th colspan="2">
                                     <label for="veebis-kuvatav-korraldaja">Veebis kuvatav korraldaja struktuur ja kontakt <span class="required">*</span></label>
                                     <br>
                                     <input type="text" name="veebis-kuvatav-korraldaja" id="veebis-kuvatav-korraldaja" class="formInput">
@@ -387,7 +388,7 @@
                                     <label for="mahuprotsent">Mahuprotsent</label>
                                     <input type="number" name="mahuprotsent" id="mahuprotsent">
                                 </th>
-                                <th>
+                                <th colspan="2">
                                     <label for="vastutaja-struktuur">Vastutaja struktuuriüksus</label>
                                     <br>
                                     <input list="vastutaja-struktuur" name="vastutaja-struktuur" class="formInput">
@@ -421,7 +422,7 @@
                                     <input type="radio" name="tellitav-kursus" id="pole-tellitav">
                                     <label for="pole-tellitav">Ei</label>
                                 </th>
-                                <th>
+                                <th colspan="2">
                                     <label for="teistele-nahtav">TÕK on teistele nähtav</label>
                                     <br>
                                     <input type="radio" name="teistele-nahtav" id="nahtav">

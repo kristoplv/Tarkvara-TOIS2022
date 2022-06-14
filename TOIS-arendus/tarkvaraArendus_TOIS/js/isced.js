@@ -61,33 +61,3 @@ let valikud = {
         "108 Teeninduse interdistsiplinaarne õppesuund": ["1088 Teeninduse interdistsiplinaarne õppekavarühm"]
     }
 }
-
-window.onload = function(){
-    let valdkond = document.querySelector('#oppevaldkond');
-    let suund = document.querySelector('#oppesuund');
-    let ruhm = document.querySelector('#oppekava-ruhm');
-
-    for (var x in valikud) {
-        console.log("Tootab");
-        valdkond.options[valdkond.options.length] = new Option(x, x);
-      }
-      valdkond.onchange = function() {
-        
-        //empty Chapters- and Topics- dropdowns
-        suund.length = 1;
-        ruhm.length = 1;
-        //display correct values
-        for (var y in valikud[this.value]) {
-          suund.options[suund.options.length] = new Option(y, y);
-        }
-      }
-      suund.onchange = function() {
-        //empty Chapters dropdown
-        ruhm.length = 1;
-        //display correct values
-        var z = valikud[valdkond.value][this.value];
-        for (var i = 0; i < z.length; i++) {
-          ruhm.options[ruhm.options.length] = new Option(z[i], z[i]);
-        }
-    }
-}
