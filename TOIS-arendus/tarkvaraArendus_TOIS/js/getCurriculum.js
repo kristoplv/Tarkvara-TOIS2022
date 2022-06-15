@@ -44,6 +44,12 @@ function getAll(){
     getFirebaseItem(hindamine);
     getFirebaseItem(vastutaja);
 }
+
+
+
+
+
+
 function getFirebaseItem(baseRef){
     var initRef = ref(db, baseRef);
     onValue(initRef, function(sisu){
@@ -59,9 +65,12 @@ function getFirebaseItem(baseRef){
             var newRef = ref(db, reffer);
             onValue(newRef, function(sisuNew){
                 var lowValues = sisuNew.val();
-                console.log(lowValues);
-                var finalValues = Object.values(lowValues);
-                console.log(finalValues[0]);
+                if(lowValues.isNaN || lowValues.isNaN == undefined){
+                    var finalValues = Object.values(lowValues);
+                    console.log(finalValues[0]);
+                } else {
+                    console.log(lowValues);
+                }
             })
         }
     })
