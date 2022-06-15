@@ -64,6 +64,7 @@ hr{
     color: #ba0c2f;
     font-weight: 600;
     text-decoration: none;
+    margin-left: 5vw;
 }
 
 .logo{
@@ -90,9 +91,7 @@ hr{
 }
 
 .mainArea{
-
     background-color: #dfced277;
-    
 }
 
 .mainContentArea{
@@ -117,9 +116,7 @@ li{
 }
 
 /*.fillerTop{
-    grid-column: 2 / 3;
-    grid-row: 1 / 2;
-    box-shadow: 0px 5px 10px #b87a8ac4;
+    box-shadow: 0 8px 2px -2px #b87a8ac4;
 }*/
 
 .menuLabel{
@@ -178,6 +175,7 @@ th{
     background-color: #c71a3d;
     color: white;
     font-size: 0.75vw;
+    margin: 5px;
     cursor: pointer;
     border: none;
     border-radius: 3px;
