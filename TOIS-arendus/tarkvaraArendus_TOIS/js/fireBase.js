@@ -1,7 +1,9 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.11/firebase-app.js";
 import {getDatabase, ref, push, set, onValue, get, child} from "https://www.gstatic.com/firebasejs/9.6.11/firebase-database.js";
 
-
+var courseId_el = document.getElementById("courseId");
+var courseId = courseId_el.innerHTML;
+console.log(courseId);
 
 // Vaga palju querySelectoreid
 
@@ -40,14 +42,12 @@ var korraldaja_veebis = document.getElementById("veebis-kuvatav-korraldaja");  /
 
 var pohivastutaja_uksus = document.getElementById("pohivastutaja-struktuur"); // done
 //var pohivastutaja_uksus_val = pohivastutaja_uksus[pohivastutaja_uksus.selectedIndex]
-var pohivastutaja_korraldaja_ei = document.querySelector("#pole-korraldaja");
 var pohivastutaja_korraldaja_jah = document.querySelector("#on-korraldaja");
 var pohivastutaja_maht = document.getElementById("mahuprotsent");  // done
 var pohivastutaja_nimi = document.querySelector("#pohivastutaja-nimi");  // done
 
 var vastutaja_uksus = document.getElementById("vastutaja-struktuur");  // done
 //var vastutaja_uksus_val = vastutaja_uksus[vastutaja_uksus.selectedIndex]
-var vastutaja_korraldaja_ei = document.getElementById("pole-korraldaja-norm");
 var vastutaja_korraldaja_jah = document.getElementById("on-korraldaja-norm");
 var vastutaja_maht = document.getElementById("mahuprotsent-norm"); // done
 var vastutaja_nimi = document.getElementById("vastutaja-nimi");  // done
@@ -99,7 +99,7 @@ function sleep(ms){
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-function sendValues(hash){
+function sendValues(){
   var eap = (maht[0].value + maht[1].value + maht[2].value) / 26;
   console.log(koolitus_valitud + " ... " + koolitus_valitud.innerHTML)
   var baseRef = "TOIS/vorm/uldine_info";
@@ -218,6 +218,5 @@ function saadaOneline(baseRef, liik){
   });
 }
 
-var courseId = document.getElementById("courseId")
 newBtn.addEventListener("click", ()=>{ sendValues(courseId.innerHTML) })
 

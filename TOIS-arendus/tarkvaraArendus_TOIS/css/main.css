@@ -36,7 +36,7 @@ hr{
 
 .mainContainer{
     display: grid;
-    grid-template-columns: 300px auto 200px;
+    grid-template-columns: 15% 70% 15%;
     grid-template-rows: 100px auto;
     grid-column-gap: 0px;
 	grid-row-gap: 0px;
@@ -45,15 +45,6 @@ hr{
 }
 
 .login{
-    padding-top: 20px;
-    padding-left: 0px;
-    grid-column: 3 / 4;
-    grid-row: 1 / 2;
-    border-bottom: solid 0.5px #75142cc4;
-    border-left: solid 0.5px #75142cc4;
-}
-
-.login_txt{
     margin: 0;
     border: 0;
     padding: 0;
@@ -61,12 +52,26 @@ hr{
     font-style:italic;
     letter-spacing: 0.05em;
     font-size: 2.2vh;
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+    border-bottom: solid 0.5px #75142cc4;
+    border-left: solid 0.5px #75142cc4;
+}
+
+.loginButton{
+    text-align: center;
+    padding-left: 40%;
+    padding-top: 40%;
+    color: #ba0c2f;
+    font-weight: 600;
+    text-decoration: none;
 }
 
 .logo{
     background-image: url("../images/TOISlogo.png");
     background-repeat: no-repeat;
-    background-size: 500px;
+    background-size: 420px;
+    background-position-y: center;
     grid-column: 1 / 3;
     grid-row: 1 / 2;
     border-bottom: solid 0.5px #75142cc4;
@@ -108,14 +113,6 @@ li{
 /* p{
     font-size: 0.85vw;
 } */
-
-.loginButton{
-    padding-left: 50px;
-    font-size: 24px;
-    color: #ba0c2f;
-    font-weight: 600;
-    text-decoration: none;
-}
 
 .loginButton:hover{
     color: #d44562;
@@ -176,13 +173,18 @@ th{
 .btn{
     background-color: #c71a3d;
     color: white;
-    font-size: 0.65vw;
+    font-size: 0.75vw;
     cursor: pointer;
     border: none;
     border-radius: 3px;
     box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12)!important;
     font-family: "Roboto", "Segoe UI", BlinkMacSystemFont, system-ui, -apple-system;
 }
+
+.btn:hover{
+    background-color: #d44562;
+}
+
 .estFlag{
     width: 15%;
     margin-top: 2%;
