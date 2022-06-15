@@ -3,6 +3,30 @@
     .field{
         font-size: 1.5vh;
     }
+    th{
+        font-size: 0.95em;
+    }
+    .links > a{
+        font-size: 0.9em;
+    }
+    .number{
+        display: none;
+    }
+    .search{
+        position: absolute;
+        margin-top: 3em;
+        width: 100%;
+        display: grid;
+        align-items: center;
+        font-size: 24px;
+    }
+    
+    #formList{
+        margin-top: 10em;
+    }
+    .btn{
+        font-size: 24px;
+    }
     .login_txt{
         margin: 0;
         border: 0;
