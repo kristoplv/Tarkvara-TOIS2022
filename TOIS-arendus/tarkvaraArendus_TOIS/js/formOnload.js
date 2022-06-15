@@ -1,8 +1,8 @@
 window.onload = function(){
 
-    checkLoginStatus();
+    /*checkLoginStatus();*/
 
-    authAccess();
+    /*authAccess();*/
 
     /* ISCED */
     let valdkond = document.querySelector('#oppevaldkond');
