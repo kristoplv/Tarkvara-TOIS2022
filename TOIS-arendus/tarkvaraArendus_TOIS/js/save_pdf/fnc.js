@@ -5,16 +5,21 @@ function generatePdf() {
     let kontaktope = document.querySelector('#kontaktope');
     let praktika = document.querySelector('#praktika');
     let iseseisevOpe = document.querySelector('#iseseisev-ope');
+    let muuOppeviis = document.querySelector('#muu-oppeviis');
+    let muuOppeviisNimetus = document.querySelector('#muu-oppeviisi-nimetus');
     let oppeviisid = "";
     let eesti = document.querySelector('#eesti');
     let inglise = document.querySelector('#inglise');
     let vene = document.querySelector('#vene');
+    let muuOppetooKeel = document.querySelector('#muu-oppetookeel');
+    let muuOppetooKeelNimetus = document.querySelector('#muu-oppetookeele-nimetus');
     let oppetooKeeled = "";
     let koolituseLiik = document.querySelector('#koolituse-liik');
     let liik = "";
     let kontaktopeH = document.querySelector('#kontaktope-h');
     let praktikaH = document.querySelector('#praktika-h');
     let iseseisevOpeH = document.querySelector('#iseseisev-ope-h');
+    let muuOpeH = document.querySelector('#muu-ope-h');
     let mahtTundides = document.querySelector('#hours-result');
     let eap = document.querySelector('#eap-result');
 
@@ -42,20 +47,33 @@ function generatePdf() {
     let sihtgrupp = document.querySelector('#sihtgrupp');
     let opikeskkond = document.querySelector('#opikeskkond');
     let koolitajaKompetentsus = document.querySelector('#koolitaja-kompetentsus');
-    let kuvatavKoolitaja = document.querySelector('#veebis-kuvatav-koolitaja');
 
     let oppevaldkond = document.querySelector('#oppevaldkond');
     let oppesuund = document.querySelector('#oppesuund');
     let oppekavaRuhm = document.querySelector('#oppekava-ruhm');
     let oppekavaKoostamiseAlus = document.querySelector('#oppekava-koostamise-alus');
-    let pohivastutaja = document.querySelector('#pohivastutaja-nimi');
     let veebisKuvatavKorraldaja = document.querySelector('#veebis-kuvatav-korraldaja');
+    let pohivastutajaStruktuur = document.querySelector('#pohivastutaja-struktuur-id');
+    let pohivastutajaNimi = document.querySelector('#pohivastutaja-nimi');
+    let pohivastutajaOnKorraldaja = document.querySelector('#on-korraldaja');
+    let pohivastutajaPoleKorraldaja = document.querySelector('#pole-korraldaja');
+    let pohivastutajaKorraldaja = "";
+    let pohivastutajaMahuprotsent = document.querySelector('#mahuprotsent');
+    let vastutajaStruktuur = document.querySelector('#vastutaja-struktuur-id');
+    let vastutajaNimi = document.querySelector('#vastutaja-nimi');
+    let vastutajaOnKorraldaja = document.querySelector('#on-korraldaja-norm');
+    let vastutajaPoleKorraldaja = document.querySelector('#pole-korraldaja-norm');
+    let vastutajaKorraldaja = "";
+    let vastutajaMahuprotsent = document.querySelector('#mahuprotsent-norm');
     let onTellitav = document.querySelector('#tellitav');
     let poleTellitav = document.querySelector('#pole-tellitav');
     let tellitavus = "";
     let onNahtav = document.querySelector('#nahtav');
     let poleNahtav = document.querySelector('#pole-nahtav');
     let nahtavus = "";
+    let koolitusvaldkond = document.querySelector('#koolitusvaldkond');
+    let viideKoolitusele = document.querySelector('#viide-koolitusele');
+    let kuvatavKoolitaja = document.querySelector('#veebis-kuvatav-koolitaja');
 
     if(kontaktope.checked){
         oppeviisid += "Kontaktõpe\n";
@@ -64,7 +82,10 @@ function generatePdf() {
         oppeviisid += "Praktika\n";
     }
     if(iseseisevOpe.checked){
-        oppeviisid += "Iseseisev õpe";
+        oppeviisid += "Iseseisev õpe\n";
+    }
+    if(muuOppeviis.checked){
+        oppeviisid += "Muu: " + muuOppeviisNimetus.value;
     }
     oppeviisid = oppeviisid.trim();
 
@@ -75,9 +96,26 @@ function generatePdf() {
         oppetooKeeled += "Inglise\n";
     }
     if(vene.checked){
-        oppetooKeeled += "Vene";
+        oppetooKeeled += "Vene\n";
+    }
+    if(muuOppetooKeel.checked){
+        oppetooKeeled += "Muu: " + muuOppetooKeelNimetus.value;
     }
     oppetooKeeled = oppetooKeeled.trim();
+
+    if(pohivastutajaOnKorraldaja.checked){
+        pohivastutajaKorraldaja = "Jah";
+    }
+    if(pohivastutajaPoleKorraldaja.checked){
+        pohivastutajaKorraldaja = "Ei";
+    }
+
+    if(vastutajaOnKorraldaja.checked){
+        vastutajaKorraldaja = "Jah";
+    }
+    if(vastutajaPoleKorraldaja.checked){
+        vastutajaKorraldaja = "Ei";
+    }
 
     if(onTellitav.checked){
         tellitavus = "Tellitav";
@@ -104,7 +142,13 @@ function generatePdf() {
     }
 
     if(koolituseLiik.value == 1){
-        liik = "Koolitus";
+        liik = "Esmane õpe";
+    }
+    if(koolituseLiik.value == 2){
+        liik = "Ümberõpe";
+    }
+    if(koolituseLiik.value == 3){
+        liik = "Täiendusõpe";
     }
 
     let doc = new jspdf.jsPDF();
@@ -123,6 +167,7 @@ function generatePdf() {
             ['Kontaktõppe maht', kontaktopeH.value],
             ['Praktika maht', praktikaH.value],
             ['Iseseisva õppe maht', iseseisevOpeH.value],
+            ['Muu maht', muuOpeH.value],
             ['Õppekava maht kokku', mahtTundides.innerText],
             ['EAP maht', eap.innerText],
             [{ content: 'Hindamine ja õppe eesmärgid', colSpan: 2, styles: { fontStyle: 'bold' } }],
@@ -149,16 +194,25 @@ function generatePdf() {
             ['Sihtgrupp', sihtgrupp.value],
             ['Õpikeskkond', opikeskkond.value],
             ['Koolitaja kompetentsus', koolitajaKompetentsus.value],
-            ['Veebis kuvatav koolitaja', kuvatavKoolitaja.value],
-            [{ content: 'Administratiivne info', colSpan: 2, styles: { fontStyle: 'bold' } }],
+            [{ content: 'Õppejuhi täita', colSpan: 2, styles: { fontStyle: 'bold' } }],
             ['Õppevaldkond', oppevaldkond.value],
             ['Õppesuund', oppesuund.value],
             ['Õppekava rühm', oppekavaRuhm.value],
             ['Õppekava koostamise alus', oppekavaKoostamiseAlus.value],
-            ['Põhivastutaja', pohivastutaja.value],
-            ['Veebis kuvatav korraldaja', veebisKuvatavKorraldaja.value],
+            ['Veebis kuvatav korraldaja struktuur ja kontakt', veebisKuvatavKorraldaja.value],
+            ['Põhivastutaja struktuuriüksus', pohivastutajaStruktuur.value],
+            ['Põhivastutaja nimi', pohivastutajaNimi.value],
+            ['On korraldaja', pohivastutajaKorraldaja],
+            ['Mahuprotsent', pohivastutajaMahuprotsent.value],
+            ['Vastutaja struktuuriüksus', vastutajaStruktuur.value],
+            ['Vastutaja nimi', vastutajaNimi.value],
+            ['On korraldaja', vastutajaKorraldaja],
+            ['Mahuprotsent', vastutajaMahuprotsent.value],
             ['Tellitavus', tellitavus],
-            ['Nähtavus', nahtavus]
+            ['Nähtavus', nahtavus],
+            ['Koolitusvaldkond', koolitusvaldkond.value],
+            ['Viide seadusega seotud koolitusele', viideKoolitusele.value],
+            ['Veebis kuvatav koolitaja', kuvatavKoolitaja.value]
         ],
     });
     doc.save(pdfName);

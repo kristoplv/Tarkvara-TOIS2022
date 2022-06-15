@@ -12,16 +12,21 @@ class SaveFile{
         this.oppeViis1 = document.querySelector('#kontaktope');
         this.oppeViis2 = document.querySelector('#praktika');
         this.oppeViis3 = document.querySelector('#iseseisev-ope');
+        this.oppeViis4 = document.querySelector('#muu-oppeviis');
+        this.oppeViis4Nimetus = document.querySelector('#muu-oppeviisi-nimetus');
         this.oppeViisid = "";
         this.keel1 = document.querySelector('#eesti');
         this.keel2 = document.querySelector('#inglise');
         this.keel3 = document.querySelector('#vene');
+        this.keel4 = document.querySelector('#muu-oppetookeel');
+        this.keel4Nimetus = document.querySelector('#muu-oppetookeele-nimetus');
         this.keeled = "";
         this.koolituseLiik = document.querySelector('#koolituse-liik');
         this.liik = "";
         this.mahtTundidesKontakt = document.querySelector('#kontaktope-h');
         this.mahtTundidesPraktika = document.querySelector('#praktika-h');
         this.mahtTundidesIseseisev = document.querySelector('#iseseisev-ope-h');
+        this.mahtTundidesMuu = document.querySelector('#muu-ope-h');
         this.mahtTundidesKokku = document.querySelector('#hours-result');
         this.eap = document.querySelector('#eap-result');
 
@@ -49,20 +54,33 @@ class SaveFile{
         this.sihtGrupp = document.querySelector('#sihtgrupp');
         this.opiKeskkond = document.querySelector('#opikeskkond');
         this.koolitajaKompetentsus = document.querySelector('#koolitaja-kompetentsus');
-        this.kuvatavKoolitaja = document.querySelector('#veebis-kuvatav-koolitaja');
 
         this.oppeValdkond = document.querySelector('#oppevaldkond');
         this.oppeSuund = document.querySelector('#oppesuund');
         this.oppeRuhm = document.querySelector('#oppekava-ruhm');
         this.oppekavaKoostamiseAlus = document.querySelector('#oppekava-koostamise-alus');
-        this.pohiVastutaja = document.querySelector('#pohivastutaja-nimi');
         this.veebisKuvatavKorraldaja = document.querySelector('#veebis-kuvatav-korraldaja');
+        this.pohiVastutajaStruktuur = document.querySelector('#pohivastutaja-struktuur-id');
+        this.pohiVastutajaNimi = document.querySelector('#pohivastutaja-nimi');
+        this.pohiVastutajaOnKorraldaja = document.querySelector('#on-korraldaja');
+        this.pohiVastutajaPoleKorraldaja = document.querySelector('#pole-korraldaja');
+        this.pohiVastutajaKorraldaja = "";
+        this.pohivastutajaMahuprotsent = document.querySelector('#mahuprotsent');
+        this.vastutajaStruktuur = document.querySelector('#vastutaja-struktuur-id');
+        this.vastutajaNimi = document.querySelector('#vastutaja-nimi');
+        this.vastutajaOnKorraldaja = document.querySelector('#on-korraldaja-norm');
+        this.vastutajaPoleKorraldaja = document.querySelector('#pole-korraldaja-norm');
+        this.vastutajaKorraldaja = "";
+        this.vastutajaMahuprotsent = document.querySelector('#mahuprotsent-norm');
         this.onTellitav = document.querySelector('#tellitav');
         this.poleTellitav = document.querySelector('#pole-tellitav');
         this.tellitavus = "";
         this.onNahtav = document.querySelector('#nahtav');
         this.poleNahtav = document.querySelector('#pole-nahtav');
         this.nahtavus = "";
+        this.koolitusvaldkond = document.querySelector('#koolitusvaldkond');
+        this.viideKoolitusele = document.querySelector('#viide-koolitusele');
+        this.kuvatavKoolitaja = document.querySelector('#veebis-kuvatav-koolitaja');
 
         this.downloadButton = document.querySelector('#downloadTxt');
 
@@ -75,10 +93,13 @@ class SaveFile{
             this.oppeViisid += "Kontaktõpe \r\n";
         }
         if(this.oppeViis2.checked){
-            this.oppeViisid += "Praktika \r\n";
+            this.oppeViisid += "  Praktika \r\n";
         }
         if(this.oppeViis3.checked){
-            this.oppeViisid += "Iseseisev õpe \r\n";
+            this.oppeViisid += "  Iseseisev õpe \r\n";
+        }
+        if(this.oppeViis4.checked){
+            this.oppeViisid += "  Muu: " + this.oppeViis4Nimetus.value + " \r\n";
         }
         console.log(this.oppeViisid);
 
@@ -86,12 +107,29 @@ class SaveFile{
             this.keeled += "Eesti \r\n";
         }
         if(this.keel2.checked){
-            this.keeled += "Inglise \r\n";
+            this.keeled += "  Inglise \r\n";
         }
         if(this.keel3.checked){
-            this.keeled += "Vene \r\n";
+            this.keeled += "  Vene \r\n";
+        }
+        if(this.keel4.checked){
+            this.keeled += "  Muu: " + this.keel4Nimetus.value + " \r\n";
         }
         console.log(this.keeled);
+
+        if(this.pohiVastutajaOnKorraldaja.checked){
+            this.pohiVastutajaKorraldaja = "Jah";
+        }
+        if(this.pohiVastutajaPoleKorraldaja.checked){
+            this.pohiVastutajaKorraldaja = "Ei";
+        }
+
+        if(this.vastutajaOnKorraldaja.checked){
+            this.vastutajaKorraldaja = "Jah";
+        }
+        if(this.vastutajaPoleKorraldaja.checked){
+            this.vastutajaKorraldaja = "Ei";
+        }
 
         if(this.onTellitav.checked){
             this.tellitavus = "Tellitav";
@@ -118,13 +156,19 @@ class SaveFile{
         }
 
         if(this.koolituseLiik.value == 1){
-            this.liik = "Koolitus";
+            this.liik = "Esmane õpe";
+        }
+        if(this.koolituseLiik.value == 2){
+            this.liik = "Ümberõpe";
+        }
+        if(this.koolituseLiik.value == 3){
+            this.liik = "Täiendusõpe";
         }
 
         let data = 
-            'Üldine info: \r\n' + 
+            'Üldine info: \r\n' +
             '\r\n ' +
-            'Õppekava nimetus eesti keeles: ' + this.nimiEK.value + ' \r\n ' + 
+            'Õppekava nimetus eesti keeles: ' + this.nimiEK.value + ' \r\n ' +
             'Õppekava nimetus inglise keeles: ' + this.nimiIK.value + ' \r\n ' +
             'Õppekava nimetus vene keeles: ' + this.nimiVK.value + ' \r\n ' +
             'Õppeviisid: ' + this.oppeViisid + ' \r\n ' +
@@ -133,51 +177,61 @@ class SaveFile{
             'Kontaktõppe maht: ' + this.mahtTundidesKontakt.value + ' \r\n ' +
             'Praktika maht: ' + this.mahtTundidesPraktika.value + ' \r\n ' +
             'Iseseisva õppe maht: ' + this.mahtTundidesIseseisev.value + ' \r\n ' +
+            'Muu maht: ' + this.mahtTundidesMuu.value + ' \r\n ' +
             'Õppekava maht kokku: ' + this.mahtTundidesKokku.innerText + ' \r\n ' +
             'EAP maht: ' + this.eap.innerText + ' \r\n ' +
             '\r\n' +
 
-            'Hindamine ja õppe eesmärgid: \r\n' + 
+            'Hindamine ja õppe eesmärgid: \r\n' +
             '\r\n ' +
             'Kontrollivorm: ' + this.kontrollvorm + ' \r\n ' +
-            'Hindamiskriteeriumid eesti keeles: ' + this.hindamisKriteeriumidEK.value + ' \r\n ' + 
+            'Hindamiskriteeriumid eesti keeles: ' + this.hindamisKriteeriumidEK.value + ' \r\n ' +
             'Hindamiskriteeriumid inglise keeles: ' + this.hindamisKriteeriumidIK.value + ' \r\n ' +
             'Hindamiskriteeriumid vene keeles: ' + this.hindamisKriteeriumidVK.value + ' \r\n ' +
-            'Õppe eesmärgid eesti keeles: ' + this.eesmargidEK.value + ' \r\n ' + 
+            'Õppe eesmärgid eesti keeles: ' + this.eesmargidEK.value + ' \r\n ' +
             'Õppe eesmärgid inglise keeles: ' + this.eesmargidIK.value + ' \r\n ' +
             'Õppe eesmärgid vene keeles: ' + this.eesmargidVK.value + ' \r\n ' +
-            'Õpiväljundid eesti keeles: ' + this.opivaljundidEK.value + ' \r\n ' + 
+            'Õpiväljundid eesti keeles: ' + this.opivaljundidEK.value + ' \r\n ' +
             'Õpiväljundid inglise keeles: ' + this.opivaljundidIK.value + ' \r\n ' +
             'Õpiväljundid vene keeles: ' + this.opivaljundidVK.value + ' \r\n ' +
-            'Õppe sisu eesti keeles: ' + this.sisuEK.value + ' \r\n ' + 
+            'Õppe sisu eesti keeles: ' + this.sisuEK.value + ' \r\n ' +
             'Õppe sisu inglise keeles: ' + this.sisuIK.value + ' \r\n ' +
             'Õppe sisu vene keeles: ' + this.sisuVK.value + ' \r\n ' +
-            'Õppe eeldused eesti keeles: ' + this.eeldusedEK.value + ' \r\n ' + 
+            'Õppe eeldused eesti keeles: ' + this.eeldusedEK.value + ' \r\n ' +
             'Õppe eeldused inglise keeles: ' + this.eeldusedIK.value + ' \r\n ' +
             'Õppe eeldused vene keeles: ' + this.eeldusedVK.value + ' \r\n ' +
-            'Õppe tingimused eesti keeles: ' + this.tingimusedEK.value + ' \r\n ' + 
+            'Õppe tingimused eesti keeles: ' + this.tingimusedEK.value + ' \r\n ' +
             'Õppe tingimused inglise keeles: ' + this.tingimusedIK.value + ' \r\n ' +
             'Õppe tingimused vene keeles: ' + this.tingimusedVK.value + ' \r\n ' +
             '\r\n' +
 
-            'Muu informatsioon: \r\n' + 
+            'Muu informatsioon: \r\n' +
             '\r\n ' +
             'Sihtgrupp: ' + this.sihtGrupp.value + ' \r\n ' +
             'Õpikeskkond: ' + this.opiKeskkond.value + ' \r\n ' +
             'Koolitaja kompetentsus: ' + this.koolitajaKompetentsus.value + ' \r\n ' +
-            'Veebis kuvatav koolitaja: ' + this.kuvatavKoolitaja.value + ' \r\n ' +
             '\r\n' +
 
-            'Administratiivne info: \r\n' + 
+            'Õppejuhi täita: \r\n' +
             '\r\n ' +
             'Õppevaldkond: ' + this.oppeValdkond.value + ' \r\n ' +
             'Õppesuund: ' + this.oppeSuund.value + ' \r\n ' +
             'Õppekava rühm: ' + this.oppeRuhm.value + ' \r\n ' +
             'Õppekava koostamise alus: ' + this.oppekavaKoostamiseAlus.value + ' \r\n ' +
-            'Põhivastutaja: ' + this.pohiVastutaja.value + ' \r\n ' +
-            'Veebis kuvatav korraldaja: ' + this.veebisKuvatavKorraldaja.value + ' \r\n ' +
-            'Tellitavus: ' + this.tellitavus.value + ' \r\n ' +     
-            'Nähtavus: ' + this.nahtavus.value + ' \r\n ';
+            'Veebis kuvatav korraldaja struktuur ja kontakt: ' + this.veebisKuvatavKorraldaja.value + ' \r\n ' +
+            'Põhivastutaja struktuuriüksus: ' + this.pohiVastutajaStruktuur.value + ' \r\n ' +
+            'Põhivastutaja nimi: ' + this.pohiVastutajaNimi.value + ' \r\n ' +
+            'On korraldaja: ' + this.pohiVastutajaKorraldaja + ' \r\n ' +
+            'Mahuprotsent: ' + this.pohivastutajaMahuprotsent.value + ' \r\n ' +
+            'Vastutaja struktuuriüksus: ' + this.vastutajaStruktuur.value + ' \r\n ' +
+            'Vastutaja nimi: ' + this.vastutajaNimi.value + ' \r\n ' +
+            'On korraldaja: ' + this.vastutajaKorraldaja + ' \r\n ' +
+            'Mahuprotsent: ' + this.vastutajaMahuprotsent.value + ' \r\n ' +
+            'Tellitavus: ' + this.tellitavus + ' \r\n ' +    
+            'Nähtavus: ' + this.nahtavus + ' \r\n ' +
+            'Koolitusvaldkond: ' + this.koolitusvaldkond.value + ' \r\n ' +
+            'Viide seadusega seotud koolitusele: ' + this.viideKoolitusele.value + ' \r\n ' +
+            'Veebis kuvatav koolitaja: ' + this.kuvatavKoolitaja.value + ' \r\n ';
         this.formBlob(data);
     }
     formBlob(data){

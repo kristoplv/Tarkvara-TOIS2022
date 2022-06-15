@@ -1,12 +1,56 @@
+
 @media (max-width: 1000px){
     .field{
         font-size: 1.5vh;
+    }
+    th{
+        font-size: 0.95em;
+    }
+    .links > a{
+        font-size: 0.9em;
+    }
+    .number{
+        display: none;
+    }
+    .search{
+        position: absolute;
+        margin-top: 3em;
+        width: 100%;
+        display: grid;
+        align-items: center;
+        font-size: 24px;
+    }
+    #searchinput{
+        width: 15em;
+        height: 1em;
+    }
+    #formList{
+        margin-top: 10em;
+    }
+    .btn{
+        font-size: 24px;
+    }
+    .login_txt{
+        margin: 0;
+        border: 0;
+        padding: 0;
+        font-family: "Times New Roman",Times,Georgia,serif;
+        font-style:italic;
+        letter-spacing: 0.05em;
+        font-size: 1.8vh;
     }
     .login_form{
         margin-top: 10vmin;
         height: 85vmin;
         min-width: 65vmin;
         max-width: 80vmin;
+    }
+    a:visited{
+        color: #922b2b;
+        text-decoration: none;
+    }
+    a{
+        text-decoration: none;
     }
     .ribbon{
         display: grid;
@@ -32,6 +76,20 @@
     .menuBtn:hover{
         transition: 300ms;
         transform: rotate(90deg);
+    }
+    #newsArea{
+        position: absolute;
+        top: -50px;
+        left: 0;
+        margin-top: 10em;
+        width: 100%;
+        padding: 0;
+    }
+    p, .newsLink{
+        font-size: 4em;
+    }
+    .sidebar{
+        display: none;
     }
 }
 @media (min-width: 1000px){
