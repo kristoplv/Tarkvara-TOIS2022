@@ -10,7 +10,7 @@
         font-family: "Times New Roman",Times,Georgia,serif;
         font-style:italic;
         letter-spacing: 0.05em;
-        font-size: 2.2vh;
+        font-size: 1.8vh;
     }
     .login_form{
         margin-top: 10vmin;
@@ -20,6 +20,10 @@
     }
     a:visited{
         color: #922b2b;
+        text-decoration: none;
+    }
+    a{
+        text-decoration: none;
     }
     .ribbon{
         display: grid;
