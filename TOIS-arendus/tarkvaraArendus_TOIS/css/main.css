@@ -178,7 +178,7 @@ th{
 .btn{
     background-color: #c71a3d;
     color: white;
-    font-size: 0.65vw;
+    font-size: 0.75vw;
     cursor: pointer;
     border: none;
     border-radius: 3px;
@@ -187,7 +187,7 @@ th{
 }
 
 .btn:hover{
-    color: #d44562;
+    background-color: #d44562;
 }
 
 .estFlag{
