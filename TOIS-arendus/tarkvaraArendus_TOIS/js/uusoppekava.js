@@ -70,16 +70,16 @@ function generateLink() {
         ['courseFiller', courseFiller]
     ]);
     set(ref(db, "TOIS/vorm/auth/link_hashed"), {
-        linkId : courseLink
+        [linkId] : courseLink
     });
     set(ref(db, "TOIS/vorm/auth/loomise_kp"), {
-        linkId : date
+        [linkId] : date
     });
     set(ref(db, "TOIS/vorm/auth/oppekava_looja"), {
-        linkId : courseCreator
+        [linkId] : courseCreator
     });
     set(ref(db, "TOIS/vorm/auth/taitja_nimi"), {
-        linkId : courseFiller
+        [linkId] : courseFiller
     });
 
 
