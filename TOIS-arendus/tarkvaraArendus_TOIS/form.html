@@ -14,6 +14,7 @@
     <script src="js/save_pdf/fnc.js" defer></script>
     <script src="js/isced.js" defer></script>
     <script src="js/formOnload.js" defer></script>
+    <script type="module" src="js/fireBase.js" defer></script>
     <title>Loo uus õppekava</title>
 </head>
 <body>
@@ -454,7 +455,7 @@
                         </table>
                     </div>
                     <div id="downloadBtn">
-                        <input type="button" value="Kinnita" id="submitForm" class="btn" onclick="validate()">
+                        <input type="button" value="Kinnita" id="submitForm" class="btn" onclick="validate(), sendValues()">
                         <input type="button" value="Lae alla tekstina" id="downloadTxt" class="btn">
                         <input type="button" value="Lae alla PDF-ina" id="downloadPdf" class="btn">
                     </div>

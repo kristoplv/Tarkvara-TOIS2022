@@ -84,7 +84,6 @@ const db= getDatabase();
 const loc = ref(db, "TOIS/vorm");
 var reffer = "";
 
-var button = document.querySelector("#sendDb");
 
 
 
@@ -97,7 +96,7 @@ function sleep(ms){
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-function sendValues(vals){
+function sendValues(hash){
   var eap = (maht[0].value + maht[1].value + maht[2].value) / 26;
   console.log(koolitus_valitud + " ... " + koolitus_valitud.innerHTML)
   var baseRef = "TOIS/vorm/uldine_info";
@@ -215,5 +214,3 @@ function saadaOneline(baseRef, liik){
     1 : liik.value
   });
 }
-
-button.addEventListener("click", sendValues);
