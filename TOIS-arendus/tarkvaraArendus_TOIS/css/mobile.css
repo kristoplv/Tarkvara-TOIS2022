@@ -3,6 +3,33 @@
     .field{
         font-size: 1.5vh;
     }
+    th{
+        font-size: 0.95em;
+    }
+    .links > a{
+        font-size: 0.9em;
+    }
+    .number{
+        display: none;
+    }
+    .search{
+        position: absolute;
+        margin-top: 3em;
+        width: 100%;
+        display: grid;
+        align-items: center;
+        font-size: 24px;
+    }
+    #searchinput{
+        width: 15em;
+        height: 1em;
+    }
+    #formList{
+        margin-top: 10em;
+    }
+    .btn{
+        font-size: 24px;
+    }
     .login_txt{
         margin: 0;
         border: 0;
@@ -10,7 +37,7 @@
         font-family: "Times New Roman",Times,Georgia,serif;
         font-style:italic;
         letter-spacing: 0.05em;
-        font-size: 2.2vh;
+        font-size: 1.8vh;
     }
     .login_form{
         margin-top: 10vmin;
@@ -20,6 +47,10 @@
     }
     a:visited{
         color: #922b2b;
+        text-decoration: none;
+    }
+    a{
+        text-decoration: none;
     }
     .ribbon{
         display: grid;
