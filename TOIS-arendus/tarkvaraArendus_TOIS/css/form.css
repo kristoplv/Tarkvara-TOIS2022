@@ -145,7 +145,10 @@ span{
     font-weight: 600;
     text-shadow: 1px 1px 20px rgba(0,0,0,0.3);
 }
-
+input[type="text"], select, textarea, input:disabled, input[type="number"], input{
+    border-width: 1px;
+    border-radius: 4px;
+}
 
 
 @keyframes animatsioon{
