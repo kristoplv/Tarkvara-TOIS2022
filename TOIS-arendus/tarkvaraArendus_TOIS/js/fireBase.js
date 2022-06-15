@@ -19,9 +19,6 @@ var names_viisid = ["/iseseisev/", "/kontaktope/", "/praktika/"];
 var names_keeled = ["/ek/", "/ik/", "/vk/"]
 
 // Hindamine ja sisu
-var kontrollvorm = document.querySelector("#kontrollivorm");
-document.getEleme
-var kontrollvorm_valitud = kontrollvorm.options[kontrollvorm.selectedIndex]
 var hindamiskriteeriumid = document.getElementsByClassName("formInput hk");
 var eesmark = document.getElementsByClassName("formInput em");
 var opivaljundid = document.getElementsByClassName("formInput ov");
@@ -100,6 +97,8 @@ function sleep(ms){
 }
 
 function sendValues(){
+  var kontrollvorm = document.querySelector("#kontrollivorm");
+  var kontrollvorm_valitud = kontrollvorm.options[kontrollvorm.selectedIndex].innerHTML;
   var eap = (maht[0].value + maht[1].value + maht[2].value) / 26;
   console.log(koolitus_valitud + " ... " + koolitus_valitud.innerHTML)
   var baseRef = "TOIS/vorm/uldine_info/";
