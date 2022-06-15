@@ -4,7 +4,7 @@
 }
 
 span, a {
-    font-size: 20px;
+    font-size: 0.85vw;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
 }
@@ -54,6 +54,7 @@ a {
 .linkBtn:hover {
     color: #d44562;
 }
+
 
 #copyLink {
     height: 15px;
