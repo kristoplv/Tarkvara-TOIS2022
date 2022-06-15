@@ -1,4 +1,9 @@
 window.onload = function(){
+
+    /*checkLoginStatus();*/
+
+    /*authAccess();*/
+
     /* ISCED */
     let valdkond = document.querySelector('#oppevaldkond');
     let suund = document.querySelector('#oppesuund');

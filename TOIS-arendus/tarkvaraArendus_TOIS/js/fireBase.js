@@ -109,7 +109,7 @@ function sendValues(){
   normaalkujule(oppeviisid, baseRef+"oppeviisid/", names_viisid);
   normaalkujule(keeled, baseRef+"keeled/", names_keeled);
   saadaOneline(baseRef + "koolituse_liik/", koolitus_valitud);
-  set(ref(db, baseRef+"EAP/"), {
+  set(ref(db, baseRef+"EAP/"+courseId), {
     [courseId] : eap
   });
   
