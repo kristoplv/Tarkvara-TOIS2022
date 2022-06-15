@@ -118,7 +118,7 @@ function sendValues(){
   baseRef = "TOIS/vorm/hindamine_eesmargid/";
   saada(baseRef+"eeldused", eeldused);
   saada(baseRef+"eesmargid", eesmark);
-  saadaOneline(baseRef+"kontrollivorm", kontrollvorm_valitud);
+  saadaOneline(baseRef+"kontrollivorm/", kontrollvorm_valitud);
   saada(baseRef+"kriteeriumid", hindamiskriteeriumid);
   saada(baseRef+"labimise_tingimused", tingimused);
   saada(baseRef+"opivaljundid", opivaljundid);
