@@ -15,8 +15,9 @@ function calculateEAP() {
     let kontaktope = Number(document.getElementById('kontaktope-h').value);
     let praktika = Number(document.getElementById('praktika-h').value);
     let iseseisev = Number(document.getElementById('iseseisev-ope-h').value);
+    let muu = Number(document.getElementById('muu-ope-h').value);
 
-    let hours = kontaktope + praktika + iseseisev;
+    let hours = kontaktope + praktika + iseseisev + muu;
     let eap = Math.round((hours) / 26);
 
     let hoursResult = document.getElementById('hours-result');
