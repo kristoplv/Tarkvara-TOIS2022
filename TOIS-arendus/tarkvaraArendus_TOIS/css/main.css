@@ -145,6 +145,10 @@ li{
     margin: 0;
 }
 
+.currentPage{
+    color: #d44562;
+}
+
 .news{
     font-size: 0.85vw;
     display: flex;
