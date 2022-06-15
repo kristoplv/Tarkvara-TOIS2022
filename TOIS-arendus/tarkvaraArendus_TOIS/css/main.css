@@ -45,9 +45,11 @@ hr{
 }
 
 .login{
-    margin: 0;
+    /*margin: 0;
     border: 0;
-    padding: 0;
+    padding: 0;*/
+    padding-top: 3vh;
+    padding-left: 5vw;
     font-family: "Times New Roman",Times,Georgia,serif;
     font-style:italic;
     letter-spacing: 0.05em;
@@ -64,7 +66,6 @@ hr{
     color: #ba0c2f;
     font-weight: 600;
     text-decoration: none;
-    margin-left: 5vw;
 }
 
 .logo{
@@ -107,9 +108,9 @@ li{
     padding: 5px;
 }
 
-/* p{
+p{
     font-size: 0.85vw;
-} */
+}
 
 .loginButton:hover{
     color: #d44562;
