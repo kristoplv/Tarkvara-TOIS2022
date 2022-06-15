@@ -1,6 +1,7 @@
 export function storeData(){
     window.localStorage.setItem('session', JSON.stringify(email.value));
     let sessionCookie = JSON.parse(window.localStorage.getItem('session'));
+    console.log(JSON.parse(window.localStorage.getItem('session')));
 }
 
 export function setRememberMeCookie(){
