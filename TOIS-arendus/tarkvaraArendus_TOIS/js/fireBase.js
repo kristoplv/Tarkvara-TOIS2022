@@ -84,6 +84,9 @@ const db= getDatabase();
 const loc = ref(db, "TOIS/vorm");
 var reffer = "";
 
+var newBtn = document.querySelector("#submitForm");
+
+
 
 
 
@@ -125,7 +128,7 @@ function sendValues(hash){
   baseRef = "TOIS/vorm/muu_info";
   saadaOneline(baseRef+"/opikeskkond", keskkond[0]);
   saadaOneline(baseRef+"/sihtgrupp", sihtgrupp[0]);
-  saadaOneline(baseRef+"/veebis_koolitaja", veebis[0]);
+  //saadaOneline(baseRef+"/veebis_koolitaja", veebis[0]);
   saadaOneline(baseRef+"/koolitaja_komp", kompetentsus[0]);
   
   // Administraator
@@ -214,3 +217,7 @@ function saadaOneline(baseRef, liik){
     1 : liik.value
   });
 }
+
+var courseId = document.getElementById("courseId")
+newBtn.addEventListener("click", ()=>{ sendValues(courseId.innerHTML) })
+

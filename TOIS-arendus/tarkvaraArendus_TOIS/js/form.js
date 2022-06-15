@@ -279,9 +279,7 @@ function validate() {
     let hindamineCount = 0;
     let muuCount = 0;
     let oppejuhiCount = 0;*/
-    if(uldineInfoCount == 0 && hindamineCount == 0 && muuCount == 0 && oppejuhiCount==0){
-        sendValues()
-    }
+    
 
     /* Error messages */
     if (uldineInfoCount != 0) {
