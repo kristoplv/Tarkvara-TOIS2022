@@ -15,8 +15,8 @@ var koolituse_liik = document.querySelector("#koolituse-liik");
 var koolitus_valitud = koolituse_liik.options[koolituse_liik.selectedIndex];
 var maht = document.getElementsByClassName("maht formInput");
 //var eap = document.querySelector("#eap-result");
-var names_viisid = ["/iseseisev", "/kontaktope", "/praktika"];
-var names_keeled = ["/ek", "/ik", "/vk"]
+var names_viisid = ["/iseseisev/", "/kontaktope/", "/praktika/"];
+var names_keeled = ["/ek/", "/ik/", "/vk/"]
 
 // Hindamine ja sisu
 var kontrollvorm = document.querySelector("#kontrollivorm");
@@ -102,34 +102,34 @@ function sleep(ms){
 function sendValues(){
   var eap = (maht[0].value + maht[1].value + maht[2].value) / 26;
   console.log(koolitus_valitud + " ... " + koolitus_valitud.innerHTML)
-  var baseRef = "TOIS/vorm/uldine_info";
+  var baseRef = "TOIS/vorm/uldine_info/";
   
   // Üldine info
-  saada(baseRef+"/nimetus", nimiEK);
-  saada(baseRef+"/maht", maht);
-  normaalkujule(oppeviisid, baseRef+"/oppeviisid", names_viisid);
-  normaalkujule(keeled, baseRef+"/keeled", names_keeled);
-  saadaOneline(baseRef + "/koolituse_liik", koolitus_valitud);
-  set(ref(db, baseRef+"/EAP"), {
-    1 : eap
+  saada(baseRef+"nimetus", nimiEK);
+  saada(baseRef+"maht", maht);
+  normaalkujule(oppeviisid, baseRef+"oppeviisid/", names_viisid);
+  normaalkujule(keeled, baseRef+"keeled/", names_keeled);
+  saadaOneline(baseRef + "koolituse_liik/", koolitus_valitud);
+  set(ref(db, baseRef+"EAP/"), {
+    [courseId] : eap
   });
   
   // Hindamine ja sisu
-  baseRef = "TOIS/vorm/hindamine_eesmargid";
-  saada(baseRef+"/eeldused", eeldused);
-  saada(baseRef+"/eesmargid", eesmark);
-  saadaOneline(baseRef+"/kontrollivorm", kontrollvorm_valitud);
-  saada(baseRef+"/kriteeriumid", hindamiskriteeriumid);
-  saada(baseRef+"/labimise_tingimused", tingimused);
-  saada(baseRef+"/opivaljundid", opivaljundid);
-  saada(baseRef+"/sisu", sisu);
+  baseRef = "TOIS/vorm/hindamine_eesmargid/";
+  saada(baseRef+"eeldused", eeldused);
+  saada(baseRef+"eesmargid", eesmark);
+  saadaOneline(baseRef+"kontrollivorm/", kontrollvorm_valitud);
+  saada(baseRef+"kriteeriumid", hindamiskriteeriumid);
+  saada(baseRef+"labimise_tingimused", tingimused);
+  saada(baseRef+"opivaljundid", opivaljundid);
+  saada(baseRef+"sisu", sisu);
   
   // Muu info
-  baseRef = "TOIS/vorm/muu_info";
-  saadaOneline(baseRef+"/opikeskkond", keskkond[0]);
-  saadaOneline(baseRef+"/sihtgrupp", sihtgrupp[0]);
+  baseRef = "TOIS/vorm/muu_info/";
+  saadaOneline(baseRef+"opikeskkond/", keskkond[0]);
+  saadaOneline(baseRef+"sihtgrupp/", sihtgrupp[0]);
   //saadaOneline(baseRef+"/veebis_koolitaja", veebis[0]);
-  saadaOneline(baseRef+"/koolitaja_komp", kompetentsus[0]);
+  saadaOneline(baseRef+"koolitaja_komp/", kompetentsus[0]);
   
   // Administraator
   var oppevaldkond = document.querySelector("#oppevaldkond");
@@ -141,41 +141,41 @@ function sendValues(){
   var oppekava_ruhm = document.querySelector("#oppekava-ruhm");
   var oppekava_ruhm_val =  oppekava_ruhm.options[oppekava_ruhm.selectedIndex].innerHTML;
 
-  baseRef = "TOIS/vorm/admin";
-  saadaOneline(baseRef+"/koolitusvaldkond", koolitusvaldkond);
-  saadaOneline(baseRef+"/seadusega_seotud_koolituse_viide", seadusega_koolitus_viide);
-  saadaOneline(baseRef+"/veebis_kuvatav_koolitaja", koolitajaVeebis);
-  saadaOneline(baseRef+"/korraldaja_struktuur_kontakt", korraldaja_veebis);
-  saadaOneline(baseRef+"/ok_koostamise_alus", koostamise_alus);
+  baseRef = "TOIS/vorm/admin/";
+  saadaOneline(baseRef+"koolitusvaldkond/", koolitusvaldkond);
+  saadaOneline(baseRef+"seadusega_seotud_koolituse_viide/", seadusega_koolitus_viide);
+  saadaOneline(baseRef+"veebis_kuvatav_koolitaja/", koolitajaVeebis);
+  saadaOneline(baseRef+"korraldaja_struktuur_kontakt/", korraldaja_veebis);
+  saadaOneline(baseRef+"ok_koostamise_alus/", koostamise_alus);
 
-  saadaOneline(baseRef+"/pohivastutaja/nimi", pohivastutaja_nimi);
-  saadaOneline(baseRef+"/pohivastutaja/mahuprotsent", pohivastutaja_maht);
+  saadaOneline(baseRef+"pohivastutaja/nimi/", pohivastutaja_nimi);
+  saadaOneline(baseRef+"pohivastutaja/mahuprotsent/", pohivastutaja_maht);
 
-  saadaOneline(baseRef+"/vastutaja/nimi",vastutaja_nimi);
-  saadaOneline(baseRef+"/vastutaja/mahuprotsent",vastutaja_maht);
-  checkRadios(baseRef+"/tellitav", onTellitav);
-  checkRadios(baseRef+"/nahtav", onNahtav);
-  checkRadios(baseRef+"/pohivastutaja/on_korraldaja", pohivastutaja_korraldaja_jah);
-  checkRadios(baseRef+"/vastutaja/on_korraldaja", vastutaja_korraldaja_jah);
+  saadaOneline(baseRef+"vastutaja/nimi/",vastutaja_nimi);
+  saadaOneline(baseRef+"vastutaja/mahuprotsent/",vastutaja_maht);
+  checkRadios(baseRef+"tellitav/", onTellitav);
+  checkRadios(baseRef+"nahtav/", onNahtav);
+  checkRadios(baseRef+"pohivastutaja/on_korraldaja/", pohivastutaja_korraldaja_jah);
+  checkRadios(baseRef+"vastutaja/on_korraldaja/", vastutaja_korraldaja_jah);
   
-  saadaOptionSisu(baseRef+"/oppevaldkond", oppevaldkond_val);
-  saadaOptionSisu(baseRef+"/oppesuund", oppesuund_val);
-  saadaOptionSisu(baseRef+"/oppekava_ruhm", oppekava_ruhm_val);
+  saadaOptionSisu(baseRef+"oppevaldkond/", oppevaldkond_val);
+  saadaOptionSisu(baseRef+"oppesuund/", oppesuund_val);
+  saadaOptionSisu(baseRef+"oppekava_ruhm/", oppekava_ruhm_val);
 }
 
 function saadaOptionSisu(baseRef, values){
-  set(ref(db, baseRef), {
-    1 : values
+  set(ref(db, baseRef+courseId), {
+    [courseId] : values
   });
 }
 function checkRadios(baseRef, values){
   if(values.checked){
-    set(ref(db, baseRef), {
-      1 : "Jah"
+    set(ref(db, baseRef+courseId), {
+      [courseId] : "Jah"
     });
   } else{
-    set(ref(db, baseRef), {
-      1 : "Ei"
+    set(ref(db, baseRef+courseId), {
+      [courseId] : "Ei"
     });
   }
 }
@@ -188,8 +188,8 @@ function saada(baseRef, values){
     var objectKeys = Object.keys(newVals);
     for(var i=0; i<objectKeys.length; i++){
       console.log(values[i].value)
-      set(ref(db, baseRef+"/"+objectKeys[i]), {
-        1 : values[i].value
+      set(ref(db, baseRef+"/"+objectKeys[i]+"/"+courseId), {
+        [courseId] : values[i].value
       });
     }
   });
@@ -206,17 +206,17 @@ function normaalkujule(values, baseRef, names_viisid){
 
   }
   for(var a=0; a<newList.length; a++){
-    set(ref(db, baseRef+names_viisid[a]), {
-      1 : newList[a]
+    set(ref(db, baseRef+names_viisid[a]+courseId), {
+      [courseId] : newList[a]
     });
   }
 }
 
 function saadaOneline(baseRef, liik){
-  set(ref(db, baseRef), {
-    1 : liik.value
+  set(ref(db, baseRef+courseId), {
+    [courseId] : liik.value
   });
 }
 
-newBtn.addEventListener("click", ()=>{ sendValues(courseId.innerHTML) })
+newBtn.addEventListener("click", ()=>{ sendValues() })
 

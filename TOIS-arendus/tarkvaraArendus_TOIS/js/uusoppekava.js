@@ -69,16 +69,17 @@ function generateLink() {
         ['courseCreator', courseCreator],
         ['courseFiller', courseFiller]
     ]);
-    set(ref(db, "TOIS/vorm/auth/link_hashed"), {
-        [linkId] : courseLink
+    console.log(linkId + date + courseLink.innerHTML)
+    set(ref(db, "TOIS/vorm/auth/link_hashed/"+linkId), {
+        [linkId] : "form.html?id=" + linkId
     });
-    set(ref(db, "TOIS/vorm/auth/loomise_kp"), {
-        [linkId] : date
+    set(ref(db, "TOIS/vorm/auth/loomise_kp/"+linkId), {
+        [linkId] : date.toISOString()
     });
-    set(ref(db, "TOIS/vorm/auth/oppekava_looja"), {
+    set(ref(db, "TOIS/vorm/auth/oppekava_looja/"+linkId), {
         [linkId] : courseCreator
     });
-    set(ref(db, "TOIS/vorm/auth/taitja_nimi"), {
+    set(ref(db, "TOIS/vorm/auth/taitja_nimi/"+linkId), {
         [linkId] : courseFiller
     });
 
