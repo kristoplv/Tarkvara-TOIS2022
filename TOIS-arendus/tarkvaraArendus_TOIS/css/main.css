@@ -108,9 +108,14 @@ li{
     padding: 5px;
 }
 
-/* p{
+.search{
     font-size: 0.85vw;
-} */
+}
+
+#searchinput{
+    width: 8vw;
+    height: 0.5vw;
+}
 
 .loginButton:hover{
     color: #d44562;
@@ -175,7 +180,7 @@ th{
 .btn{
     background-color: #c71a3d;
     color: white;
-    font-size: 0.75vw;
+    font-size: 0.6vw;
     margin: 5px;
     cursor: pointer;
     border: none;
