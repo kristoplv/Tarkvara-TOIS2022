@@ -84,7 +84,9 @@ const db= getDatabase();
 const loc = ref(db, "TOIS/vorm");
 var reffer = "";
 
-var button = document.querySelector("#sendDb");
+var newBtn = document.querySelector("#submitForm");
+
+
 
 
 
@@ -97,7 +99,7 @@ function sleep(ms){
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-function sendValues(vals){
+function sendValues(hash){
   var eap = (maht[0].value + maht[1].value + maht[2].value) / 26;
   console.log(koolitus_valitud + " ... " + koolitus_valitud.innerHTML)
   var baseRef = "TOIS/vorm/uldine_info";
@@ -126,7 +128,7 @@ function sendValues(vals){
   baseRef = "TOIS/vorm/muu_info";
   saadaOneline(baseRef+"/opikeskkond", keskkond[0]);
   saadaOneline(baseRef+"/sihtgrupp", sihtgrupp[0]);
-  saadaOneline(baseRef+"/veebis_koolitaja", veebis[0]);
+  //saadaOneline(baseRef+"/veebis_koolitaja", veebis[0]);
   saadaOneline(baseRef+"/koolitaja_komp", kompetentsus[0]);
   
   // Administraator
@@ -216,4 +218,6 @@ function saadaOneline(baseRef, liik){
   });
 }
 
-button.addEventListener("click", sendValues);
+var courseId = document.getElementById("courseId")
+newBtn.addEventListener("click", ()=>{ sendValues(courseId.innerHTML) })
+

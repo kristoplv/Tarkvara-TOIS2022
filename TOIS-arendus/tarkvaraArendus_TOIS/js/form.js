@@ -1,8 +1,9 @@
+
 function openTable(tableBtn_id) {
     let table_id = tableBtn_id.replace('Btn', '');
     let table = document.getElementById(table_id);
     let hide = table.style.display === 'none';
-
+    
     if (hide) {
         table.style.display = 'table';
     } else {
@@ -273,6 +274,12 @@ function validate() {
     } else {
         koolitusvaldkond.classList.remove('emptyError');
     }
+    /*
+    let uldineInfoCount = 0;
+    let hindamineCount = 0;
+    let muuCount = 0;
+    let oppejuhiCount = 0;*/
+    
 
     /* Error messages */
     if (uldineInfoCount != 0) {
