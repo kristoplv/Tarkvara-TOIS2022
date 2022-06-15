@@ -52,6 +52,7 @@ function generatePdf() {
     let oppesuund = document.querySelector('#oppesuund');
     let oppekavaRuhm = document.querySelector('#oppekava-ruhm');
     let oppekavaKoostamiseAlus = document.querySelector('#oppekava-koostamise-alus');
+    let veebisKuvatavKorraldaja = document.querySelector('#veebis-kuvatav-korraldaja');
     let pohivastutajaStruktuur = document.querySelector('#pohivastutaja-struktuur-id');
     let pohivastutajaNimi = document.querySelector('#pohivastutaja-nimi');
     let pohivastutajaOnKorraldaja = document.querySelector('#on-korraldaja');
@@ -62,7 +63,6 @@ function generatePdf() {
     let vastutajaNimi = document.querySelector('#vastutaja-nimi');
     let vastutajaOnKorraldaja = document.querySelector('#on-korraldaja-norm');
     let vastutajaPoleKorraldaja = document.querySelector('#pole-korraldaja-norm');
-    let veebisKuvatavKorraldaja = document.querySelector('#veebis-kuvatav-korraldaja');
     let vastutajaKorraldaja = "";
     let vastutajaMahuprotsent = document.querySelector('#mahuprotsent-norm');
     let onTellitav = document.querySelector('#tellitav');
@@ -103,7 +103,7 @@ function generatePdf() {
     }
     oppetooKeeled = oppetooKeeled.trim();
 
-    if (pohivastutajaOnKorraldaja.checked){
+    if(pohivastutajaOnKorraldaja.checked){
         pohivastutajaKorraldaja = "Jah";
     }
     if(pohivastutajaPoleKorraldaja.checked){

@@ -15,6 +15,7 @@
     <script src="js/isced.js" defer></script>
     <script src="js/formOnload.js" defer></script>
     <script type="module" src="js/fireBase.js" defer></script>
+    <script src="js/loginStatus.js" defer></script>
     <title>Loo uus õppekava</title>
 </head>
 <body>
@@ -187,11 +188,13 @@
                                     <label for="hindamiskriteeriumid-ik">Hindamiskriteeriumid i.k.</label>
                                     <br>
                                     <textarea name="hindamiskriteeriumid-ik" id="hindamiskriteeriumid-ik" class="formInput hk" rows="4" cols="40"></textarea>
+                                    <span class="tooltip" data-tooltip="Sisestage hindamiskriteeriumid ehk hindamisjuhised, mis kirjeldavad hindamismeetodiga tõendatavate teadmiste ja oskuste oodatavat taset ning ulatust, inglise keeles">?</span>
                                 </th>
                                 <th id="hindamiskriteeriumid-vk-th" style="display:none">
                                     <label for="hindamiskriteeriumid-vk">Hindamiskriteeriumid v.k.</label>
                                     <br>
                                     <textarea name="hindamiskriteeriumid-vk" id="hindamiskriteeriumid-vk" class="formInput hk" rows="4" cols="40"></textarea>
+                                    <span class="tooltip" data-tooltip="Sisestage hindamiskriteeriumid ehk hindamisjuhised, mis kirjeldavad hindamismeetodiga tõendatavate teadmiste ja oskuste oodatavat taset ning ulatust, vene keeles">?</span>
                                 </th>
                             </tr>
                             <tr>
@@ -389,7 +392,8 @@
                                     <label for="pole-korraldaja">Ei</label>
                                     <br>
                                     <label for="mahuprotsent">Mahuprotsent</label>
-                                    <input type="number" name="mahuprotsent" id="mahuprotsent">
+                                    <br>
+                                    <input type="number" name="mahuprotsent" id="mahuprotsent" class="formInput">
                                 </th>
                                 <th colspan="2">
                                     <label for="vastutaja-struktuur">Vastutaja struktuuriüksus</label>
@@ -412,7 +416,8 @@
                                     <label for="pole-korraldaja-norm">Ei</label>
                                     <br>
                                     <label for="mahuprotsent-norm">Mahuprotsent</label>
-                                    <input type="number" name="mahuprotsent-norm" id="mahuprotsent-norm">
+                                    <br>
+                                    <input type="number" name="mahuprotsent-norm" id="mahuprotsent-norm" class="formInput">
                                     <input type="button" value="Lisa vastutaja" class="btn">
                                 </th>
                             </tr>

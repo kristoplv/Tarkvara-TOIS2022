@@ -11,16 +11,35 @@ var testEmail;
 var testPass;
 
 
-var login = document.querySelector("#loginButton");
+var loginArea = document.querySelector('#loginArea');
+var loginButton = document.querySelector('#logIn');
 
+var rememberMeCheckbox = document.querySelector('#rememberMe');
+var rememberMe = false;
+
+var login = document.querySelector("#loginButton");
+var email = document.querySelector('#email');
+
+loadSavedLogin();
+
+rememberMeCheckbox.addEventListener('change', setRememberMeStatus);
+
+function setRememberMeStatus(){
+    if(rememberMeCheckbox.checked == false){
+        rememberMe = false;
+    } else if(rememberMeCheckbox.checked){
+        rememberMe = true;
+    }
+}
 
 var testMeil = async () => { return await onValue(EmailTester, testEmailInput)}
 var testPassw = async () => { return await onValue(passwordTester, testPasswordInput)}
 
-import {storeData} from '../js/cookies'
+import {setRememberMeCookie, deleteRememberMeCookie, storeData, loadSavedLogin} from '../js/cookies'
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.11/firebase-app.js";
 import {getDatabase, ref, push, set, onValue} from "https://www.gstatic.com/firebasejs/9.6.11/firebase-database.js";
+
 // Import the functions you need from the SDKs you need
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -124,6 +143,12 @@ function NotificationSystem(notice){
         emailCheck = -7;
         pwCheck = -5;
         storeData();
+        console.log(rememberMe);
+        if(rememberMe == true){
+            setRememberMeCookie();
+        } else if(rememberMe == false){
+            deleteRememberMeCookie();
+        }
         sleep(1500).then(()=>{
             return location.href = "main.html";
         });

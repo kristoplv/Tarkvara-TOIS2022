@@ -20,7 +20,10 @@
         align-items: center;
         font-size: 24px;
     }
-    
+    #searchinput{
+        width: 15em;
+        height: 1em;
+    }
     #formList{
         margin-top: 10em;
     }
