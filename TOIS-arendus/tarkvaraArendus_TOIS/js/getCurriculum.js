@@ -39,11 +39,18 @@ function sleep(ms){
 */
 
 function getAll(){
+    var superList = [];
     getFirebaseItem(nimetus);
     getFirebaseItem(EAP);
     getFirebaseItem(hindamine);
     getFirebaseItem(vastutaja);
 }
+
+
+
+
+
+
 function getFirebaseItem(baseRef){
     var initRef = ref(db, baseRef);
     onValue(initRef, function(sisu){
@@ -59,9 +66,9 @@ function getFirebaseItem(baseRef){
             var newRef = ref(db, reffer);
             onValue(newRef, function(sisuNew){
                 var lowValues = sisuNew.val();
-                console.log(lowValues);
-                var finalValues = Object.values(lowValues);
+                var finalValues = document.createTextNode(Object.values(lowValues));
                 console.log(finalValues[0]);
+                
             })
         }
     })
