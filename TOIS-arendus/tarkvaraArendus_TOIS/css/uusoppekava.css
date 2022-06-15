@@ -3,11 +3,7 @@
     flex-direction: column;
 }
 
-span, a {
-    font-size: 0.85vw;
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
-}
+
 
 label {
     font-size: 20px;
@@ -28,6 +24,8 @@ input[type="text"] {
 }
 
 .btn {
+    width: 20%;
+    transition: 200ms;
     cursor: pointer;
 }
 

@@ -5,8 +5,8 @@ html{
     font-family: "Times New Roman",Times,Georgia,serif;
     letter-spacing: 1px;
     font-size: 24px;
-    background-color: #fae8ebda;
-    background: linear-gradient(to bottom, white 0%, #fae8ebda 100% fixed);
+    background: linear-gradient(to bottom, white 50%, #fae8ebda);
+    height: 100%;
 }
 
 h2{
@@ -35,9 +35,14 @@ hr{
 }
 
 .mainContainer{
+    top: 0;
+    left: 0;
+    position: absolute;
     display: grid;
     grid-template-columns: 15% 70% 15%;
-    grid-template-rows: 4vw auto;
+    width: 100%;
+    aspect-ratio: 2.2/1;
+    grid-template-rows: 4vw;
     grid-column-gap: 0px;
 	grid-row-gap: 0px;
     background-color: white;
@@ -92,10 +97,13 @@ hr{
 }
 
 .mainArea{
-    background-color: #dfced277;
+    background-color: #dfced24f;
 }
 
 .mainContentArea{
+    top: 0;
+    left: 0;
+    height: 100%;
     grid-column: 2 / 3;
     grid-row: 2 / 3;
     margin-left: 20px;
@@ -109,13 +117,16 @@ li{
 }
 
 .search{
-    font-size: 0.85vw;
+    height: 10%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    font-size: 1em;
+}
+#searchInput{
+    width: 50%;
 }
 
-#searchinput{
-    width: 8vw;
-    height: 0.5vw;
-}
 
 .loginButton:hover{
     color: #d44562;
@@ -169,7 +180,8 @@ li{
 .fillerMain{
     grid-column: 3 / 4;
     grid-row: 2 / 3;
-    box-shadow: -5px 0px 5px #b87a8ac4;
+    border-left:1px solid black; 
+    box-shadow: 0px 0px 0px #b87a8ac4;
 }
 
 .notifications::before{
@@ -182,9 +194,10 @@ th{
 }
 
 .btn{
+    width: 3em;
     background-color: #c71a3d;
     color: white;
-    font-size: 0.6vw;
+    font-size: 1.5vw;
     margin: 5px;
     cursor: pointer;
     border: none;

@@ -21,6 +21,9 @@ const vastutaja = "TOIS/vorm/admin/pohivastutaja/nimi";
 var reffer = "";
 
 
+const listOFid = ["nimetus", "EAP", "hindamine", "instituut"];
+const listOfClasses = ["links", "number", "", ""]
+
 function sleep(ms){
     return new Promise((resolve) => setTimeout(resolve, ms));
   }
@@ -40,18 +43,39 @@ function sleep(ms){
 
 function getAll(){
     var superList = [];
-    getFirebaseItem(nimetus);
-    getFirebaseItem(EAP);
-    getFirebaseItem(hindamine);
-    getFirebaseItem(vastutaja);
+    superList.push(getFirebaseItem(nimetus));
+    superList.push(getFirebaseItem(EAP));
+    superList.push(getFirebaseItem(hindamine));
+    superList.push(getFirebaseItem(vastutaja));
+    console.log(superList);
+    createElements(superList);
+}
+
+function createElements(el){
+    var list = document.getElementById("bodyOfList");
+    sleep(2000).then(()=>{
+        for(var i=0; i<el[1].length;i++){
+            var starter = document.createElement("tr");
+            for(var a=0; a<el.length; a++){
+                var thStart = document.createElement("th")
+                thStart.id = listOFid[a];
+                thStart.className = listOfClasses[a];
+                thStart.innerHTML = el[a][i];
+                console.log(el[a][i]);
+                starter.appendChild(thStart);
+            }
+            var various1 = "<th class='links'><a href='form.html' class='newsLink'>Vaata </a><a href='muuda.html' class='newsLink'>Muuda </a><a href='kustuta.html' class='newsLink'>Kustuta </a></th>";
+            starter.innerHTML += various1;
+            list.append(starter);
+        }
+    })
 }
 
 
 
 
-
-
 function getFirebaseItem(baseRef){
+    var listOfResults = []
     var initRef = ref(db, baseRef);
     onValue(initRef, function(sisu){
         var newVals = sisu.val();
@@ -66,16 +90,15 @@ function getFirebaseItem(baseRef){
             var newRef = ref(db, reffer);
             onValue(newRef, function(sisuNew){
                 var lowValues = sisuNew.val();
-                var finalValues = document.createTextNode(Object.values(lowValues));
+                var finalValues = Object.values(lowValues);
                 console.log(finalValues[0]);
+                listOfResults.push(finalValues[0]);
                 
             })
         }
     })
+    return listOfResults;
 }
 
-sleep(2000).then(()=>{
-    console.log("teeme väikese pausi");
-    getAll();
-})
+getAll();
 

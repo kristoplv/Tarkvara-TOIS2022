@@ -80,3 +80,12 @@
     transition: 300ms;
     background-color: #dddddd
 }
+.sides{
+    font-size: 1.25vw;
+    font-style: italic;
+}
+#formList{
+    position: inherit;
+    width: 100%;
+    aspect-ratio: 2.2/1;
+}

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TLÜ TÕIS</title>
+    <link rel="stylesheet" href="css/improvedOppekavad.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/menu.css">
     <link rel="stylesheet" href="css/mobile.css">
@@ -25,13 +26,13 @@
             <h2 class="menuLabel">MENÜÜ</h2>
             <ul id="navMenu" class="navMenu">
                 <li>
-                    <a href="main.html" class="links" id="homePage">Avaleht</a>
+                    <a href="main.html" class="links sides" id="homePage">Avaleht</a>
                 </li>
                 <li>
-                    <a href="oppekavad.html" class="links" id="allForms">Kõik õppekavad</a>
+                    <a href="oppekavad.html" class="links sides" id="allForms">Kõik õppekavad</a>
                 </li>
                 <li>
-                    <a href="uusoppekava.html" class="links" id="newForm">Loo uus õppekava</a>
+                    <a href="uusoppekava.html" class="links sides" id="newForm">Loo uus õppekava</a>
                 </li>
                 <a href="oppekavad.html"><img src="images/eestilipp.png" title="Eesti keel" class="estFlag"></a>
                 <a href="oppekavadEng.html"><img src="images/uklipp.png" title="Inglise keel" class="ukFlag"></a>
@@ -69,18 +70,20 @@
 
                 <br>
                 <table id="formList" class="evenBorders">
-                    <tr class="mains">
-                        <th class="topper"><b>Õppekava nimetus</b></th>
-                        <th class="topper"><b>Kursuse maht(EAP)</b></th>
-                        <th class="topper"><b>Hindamismeetod</b></th>
-                        <th class="topper"><b>Instituut</b></th>
-                        <th class="topper"></th>
-                    </tr>
-                    <tr>
-                        <th id="nimetus"><a href="form.html" class="links">Matemaatika elemendid</a></th>
-                        <th id="EAP" class="number">1</th>
-                        <th id="hindamine">Arvestus</th>
-                        <th id="instituut">Digitehnoloogiate instituut</th>
+                    <tbody id="bodyOfList">
+
+                        <tr class="mains">
+                            <th class="topper"><b>Õppekava nimetus</b></th>
+                            <th class="topper"><b>Kursuse maht(EAP)</b></th>
+                            <th class="topper"><b>Hindamismeetod</b></th>
+                            <th class="topper"><b>Instituut</b></th>
+                            <th class="topper"></th>
+                        </tr>
+                        <tr class="rows">
+                            <th id="nimetus"><a href="form.html" class="links">Matemaatika elemendid</a></th>
+                            <th id="EAP" class="number">1</th>
+                            <th id="hindamine">Arvestus</th>
+                            <th id="instituut">Digitehnoloogiate instituut</th>
                         <th class="links">
                             <a href="form.html" class="newsLink">Vaata</a>
                             <a href="muuda.html" class="newsLink">Muuda</a>
@@ -131,12 +134,13 @@
                             <a href="kustuta.html" class="newsLink">Kustuta</a>
                         </th>
                     </tr>
+                </tbody>
                 </table>
             </div>
         </container>
         <div id="fillerMain" class="fillerMain"></div>
         
-
+        
     </div>
     
 </body>
