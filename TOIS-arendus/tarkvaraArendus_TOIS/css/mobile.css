@@ -35,9 +35,9 @@
         margin-top: 10em;
     }
     .btn{
-        font-size: 20px;
         height: 50px;
         width: 70%;
+        font-size: 2vw;
     }
     .login_txt{
         margin: 0;
