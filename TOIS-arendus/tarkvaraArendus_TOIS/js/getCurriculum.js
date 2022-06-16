@@ -17,7 +17,7 @@ const loc = ref(db, "TOIS/vorm");
 const nimetus ="TOIS/vorm/uldine_info/nimetus/ek";
 const EAP = "TOIS/vorm/uldine_info/EAP";
 const hindamine = "TOIS/vorm/hindamine_eesmargid/kontrollivorm";
-const vastutaja = "TOIS/vorm/admin/pohivastutaja/nimi";
+const vastutaja = "TOIS/vorm/admin/veebis_kuvatav_vastutaja";
 var reffer = "";
 
 
@@ -42,18 +42,20 @@ function sleep(ms){
 */
 
 function getAll(){
+    var hash = [];
     var superList = [];
-    superList.push(getFirebaseItem(nimetus));
-    superList.push(getFirebaseItem(EAP));
-    superList.push(getFirebaseItem(hindamine));
-    superList.push(getFirebaseItem(vastutaja));
+    superList.push(getFirebaseItem(nimetus, hash));
+    superList.push(getFirebaseItem(EAP, hash));
+    superList.push(getFirebaseItem(hindamine, hash));
+    superList.push(getFirebaseItem(vastutaja, hash));
     console.log(superList);
-    createElements(superList);
+    createElements(superList, hash);
 }
 
-function createElements(el){
+function createElements(el, hashes){
     var list = document.getElementById("bodyOfList");
     sleep(2000).then(()=>{
+        console.log(hashes)
         for(var i=0; i<el[1].length;i++){
             var starter = document.createElement("tr");
             for(var a=0; a<el.length; a++){
@@ -64,7 +66,7 @@ function createElements(el){
                 console.log(el[a][i]);
                 starter.appendChild(thStart);
             }
-            var various1 = "<th class='links'><a href='form.html' class='newsLink'>Vaata </a><a href='muuda.html' class='newsLink'>Muuda </a><a href='kustuta.html' class='newsLink'>Kustuta </a></th>";
+            var various1 = "<th class='links'><a href='form.html' class='newsLink'>Vaata </a><a href='muuda.html' class='newsLink'>Muuda </a><a href='kustuta.html' id='"+hashes[i]+"' class='newsLink'>Kustuta </a></th>";
             starter.innerHTML += various1;
             list.append(starter);
         }
@@ -74,7 +76,7 @@ function createElements(el){
 
 
 
-function getFirebaseItem(baseRef){
+function getFirebaseItem(baseRef, hash){
     var listOfResults = []
     var initRef = ref(db, baseRef);
     onValue(initRef, function(sisu){
@@ -87,6 +89,11 @@ function getFirebaseItem(baseRef){
             console.log(baseRef +"/"+objectKeys[i]+"/"+objectKeys[i]);
             var reffer = baseRef +"/"+objectKeys[i];
             console.log(objectKeys[i]);
+            if(hash.includes(objectKeys[i])){
+
+            } else{
+                hash.push(objectKeys[i])
+            }
             var newRef = ref(db, reffer);
             onValue(newRef, function(sisuNew){
                 var lowValues = sisuNew.val();
