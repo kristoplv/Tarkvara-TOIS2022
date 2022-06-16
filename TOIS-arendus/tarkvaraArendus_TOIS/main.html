@@ -11,7 +11,8 @@
     <link rel="icon" href="images/toisFavicon.png" type="image/x-icon">
     <script src="js/loginStatus.js" defer></script>
     <script src="js/ribbon.js" defer></script>
-    <script src="js/navigation.js" defer></script>
+    <script type="module" src="js/navigation.js" defer></script>
+    <script type="module" src="js/lang.js" defer></script>
 </head>
 <body>
     <div id="mainContainer" class="mainContainer">
@@ -35,8 +36,8 @@
                 <li>
                     <a href="uusoppekava.html" class="links sides" id="newForm">Loo uus õppekava</a>
                 </li>
-                <a href="main.html"><img src="images/eestilipp.png" title="Eesti keel" class="estFlag"></a>
-                <a href="mainEng.html"><img src="images/uklipp.png" title="Inglise keel" class="ukFlag"></a>
+                <a href="main.html"><img src="images/eestilipp.png" id="langEE" title="Eesti keel" class="estFlag"></a>
+                <a href="mainEng.html"><img src="images/uklipp.png" id="langEN" title="Inglise keel" class="ukFlag"></a>
             </ul>
         </div>
 
