@@ -13,11 +13,9 @@ English.addEventListener('click', setLanguageEN);
 function setLanguageEE(){
     console.log('Töötab');
     window.localStorage.setItem('lang', 'EE');
-    setAddress();
 }
 
 function setLanguageEN(){
     console.log('Töötab');
     window.localStorage.setItem('lang', 'EN');
-    setAddress();
 }
