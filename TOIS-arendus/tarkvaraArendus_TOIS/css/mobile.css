@@ -15,9 +15,9 @@
     .links > a{
         font-size: 0.9em;
     }
-    .number{
+    /* .number{
         display: none;
-    }
+    } */
     .search{
         position: absolute;
         margin-top: 3em;
@@ -35,6 +35,8 @@
         margin-top: 10em;
     }
     .btn{
+        height: 50px;
+        width: 70%;
         font-size: 2vw;
     }
     .login_txt{

@@ -6,10 +6,11 @@
 
 
 label {
-    font-size: 20px;
+    font-size: 1vw;
 }
 
 input[type="text"] {
+    width: 15%;
     font-size: 20px;
     margin-left: 0.5em;
     font-family: 'Times New Roman', Times, Georgia, serif;

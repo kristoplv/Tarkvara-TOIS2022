@@ -125,11 +125,17 @@ li{
     width: 50%;
     display: flex;
     flex-direction: column;
-    font-size: 1em;
+    font-size: 1vw;
 }
-#searchInput{
-    width: 50%;
+#searchinput{
+    width: 70%;
+    height: 20%;
 }
+/* #searchButton{
+    cursor: pointer;
+    height: 25%;
+    width: 40%;
+} */
 
 
 .loginButton:hover{
@@ -209,6 +215,7 @@ th{
 
 .btn{
     width: 20%;
+    height: 20%;
     transition: 200ms;
     background: linear-gradient(to right, rgba(116, 32, 32, 0.295) 1%, white);
     border: 2px solid rgba(0, 0, 0, 0.2);
@@ -320,7 +327,7 @@ td{
 }
 
 .number{
-    text-align: right;
+    text-align: left;
 }
 
 /*.curriculumTable{
