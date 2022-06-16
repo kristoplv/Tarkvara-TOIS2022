@@ -17,7 +17,7 @@ const loc = ref(db, "TOIS/vorm");
 const nimetus ="TOIS/vorm/uldine_info/nimetus/ek";
 const EAP = "TOIS/vorm/uldine_info/EAP";
 const hindamine = "TOIS/vorm/hindamine_eesmargid/kontrollivorm";
-const vastutaja = "TOIS/vorm/admin/veebis_kuvatav_vastutaja";
+const vastutaja = "TOIS/vorm/admin/veebis_kuvatav_koolitaja";
 var reffer = "";
 
 
