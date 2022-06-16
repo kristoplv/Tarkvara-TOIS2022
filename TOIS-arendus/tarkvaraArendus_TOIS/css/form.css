@@ -160,9 +160,12 @@ input[type="text"], select, textarea, input:disabled, input[type="number"], inpu
         opacity: 100%;
     }
 }
-.btn{
+.formBtn {
     width: 20%;
-    transition: 200ms;
+    font-size: 24px;
+}
+.End{
+    width: 20%;
     background: linear-gradient(to right, rgba(116, 32, 32, 0.295) 1%, white);
     border: 2px solid rgba(0, 0, 0, 0.2);
     color: black;
@@ -170,8 +173,7 @@ input[type="text"], select, textarea, input:disabled, input[type="number"], inpu
     animation-name: flushButton_out;
     animation-duration: 300ms;
 }
-.btn:hover{
-    transition: 300ms;
+.End:hover{
     animation-name: flushButton_in;
     animation-duration: 300ms;
     background: linear-gradient(to right, rgba(116, 32, 32, 0.295) 100%, white);
