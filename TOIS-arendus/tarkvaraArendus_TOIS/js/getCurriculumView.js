@@ -219,6 +219,9 @@ function createElements(el){
     let kontaktope = document.querySelector('#kontaktope');
     let praktika = document.querySelector('#praktika');
 
+    let selected;
+    let selected_kv;
+
     let testList = [koolitusvaldkond, veebisKuvatavKorraldaja, onNahtav, oppekavaKoostamiseAlus, oppekavaRuhm,
         oppesuund, oppevaldkond, pohivastutajaMahuprotsent, pohivastutajaNimi, pohivastutajaOnKorraldaja,
         pohivastutajaStruktuur, viideKoolitusele, onTellitav, vastutajaMahuprotsent, vastutajaNimi,
@@ -235,15 +238,75 @@ function createElements(el){
     sleep(2000).then(()=>{
         for(var i=0; i<el[1].length;i++){
             for(var a=0; a<el.length; a++){
+                if(testList[a] == onTellitav && el[a][i] == "Jah"){
+                    document.querySelector('#tellitav').checked = true
+                }
+                if(testList[a] == onTellitav && el[a][i] == "Ei"){
+                    document.querySelector('#pole-tellitav').checked = true
+                }
+                if(testList[a] == onNahtav && el[a][i] == "Jah"){
+                    document.querySelector('#nahtav').checked = true
+                }
+                if(testList[a] == onNahtav && el[a][i] == "Ei"){
+                    document.querySelector('#pole-nahtav').checked = true
+                }
+                if(testList[a] == pohivastutajaOnKorraldaja && el[a][i] == "Jah"){
+                    document.querySelector('#on-korraldaja').checked = true
+                }
+                if(testList[a] == pohivastutajaOnKorraldaja && el[a][i] == "Ei"){
+                    document.querySelector('#pole-korraldaja').checked = true
+                }
+                if(testList[a] == vastutajaOnKorraldaja && el[a][i] == "Jah"){
+                    document.querySelector('#on-korraldaja-norm').checked = true
+                }
+                if(testList[a] == vastutajaOnKorraldaja && el[a][i] == "Ei"){
+                    document.querySelector('#pole-korraldaja-norm').checked = true
+                }
+                if(testList[a] == kontaktope && el[a][i] == "Jah"){
+                    testList[a].checked = true;
+                }
+                if(testList[a] == praktika && el[a][i] == "Jah"){
+                    testList[a].checked = true;
+                }
+                if(testList[a] == iseseisevOpe && el[a][i] == "Jah"){
+                    testList[a].checked = true;
+                }
+                if(testList[a] == eesti && el[a][i] == "Jah"){
+                    testList[a].checked = true;
+                }
+                if(testList[a] == inglise && el[a][i] == "Jah"){
+                    testList[a].checked = true;
+                }
+                if(testList[a] == vene && el[a][i] == "Jah"){
+                    testList[a].checked = true;
+                }
+                if(testList[a] == koolituseLiik && el[a][i] == "Esmane õpe"){
+                    selected = 0;
+                } else if(testList[a] == koolituseLiik && el[a][i] == "Ümberõpe"){
+                    selected = 1;
+                } else if(testList[a] == koolituseLiik && el[a][i] == "Täiendusõpe"){
+                    selected = 2;
+                }
+                if(testList[a] == kontrollivorm && el[a][i] == "Eksam"){
+                    selected_kv = 0;
+                } else if(testList[a] == kontrollivorm && el[a][i] == "Arvestus"){
+                    selected_kv = 1;
+                } else if(testList[a] == kontrollivorm && el[a][i] == "Puudub"){
+                    selected_kv = 2;
+                }
                 if(testList[a] == eap) {
                     testList[a].innerHTML = el[a][i];
+                } else if(el[a][i] == null) {
+                    testList[a].value = "";
                 } else {
                     testList[a].value = el[a][i];
                 }
             }
+            calculateEAP();
         }
+        koolituseLiik.options[selected].selected = true;
+        kontrollivorm.options[selected_kv].selected = true;
     })
-
 }
 
 function getIdFromPage(){
