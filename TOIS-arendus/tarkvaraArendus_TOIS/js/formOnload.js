@@ -91,4 +91,14 @@ window.onload = function(){
             }
         }
     });
+    document.querySelector('#on-korraldaja').addEventListener('change', function() {
+        if (this.checked) {
+            document.querySelector('#pole-korraldaja-norm').checked = true;
+        }
+    });
+    document.querySelector('#on-korraldaja-norm').addEventListener('change', function() {
+        if (this.checked) {
+            document.querySelector('#pole-korraldaja').checked = true;
+        }
+    });
 }

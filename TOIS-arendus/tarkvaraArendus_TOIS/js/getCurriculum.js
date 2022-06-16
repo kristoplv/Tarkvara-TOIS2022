@@ -66,7 +66,7 @@ function createElements(el, hashes){
                 console.log(el[a][i]);
                 starter.appendChild(thStart);
             }
-            var various1 = "<th class='links'><a href='form.html' id='"+hashes[i]+"' class='newsLink'>Vaata </a><a href='muuda.html' id='"+hashes[i]+"' class='newsLink'>Muuda </a><a href='kustuta.html' id='"+hashes[i]+"' class='newsLink'>Kustuta </a></th>";
+            var various1 = "<th class='links'><a href='vaata.html?id="+hashes[i]+"' id='"+hashes[i]+"' class='newsLink'>Vaata </a><a href='muuda.html?id="+hashes[i]+"' id='"+hashes[i]+"' class='newsLink'>Muuda </a><a href='kustuta.html?id="+hashes[i]+"' id='"+hashes[i]+"' class='newsLink'>Kustuta </a></th>";
             starter.innerHTML += various1;
             list.append(starter);
         }
