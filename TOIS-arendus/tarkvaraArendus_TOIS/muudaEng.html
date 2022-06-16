@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ee">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,17 +12,12 @@
     <script src="js/save_pdf/jspdf.umd.min.js" defer></script>
     <script src="js/save_pdf/jspdf.plugin.autotable.js" defer></script>
     <script src="js/save_pdf/fnc.js" defer></script>
-    <script src="js/loginStatus.js"></script>
-    <script src="js/isced.js"></script>
-    <script src="js/formOnload.js"></script>
-    <script type="module" src="js/navigation.js" defer></script>
-    <script type="module" src="js/lang.js" defer></script>
-    <title>Create a new curriculum</title>
+    <title>Editing curriculum</title>
 </head>
 <body>
     <div id="mainContainer" class="mainContainer"> 
         <div id="fillerMain" class="fillerMain"></div>
-        <a href="mainEng.html" class="logo"></a>
+        <a href="main.html" class="logo"></a>
         
         <div id="loginArea" class="login" >          
             <a href="login.html" class="loginButton" id="logIn">Log in</a>
@@ -38,18 +33,18 @@
                     <a href="oppekavadEng.html" class="links sides" id="allForms">All curricula</a>
                 </li>
                 <li>
-                    <a href="formEng.html" class="links sides" id="newForm">Create a new curriculum</a>
+                    <a href="uusoppekavaEng.html" class="links sides" id="newForm">Create new curriculum</a>
                 </li>
-                <a href="form.html" id="langEE"><img src="images/eestilipp.png" title="Eesti keel" class="estFlag"></a>
-                <a href="formEng.html" id="langEN"><img src="images/uklipp.png" title="Inglise keel" class="ukFlag"></a>
+                <a href="uusoppekava.html"><img src="images/eestilipp.png" title="Eesti keel" class="estFlag"></a>
+                <a href="uusoppekava.html"><img src="images/uklipp.png" title="Inglise keel" class="ukFlag"></a>
             </ul>
         </div>
         <div id="mainArea" class="mainArea">
             <div id="formAreaENG" class="mainContentArea">
                 <container class="oppekava">
                     <div class="headPiece">
-                        <h2>Curriculum development</h2>
-                        <p id="taitja">Filler:</p>
+                        <h2>Editing curriculum</h2>
+                        <p id="taitja">Editor:</p>
                         <input type="text" id="filler">
                         <br>
                         <p>Curriculum ID: <b>jölkadfh245389r2yfdöfw</b></p>
@@ -63,22 +58,23 @@
                         <table id="table1" style="display:none">
                             <tr>
                                 <th>
-                                    <label for="nimetus-ek">Name Est.lg</label>
+                                    <label for="nimetus-ek">Name e.k.</label>
                                     <br>
-                                    <input type="text" name="nimetus-ek" id="nimetus-ek" class="formInput" title="Sisestage õppekava eestikeelne nimetus"> 
+                                    <input type="text" name="nimetus-ek" id="nimetus-ek" class="formInput" title="Sisestage õppekava eestikeelne nimetus">
+                                    
                                     <span class="tooltip" data-tooltip="Enter the name of the curriculum in Estonian">?</span>
                                 </th>
                                 <th>
-                                    <label for="nimetus-ik">Name Eng.lg</label>
+                                    <label for="nimetus-ik">Name i.k.</label>
                                     <br>
                                     <input type="text" name="nimetus-ik" id="nimetus-ik" class="formInput">
                                     <span class="tooltip" data-tooltip="Enter the name of the curriculum in English">?</span>
                                 </th>
                                 <th>
-                                    <label for="nimetus-vk">Name Rus.lg</label>
+                                    <label for="nimetus-vk">Name v.k.</label>
                                     <br>
                                     <input type="text" name="nimetus-vk" id="nimetus-vk" class="formInput">
-                                    <span class="tooltip" data-tooltip="Enter the name of the curriculum in Russian">?</span>
+                                    <span class="tooltip" data-tooltip="Enter the name of the curriculum in English">?</span>
                                 </th>
                             </tr>
                             <tr>
@@ -167,88 +163,86 @@
                             </tr>
                             <tr>
                                 <th id="hindamiskriteeriumid-ek-th">
-                                    <label for="hindamiskriteeriumid-ek">Evaluation criteria Est.lg</label>
+                                    <label for="hindamiskriteeriumid-ek">Evaluation criteria e.k.</label>
                                     <br>
                                     <textarea name="hindamiskriteeriumid-ek" id="hindamiskriteeriumid-ek" class="formInput"> </textarea>
-                                    <span class="tooltip" data-tooltip="Enter assessment criteria or assessment guidelines that describe the expected level and scope of knowledge and skills to be demonstrated by the assessment method in Estonian">?</span>
+                                    <span class="tooltip" data-tooltip="Enter assessment criteria or assessment guidelines that describe the expected level and scope of knowledge and skills to be demonstrated by the assessment method">?</span>
                                     
                                 </th>
                                 <th id="hindamiskriteeriumid-ik-th" style="display:none">
-                                    <label for="hindamiskriteeriumid-ik">Evaluation criteria Eng.lg</label>
+                                    <label for="hindamiskriteeriumid-ik">Evaluation criteria i.k.</label>
                                     <br>
                                     <textarea name="hindamiskriteeriumid-ik" id="hindamiskriteeriumid-ik" class="formInput"> </textarea>
-                                    <span class="tooltip" data-tooltip="Enter assessment criteria or assessment guidelines that describe the expected level and scope of knowledge and skills to be demonstrated by the assessment method in English">?</span>
                                 </th>
                                 <th id="hindamiskriteeriumid-vk-th" style="display:none">
-                                    <label for="hindamiskriteeriumid-vk">Evaluation criteria Rus.lg</label>
+                                    <label for="hindamiskriteeriumid-vk">Evaluation criteria v.k.</label>
                                     <br>
                                     <textarea name="hindamiskriteeriumid-vk" id="hindamiskriteeriumid-vk" class="formInput"> </textarea>
-                                    <span class="tooltip" data-tooltip="Enter assessment criteria or assessment guidelines that describe the expected level and scope of knowledge and skills to be demonstrated by the assessment method in Russian">?</span>
                                 </th>
                             </tr>
                             <tr>
                                 <th id="eesmargid-ek-th">
-                                    <label for="eesmargid-ek">Goals Est.lg</label>
+                                    <label for="eesmargid-ek">Goals e.k.</label>
                                     <br>
                                     <textarea name="eesmargid-ek" id="eesmargid-ek" class="formInput"> </textarea>
-                                    <span class="tooltip" data-tooltip="Enter the goals of the curriculum, ie generalisation of what would be achieved upon completing the course, in Estonian. Example: 'Upon completion of the course, the learner has obtained necessary skills for passing the Level 3 Sanitor vocational exam'">?</span>
+                                    <span class="tooltip" data-tooltip="Enter the goals of the curriculum in Estonian">?</span>
                                     
                                 </th>
                                 <th id="eesmargid-ik-th" style="display:none">
-                                    <label for="eesmargid-ik">Goals Eng.lg</label>
+                                    <label for="eesmargid-ik">Goals i.k.</label>
                                     <br>
                                     <textarea name="eesmargid-ik" id="eesmargid-ik" class="formInput"> </textarea>
-                                    <span class="tooltip" data-tooltip="Enter the goals of the curriculum, ie generalisation of what would be achieved upon completing the course, in English. Example: 'Upon completion of the course, the learner has obtained necessary skills for passing the Level 3 Sanitor vocational exam'">?</span>
+                                    <span class="tooltip" data-tooltip="Enter curriculum objectives in English">?</span>
                                     
                                 </th>
                                 <th id="eesmargid-vk-th" style="display:none">
-                                    <label for="eesmargid-vk">Goals Rus.lg</label>
+                                    <label for="eesmargid-vk">Goals v.k.</label>
                                     <br>
                                     <textarea name="eesmargid-vk" id="eesmargid-vk" class="formInput"> </textarea>
-                                    <span class="tooltip" data-tooltip="Enter the goals of the curriculum, ie generalisation of what would be achieved upon completing the course, in Russian. Example: 'Upon completion of the course, the learner has obtained necessary skills for passing the Level 3 Sanitor vocational exam'">?</span>
+                                    <span class="tooltip" data-tooltip="Enter the objectives of the curriculum in Russian">?</span>
                                     
                                 </th>
                             </tr>
                             <tr>
                                 <th id="opivaljundid-ek-th">
-                                    <label for="opivaljundid-ek">Learning outcomes Est.lg</label>
+                                    <label for="opivaljundid-ek">Learning outcomes e.k.</label>
                                     <br>
                                     <textarea name="opivaljundid-ek" id="opivaljundid-ek" class="formInput"> </textarea>
-                                    <span class="tooltip" data-tooltip="Enter the learning outcomes, ie what is expected of the learner after completing the learning object, in Estonian. Example: 'By the end of the course, the learner... knows the characteristics of different surface materials; uses the correct tools and techniques for cleaning rooms; can solve the tests used in vocational exam'">?</span>
+                                    <span class="tooltip" data-tooltip="Enter the learning outcomes, ie what is expected of the learner after completing the learning object">?</span>
                                     
                                 </th>
                                 <th id="opivaljundid-ik-th" style="display:none">
-                                    <label for="opivaljundid-ik">Learning outcomes Eng.lg</label>
+                                    <label for="opivaljundid-ik">Learning outcomes i.k.</label>
                                     <br>
                                     <textarea name="opivaljundid-ik" id="opivaljundid-ik" class="formInput"> </textarea>
-                                    <span class="tooltip" data-tooltip="Enter the learning outcomes, ie what is expected of the learner after completing the learning object, in English. Example: 'By the end of the course, the learner... knows the characteristics of different surface materials; uses the correct tools and techniques for cleaning rooms; can solve the tests used in vocational exam'">?</span>
+                                    <span class="tooltip" data-tooltip="Enter the learning outcomes, ie what is expected of the learner after completing the learning object">?</span>
                                     
                                 </th>
                                 <th id="opivaljundid-vk-th" style="display:none">
-                                    <label for="opivaljundid-vk">Learning outcomes Rus.lg</label>
+                                    <label for="opivaljundid-vk">Learning outcomes v.k.</label>
                                     <br>
                                     <textarea name="opivaljundid-vk" id="opivaljundid-vk" class="formInput"> </textarea>
-                                    <span class="tooltip" data-tooltip="Enter the learning outcomes, ie what is expected of the learner after completing the learning object, in Russian. Example: 'By the end of the course, the learner... knows the characteristics of different surface materials; uses the correct tools and techniques for cleaning rooms; can solve the tests used in vocational exam'">?</span>
+                                    <span class="tooltip" data-tooltip="Enter the learning outcomes, ie what is expected of the learner after completing the learning object">?</span>
                                     
                                 </th>
                             </tr>
                             <tr>
                                 <th id="sisu-ek-th">
-                                    <label for="sisu-ek">Content Est.lg</label>
+                                    <label for="sisu-ek">Content e.k.</label>
                                     <br>
                                     <textarea name="sisu-ek" id="sisu-ek" class="formInput"> </textarea>
                                     <span class="tooltip" data-tooltip="Enter the content of the curriculum in Estonian">?</span>
                                     
                                 </th>
                                 <th id="sisu-ik-th" style="display:none">
-                                    <label for="sisu-ik">Content Eng.lg</label>
+                                    <label for="sisu-ik">Content i.k.</label>
                                     <br>
                                     <textarea name="sisu-ik" id="sisu-ik" class="formInput"> </textarea>
                                     <span class="tooltip" data-tooltip="Enter the content of the curriculum in English">?</span>
                                     
                                 </th>
                                 <th id="sisu-vk-th" style="display:none">
-                                    <label for="sisu-vk">Content Rus.lg</label>
+                                    <label for="sisu-vk">Content v.k.</label>
                                     <br>
                                     <textarea name="sisu-vk" id="sisu-vk" class="formInput"> </textarea>
                                     <span class="tooltip" data-tooltip="Enter the content of the curriculum in Russian">?</span>
@@ -257,41 +251,40 @@
                             </tr>
                             <tr>
                                 <th id="eeldused-ek-th">
-                                    <label for="eeldused-ek">Prerequisites Est.lg</label>
+                                    <label for="eeldused-ek">Prerequisites e.k.</label>
                                     <br>
                                     <textarea name="eeldused-ek" id="eeldused-ek" class="formInput"> </textarea>
-                                    <span class="tooltip" data-tooltip="Enter the prerequisites of the curriculum in Estonian. Example: 'obtained B1 level in Estonian; obtained elementary education'">?</span>
+                                    <span class="tooltip" data-tooltip="Enter the prerequisites of the curriculum in Estonian">?</span>
                                     
                                 </th>
                                 <th id="eeldused-ik-th" style="display:none">
-                                    <label for="eeldused-ik">Prerequisites Eng.lg</label>
+                                    <label for="eeldused-ik">Prerequisites i.k.</label>
                                     <br>
                                     <textarea name="eeldused-ik" id="eeldused-ik" class="formInput"> </textarea>
-                                    <span class="tooltip" data-tooltip="Enter the prerequisites of the curriculum in English. Example: 'obtained B1 level in Estonian; obtained elementary education'">?</span>
+                                    <span class="tooltip" data-tooltip="Enter the prerequisites of the curriculum in English">?</span>
                                     
                                 </th>
                                 <th id="eeldused-vk-th" style="display:none">
-                                    <label for="eeldused-vk">Prerequisites Rus.lg</label>
+                                    <label for="eeldused-vk">Prerequisites v.k.</label>
                                     <br>
                                     <textarea name="eeldused-vk" id="eeldused-vk" class="formInput"> </textarea>
-                                    <span class="tooltip" data-tooltip="Enter the prerequisites of the curriculum in Russian. Example: 'obtained B1 level in Estonian; obtained elementary education'">?</span>
+                                    <span class="tooltip" data-tooltip="Enter the prerequisites of the curriculum in Russian">?</span>
                                     
                                 </th>
                             </tr>
                             <tr>
                                 <th id="tingimused-ek-th">
-                                    <label for="tingimused-ek">Conditions for passage, incl. brief descriptions of practical work Est.lg</label>
+                                    <label for="tingimused-ek">Conditions for passage, incl. brief descriptions of practical work e.k.</label>
                                     <br>
                                     <textarea name="tingimused-ek" id="tingimused-ek" class="formInput"> </textarea>
-                                    <span class="tooltip" data-tooltip="Example: 'has participated in atleast 70% of the lectures'">?</span>
                                 </th>
                                 <th id="tingimused-ik-th" style="display:none">
-                                    <label for="tingimused-ik">Conditions for passage, incl. brief descriptions of practical work Eng.lg</label>
+                                    <label for="tingimused-ik">Conditions for passage, incl. brief descriptions of practical work i.k.</label>
                                     <br>
                                     <textarea name="tingimused-ik" id="tingimused-ik" class="formInput"> </textarea>
                                 </th>
                                 <th id="tingimused-vk-th" style="display:none">
-                                    <label for="tingimused-vk">Conditions for passage, incl. brief descriptions of practical work Rus.lg</label>
+                                    <label for="tingimused-vk">Conditions for passage, incl. brief descriptions of practical work v.k.</label>
                                     <br>
                                     <textarea name="tingimused-vk" id="tingimused-vk" class="formInput"> </textarea>
                                 </th>
@@ -332,30 +325,20 @@
                     <div class="fillForm" id="divv1">
                         <table id="table4" style="display:none">
                             <tr>
-                                <th colspan="3">
-                                    <label for="oppevaldkond">Õppevaldkond (ISCED) <span class="required">*</span></label>
+                                <th>
+                                    <label for="oppevaldkond">Field of study (ISCED)</label>
                                     <br>
-                                    <select name="oppevaldkond" id="oppevaldkond" class="formInputDropdown">
-                                        <option value=""></option>
-                                    </select>
+                                    <input type="text" name="oppevaldkond" id="oppevaldkond" class="formInput">
                                 </th>
-                            </tr>
-                            <tr>
-                                <th colspan="3">
-                                    <label for="oppesuund">Õppesuund (ISCED) <span class="required">*</span></label>
+                                <th>
+                                    <label for="oppesuund">Direction of study (ISCED)</label>
                                     <br>
-                                    <select name="oppesuund" id="oppesuund" class="formInputDropdown">
-                                        <option value=""></option>
-                                    </select>
+                                    <input type="text" name="oppesuund" id="oppesuund" class="formInput">
                                 </th>
-                            </tr>
-                            <tr>
-                                <th colspan="3">
-                                    <label for="oppekava-ruhm">Õppekava rühm (ISCED)</label>
+                                <th>
+                                    <label for="oppekava-ruhm">Curriculum group (ISCED)</label>
                                     <br>
-                                    <select name="oppekava-ruhm" id="oppekava-ruhm" class="formInputDropdown">
-                                        <option value=""></option>
-                                    </select>
+                                    <input type="text" name="oppekava-ruhm" id="oppekava-ruhm" class="formInput">
                                 </th>
                             </tr>
                             <tr>
@@ -376,19 +359,8 @@
                                     <br>
                                     <input list="pohivastutaja-struktuur" name="pohivastutaja-struktuur" class="formInput">
                                     <datalist id="pohivastutaja-struktuur">
-                                        <option value="AY - avatud akadeemia"></option>
-                                        <option value="CI - Konfutsiuse instituut"></option>
-                                        <option value="DT - digitehnoloogiate instituut"></option>
-                                        <option value="FK - Balti filmi, meedia ja kunstide instituut"></option>
-                                        <option value="HK - Haapsalu kolledž"></option>
-                                        <option value="HR - haridusteaduste instituut"></option>
-                                        <option value="HT - humanitaarteaduste instituut"></option>
-                                        <option value="LT - loodus- ja terviseteaduste instituut"></option>
-                                        <option value="RK - Rakvere kolledž"></option>
-                                        <option value="YK - ühiskonnateaduste instituut"></option>
-                                        <option value="IK - haridusinnovatsiooni keskus"></option>
-                                        <option value="OP - e-õppe keskus"></option>
-                                        <option value="PO - personaliosakond"></option>
+                                        <option value="Tallinna Ülikool"></option>
+                                        <option value="Tartu Ülikool"></option>
                                     </datalist>
                                     <br>
                                     <label for="pohivastutaja-nimi">Name of principal</label>
@@ -410,19 +382,8 @@
                                     <br>
                                     <input list="vastutaja-struktuur" name="vastutaja-struktuur" class="formInput">
                                     <datalist id="vastutaja-struktuur">
-                                        <option value="AY - avatud akadeemia"></option>
-                                        <option value="CI - Konfutsiuse instituut"></option>
-                                        <option value="DT - digitehnoloogiate instituut"></option>
-                                        <option value="FK - Balti filmi, meedia ja kunstide instituut"></option>
-                                        <option value="HK - Haapsalu kolledž"></option>
-                                        <option value="HR - haridusteaduste instituut"></option>
-                                        <option value="HT - humanitaarteaduste instituut"></option>
-                                        <option value="LT - loodus- ja terviseteaduste instituut"></option>
-                                        <option value="RK - Rakvere kolledž"></option>
-                                        <option value="YK - ühiskonnateaduste instituut"></option>
-                                        <option value="IK - haridusinnovatsiooni keskus"></option>
-                                        <option value="OP - e-õppe keskus"></option>
-                                        <option value="PO - personaliosakond"></option>
+                                        <option value="Tallinna Ülikool"></option>
+                                        <option value="Tartu Ülikool"></option>
                                     </datalist>
                                     <br>
                                     <label for="vastutaja-nimi">Name of responsible person</label>
