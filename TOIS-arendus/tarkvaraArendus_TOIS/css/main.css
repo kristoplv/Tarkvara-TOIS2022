@@ -191,20 +191,75 @@ th{
 }
 
 .btn{
-    width: 12em;
-    background-color: #c71a3d;
-    color: white;
-    font-size: .8vw;
-    margin: 5px;
-    cursor: pointer;
-    border: none;
-    border-radius: 3px;
-    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12)!important;
-    font-family: "Roboto", "Segoe UI", BlinkMacSystemFont, system-ui, -apple-system;
+    width: 20%;
+    transition: 200ms;
+    background: linear-gradient(to right, rgba(116, 32, 32, 0.295) 1%, white);
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    color: black;
+    font-style: italic;
+    animation-name: flushButton_out;
+    animation-duration: 300ms;
+}
+.btn:hover{
+    transition: 300ms;
+    animation-name: flushButton_in;
+    animation-duration: 300ms;
+    background: linear-gradient(to right, rgba(116, 32, 32, 0.295) 100%, white);
 }
 
-.btn:hover{
-    background-color: #d44562;
+@keyframes flushButton_in{
+    0%{
+        background: linear-gradient(to right, rgba(116, 32, 32, 0.295) 1%, white 99%);
+    }10%{
+        background: linear-gradient(to right, rgba(116, 32, 32, 0.295) 10%, white);
+    }20%{
+        background: linear-gradient(to right, rgba(116, 32, 32, 0.295) 20%, white);
+    }30%{
+        background: linear-gradient(to right, rgba(116, 32, 32, 0.295) 30%, white);
+    }40%{
+        background: linear-gradient(to right, rgba(116, 32, 32, 0.295) 40%, white);
+    }50%{
+        background: linear-gradient(to right, rgba(116, 32, 32, 0.295) 50%, white);
+    }60%{
+        background: linear-gradient(to right, rgba(116, 32, 32, 0.295) 60%, white);
+    }70%{
+        background: linear-gradient(to right, rgba(116, 32, 32, 0.295) 70%, white);
+    }80%{
+        background: linear-gradient(to right, rgba(116, 32, 32, 0.295) 80%, white);
+    }
+    90%{
+        background: linear-gradient(to right, rgba(116, 32, 32, 0.295) 90%, white);
+    }
+    100%{
+        background: linear-gradient(to right, rgba(116, 32, 32, 0.295) 100%, white);
+    }
+}
+@keyframes flushButton_out{
+    100%{
+        background: linear-gradient(to right, rgba(116, 32, 32, 0.295) 1%, white);
+    }90%{
+        background: linear-gradient(to right, rgba(116, 32, 32, 0.295) 10%, white);
+    }80%{
+        background: linear-gradient(to right, rgba(116, 32, 32, 0.295) 20%, white);
+    }70%{
+        background: linear-gradient(to right, rgba(116, 32, 32, 0.295) 30%, white);
+    }60%{
+        background: linear-gradient(to right, rgba(116, 32, 32, 0.295) 40%, white);
+    }50%{
+        background: linear-gradient(to right, rgba(116, 32, 32, 0.295) 50%, white);
+    }40%{
+        background: linear-gradient(to right, rgba(116, 32, 32, 0.295) 60%, white);
+    }30%{
+        background: linear-gradient(to right, rgba(116, 32, 32, 0.295) 70%, white);
+    }20%{
+        background: linear-gradient(to right, rgba(116, 32, 32, 0.295) 80%, white);
+    }
+    10%{
+        background: linear-gradient(to right, rgba(116, 32, 32, 0.295) 90%, white);
+    }
+    1%{
+        background: linear-gradient(to right, rgba(116, 32, 32, 0.295) 100%, white);
+    }
 }
 
 .estFlag{
