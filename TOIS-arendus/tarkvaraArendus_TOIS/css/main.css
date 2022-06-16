@@ -10,14 +10,17 @@ html{
 }
 
 h2{
-    font-size: 1.5vw;
-    /* font-size: 34px; */
+    font-size: 2.5vh;
     font-style: italic;
 }
 
 hr{
     border: 0;
     border-bottom: 0.5px solid #75142cc4;
+}
+
+p{
+    font-size: 2vh;
 }
 
 .links{
@@ -41,6 +44,7 @@ hr{
     display: grid;
     grid-template-columns: 15% 70% 15%;
     width: 100%;
+    height: 100%;
     aspect-ratio: 2.2/1;
     grid-template-rows: 4vw;
     grid-column-gap: 0px;
@@ -50,10 +54,12 @@ hr{
 }
 
 .login{
-    /*margin: 0;
-    border: 0;*/
+    margin: 0;
+    border: 0;
     padding: 0;
-    padding-left: 5vw;
+    padding-top: 1vh;
+    display: flex;
+    justify-content: center;
     font-family: "Times New Roman",Times,Georgia,serif;
     font-style:italic;
     letter-spacing: 0.05em;
@@ -68,6 +74,7 @@ hr{
     color: #ba0c2f;
     font-weight: 600;
     text-decoration: none;
+    text-shadow: 1px 3px #7e6b6f34;
 }
 
 .logo{
@@ -185,6 +192,16 @@ li{
     content: url(../images/notification.png);
 }
 
+.contentLabel{
+    font-size: 1.5vw;
+}
+
+@media (max-width: 1000px){
+    .contentLabel{
+        font-size: 2.5vh;
+    }
+}
+
 th{
     border-bottom: solid 1px #75142cc4;
     text-align: left;
@@ -197,6 +214,7 @@ th{
     border: 2px solid rgba(0, 0, 0, 0.2);
     color: black;
     font-style: italic;
+    font-size: 1vw;
     animation-name: flushButton_out;
     animation-duration: 300ms;
 }
