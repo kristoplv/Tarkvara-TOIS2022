@@ -7,6 +7,7 @@
     <link rel="icon" href="images/toisFavicon.png" type="image/x-icon">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/mobile.css">
     <link rel="stylesheet" href="css/mobileForm.css">
     <link rel="stylesheet" href="css/form.css">
     <script src="js/form.js" defer></script>
@@ -16,6 +17,7 @@
     <script src="js/save_pdf/fnc.js" defer></script>
     <script src="js/isced.js" defer></script>
     <script src="js/formOnload.js" defer></script>
+    <script src="js/ribbon.js" defer></script>
     <script type="module" src="js/fireBase.js" defer></script>
     <script type="module" src="js/navigation.js" defer></script>
     <script type="module" src="js/lang.js" defer></script>
@@ -47,6 +49,20 @@
                 <a href="form.html" id="langEE"><img src="images/eestilipp.png" title="Eesti keel" class="estFlag"></a>
                 <a href="formEng.html" id="langEN"><img src="images/uklipp.png" title="Inglise keel" class="ukFlag"></a>
             </ul>
+        </div>
+        <container class="ribbon">
+            <a class="home_logo item a" id="Logo" href="index.html"><p class="menu-text"></p></a>
+            <!--<a class="item_3 item a" href="main.html"><p class="menu-text">Õppekavad</p></a>
+                <a class="item_3 item a" href="form.html"><p class="menu-text">Loo uus õppekava</p></a>
+                <a class="item_3 item a" href="login.html"><p class="menu-text">Logi sisse</p></a>
+            -->
+            <div class="menuBtn" id="menu"></div>
+        </container>
+        <div class="peidus" id="dropped">
+            <p1 class="item login_txt"><a href="main.html">Avaleht</a></p1>
+            <p1 class="item login_txt"><a href="oppekavad.html">Õppekavad</a></p1>
+            <p1 class="item login_txt"><a href="uusoppekava.html">Loo uus õppekava</a></p1>
+            <p1 class="item login_txt"><a href="login.html">Logi sisse</a></p1>
         </div>
         <div id="mainArea" class="mainArea">
             <div id="formArea" class="mainContentArea">
