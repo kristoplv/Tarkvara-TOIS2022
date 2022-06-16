@@ -96,9 +96,6 @@ input[type=text], input[type=password]:focus{
     border-radius: 0.3em;
 
 }
-a:visited{
-    color: #922b2b;
-}
 .forgot_pw{
     margin-top: 1em;
     text-align: center;

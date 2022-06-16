@@ -215,7 +215,7 @@ th{
 
 .btn{
     width: 20%;
-    height: 20%;
+    height: 2.5vh;
     transition: 200ms;
     background: linear-gradient(to right, rgba(116, 32, 32, 0.295) 1%, white);
     border: 2px solid rgba(0, 0, 0, 0.2);
