@@ -22,3 +22,4 @@ export function setAddress(){
         document.querySelector('#newForm').classList.add('currentPage');
     }
 }
+
