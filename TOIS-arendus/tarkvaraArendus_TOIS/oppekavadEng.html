@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="css/mobile.css">
     <link rel="icon" href="images/toisFavicon.png" type="image/x-icon">
     <script src="js/ribbon.js" defer></script>
+    <script type="module" src="js/navigation.js" defer></script>
+    <script type="module" src="js/lang.js" defer></script>
 </head>
 <body>
     <div id="mainContainer" class="mainContainer">
@@ -24,16 +26,16 @@
             <h2 class="menuLabel">MENU</h2>
             <ul id="navMenu" class="navMenu">
                 <li>
-                    <a href="mainEng.html" class="links sides" id="homePage">Home page</a>
+                    <a href="main.html" class="links sides" id="homePage">Home page</a>
                 </li>
                 <li>
-                    <a href="oppekavadEng.html" class="links sides" id="allForms">All curricula</a>
+                    <a href="oppekavad.html" class="links sides" id="allForms">All curricula</a>
                 </li>
                 <li>
                     <a href="uusoppekava.html" class="links sides" id="newForm">Create a new curriculum</a>
                 </li>
-                <a href="oppekavad.html"><img src="images/eestilipp.png" title="Eesti keel" class="estFlag"></a>
-                <a href="oppekavadEng.html"><img src="images/uklipp.png" title="Inglise keel" class="ukFlag"></a>
+                <a href="oppekavad.html" id="langEE"><img src="images/eestilipp.png" title="Eesti keel" class="estFlag"></a>
+                <a href="oppekavadEng.html" id="langEN"><img src="images/uklipp.png" title="Inglise keel" class="ukFlag"></a>
             </ul>
         </div>
 
