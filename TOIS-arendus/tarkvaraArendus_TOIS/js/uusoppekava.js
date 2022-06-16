@@ -30,7 +30,7 @@ window.onload = function() {
         year: 'numeric'
     });
 
-    courseCreationDate.innerHTML = "Kuupäev: " + currentDate;
+    courseCreationDate.innerHTML = currentDate;
 
     document.querySelector('#generateCourseLink').addEventListener('click', generateLink);
 }
