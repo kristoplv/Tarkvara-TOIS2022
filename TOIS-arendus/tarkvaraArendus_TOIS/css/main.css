@@ -131,6 +131,11 @@ li{
     width: 70%;
     height: 20%;
 }
+/* #searchButton{
+    cursor: pointer;
+    height: 25%;
+    width: 40%;
+} */
 
 
 .loginButton:hover{
