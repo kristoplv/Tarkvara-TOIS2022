@@ -11,15 +11,16 @@
     <link rel="stylesheet" href="css/uusoppekava.css">
     <script type="module" src="js/uusoppekava.js" defer></script>
     <script src="js/ribbon.js" defer></script>
-    <script src="js/navigation.js" defer></script>
+    <script type="module" src="js/navigation.js" defer></script>
+    <script type="module" src="js/lang.js"></script>
     <title>TLÜ TÕIS</title>
 </head>
 <body>
     <div id="mainContainer" class="mainContainer">
-        <a href="main.html" class="logo"></a>
+        <a href="mainEng.html" class="logo"></a>
 
         <div id="loginArea" class="login" >          
-            <a href="login.html" class="loginButton" id="logIn">Log in</a>
+            <a href="loginEng.html" class="loginButton" id="logIn">Log in</a>
         </div>
 
         <div id="sidebar" class="sidebar">
@@ -34,8 +35,8 @@
                 <li>
                     <a href="uusoppekavaEng.html" class="links sides" id="newForm">Create new curriculum</a>
                 </li>
-                <a href="uusoppekava.html"><img src="images/eestilipp.png" title="Eesti keel" class="estFlag"></a>
-                <a href="uusoppekavaEng.html"><img src="images/uklipp.png" title="Inglise keel" class="ukFlag"></a>
+                <a href="uusoppekava.html" id="langEE"><img src="images/eestilipp.png" title="Eesti keel" class="estFlag"></a>
+                <a href="uusoppekavaEng.html" id="langEN"><img src="images/uklipp.png" title="Inglise keel" class="ukFlag"></a>
             </ul>
         </div>
 
@@ -47,7 +48,7 @@
             <p1 class="item login_txt"><a href="mainEng.html">Home page</a></p1>
             <p1 class="item login_txt"><a href="oppekavadEng.html">All curricula</a></p1>
             <p1 class="item login_txt"><a href="uusoppekavaEng.html">Create new curriculum</a></p1>
-            <p1 class="item login_txt"><a href="login.html">Log in</a></p1>
+            <p1 class="item login_txt"><a href="loginEng.html">Log in</a></p1>
         </div>
 
         <div id="mainArea" class="mainArea">
