@@ -101,6 +101,8 @@ function sendValues(){
   var kontrollvorm_valitud = kontrollvorm.options[kontrollvorm.selectedIndex];
   var eap = (maht[0].value + maht[1].value + maht[2].value) / 26;
   var baseRef = "TOIS/vorm/uldine_info/";
+
+  var newBase = "TOIS/vorm/vormid" + id
   
   // Üldine info
   saada(baseRef+"nimetus", nimiEK);
