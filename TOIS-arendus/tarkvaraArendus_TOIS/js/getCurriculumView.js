@@ -79,6 +79,7 @@ const nimetusIK = "TOIS/vorm/uldine_info/nimetus/ik";
 const nimetusVK = "TOIS/vorm/uldine_info/nimetus/vk";
 const oppeviisidIseseisev = "TOIS/vorm/uldine_info/oppeviisid/iseseisev";
 const oppeviisidKontaktope = "TOIS/vorm/uldine_info/oppeviisid/kontaktope";
+const oppeviisidMuu = "TOIS/vorm/uldine_info/oppeviisid/muu";
 const oppeviisidPraktika = "TOIS/vorm/uldine_info/oppeviisid/praktika";
 
 var reffer = "";
@@ -161,6 +162,7 @@ function getAll(){
     superList.push(getFirebaseItem(nimetusVK));
     superList.push(getFirebaseItem(oppeviisidIseseisev));
     superList.push(getFirebaseItem(oppeviisidKontaktope));
+    superList.push(getFirebaseItem(oppeviisidMuu));
     superList.push(getFirebaseItem(oppeviisidPraktika));
 
     console.log(superList);
@@ -227,6 +229,7 @@ function createElements(el){
     let nimetusVK = document.querySelector('#nimetus-vk');
     let iseseisevOpe = document.querySelector('#iseseisev-ope');
     let kontaktope = document.querySelector('#kontaktope');
+    let muuOpe = document.querySelector('#muu-oppeviisi-nimetus');
     let praktika = document.querySelector('#praktika');
 
     let selected;
@@ -278,6 +281,9 @@ function createElements(el){
                     testList[a].checked = true;
                 }
                 if(testList[a] == praktika && el[a][i] == "Jah"){
+                    testList[a].checked = true;
+                }
+                if(testList[a] == muuOpe && el[a][i] == "Jah"){
                     testList[a].checked = true;
                 }
                 if(testList[a] == iseseisevOpe && el[a][i] == "Jah"){
