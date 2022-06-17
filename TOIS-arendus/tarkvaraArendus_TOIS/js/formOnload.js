@@ -146,3 +146,10 @@ window.onload = function(){
         }
     });
 }
+
+document.body.addEventListener('change', function() {
+    sleep(2000).then(() => {
+    sendValues();
+    console.log('saatsime');
+    });
+});

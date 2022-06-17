@@ -229,7 +229,7 @@ function createElements(el){
     let nimetusVK = document.querySelector('#nimetus-vk');
     let iseseisevOpe = document.querySelector('#iseseisev-ope');
     let kontaktope = document.querySelector('#kontaktope');
-    let muuOpe = document.querySelector('#muu-oppeviisi-nimetus');
+    let muuOpe = document.querySelector('#muu-oppeviis');
     let praktika = document.querySelector('#praktika');
 
     let selected;
@@ -249,7 +249,7 @@ function createElements(el){
         koolitajaKompetentsus, opikeskkond, sihtgrupp,
     
         eap, eesti, inglise, vene, koolituseLiik, iseseisevOpeH, kontaktopeH, praktikaH, nimetusEK, nimetusIK,
-        nimetusVK, iseseisevOpe, kontaktope, praktika];
+        nimetusVK, iseseisevOpe, kontaktope, muuOpe, praktika];
     sleep(2000).then(()=>{
         for(var i=0; i<el[1].length;i++){
             for(var a=0; a<el.length; a++){
@@ -284,8 +284,7 @@ function createElements(el){
                     testList[a].checked = true;
                 }
                 if(testList[a] == muuOpe && el[a][i] == "Jah"){
-                    document.querySelector('#muu-oppeviis').checked = true;
-                    testList[a].value = el[a][i];
+                    testList[a].checked = el[a][i];
                 }
                 if(testList[a] == iseseisevOpe && el[a][i] == "Jah"){
                     testList[a].checked = true;
@@ -324,6 +323,7 @@ function createElements(el){
             calculateEAP();
         }
         koolituseLiik.options[selected].selected = true;
+        console.log(koolituseLiik.options[selected])
         kontrollivorm.options[selected_kv].selected = true;
     })
 }
