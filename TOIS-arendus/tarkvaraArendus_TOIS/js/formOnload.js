@@ -34,8 +34,6 @@ window.onload = function(){
     }
 
     /* Nupud, väljad enabled/disabled, colspan */
-    document.querySelector('#courseCreator').value = localStorage.getItem("courseCreator");
-    document.querySelector('#courseFiller').value = localStorage.getItem("courseFiller");
     document.querySelector('#downloadTxt').addEventListener('click', downloadFormTxt);
     document.querySelector('#downloadPdf').addEventListener('click', generatePdf);
     document.querySelector('#kontaktope').addEventListener('change', function() {

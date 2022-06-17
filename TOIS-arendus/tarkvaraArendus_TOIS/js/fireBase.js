@@ -78,10 +78,69 @@ const db= getDatabase();
 const loc = ref(db, "TOIS/vorm");
 var reffer = "";
 
+/* general */
+const oppekavaLoojaNimi = "TOIS/vorm/auth/oppekava_looja/";
+const oppekavaTaitjaNimi = "TOIS/vorm/auth/taitja_nimi/";
+
 var newBtn = document.querySelector("#submitForm");
 
+function getAll(){
+  var superList = [];
+  superList.push(getFirebaseItem(oppekavaLoojaNimi));
+  superList.push(getFirebaseItem(oppekavaTaitjaNimi));
+
+  console.log(superList);
+  createElements(superList);
+}
+
+function createElements(el){
+  let oppekavaLoojaNimi = document.querySelector('#courseCreator');
+  let oppekavaTaitjaNimi = document.querySelector('#courseFiller');
+
+  let testList = [oppekavaLoojaNimi, oppekavaTaitjaNimi,]
+  sleep(2000).then(()=>{
+    for(var i=0; i<el[1].length;i++){
+      for(var a=0; a<el.length; a++){
+        testList[a].value = el[a][i];
+      }
+    }
+  });
+}
+
+function getIdFromPage(){
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  const id = urlParams.get('id');
+  return id;
+}
 
 
+function getFirebaseItem(baseRef){
+  var pageId = getIdFromPage();
+  var listOfResults = []
+  var initRef = ref(db, baseRef);
+  onValue(initRef, function(sisu){
+      var newVals = sisu.val();
+      /*var objectKeys = Object.keys(newVals);*/
+      var innerSisu = Object.values(newVals);
+      console.log(pageId);
+      console.log(newVals);
+      console.log(baseRef +"/"+pageId+"/"+pageId);
+      var reffer = baseRef +"/"+pageId;
+      console.log(pageId);
+      var newRef = ref(db, reffer);
+      onValue(newRef, function(sisuNew){
+          var lowValues = sisuNew.val();
+          var finalValues = Object.values(lowValues);
+          console.log(finalValues[0]);
+          listOfResults.push(finalValues[0]);
+          
+      })
+  })
+  return listOfResults;
+}
+
+getAll();
 
 
 /*function sendToFirebase(){
@@ -233,3 +292,12 @@ newBtn.addEventListener("click", ()=>{ sendValues() })
     console.log("saatsime")
   })
 }*/
+
+window.onload = function() {
+  document.body.addEventListener('change', function() {
+    sleep(2000).then(() => {
+      sendValues();
+      console.log('saatsime');
+    });
+  });
+}
