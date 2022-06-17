@@ -14,6 +14,10 @@ const app = initializeApp(firebaseConfig);
 const db = getDatabase();
 const loc = ref(db, "TOIS/vorm");
 
+/* general */
+const oppekavaLoojaNimi = "TOIS/vorm/auth/oppekava_looja/";
+const oppekavaTaitjaNimi = "TOIS/vorm/auth/taitja_nimi/";
+
 /* admin */
 const koolitusvaldkond = "TOIS/vorm/admin/koolitusvaldkond";
 const korraldajaStruktuurKontakt = "TOIS/vorm/admin/korraldaja_struktuur_kontakt";
@@ -98,6 +102,9 @@ function sleep(ms){
 
 function getAll(){
     var superList = [];
+    superList.push(getFirebaseItem(oppekavaLoojaNimi));
+    superList.push(getFirebaseItem(oppekavaTaitjaNimi));
+
     superList.push(getFirebaseItem(koolitusvaldkond));
     superList.push(getFirebaseItem(korraldajaStruktuurKontakt));
     superList.push(getFirebaseItem(nahtav));
@@ -161,6 +168,9 @@ function getAll(){
 }
 
 function createElements(el){
+    let oppekavaLoojaNimi = document.querySelector('#courseCreator');
+    let oppekavaTaitjaNimi = document.querySelector('#courseFiller');
+
     let koolitusvaldkond = document.querySelector('#koolitusvaldkond');
     let veebisKuvatavKorraldaja = document.querySelector('#veebis-kuvatav-korraldaja');
     let onNahtav = document.querySelector('#nahtav');
@@ -222,7 +232,9 @@ function createElements(el){
     let selected;
     let selected_kv;
 
-    let testList = [koolitusvaldkond, veebisKuvatavKorraldaja, onNahtav, oppekavaKoostamiseAlus, oppekavaRuhm,
+    let testList = [oppekavaLoojaNimi, oppekavaTaitjaNimi,
+        
+        koolitusvaldkond, veebisKuvatavKorraldaja, onNahtav, oppekavaKoostamiseAlus, oppekavaRuhm,
         oppesuund, oppevaldkond, pohivastutajaMahuprotsent, pohivastutajaNimi, pohivastutajaOnKorraldaja,
         pohivastutajaStruktuur, viideKoolitusele, onTellitav, vastutajaMahuprotsent, vastutajaNimi,
         vastutajaOnKorraldaja, vastutajaStruktuur, kuvatavKoolitaja,

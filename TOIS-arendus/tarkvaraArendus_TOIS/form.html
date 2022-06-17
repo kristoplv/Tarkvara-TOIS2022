@@ -69,9 +69,15 @@
                 <container class="oppekava">
                     <div class="headPiece">
                         <h2>Õppekava loomine</h2>
-                        <p id="taitja" class="contentLabel">Täitja:</p>
-                        <input type="text" id="filler">
+                        <div class="inputField">
+                            <label for="courseCreator">Õppekava looja nimi:</label>
+                            <input type="text" name="courseCreator" id="courseCreator" class="formInput" disabled>
+                        </div>
                         <br>
+                        <div class="inputField">
+                            <label for="courseFiller">Õppekava täitja nimi:</label>
+                            <input type="text" name="courseFiller" id="courseFiller" class="formInput" disabled>
+                        </div>
                         <p>Õppekava ID: <span id="courseId"></span></p>
                         <script>
                             const queryString = window.location.search;
