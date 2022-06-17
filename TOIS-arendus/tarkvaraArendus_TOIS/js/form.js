@@ -280,9 +280,32 @@ function validate() {
     let hindamineCount = 0;
     let muuCount = 0;
     let oppejuhiCount = 0;*/
-    
 
-    /* Error messages */
+    let fileName = location.href.split("/").slice(-1);
+    if (fileName[0].includes("Eng")) {
+        /* Error messages ENG */
+        if (uldineInfoCount != 0) {
+            document.querySelector('#table1-error-eng').innerHTML = "<th>" + uldineInfoCount + " missing inputs!</th>";
+        } else {
+            document.querySelector('#table1-error-eng').innerHTML = "";
+        }
+        if (hindamineCount != 0) {
+            document.querySelector('#table2-error-eng').innerHTML = "<th>" + hindamineCount + " missing inputs!</th>";
+        } else {
+            document.querySelector('#table2-error-eng').innerHTML = "";
+        }
+        if (muuCount != 0) {
+            document.querySelector('#table3-error-eng').innerHTML = "<th>" + muuCount + " missing inputs!</th>";
+        } else {
+            document.querySelector('#table3-error-eng').innerHTML = "";
+        }
+        if (oppejuhiCount != 0) {
+            document.querySelector('#table4-error-eng').innerHTML = "<th>" + oppejuhiCount + " missing inputs!</th>";
+        } else {
+            document.querySelector('#table4-error-eng').innerHTML = "";
+        }
+    } else {
+        /* Error messages */
     if (uldineInfoCount != 0) {
         document.querySelector('#table1-error').innerHTML = "<th>" + uldineInfoCount + " välja täitmata!</th>";
     } else {
@@ -302,5 +325,6 @@ function validate() {
         document.querySelector('#table4-error').innerHTML = "<th>" + oppejuhiCount + " välja täitmata!</th>";
     } else {
         document.querySelector('#table4-error').innerHTML = "";
+    }
     }
 }
