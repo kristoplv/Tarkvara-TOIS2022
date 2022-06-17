@@ -82,6 +82,9 @@ function generateLink() {
     set(ref(db, "TOIS/vorm/auth/taitja_nimi/"+linkId), {
         [linkId] : courseFiller
     });
+    set(ref(db, "TOIS/vorm/auth/deleted/"+linkId), {
+        [linkId] : "Ei"
+    });
 
 
     
