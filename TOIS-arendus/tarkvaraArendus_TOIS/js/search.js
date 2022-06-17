@@ -11,9 +11,10 @@ searchInput.addEventListener("keyup", (event) => {
         let name = nameElement.textContent.toLowerCase();
         
         if (name.includes(searchQuery)) {
-            nameElement.style.display = "block";
+            nameElement.style.display = "";
         } else {
             nameElement.style.display = "none";
         }
     }
 });
+
