@@ -13,7 +13,7 @@ var oppeviisid = document.getElementsByClassName("uldine_viisid");
 var keeled = document.getElementsByClassName("uldine_keeled");
 var maht = document.getElementsByClassName("maht formInput");
 //var eap = document.querySelector("#eap-result");
-var names_viisid = ["/iseseisev/", "/kontaktope/", "/praktika/"];
+var names_viisid = ["/iseseisev/", "/kontaktope/", "/praktika/", "/muu/"];
 var names_keeled = ["/ek/", "/ik/", "/vk/"]
 
 // Hindamine ja sisu
@@ -92,7 +92,6 @@ var newBtn = document.querySelector("#submitForm");
 function sleep(ms){
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
-
 function sendValues(){
   
   var koolituse_liik = document.querySelector("#koolituse-liik");
@@ -223,3 +222,10 @@ function saadaOneline(baseRef, liik){
 
 newBtn.addEventListener("click", ()=>{ sendValues() })
 
+/*window.onload = ()=>{
+  
+  sleep(10000).then(()=>{
+    sendValues();
+    console.log("saatsime")
+  })
+}*/

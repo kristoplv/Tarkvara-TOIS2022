@@ -16,5 +16,8 @@ export function deleteRememberMeCookie(){
 export function loadSavedLogin(){
     if(JSON.parse(window.localStorage.getItem('login')) !== null){
         email.value = JSON.parse(window.localStorage.getItem('login'));
+        document.querySelector('#rememberMe').checked = true;
+    } else {
+        document.querySelector('#rememberMe').checked = false;
     }
 }

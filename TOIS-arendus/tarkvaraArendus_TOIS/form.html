@@ -46,8 +46,8 @@
                 <li>
                     <a href="uusoppekava.html" class="links sides" id="newForm">Loo uus õppekava</a>
                 </li>
-                <a href="form.html" id="langEE"><img src="images/eestilipp.png" title="Eesti keel" class="estFlag"></a>
-                <a href="formEng.html" id="langEN"><img src="images/uklipp.png" title="Inglise keel" class="ukFlag"></a>
+                <span id="formEE"></span>
+                <span id="formEN"></span>
             </ul>
         </div>
         <container class="ribbon">
@@ -84,6 +84,8 @@
                             const urlParams = new URLSearchParams(queryString);
                             const id = urlParams.get('id');
                             document.querySelector('#courseId').innerHTML = id;
+                            document.querySelector('#formEE').innerHTML = '<a href="form.html?id=' + id + '" id="langEE"><img src="images/eestilipp.png" title="Eesti keel" class="estFlag"></a>';
+                            document.querySelector('#formEN').innerHTML = '<a href="formEng.html?id=' + id + '" id="langEN"><img src="images/uklipp.png" title="Inglise keel" class="ukFlag"></a>';
                         </script>
                         <br>
                         <hr>
@@ -118,14 +120,14 @@
                                 <th>
                                     <label for="oppeviis" id="oppeviis-label">Õppeviis <span class="required">*</span></label>
                                     <br>
+                                    <input type="checkbox" name="oppeviis" class="uldine_viisid" id="iseseisev-ope">
+                                    <label for="iseseisev-ope" id="iseseisev-ope-label">Iseseisev õpe</label>
+                                    <br>
                                     <input type="checkbox" name="oppeviis" class="uldine_viisid" id="kontaktope">
                                     <label for="kontaktope" id="kontaktope-label">Kontaktõpe</label>
                                     <br>
                                     <input type="checkbox" name="oppeviis" class="uldine_viisid" id="praktika">
                                     <label for="praktika" id="praktika-label">Praktika</label>
-                                    <br>
-                                    <input type="checkbox" name="oppeviis" class="uldine_viisid" id="iseseisev-ope">
-                                    <label for="iseseisev-ope" id="iseseisev-ope-label">Iseseisev õpe</label>
                                     <br>
                                     <input type="checkbox" name="oppeviis" class="uldine_viisid" id="muu-oppeviis">
                                     <label for="muu-oppeviis">Muu</label>

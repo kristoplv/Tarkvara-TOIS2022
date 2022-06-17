@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/menu.css">
     <link rel="stylesheet" href="css/mobile.css">
     <link rel="icon" href="images/toisFavicon.png" type="image/x-icon">
+    <script type="module" src="js/deleteCurr.js" defer></script>
 </head>
 <body>
     <div id="mainContainer" class="mainContainer"> 
@@ -50,23 +51,20 @@
             <div id="deleteArea" class="mainContentArea">
                 <h2 class="deleteHead">Õppekava kustutamine</h2>
                 <table id="deleteTable" class="evenBorders">
-                    <tr>
+                    <tr id="name">
                         <th>Valitud õppekava:</th>
-                        <td>Termodünaamika</td>
                     </tr>
-                    <tr>
+                    <tr id="desc">
                         <th>Õppekava kirjeldus:</th>
-                        <td>Alusteadmised termodünaamikast asdas dasdja joadj maodjaos dmjasdjm asjdmaojd asd asmdmalmdlamdl ma asmdmadl maslmdaslmal mldas mlaskmd klma smdlasd malsk  dmas dmal dalsd ma dalsdm a sdlas mdlasmdlasmd l</td>
-                    </tr>
-                    <tr>
-                        <th>Õppekava staatus:</th>
-                        <td>Mitteaktiivne</td>
+                       </tr>
+                    <tr id="status">
+                        <th>Õppekava EAP maht:</th>
                     </tr>
                     <tr>
                         <th>
                             <p class="confirmation">Oled kindel, et soovid õppekava kustutada?</p>
-                            <input type="button" value="Jah" class="btn">
-                            <input type="button" value="Ei" class="btn">
+                            <input type="button" id="btnYes" value="Jah" class="btn">
+                            <input type="button" id="btnNo" value="Ei" class="btn">
                         </th>
                         <th>
                             
