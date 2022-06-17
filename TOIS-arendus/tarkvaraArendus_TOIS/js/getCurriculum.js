@@ -56,7 +56,7 @@ function getAll(){
 
 function createElements(el, hashes){
     var list = document.getElementById("bodyOfList");
-    sleep(2000).then(()=>{
+    sleep(400).then(()=>{
         console.log(hashes)
         for(var i=0; i<el[1].length;i++){
             if(el[4][i] == "Ei"){
@@ -110,6 +110,5 @@ function getFirebaseItem(baseRef, hash){
     })
     return listOfResults;
 }
-
 getAll();
 
