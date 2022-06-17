@@ -18,6 +18,7 @@ const nimetus ="TOIS/vorm/uldine_info/nimetus/ek";
 const EAP = "TOIS/vorm/uldine_info/EAP";
 const hindamine = "TOIS/vorm/hindamine_eesmargid/kontrollivorm";
 const vastutaja = "TOIS/vorm/admin/veebis_kuvatav_koolitaja";
+const deleted = "TOIS/vorm/auth/deleted";
 var reffer = "";
 
 
@@ -48,6 +49,7 @@ function getAll(){
     superList.push(getFirebaseItem(EAP, hash));
     superList.push(getFirebaseItem(hindamine, hash));
     superList.push(getFirebaseItem(vastutaja, hash));
+    superList.push(getFirebaseItem(deleted, hash));
     console.log(superList);
     createElements(superList, hash);
 }
@@ -57,18 +59,20 @@ function createElements(el, hashes){
     sleep(2000).then(()=>{
         console.log(hashes)
         for(var i=0; i<el[1].length;i++){
-            var starter = document.createElement("tr");
-            for(var a=0; a<el.length; a++){
-                var thStart = document.createElement("th")
-                thStart.id = listOFid[a];
-                thStart.className = listOfClasses[a];
-                thStart.innerHTML = el[a][i];
-                console.log(el[a][i]);
-                starter.appendChild(thStart);
+            if(el[4][i] == "Ei"){
+                var starter = document.createElement("tr");
+                for(var a=0; a<el.length-1; a++){
+                    var thStart = document.createElement("th")
+                    thStart.id = listOFid[a];
+                    thStart.className = listOfClasses[a];
+                    thStart.innerHTML = el[a][i];
+                    console.log(el[a][i]);
+                    starter.appendChild(thStart);
+                }
+                var various1 = "<th class='links'><a href='vaata.html?id="+hashes[i]+"' id='"+hashes[i]+"' class='newsLink'>Vaata </a><a href='muuda.html?id="+hashes[i]+"' id='"+hashes[i]+"' class='newsLink'>Muuda </a><a href='kustuta.html?id="+hashes[i]+"' id='"+hashes[i]+"' class='newsLink'>Kustuta </a></th>";
+                starter.innerHTML += various1;
+                list.append(starter);
             }
-            var various1 = "<th class='links'><a href='vaata.html?id="+hashes[i]+"' id='"+hashes[i]+"' class='newsLink'>Vaata </a><a href='muuda.html?id="+hashes[i]+"' id='"+hashes[i]+"' class='newsLink'>Muuda </a><a href='kustuta.html?id="+hashes[i]+"' id='"+hashes[i]+"' class='newsLink'>Kustuta </a></th>";
-            starter.innerHTML += various1;
-            list.append(starter);
         }
     })
 }
