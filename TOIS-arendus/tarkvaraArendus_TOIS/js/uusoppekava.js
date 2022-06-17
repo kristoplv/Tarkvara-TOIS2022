@@ -57,9 +57,6 @@ function generateLink() {
     let courseFiller = document.querySelector('#courseFiller').value;
     let buttonId = document.querySelector('#generateCourseLink');
     let courseLink = document.querySelector('#courseLink');
-
-    localStorage.setItem("courseCreator", courseCreator);
-    localStorage.setItem("courseFiller", courseFiller);
     
     buttonId.style.display = 'none';
     courseLink.innerHTML = '<a class="linkBtn" id="linkBtn" href="form.html?id=' + linkId + '">Link uue õppekava täitmiseks</a>';
