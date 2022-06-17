@@ -284,7 +284,8 @@ function createElements(el){
                     testList[a].checked = true;
                 }
                 if(testList[a] == muuOpe && el[a][i] == "Jah"){
-                    testList[a].checked = true;
+                    document.querySelector('#muu-oppeviis').checked = true;
+                    testList[a].value = el[a][i];
                 }
                 if(testList[a] == iseseisevOpe && el[a][i] == "Jah"){
                     testList[a].checked = true;
