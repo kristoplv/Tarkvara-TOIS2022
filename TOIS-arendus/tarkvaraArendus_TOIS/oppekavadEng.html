@@ -5,12 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TLÜ TÕIS</title>
+    <link rel="stylesheet" href="css/improvedOppekavad.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/menu.css">
     <link rel="stylesheet" href="css/mobile.css">
     <link rel="icon" href="images/toisFavicon.png" type="image/x-icon">
-    <script src="js/ribbon.js" defer></script>
     <script src="js/search.js" defer></script>
+    <script src="js/ribbon.js" defer></script>
+    <script type="module" src="js/getCurriculum.js" defer></script>
     <script type="module" src="js/navigation.js" defer></script>
     <script type="module" src="js/lang.js" defer></script>
     <script type="module" src="js/loginStatus.js" defer></script>
@@ -18,11 +20,11 @@
 <body>
     <div id="mainContainer" class="mainContainer">
         <!-- <div id="fillerMain" class="fillerMain"></div>  -->
-        <a href="mainEng.html" class="logo"></a>
+        <a href="main.html" class="logo"></a>
         
         <div id="loginArea" class="login">
-            <div id="welcomePlaceholder"></div>          
-            <a href="loginEng.html" class="loginButton" id="logIn">Log in</a>
+            <div id="welcomePlaceholder"></div>  
+            <a href="login.html" class="loginButton" id="logIn">Log in</a>
         </div>
 
         <div id="sidebar" class="sidebar">
@@ -35,10 +37,10 @@
                     <a href="oppekavad.html" class="links sides" id="allForms">All curricula</a>
                 </li>
                 <li>
-                    <a href="uusoppekava.html" class="links sides" id="newForm">Create a new curriculum</a>
+                    <a href="uusoppekava.html" class="links sides" id="newForm">Create new curriculum</a>
                 </li>
-                <a href="oppekavad.html" id="langEE"><img src="images/eestilipp.png" title="Eesti keel" class="estFlag"></a>
-                <a href="oppekavadEng.html" id="langEN"><img src="images/uklipp.png" title="Inglise keel" class="ukFlag"></a>
+                <a href="oppekavad.html"><img src="images/eestilipp.png" id="langEE" title="Eesti keel" class="estFlag"></a>
+                <a href="oppekavadEng.html"><img src="images/uklipp.png" id="langEN" title="Inglise keel" class="ukFlag"></a>
             </ul>
         </div>
 
@@ -51,10 +53,10 @@
             <div class="menuBtn" id="menu"></div>
         </container>
         <div class="peidus" id="dropped">
-            <p1 class="item login_txt"><a href="mainEng.html">Home page</a></p1>
-            <p1 class="item login_txt"><a href="oppekavadEng.html">All curricula</a></p1>
-            <p1 class="item login_txt"><a href="uusoppekavaEng.html">Create a new curriculum</a></p1>
-            <p1 class="item login_txt"><a href="loginEng.html">Log in</a></p1>
+            <p1 class="item login_txt"><a href="main.html">Home page</a></p1>
+            <p1 class="item login_txt"><a href="oppekavad.html">Curriculums</a></p1>
+            <p1 class="item login_txt"><a href="uusoppekava.html">Create new curriculum</a></p1>
+            <p1 class="item login_txt"><a href="login.html">Log in</a></p1>
         </div>
         
 
@@ -68,79 +70,28 @@
                 <div class="search">
                     <label for="searchInput">Search by name</label>
                     <input type="text" id="searchinput">
-                    <input type="button" value="Search" id="searchButton" class="btn">
+                    <input type="button" value="Otsi" id="searchButton" class="btn">
                 </div>
 
                 <br>
                 <table id="formList" class="evenBorders">
-                    <tr class="mains">
-                        <th class="topper"><b>Name of the curriculum</b></th>
-                        <th class="topper"><b>Course volume(EAP)</b></th>
-                        <th class="topper"><b>Evaluation method</b></th>
-                        <th class="topper"><b>Institute</b></th>
-                        <th class="topper"></th>
-                    </tr>
-                    <tr>
-                        <th><a href="form.html" class="links">Matemaatika elemendid</a></th>
-                        <th class="number">1</th>
-                        <th>Arvestus</th>
-                        <th>Digitehnoloogiate instituut</th>
-                        <th class="links">
-                            <a href="formEng.html" class="newsLink">View</a>
-                            <a href="muudaEng.html" class="newsLink">Edit</a>
-                            <a href="kustutaEng.html" class="newsLink">Delete</a>
-                        </th>
-                    </tr>
-                    <tr>
-                        <th><a href="form.html" class="links">Termodünaamika</a></th>
-                        <th class="number">2</th>
-                        <th>Eksam</th>
-                        <th>Loodusteaduste instituut</th>
-                        <th class="links">
-                            <a href="formEng.html" class="newsLink">View</a>
-                            <a href="muudaEng.html" class="newsLink">Edit</a>
-                            <a href="kustutaEng.html" class="newsLink">Delete</a>
-                        </th>
-                    </tr>
-                    <tr>
-                        <th><a href="form.html" class="links">Vana-Kreeka ajalugu</a></th>
-                        <th class="number">5</th>
-                        <th>Arvestus</th>
-                        <th>HTLE</th>
-                        <th class="links">
-                            <a href="formEng.html" class="newsLink">View</a>
-                            <a href="muudaEng.html" class="newsLink">Edit</a>
-                            <a href="kustutaEng.html" class="newsLink">Delete</a>
-                        </th>
-                    </tr>
-                    <tr>
-                        <th><a href="form.html" class="links">Javascript algajatele</a></th>
-                        <th class="number">4</th>
-                        <th>Eksam</th>
-                        <th>Digitehnoloogiate instituut</th>
-                        <th class="links">
-                            <a href="formEng.html" class="newsLink">View</a>
-                            <a href="muudaEng.html" class="newsLink">Edit</a>
-                            <a href="kustutaEng.html" class="newsLink">Delete</a>
-                        </th>
-                    </tr>
-                    <tr>
-                        <th><a href="form.html" class="links">Ajakirjandus</a></th>
-                        <th class="number">12</th>
-                        <th>Eksam</th>
-                        <th>Balti filmi ja meedia</th>
-                        <th class="links">
-                            <a href="formEng.html" class="newsLink">View</a>
-                            <a href="muudaEng.html" class="newsLink">Edit</a>
-                            <a href="kustutaEng.html" class="newsLink">Delete</a>
-                        </th>
-                    </tr>
+                    <tbody id="bodyOfList">
+
+                        <tr class="mains" id="mains">
+                            <th class="topper"><b>Name of Curriculum</b></th>
+                            <th class="topper"><b>Credit Points (ECTS)</b></th>
+                            <th class="topper"><b>Method of Evaluation</b></th>
+                            <th class="topper"><b>Institution</b></th>
+                            <th class="topper"></th>
+                        </tr>
+                        
+                </tbody>
                 </table>
             </div>
         </container>
         <div id="fillerMain" class="fillerMain"></div>
         
-
+        
     </div>
     
 </body>
