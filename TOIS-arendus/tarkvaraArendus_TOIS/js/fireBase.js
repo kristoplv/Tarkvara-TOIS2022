@@ -165,7 +165,7 @@ function sendValues(){
   saadaOptionSisu(baseRef+"oppekava_ruhm/", oppekava_ruhm_val);
   
   set(ref(db, "TOIS/vorm/auth/deleted/"+courseId), {
-    [linkId] : "Ei"
+    [courseId] : "Ei"
 });
 }
 
