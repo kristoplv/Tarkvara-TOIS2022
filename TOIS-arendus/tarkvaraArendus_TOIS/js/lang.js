@@ -1,6 +1,9 @@
 let Estonian = document.querySelector('#langEE');
 let English = document.querySelector('#langEN');
-let currentLanguage;
+
+if(window.localStorage.getItem('lang') == null){
+    window.localStorage.setItem('lang', 'EE');
+}
 
 import {setAddress} from '../js/navigation.js';
 
