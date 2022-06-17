@@ -103,8 +103,11 @@ function sendValues(){
 
   var newBase = "TOIS/vorm/vormid" + id
   
+  
   // Üldine info
   saada(baseRef+"nimetus", nimiEK);
+  var OKnimi = getNameOfOK(nimiEK);
+
   saada(baseRef+"maht", maht);
   normaalkujule(oppeviisid, baseRef+"oppeviisid/", names_viisid);
   normaalkujule(keeled, baseRef+"keeled/", names_keeled);
@@ -163,16 +166,28 @@ function sendValues(){
   saadaOptionSisu(baseRef+"oppevaldkond/", oppevaldkond_val);
   saadaOptionSisu(baseRef+"oppesuund/", oppesuund_val);
   saadaOptionSisu(baseRef+"oppekava_ruhm/", oppekava_ruhm_val);
-  
+
+  let date = new Date();
+  let currentDate = date.toLocaleDateString('et', {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric'
+    });
   set(ref(db, "TOIS/vorm/auth/deleted/"+courseId), {
     [courseId] : "Ei"
-});
+  });
+  saadaOptionSisu("TOIS/vorm/vormid/name/", OKnimi)
+  saadaOptionSisu("TOIS/vorm/vormid/id/", courseId)
+  saadaOptionSisu("TOIS/vorm/vormid/time/", currentDate);
 }
 
 function saadaOptionSisu(baseRef, values){
   set(ref(db, baseRef+courseId), {
     [courseId] : values
   });
+}
+function getNameOfOK(){
+  return nimiEK[0].value;
 }
 function checkRadios(baseRef, values){
   if(values.checked){
