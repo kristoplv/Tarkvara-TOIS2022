@@ -1,5 +1,49 @@
 window.onload = function(){
+    console.log('laetud');
+    document.querySelector('#hindamiskriteeriumid-ek').innerHTML = window.localStorage.getItem('hindamisKriteeriumidEK');
+    document.querySelector('#hindamiskriteeriumid-ik').innerHTML = window.localStorage.getItem('hindamisKriteeriumidIK');
+    document.querySelector('#hindamiskriteeriumid-vk').innerHTML = window.localStorage.getItem('hindamisKriteeriumidVK');
+    document.querySelector('#eesmargid-ek').innerHTML = window.localStorage.getItem('eesmargidEK');
+    document.querySelector('#eesmargid-ik').innerHTML = window.localStorage.getItem('eesmargidIK');
+    document.querySelector('#eesmargid-vk').innerHTML = window.localStorage.getItem('eesmargidVK');
+    document.querySelector('#opivaljundid-ek').innerHTML = window.localStorage.getItem('opivaljundidEK');
+    document.querySelector('#opivaljundid-ik').innerHTML = window.localStorage.getItem('opivaljundidIK');
+    document.querySelector('#opivaljundid-vk').innerHTML = window.localStorage.getItem('opivaljundidVK');
+    document.querySelector('#sisu-ek').innerHTML = window.localStorage.getItem('sisuEK');
+    document.querySelector('#sisu-ik').innerHTML = window.localStorage.getItem('sisuIK');
+    document.querySelector('#sisu-vk').innerHTML = window.localStorage.getItem('sisuVK');
+    document.querySelector('#eeldused-ek').innerHTML = window.localStorage.getItem('eeldusedEK');
+    document.querySelector('#eeldused-ik').innerHTML = window.localStorage.getItem('eeldusedIK');
+    document.querySelector('#eeldused-vk').innerHTML = window.localStorage.getItem('eeldusedVK');
+    document.querySelector('#tingimused-ek').innerHTML = window.localStorage.getItem('tingimusedEK');
+    document.querySelector('#tingimused-ik').innerHTML = window.localStorage.getItem('tingimusedIK');
+    document.querySelector('#tingimused-vk').innerHTML = window.localStorage.getItem('tingimusedVK');
+    
+    let formID = document.querySelector('#courseId').innerHTML;
+    setInterval(function() {
+        console.log(formID);
+        window.localStorage.setItem('hindamisKriteeriumidEK', document.querySelector('#hindamiskriteeriumid-ek').value);
+        window.localStorage.setItem('hindamisKriteeriumidIK', document.querySelector('#hindamiskriteeriumid-ik').value);
+        window.localStorage.setItem('hindamisKriteeriumidVK', document.querySelector('#hindamiskriteeriumid-vk').value);
+        window.localStorage.setItem('eesmargidEK', document.querySelector('#eesmargid-ek').value);
+        window.localStorage.setItem('eesmargidIK', document.querySelector('#eesmargid-ik').value);
+        window.localStorage.setItem('eesmargidVK', document.querySelector('#eesmargid-vk').value);
+        window.localStorage.setItem('opivaljundidEK', document.querySelector('#opivaljundid-ek').value);
+        window.localStorage.setItem('opivaljundidIK', document.querySelector('#opivaljundid-ik').value);
+        window.localStorage.setItem('opivaljundidVK', document.querySelector('#opivaljundid-vk').value);
+        window.localStorage.setItem('sisuEK', document.querySelector('#sisu-ek').value);
+        window.localStorage.setItem('sisuIK', document.querySelector('#sisu-ik').value);
+        window.localStorage.setItem('sisuVK', document.querySelector('#sisu-vk').value);
+        window.localStorage.setItem('eeldusedEK', document.querySelector('#eeldused-ek').value);
+        window.localStorage.setItem('eeldusedIK', document.querySelector('#eeldused-ik').value);
+        window.localStorage.setItem('eeldusedVK', document.querySelector('#eeldused-vk').value);
+        window.localStorage.setItem('tingimusedEK', document.querySelector('#tingimused-ek').value);
+        window.localStorage.setItem('tingimusedIK', document.querySelector('#tingimused-ik').value);
+        window.localStorage.setItem('tingimusedVK', document.querySelector('#tingimused-vk').value);
 
+        console.log(window.localStorage.getItem('hindamisKriteeriumidEK'));
+    }, 60 * 1000);
+    
     /*checkLoginStatus();*/
 
     /*authAccess();*/
