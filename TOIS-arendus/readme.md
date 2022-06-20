@@ -5,11 +5,11 @@ TÕIS avaleht
 
 ## Eesmärk ja lühikirjeldus:
 
-Käsitletavaks organisatsiooniks on TÕIS (Täiendõppe infosüsteem). Tegemist on Tallinna Ülikooli infosüsteemiga, mis on mõeldud täiendõppe õppekavade ja koolituste loomiseks ning haldamiseks. Praegune süsteem on ebamugav ja vähese funktsionaalsusega, seega kliendi soov oli luua parem lahendus, mis muudaks TÕISi lihtsamaks ja mugavaks. Selleks viisime läbi disainiuuringu ning arendasime selle põhjal uue süsteemi, pidades silmas kasutajasõbralikkust - selgem disain, keelevahetus, seletused vormi väljadel, automaatne vormi sisu salvestamine.
+Käsitletavaks organisatsiooniks on TÕIS (Täiendõppe infosüsteem). Tegemist on Tallinna Ülikooli infosüsteemiga, mis on mõeldud täiendõppe õppekavade ja koolituste loomiseks ning haldamiseks. Praegune süsteem on ebamugav ja vähese funktsionaalsusega, seega kliendi soov oli luua parem lahendus, mis muudaks TÕISi lihtsamaks ja mugavamaks. Selleks viisime läbi disainiuuringu ning arendasime selle põhjal uue süsteemi, pidades silmas kasutajasõbralikkust - selgem disain, keelevahetus, seletused vormi väljadel, automaatne vormi sisu salvestamine.
 
 ## Instituut:
 
-Projekt viidi läbi Tallinna Ülikooli Digitehnoloogiate Instituudis järgnevate ainete raames: tarkvaraarenduse projekt, interaktsioonidisain, sissejuhatus infosüsteemidesse. Interaktsioonidisaini aines keskendusime disainiuuringu erinevatele etappidele, infosüsteemide aines koostasime infovajaduste analüüsi ning andmemudelid ning tarkvaraarenduse projekti raames viisime läbi suvepraktika.
+Projekt viidi läbi [Tallinna Ülikooli Digitehnoloogiate Instituudis](https://www.tlu.ee/dt) järgnevate ainete raames: tarkvaraarenduse projekt, interaktsioonidisain, sissejuhatus infosüsteemidesse. Interaktsioonidisaini aines keskendusime disainiuuringu erinevatele etappidele, infosüsteemide aines koostasime infovajaduste analüüsi ning andmemudelid ning tarkvaraarenduse projekti raames viisime läbi suvepraktika.
 
 ## Kasutatud tehnoloogiad:
 
