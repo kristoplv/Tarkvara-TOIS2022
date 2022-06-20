@@ -36,7 +36,7 @@ Projekt viidi läbi Tallinna Ülikooli Digitehnoloogiate Instituudis järgnevate
 ## Paigaldusjuhised:
 
 Süsteem on ligipääsetav veebi kaudu järgmisel lingil:
-https://kristoplv.github.io/TLU_TOIS/tarkvaraArendus_TOIS/mainEng.html
+https://kristoplv.github.io/TLU_TOIS/tarkvaraArendus_TOIS/main.html
 
 Testkasutaja:
 email: test@test.ee
