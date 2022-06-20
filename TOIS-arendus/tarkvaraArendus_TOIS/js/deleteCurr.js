@@ -92,5 +92,4 @@ function returnToList(){
 }
 
 btn_yes.addEventListener("click", deleteCurr);
-
 btn_no.addEventListener("click", returnToList);

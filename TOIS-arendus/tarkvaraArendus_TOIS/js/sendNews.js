@@ -1,9 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.11/firebase-app.js";
 import {getDatabase, ref, push, set, onValue, get, child} from "https://www.gstatic.com/firebasejs/9.6.11/firebase-database.js";
 
-
-
-
 const firebaseConfig = {
     apiKey: "AIzaSyA68-WRoXzWuFYJQf0t-txxMq4E749arpQ",
     authDomain: "igplatvormid.firebaseapp.com",
@@ -37,8 +34,6 @@ function main(){
         }
     })
 }
-
-
 
 function getValues(baseRef){
     var retVal = [];
