@@ -86,4 +86,11 @@ function deleteCurr(){
         [id] : "Jah"
     });
 }
+
+function returnToList(){
+    window.location.href = "oppekavad.html";
+}
+
 btn_yes.addEventListener("click", deleteCurr);
+
+btn_no.addEventListener("click", returnToList);
