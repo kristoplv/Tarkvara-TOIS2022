@@ -38,10 +38,6 @@ Projekt viidi läbi Tallinna Ülikooli Digitehnoloogiate Instituudis järgnevate
 Süsteem on ligipääsetav veebi kaudu järgmisel lingil:
 https://kristoplv.github.io/TLU_TOIS/tarkvaraArendus_TOIS/main.html
 
-Testkasutaja:
-email: test@test.ee
-parool: test
-
 ## Litsents:
 
 https://github.com/kristoplv/Tarkvara-TOIS2022/blob/e4dd080721496adf67d0a291566087ea8adda7c6/LICENCE
