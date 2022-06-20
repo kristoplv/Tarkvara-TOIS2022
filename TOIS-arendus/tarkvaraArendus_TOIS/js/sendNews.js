@@ -1,9 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.11/firebase-app.js";
 import {getDatabase, ref, push, set, onValue, get, child} from "https://www.gstatic.com/firebasejs/9.6.11/firebase-database.js";
 
-
-
-
 const firebaseConfig = {
     apiKey: "AIzaSyA68-WRoXzWuFYJQf0t-txxMq4E749arpQ",
     authDomain: "igplatvormid.firebaseapp.com",
@@ -31,8 +28,6 @@ function main(){
         /*thingy.innerHTML += "<div id='"+superlist[i][i]+"' class='news'><div id='"+superlist[i][i]+"'><p>08.06.2022</p></div><div id='newsContent1' class='newsContent'><p>Õppekavas x on tehtud muudatused</p><a href=' class='newsLink'>Vaata</a></div></div>'"
     */}
 }
-
-
 
 function getValues(baseRef){
     var retVal = [];
