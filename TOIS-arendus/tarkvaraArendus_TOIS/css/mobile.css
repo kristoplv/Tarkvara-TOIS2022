@@ -11,6 +11,12 @@
     .hello{
         font-size: 1.2em;
     }
+    #courseId{
+        word-break: break-all;
+    }
+    label{
+        font-size: 2em;
+    }
     #mainContainer{
         position: absolute;
         top:0;
