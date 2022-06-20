@@ -9,7 +9,7 @@ Käsitletavaks organisatsiooniks on TÕIS (Täiendõppe infosüsteem). Tegemist 
 
 ## Instituut:
 
-Projekt viidi läbi Tallinna Ülikooli Digitehnoloogiate Instituudis järgnevate ainete raames: tarkvaraarenduse projekt, interaktsioonidisain, sissejuhatus infosüsteemidesse. Interaktsioonidisaini aines keskendusime disainiuuringu erinevatele etappidele, infosüsteemide aines koostasime infovajaduste analüüsi ning andmemudelid ning tarkvaraarenduse projekti raames viisime läbi suvepraktika.
+Projekt viidi läbi [Tallinna Ülikooli Digitehnoloogiate Instituudis](https://www.tlu.ee/dt) järgnevate ainete raames: tarkvaraarenduse projekt, interaktsioonidisain, sissejuhatus infosüsteemidesse. Interaktsioonidisaini aines keskendusime disainiuuringu erinevatele etappidele, infosüsteemide aines koostasime infovajaduste analüüsi ning andmemudelid ning tarkvaraarenduse projekti raames viisime läbi suvepraktika.
 
 ## Kasutatud tehnoloogiad:
 
