@@ -2,6 +2,15 @@
 @media (max-width: 1000px){
     .field{
         font-size: 1.5vh;
+        width: 85%;
+        margin-left: 1.5em;
+        margin-right: 1.5em;
+    }
+    .okHead{
+        margin-top: 4em;
+    }
+    .hello{
+        font-size: 1.2em;
     }
     #mainContainer{
         position: absolute;
@@ -26,7 +35,6 @@
     } */
     .search{
         position: absolute;
-        margin-top: 3em;
         width: 100%;
         display: grid;
         align-items: center;
@@ -39,6 +47,9 @@
     }
     #formList{
         margin-top: 10em;
+    }
+    #bodyOfList{
+        font-size: 0.8em;
     }
     .btn{
         height: 50px;
@@ -55,6 +66,8 @@
         font-size: 1.8vh;
     }
     .login_form{
+        align-items: center;
+        justify-content: center;
         margin-top: 10vmin;
         height: 85vmin;
         min-width: 65vmin;
