@@ -11,6 +11,10 @@ const firebaseConfig = {
     appId: "1:778407009045:web:682d3fb68159d7a747a71c"
 };
 
+function sleep(ms){
+    return new Promise((resolve) => setTimeout(resolve, ms));
+  }
+
   // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db= getDatabase();
@@ -19,14 +23,16 @@ var reffer = "";
 const thingy = document.getElementById("newsArea");
 
 function main(){
-    var superlist = [];
-    superlist.push(getValues("TOIS/vorm/vormid/id/"))
-    superlist.push(getValues("TOIS/vorm/vormid/name/"))
-    superlist.push(getValues("TOIS/vorm/vormid/time/"))
-    console.log(superlist);
-    for(var i=0; i<superlist[i].length; i++){
-        /*thingy.innerHTML += "<div id='"+superlist[i][i]+"' class='news'><div id='"+superlist[i][i]+"'><p>08.06.2022</p></div><div id='newsContent1' class='newsContent'><p>Õppekavas x on tehtud muudatused</p><a href=' class='newsLink'>Vaata</a></div></div>'"
-    */}
+    var item_1 = getValues("TOIS/vorm/vormid/id/")
+    var item_2 = getValues("TOIS/vorm/vormid/name/")
+    var item_3 = getValues("TOIS/vorm/vormid/time/")
+    sleep(500).then(()=>{
+        console.log(item_1.length)
+        for(var i=0; i<item_1.length; i++){
+            console.log(thingy);
+            thingy.innerHTML += "<div id='"+item_1[i]+"' class='news'><div id='"+item_1[i]+"'><p>"+item_3[i]+"</p></div><div id='newsContent1' class='newsContent'><p>Õppekavas "+item_2[i]+" on tehtud muudatused</p><a href='vaata.html?id="+item_1[i]+"' class='newsLink'>Vaata</a></div></div><hr>"
+        }
+    })
 }
 
 function getValues(baseRef){
@@ -34,8 +40,15 @@ function getValues(baseRef){
     var reffer = ref(db, baseRef);
     onValue(reffer, (values)=>{
         var sisu = values.val();
-        var items = Object.keys(sisu);
-        retVal.push(Object.values(sisu[items]));
+        var keys = Object.keys(sisu);
+        var vals = Object.values(sisu);
+        var innerVals = Object.values(vals);
+        for(var i=0; i<keys.length; i++){
+            var newVar = innerVals[i]
+            console.log(newVar)
+            retVal.push(newVar[keys[i]]);
+
+        }
     })
     return retVal;
 }
