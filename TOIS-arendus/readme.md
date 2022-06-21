@@ -35,6 +35,15 @@ Projekt viidi läbi [Tallinna Ülikooli Digitehnoloogiate Instituudis](https://w
 
 ## Paigaldusjuhised:
 
+1) Tee kindlaks, et serveril oleks alla laetud Node.js
+2) Kopeeri kõik failid, mis kuuluvad kausta tarkvaraArendus_TOIS enda serverile.
+3) Ava konsool serveris ja liigu vastavasse kausta ("cd tarkvaraArendus_TOIS")
+4) Kirjuta konsooli "npm --v" ja "node --v", et olla kindel Node ja npm olemasolus
+5) Kui said versioonid teada, siis järgnevalt kirjuta konsooli "npm ci" või vanemal npm versioonil
+"npm install"
+6) Kui kõik see on tehtud, peaks olema veebileht ja selle funktsionaalsus töötama
+7) Naudi!
+
 Süsteem on ligipääsetav veebi kaudu järgmisel lingil:
 https://kristoplv.github.io/TLU_TOIS/tarkvaraArendus_TOIS/main.html
 
